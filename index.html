@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="HeartCare Clinic Management System — compassionate heart care, experienced doctors, and convenient appointments."
+    />
+    <title>HeartCare Clinic | Your Heart, Our Priority</title>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+
+    <script>
+      const toggle = document.querySelector("[data-menu-toggle]");
+      const nav = document.getElementById("main-navigation");
+      toggle.addEventListener("click", () => {
+        const open = nav.classList.toggle("is-open");
+        toggle.setAttribute("aria-expanded", open);
+      });
+    </script>
+  </head>
+
+  <body>
+    <!-- HEADER / NAVIGATION -->
+    <header class="site-header" id="top">
+      <div class="container header__container">
+        <a class="site-logo" href="index.html" aria-label="HeartCare homepage">
+          <img
+            class="site-logo__image"
+            src="assets/images/heartcare-logo.png"
+            alt="HeartCare logo"
+            width="52"
+            height="52"
+          />
+          <span class="site-logo__text">HeartCare</span>
+        </a>
+
+        <nav class="main-nav" id="main-navigation" aria-label="Main navigation">
+          <a class="main-nav__link" href="#home">Home</a>
+          <a class="main-nav__link" href="#about">About</a>
+          <a class="main-nav__link" href="#services">Services</a>
+          <a class="main-nav__link" href="#doctors">Our Doctors</a>
+          <a class="main-nav__link" href="#contact">Contact</a>
+          <a class="main-nav__link main-nav__link--login" href="auth/login.html"
+            >Login</a
+          >
+          <a
+            class="main-nav__link main-nav__link--register"
+            href="auth/register.html"
+            >Register</a
+          >
+        </nav>
+
+        <!-- You can connect this button to a mobile navigation menu with JavaScript later. -->
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="main-navigation"
+          data-menu-toggle
+        >
+          Menu
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO SECTION -->
+      <section class="hero section" id="home">
+        <div class="container hero__container">
+          <div class="hero__content">
+            <p class="section-label">Welcome to HeartCare Clinic</p>
+            <h1 class="hero__title">Your Heart Deserves the Best Care</h1>
+            <p class="hero__description">
+              Compassionate care, experienced heart-care professionals, and a
+              smoother clinic experience — all in one place.
+            </p>
+
+            <div class="hero__actions">
+              <a class="button button--primary" href="auth/register.html"
+                >Create Patient Account</a
+              >
+              <a class="button button--secondary" href="auth/login.html"
+                >Book an Appointment</a
+              >
+            </div>
+
+            <ul class="hero__highlights">
+              <li>Experienced Doctors</li>
+              <li>Connected Care</li>
+              <li>Patient-Focused Service</li>
+            </ul>
+          </div>
+
+          <div class="hero__media">
+            <img
+              class="hero__image"
+              src="assets/images/heartcare-hero.jpg"
+              alt="Cardiologist speaking with a patient"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- TRUST / QUICK FACTS -->
+      <section class="highlights section" aria-label="HeartCare highlights">
+        <div class="container highlights__grid">
+          <article class="highlight-card">
+            <h2 class="highlight-card__title">Expert Care</h2>
+            <p>Consultation with dedicated healthcare professionals.</p>
+          </article>
+
+          <article class="highlight-card">
+            <h2 class="highlight-card__title">Easy Booking</h2>
+            <p>Find a doctor and request a convenient appointment.</p>
+          </article>
+
+          <article class="highlight-card">
+            <h2 class="highlight-card__title">Connected Records</h2>
+            <p>
+              Access your appointments, reports, and invoices in one portal.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ABOUT SECTION -->
+      <section class="about section" id="about">
+        <div class="container about__container">
+          <div class="about__media">
+            <img
+              class="about__image"
+              src="assets/images/heartcare-about-clinic.jpg"
+              alt="Welcoming and modern clinic interior"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="about__content">
+            <p class="section-label">About HeartCare</p>
+            <h2 class="section-title">Healthcare Made More Connected</h2>
+            <p>
+              HeartCare is a clinic management platform designed to make the
+              patient journey more organized — from booking an appointment to
+              reviewing consultation notes, laboratory reports, and invoices.
+            </p>
+            <p>
+              Patients, doctors, laboratory technicians, and administrators use
+              role-specific areas connected through one system.
+            </p>
+
+            <ul class="about__list">
+              <li>Convenient appointment management</li>
+              <li>Organized consultation and laboratory records</li>
+              <li>Patient access to reports and billing information</li>
+            </ul>
+
+            <a class="text-link" href="#services">Explore Our Services</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES SECTION -->
+      <section class="services section" id="services">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-label">What We Offer</p>
+            <h2 class="section-title">Our Healthcare Services</h2>
+            <p>Supporting your care journey with organized clinic services.</p>
+          </div>
+
+          <div class="services__grid">
+            <article class="service-card">
+              <img
+                class="service-card__image"
+                src="assets/images/service-cardiology.jpg"
+                alt="Cardiology consultation"
+                loading="lazy"
+              />
+              <div class="service-card__content">
+                <h3 class="service-card__title">Cardiology Consultation</h3>
+                <p>
+                  Book a consultation and keep your appointment details
+                  organized.
+                </p>
+                <a class="text-link" href="auth/register.html">Get Started</a>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <img
+                class="service-card__image"
+                src="assets/images/service-heart-checkup.jpg"
+                alt="Heart health checkup"
+                loading="lazy"
+              />
+              <div class="service-card__content">
+                <h3 class="service-card__title">Heart Health Checkups</h3>
+                <p>
+                  Record relevant measurements and review information with your
+                  doctor.
+                </p>
+                <a class="text-link" href="auth/register.html">Get Started</a>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <img
+                class="service-card__image"
+                src="assets/images/service-laboratory.jpg"
+                alt="Medical laboratory testing"
+                loading="lazy"
+              />
+              <div class="service-card__content">
+                <h3 class="service-card__title">Laboratory Investigations</h3>
+                <p>
+                  Keep ordered tests, results, and laboratory reports connected.
+                </p>
+                <a class="text-link" href="auth/login.html"
+                  >View Patient Portal</a
+                >
+              </div>
+            </article>
+
+            <article class="service-card">
+              <img
+                class="service-card__image"
+                src="assets/images/service-preventive-care.jpg"
+                alt="Doctor discussing preventive care"
+                loading="lazy"
+              />
+              <div class="service-card__content">
+                <h3 class="service-card__title">Preventive Care Support</h3>
+                <p>
+                  Discuss healthy habits and relevant measurements with a
+                  healthcare professional.
+                </p>
+                <a class="text-link" href="auth/register.html">Get Started</a>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <img
+                class="service-card__image"
+                src="assets/images/service-prescription.jpg"
+                alt="Doctor preparing a prescription"
+                loading="lazy"
+              />
+              <div class="service-card__content">
+                <h3 class="service-card__title">
+                  Prescriptions &amp; Follow-ups
+                </h3>
+                <p>
+                  Access saved prescriptions and follow-up information through
+                  your account.
+                </p>
+                <a class="text-link" href="auth/login.html">Sign In</a>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <img
+                class="service-card__image"
+                src="assets/images/service-billing.jpg"
+                alt="Clinic billing and patient service desk"
+                loading="lazy"
+              />
+              <div class="service-card__content">
+                <h3 class="service-card__title">Invoices &amp; Reports</h3>
+                <p>
+                  Review available invoices, payment records, and medical
+                  reports in one place.
+                </p>
+                <a class="text-link" href="auth/login.html"
+                  >View Your Records</a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- DOCTORS SECTION -->
+      <section class="doctors section" id="doctors">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-label">Meet Our Team</p>
+            <h2 class="section-title">Our Healthcare Professionals</h2>
+            <p>
+              Sample profiles for the project demonstration. Replace them with
+              your final team data.
+            </p>
+          </div>
+
+          <div class="doctors__grid">
+            <article class="doctor-card">
+              <img
+                class="doctor-card__image"
+                src="assets/images/doctor-rahman.jpg"
+                alt="Portrait of Dr. A. Rahman"
+                loading="lazy"
+              />
+              <div class="doctor-card__content">
+                <h3 class="doctor-card__name">Dr. A. Rahman</h3>
+                <p class="doctor-card__role">Consultant Cardiologist</p>
+                <p class="doctor-card__department">Cardiology Department</p>
+                <a class="button button--secondary" href="auth/register.html"
+                  >Request Appointment</a
+                >
+              </div>
+            </article>
+
+            <article class="doctor-card">
+              <img
+                class="doctor-card__image"
+                src="assets/images/doctor-sultana.jpg"
+                alt="Portrait of Dr. N. Sultana"
+                loading="lazy"
+              />
+              <div class="doctor-card__content">
+                <h3 class="doctor-card__name">Dr. N. Sultana</h3>
+                <p class="doctor-card__role">Cardiology Specialist</p>
+                <p class="doctor-card__department">Heart Health Consultation</p>
+                <a class="button button--secondary" href="auth/register.html"
+                  >Request Appointment</a
+                >
+              </div>
+            </article>
+
+            <article class="doctor-card">
+              <img
+                class="doctor-card__image"
+                src="assets/images/doctor-hossain.jpg"
+                alt="Portrait of Dr. M. Hossain"
+                loading="lazy"
+              />
+              <div class="doctor-card__content">
+                <h3 class="doctor-card__name">Dr. M. Hossain</h3>
+                <p class="doctor-card__role">Medical Consultant</p>
+                <p class="doctor-card__department">Preventive Care</p>
+                <a class="button button--secondary" href="auth/register.html"
+                  >Request Appointment</a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section class="how-it-works section" id="how-it-works">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-label">Getting Started</p>
+            <h2 class="section-title">Your Care Journey in Four Steps</h2>
+          </div>
+
+          <ol class="steps__list">
+            <li class="step-card">
+              <span class="step-card__number">01</span>
+              <h3 class="step-card__title">Register</h3>
+              <p>Create your patient account.</p>
+            </li>
+            <li class="step-card">
+              <span class="step-card__number">02</span>
+              <h3 class="step-card__title">Book</h3>
+              <p>Select a doctor and request an available appointment.</p>
+            </li>
+            <li class="step-card">
+              <span class="step-card__number">03</span>
+              <h3 class="step-card__title">Consult</h3>
+              <p>Attend your appointment and follow your doctor's guidance.</p>
+            </li>
+            <li class="step-card">
+              <span class="step-card__number">04</span>
+              <h3 class="step-card__title">Review</h3>
+              <p>View available reports and invoices in your portal.</p>
+            </li>
+          </ol>
+
+          <div class="section-actions">
+            <a class="button button--primary" href="auth/register.html"
+              >Create Your Account</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- CALL TO ACTION -->
+      <section class="cta section" id="get-started">
+        <div class="container cta__content">
+          <h2 class="cta__title">Take the Next Step in Your Care Journey</h2>
+          <p>
+            Create an account to manage appointments and access your patient
+            portal.
+          </p>
+          <div class="cta__actions">
+            <a class="button button--primary" href="auth/register.html"
+              >Register as a Patient</a
+            >
+            <a class="button button--secondary" href="auth/login.html"
+              >Sign In</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section class="contact section" id="contact">
+        <div class="container contact__container">
+          <div class="contact__content">
+            <p class="section-label">Contact HeartCare</p>
+            <h2 class="section-title">We Are Here to Help</h2>
+            <p>
+              For this academic demo, replace the sample contact details with
+              your project's final information.
+            </p>
+
+            <address class="contact__details">
+              <p>
+                <strong>Address:</strong> HeartCare Clinic, Dhaka, Bangladesh
+              </p>
+              <p>
+                <strong>Phone:</strong>
+                <a href="tel:+8801000000000">+880 1XXX-XXXXXX</a>
+              </p>
+              <p>
+                <strong>Email:</strong>
+                <a href="mailto:info@heartcare.example"
+                  >info@heartcare.example</a
+                >
+              </p>
+              <p>
+                <strong>Hours:</strong> Add your demonstration clinic hours
+                here.
+              </p>
+            </address>
+          </div>
+
+          <div class="contact__media">
+            <img
+              class="contact__image"
+              src="assets/images/heartcare-contact.jpg"
+              alt="Clinic reception area"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer__container">
+        <div class="footer__brand">
+          <h2 class="footer__title">HeartCare Clinic</h2>
+          <p>Your heart, our priority.</p>
+          <p>
+            A clinic management system developed as an academic semester
+            project.
+          </p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <h3 class="footer-nav__title">Quick Links</h3>
+          <a class="footer-nav__link" href="#home">Home</a>
+          <a class="footer-nav__link" href="#about">About</a>
+          <a class="footer-nav__link" href="#services">Services</a>
+          <a class="footer-nav__link" href="#doctors">Our Doctors</a>
+          <a class="footer-nav__link" href="auth/login.html">Login</a>
+        </nav>
+      </div>
+
+      <div class="footer__bottom">
+        <p>
+          &copy; 2026 HeartCare Clinic Management System. Academic project
+          demonstration only.
+        </p>
+        <a class="back-to-top" href="#top">Back to top</a>
+      </div>
+    </footer>
+  </body>
+</html>
