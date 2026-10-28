@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Create your HeartCare Clinic patient account."
+    />
+
+    <title>Create Account | HeartCare Clinic</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/auth.css" />
+  </head>
+
+  <body class="login-page">
+    <header class="login-header">
+      <a href="../index.html" class="login-logo">
+        <span class="login-logo__icon" aria-hidden="true">♥</span>
+        <span>HeartCare</span>
+      </a>
+
+      <a href="../index.html" class="login-home-link"> ← Back to Home </a>
+    </header>
+
+    <main class="login-main">
+      <section class="login-card" aria-labelledby="register-title">
+        <div class="login-card__heading">
+          <div class="login-heart-icon" aria-hidden="true">♥</div>
+
+          <p class="login-eyebrow">JOIN HEARTCARE</p>
+
+          <h1 id="register-title">Create your account</h1>
+
+          <p class="login-subtitle">
+            Register as a patient to book appointments and manage your
+            healthcare journey.
+          </p>
+        </div>
+
+        <!-- Connect this form to your PHP registration handler later -->
+        <form class="login-form" action="register.php" method="POST">
+          <div class="form-group">
+            <label for="full_name">Full Name</label>
+
+            <input
+              type="text"
+              id="full_name"
+              name="full_name"
+              placeholder="Enter your full name"
+              autocomplete="name"
+              minlength="2"
+              maxlength="100"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              maxlength="150"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="e.g. 01XXXXXXXXX"
+              autocomplete="tel"
+              maxlength="20"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="date_of_birth">Date of Birth</label>
+
+            <input
+              type="date"
+              id="date_of_birth"
+              name="date_of_birth"
+              autocomplete="bday"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="gender">Gender</label>
+
+            <select id="gender" name="gender" required>
+              <option value="" disabled selected>Select your gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+              <option value="prefer_not_to_say">Prefer not to say</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Create a strong password"
+              autocomplete="new-password"
+              minlength="8"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="confirm_password">Confirm Password</label>
+
+            <input
+              type="password"
+              id="confirm_password"
+              name="confirm_password"
+              placeholder="Enter your password again"
+              autocomplete="new-password"
+              minlength="8"
+              required
+            />
+          </div>
+
+          <div class="login-options">
+            <label class="remember-me">
+              <input type="checkbox" name="terms" value="1" required />
+              <span> I agree to the clinic's terms and privacy policy. </span>
+            </label>
+          </div>
+
+          <button type="submit" class="login-button">
+            Create Account
+            <span aria-hidden="true">→</span>
+          </button>
+        </form>
+
+        <div class="login-divider">
+          <span>SECURE CLINIC ACCESS</span>
+        </div>
+
+        <p class="register-prompt">
+          Already have an account?
+          <a href="login.html">Sign in</a>
+        </p>
+
+        <p class="login-security-note">
+          Your personal information should remain private and secure.
+        </p>
+      </section>
+
+      <p class="login-footer">
+        &copy; 2026 HeartCare Clinic Management System. Academic project
+        demonstration.
+      </p>
+    </main>
+
+    <script>
+      // Prevent selecting a future date of birth.
+      const dateOfBirth = document.getElementById("date_of_birth");
+      dateOfBirth.max = new Date().toISOString().split("T")[0];
+
+      // Basic client-side password confirmation.
+      const form = document.querySelector(".login-form");
+      const password = document.getElementById("password");
+      const confirmPassword = document.getElementById("confirm_password");
+
+      form.addEventListener("submit", function (event) {
+        if (password.value !== confirmPassword.value) {
+          event.preventDefault();
+          confirmPassword.setCustomValidity("Passwords do not match.");
+          confirmPassword.reportValidity();
+        } else {
+          confirmPassword.setCustomValidity("");
+        }
+      });
+
+      confirmPassword.addEventListener("input", function () {
+        confirmPassword.setCustomValidity("");
+      });
+    </script>
+  </body>
+</html>
