@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Sign in to your HeartCare Clinic account."
+    />
+
+    <title>Login | HeartCare Clinic</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/auth.css" />
+  </head>
+  <body class="login-page">
+    <header class="login-header">
+      <a href="../index.html" class="login-logo">
+        <span class="login-logo__icon">♥</span>
+        <span>HeartCare</span>
+      </a>
+
+      <a href="../index.html" class="login-home-link"> ← Back to Home </a>
+    </header>
+
+    <main class="login-main">
+      <section class="login-card">
+        <div class="login-card__heading">
+          <div class="login-heart-icon">♥</div>
+
+          <p class="login-eyebrow">WELCOME BACK</p>
+
+          <h1>Sign in to HeartCare</h1>
+
+          <p class="login-subtitle">
+            Access your account and manage your healthcare journey.
+          </p>
+        </div>
+
+        <!-- Connect this form to your PHP login handler later -->
+        <form class="login-form" action="login.php" method="POST">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <div class="form-label-row">
+              <label for="password">Password</label>
+
+              <a href="forgot-password.php" class="forgot-password">
+                Forgot password?
+              </a>
+            </div>
+
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              required
+            />
+          </div>
+
+          <div class="login-options">
+            <label class="remember-me">
+              <input type="checkbox" name="remember_me" value="1" />
+              <span>Remember me</span>
+            </label>
+          </div>
+
+          <button type="submit" class="login-button">
+            Sign In <span aria-hidden="true">→</span>
+          </button>
+        </form>
+
+        <div class="login-divider">
+          <span>SECURE CLINIC ACCESS</span>
+        </div>
+
+        <p class="register-prompt">
+          Don't have a patient account?
+          <a href="register.html">Create an account</a>
+        </p>
+
+        <p class="login-security-note">
+          Your healthcare information should remain private and secure.
+        </p>
+      </section>
+
+      <p class="login-footer">
+        &copy; 2026 HeartCare Clinic Management System. Academic project
+        demonstration.
+      </p>
+    </main>
+  </body>
+</html>
