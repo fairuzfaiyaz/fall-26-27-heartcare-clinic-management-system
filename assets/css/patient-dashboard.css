@@ -1,0 +1,1153 @@
+/* ==========================================================================
+   HeartCare Clinic — Patient Dashboard
+   File: assets/css/patient-dashboard.css
+   Requires: assets/css/style.css
+   ========================================================================== */
+
+/* 1. Global dashboard styles
+   ========================================================================== */
+
+.patient-dashboard {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--color-page);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+}
+
+.patient-dashboard *,
+.patient-dashboard *::before,
+.patient-dashboard *::after {
+  box-sizing: border-box;
+}
+
+.patient-dashboard a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.patient-dashboard a:focus-visible {
+  outline: 3px solid rgba(47, 100, 134, 0.4);
+  outline-offset: 3px;
+}
+
+.dashboard-layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+}
+
+/* 2. Sidebar
+   ========================================================================== */
+
+.dashboard-sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1rem;
+  overflow-y: auto;
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-line);
+}
+
+.dashboard-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0 0 2rem 0.35rem;
+  color: var(--color-ink);
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.dashboard-brand__icon {
+  width: 39px;
+  height: 39px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--color-red);
+  color: white;
+  font-size: 1.4rem;
+}
+
+.sidebar-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 0.5rem;
+  margin-bottom: 1.5rem;
+  border-block: 1px solid var(--color-line);
+}
+
+.avatar,
+.topbar-avatar,
+.profile-avatar {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #e8eff7;
+  color: var(--color-blue);
+  font-weight: 700;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  font-size: 0.85rem;
+}
+
+.sidebar-profile strong,
+.sidebar-profile span {
+  display: block;
+}
+
+.sidebar-profile strong {
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.sidebar-profile span {
+  color: var(--color-ink-soft);
+  font-size: 0.77rem;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.sidebar-label {
+  margin: 0.15rem 0.7rem 0.65rem;
+  color: #8796a5;
+  font-size: 0.69rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.sidebar-label--spaced {
+  margin-top: 1.7rem;
+}
+
+.sidebar-link {
+  min-height: 45px;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.7rem 0.8rem;
+  border-radius: var(--radius-sm);
+  color: var(--color-ink-soft);
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.nav-icon {
+  width: 22px;
+  display: inline-grid;
+  place-items: center;
+  font-size: 1.15rem;
+}
+
+.sidebar-link:hover {
+  background: var(--color-mist);
+  color: var(--color-ink);
+}
+
+.sidebar-link.is-active {
+  background: rgba(196, 34, 58, 0.09);
+  color: var(--color-red);
+  font-weight: 700;
+}
+
+.sidebar-link--logout {
+  margin-top: 0.25rem;
+}
+
+.sidebar-link--logout:hover {
+  background: rgba(196, 34, 58, 0.07);
+  color: var(--color-red);
+}
+
+/* Sidebar help card */
+
+.sidebar-help {
+  margin-top: auto;
+  padding: 1rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  background: var(--color-page);
+}
+
+.help-icon {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 0.7rem;
+  border-radius: 50%;
+  background: #e8eff7;
+  color: var(--color-blue);
+  font-weight: 700;
+}
+
+.sidebar-help strong {
+  display: block;
+  font-size: 0.85rem;
+}
+
+.sidebar-help p {
+  margin: 0.45rem 0 0.75rem;
+  color: var(--color-ink-soft);
+  font-size: 0.77rem;
+  line-height: 1.6;
+}
+
+.sidebar-help a {
+  color: var(--color-blue);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* 3. Main content and topbar
+   ========================================================================== */
+
+.dashboard-main {
+  min-width: 0;
+}
+
+.dashboard-topbar {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem clamp(1.25rem, 3vw, 2.5rem);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  color: var(--color-ink-soft);
+  font-size: 0.85rem;
+}
+
+.breadcrumb strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.portal-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--color-ink-soft);
+  font-size: 0.8rem;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #269a6b;
+}
+
+.topbar-avatar {
+  width: 39px;
+  height: 39px;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+/* 4. Dashboard content and welcome section
+   ========================================================================== */
+
+.dashboard-content {
+  width: 100%;
+  max-width: 1600px;
+  margin-inline: auto;
+  padding: 2rem clamp(1.25rem, 3vw, 2.5rem);
+}
+
+.welcome-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.section-eyebrow {
+  margin: 0 0 0.5rem;
+  color: var(--color-red);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.welcome-section h1 {
+  margin: 0;
+  color: var(--color-ink);
+  font-family: var(--font-heading);
+  font-size: clamp(1.65rem, 3vw, 2.15rem);
+  line-height: 1.25;
+  letter-spacing: -0.04em;
+}
+
+.welcome-description {
+  margin: 0.65rem 0 0;
+  color: var(--color-ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Primary and secondary actions */
+
+.primary-button,
+.secondary-button {
+  min-height: 43px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.primary-button {
+  border: 1px solid var(--color-red);
+  background: var(--color-red);
+  color: #fff;
+}
+
+.primary-button:hover {
+  border-color: var(--color-red-dark);
+  background: var(--color-red-dark);
+}
+
+.primary-button > span {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.secondary-button {
+  width: 100%;
+  border: 1px solid var(--color-line);
+  background: var(--color-surface);
+  color: var(--color-ink);
+}
+
+.secondary-button:hover {
+  border-color: var(--color-blue);
+  color: var(--color-blue);
+}
+
+/* 5. Summary cards
+   ========================================================================== */
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.summary-card {
+  min-width: 0;
+  padding: 1.2rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: 0 5px 18px rgba(16, 36, 58, 0.025);
+}
+
+.summary-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.summary-icon {
+  width: 39px;
+  height: 39px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 11px;
+  font-size: 1.2rem;
+}
+
+.summary-icon--blue {
+  background: #e8effb;
+  color: #4267ad;
+}
+
+.summary-icon--red {
+  background: #fbe9ec;
+  color: var(--color-red);
+}
+
+.summary-icon--gold {
+  background: #fff3dc;
+  color: #a87513;
+}
+
+.summary-icon--green {
+  background: #e4f5ec;
+  color: #24855b;
+}
+
+.summary-caption {
+  color: var(--color-ink-soft);
+  font-size: 0.72rem;
+  text-align: right;
+}
+
+.summary-value {
+  margin: 1.15rem 0 0.25rem;
+  color: var(--color-ink);
+  font-family: var(--font-heading);
+  font-size: clamp(1.55rem, 2.5vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  overflow-wrap: anywhere;
+}
+
+.summary-value--date {
+  font-size: 1.8rem;
+}
+
+.summary-card h2 {
+  margin: 0;
+  color: var(--color-ink-soft);
+  font-size: 0.83rem;
+  font-weight: 500;
+}
+
+.summary-card > a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--color-blue);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.summary-card > a:hover {
+  color: var(--color-red);
+}
+
+/* 6. Content panels
+   ========================================================================== */
+
+.dashboard-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  align-items: stretch;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.dashboard-columns--bottom {
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+}
+
+.panel {
+  min-width: 0;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: 0 5px 18px rgba(16, 36, 58, 0.025);
+}
+
+.panel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.panel-header h2 {
+  margin: 0;
+  color: var(--color-ink);
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+
+.panel-header .section-eyebrow {
+  font-size: 0.66rem;
+}
+
+.text-link {
+  flex-shrink: 0;
+  color: var(--color-blue);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.text-link:hover {
+  color: var(--color-red);
+}
+
+/* 7. Appointments
+   ========================================================================== */
+
+.appointment-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.appointment-item:first-of-type {
+  padding-top: 0;
+}
+
+.appointment-date {
+  width: 55px;
+  min-width: 55px;
+  min-height: 62px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-line);
+  border-radius: 10px;
+  background: var(--color-page);
+}
+
+.appointment-date span {
+  color: var(--color-red);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.appointment-date strong {
+  margin-top: 0.15rem;
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  line-height: 1.2;
+}
+
+.appointment-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.appointment-details h3 {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.appointment-details p {
+  margin: 0.3rem 0;
+  color: var(--color-ink-soft);
+  font-size: 0.78rem;
+}
+
+.appointment-time {
+  color: var(--color-ink-soft);
+  font-size: 0.74rem;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.55rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.7rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.status-badge--confirmed,
+.status-badge--paid {
+  background: #e5f5ec;
+  color: #247a50;
+}
+
+.status-badge--pending {
+  background: #fff2d9;
+  color: #94640c;
+}
+
+.status-badge--unpaid {
+  background: #fbe8eb;
+  color: #b32139;
+}
+
+.appointments-panel > .secondary-button {
+  margin-top: 1.15rem;
+}
+
+/* 8. Patient profile
+   ========================================================================== */
+
+.profile-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding-bottom: 1.15rem;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.profile-avatar {
+  width: 54px;
+  height: 54px;
+  font-size: 1rem;
+}
+
+.profile-summary h3 {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.profile-summary p {
+  margin: 0.35rem 0 0;
+  color: var(--color-ink-soft);
+  font-size: 0.77rem;
+}
+
+.profile-info {
+  display: grid;
+  gap: 1rem;
+  padding-block: 1.2rem;
+}
+
+.profile-info > div {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.profile-info > div > span:first-child {
+  color: var(--color-ink-soft);
+  font-size: 0.78rem;
+}
+
+.profile-info strong {
+  max-width: 65%;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.profile-info .account-active {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #24855b;
+}
+
+/* 9. Health tracker
+   ========================================================================== */
+
+.measurement-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.measurement-card {
+  min-width: 0;
+  padding: 0.9rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  background: var(--color-page);
+}
+
+.measurement-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--color-ink-soft);
+  font-size: 0.73rem;
+  line-height: 1.4;
+}
+
+.measurement-icon {
+  width: 29px;
+  height: 29px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.measurement-icon--red {
+  background: #fbe9ec;
+  color: var(--color-red);
+}
+
+.measurement-icon--blue {
+  background: #e8effb;
+  color: #4267ad;
+}
+
+.measurement-icon--green {
+  background: #e4f5ec;
+  color: #24855b;
+}
+
+.measurement-value {
+  margin: 1rem 0 0.4rem;
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 1.8vw, 1.4rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  overflow-wrap: anywhere;
+}
+
+.measurement-value small {
+  color: var(--color-ink-soft);
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.measurement-date {
+  margin: 0;
+  color: var(--color-ink-soft);
+  font-size: 0.68rem;
+  line-height: 1.5;
+}
+
+.health-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin: 1rem 0;
+  padding: 0.85rem;
+  border: 1px solid #dce8f3;
+  border-radius: var(--radius-sm);
+  background: #f3f8fc;
+  color: #46647e;
+}
+
+.health-notice > span {
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+
+.health-notice p {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+/* 10. Recent medical records
+   ========================================================================== */
+
+.records-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.record-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--color-line);
+  color: inherit;
+  text-decoration: none;
+}
+
+.record-item:first-of-type {
+  padding-top: 0;
+}
+
+.record-item:last-of-type {
+  border-bottom: 0;
+}
+
+.record-item:hover .record-details strong {
+  color: var(--color-blue);
+}
+
+.record-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 11px;
+  font-size: 1.1rem;
+}
+
+.record-icon--red {
+  background: #fbe9ec;
+  color: var(--color-red);
+}
+
+.record-icon--blue {
+  background: #e8effb;
+  color: #4267ad;
+}
+
+.record-icon--green {
+  background: #e4f5ec;
+  color: #24855b;
+}
+
+.record-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.record-details strong,
+.record-details small {
+  display: block;
+}
+
+.record-details strong {
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.record-details small {
+  margin-top: 0.3rem;
+  color: var(--color-ink-soft);
+  font-size: 0.73rem;
+  line-height: 1.5;
+}
+
+.record-arrow {
+  color: var(--color-ink-soft);
+  font-size: 1.1rem;
+}
+
+/* 11. Invoice table
+   ========================================================================== */
+
+.billing-panel {
+  margin-bottom: 1.5rem;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.invoice-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.invoice-table th {
+  padding: 0.85rem 0.9rem;
+  background: var(--color-page);
+  color: var(--color-ink-soft);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.invoice-table th:first-child {
+  border-radius: 7px 0 0 7px;
+}
+
+.invoice-table th:last-child {
+  border-radius: 0 7px 7px 0;
+}
+
+.invoice-table td {
+  padding: 1rem 0.9rem;
+  border-bottom: 1px solid var(--color-line);
+  color: var(--color-ink);
+  font-size: 0.78rem;
+}
+
+.invoice-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.invoice-amount {
+  font-weight: 700;
+}
+
+.table-link {
+  color: var(--color-blue);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.table-link:hover {
+  color: var(--color-red);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* 12. Footer
+   ========================================================================== */
+
+.dashboard-footer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  padding-block: 0.5rem 1rem;
+  color: var(--color-ink-soft);
+  font-size: 0.74rem;
+  line-height: 1.6;
+}
+
+.dashboard-footer p {
+  margin: 0;
+}
+
+/* 13. Tablet
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .dashboard-layout {
+    grid-template-columns: 220px minmax(0, 1fr);
+  }
+
+  .dashboard-sidebar {
+    padding-inline: 0.8rem;
+  }
+
+  .summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard-columns,
+  .dashboard-columns--bottom {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .measurement-value {
+    font-size: 1.35rem;
+  }
+}
+
+/* 14. Mobile
+   ========================================================================== */
+
+@media (max-width: 700px) {
+  .dashboard-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .dashboard-sidebar {
+    position: static;
+    height: auto;
+    padding: 1rem;
+    overflow: visible;
+    border-right: 0;
+    border-bottom: 1px solid var(--color-line);
+  }
+
+  .dashboard-brand {
+    margin-bottom: 1rem;
+  }
+
+  .sidebar-profile {
+    margin-bottom: 0.75rem;
+    padding-block: 0.75rem;
+  }
+
+  .sidebar-nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.35rem;
+  }
+
+  .sidebar-label {
+    grid-column: 1 / -1;
+    margin-top: 0.5rem;
+  }
+
+  .sidebar-label--spaced {
+    margin-top: 0.75rem;
+  }
+
+  .sidebar-link {
+    min-height: 42px;
+    padding: 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .nav-icon {
+    width: 18px;
+  }
+
+  .sidebar-help {
+    display: none;
+  }
+
+  .dashboard-topbar {
+    min-height: 60px;
+    padding: 0.8rem 1rem;
+  }
+
+  .portal-status {
+    font-size: 0.72rem;
+  }
+
+  .dashboard-content {
+    padding: 1.4rem 1rem;
+  }
+
+  .welcome-section {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .welcome-section .primary-button {
+    width: 100%;
+  }
+
+  .summary-grid {
+    gap: 0.75rem;
+  }
+
+  .summary-card {
+    padding: 1rem;
+  }
+
+  .summary-caption {
+    font-size: 0.66rem;
+  }
+
+  .appointment-item {
+    flex-wrap: wrap;
+  }
+
+  .appointment-item .status-badge {
+    margin-left: calc(55px + 0.85rem);
+  }
+
+  .measurement-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .measurement-card {
+    padding: 1rem;
+  }
+
+  .measurement-value {
+    margin-top: 0.7rem;
+  }
+
+  .dashboard-footer {
+    flex-direction: column;
+  }
+}
+
+/* 15. Small mobile screens
+   ========================================================================== */
+
+@media (max-width: 380px) {
+  .dashboard-content {
+    padding-inline: 0.75rem;
+  }
+
+  .summary-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .summary-card {
+    padding: 1rem;
+  }
+
+  .panel {
+    padding: 1rem;
+  }
+
+  .breadcrumb {
+    gap: 0.35rem;
+    font-size: 0.75rem;
+  }
+
+  .topbar-actions {
+    gap: 0.5rem;
+  }
+
+  .portal-status {
+    font-size: 0;
+  }
+
+  .portal-status .status-dot {
+    width: 9px;
+    height: 9px;
+  }
+
+  .appointment-item .status-badge {
+    margin-left: 0;
+  }
+
+  .profile-info > div {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .profile-info strong {
+    max-width: 100%;
+    text-align: left;
+  }
+}
+
+/* 16. Reduced motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .patient-dashboard *,
+  .patient-dashboard *::before,
+  .patient-dashboard *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
