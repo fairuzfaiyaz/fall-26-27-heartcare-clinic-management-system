@@ -1,13 +1,12 @@
 /* ==========================================================================
-   HeartCare Clinic — authentication stylesheet
-   Place at: assets/css/auth.css
-   Used by: auth/login.html, auth/register.html
+   HeartCare Clinic — Authentication Stylesheet
+   File: assets/css/auth.css
+   Pages: auth/login.html, auth/register.html
    Requires: assets/css/style.css loaded first
    ========================================================================== */
 
-/* --------------------------------------------------------------------------
-   1. Login page layout
-   -------------------------------------------------------------------------- */
+/* 1. Page layout
+   ========================================================================== */
 
 .login-page {
   min-height: 100vh;
@@ -22,9 +21,8 @@
     var(--color-page);
 }
 
-/* --------------------------------------------------------------------------
-   2. Authentication header
-   -------------------------------------------------------------------------- */
+/* 2. Header
+   ========================================================================== */
 
 .login-header {
   min-height: var(--header-height);
@@ -32,8 +30,8 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--space-2);
-  padding: 0 max(1.25rem, calc((100% - var(--container)) / 2));
-  background: rgba(255, 255, 255, 0.94);
+  padding-inline: max(1.25rem, calc((100% - var(--container)) / 2));
+  background: rgba(255, 255, 255, 0.96);
   border-bottom: 1px solid var(--color-line);
 }
 
@@ -41,19 +39,19 @@
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
+  color: var(--color-ink);
   font-family: var(--font-heading);
   font-size: 1.3rem;
   font-weight: 700;
-  color: var(--color-ink);
   text-decoration: none;
 }
 
 .login-logo__icon {
+  width: 38px;
+  height: 38px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
   border-radius: 50%;
   background: var(--color-red);
   color: #fff;
@@ -66,39 +64,56 @@
   font-size: var(--text-sm);
   font-weight: 600;
   text-decoration: none;
-  transition: color 0.15s ease;
+  transition: color 0.2s ease;
 }
 
 .login-home-link:hover {
   color: var(--color-red);
 }
 
-/* --------------------------------------------------------------------------
-   3. Main content
-   -------------------------------------------------------------------------- */
+/* 3. Main layout
+   ========================================================================== */
 
 .login-main {
   flex: 1;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(380px, 480px);
   align-items: center;
-  justify-content: center;
-  padding: var(--space-5) 1.25rem var(--space-3);
+  gap: clamp(2rem, 5vw, 5rem);
+  width: min(calc(100% - 3rem), 1140px);
+  margin-inline: auto;
+  padding-block: 3rem;
 }
+
+/* Healthcare image panel on the left */
+
+.login-main::before {
+  content: "";
+  display: block;
+  min-height: 580px;
+  border-radius: var(--radius-md);
+  background:
+    linear-gradient(180deg, rgba(16, 36, 58, 0.02), rgba(16, 36, 58, 0.35)),
+    url("../images/heartcare-hero.jpg") center / cover no-repeat;
+  box-shadow: var(--shadow-lift);
+}
+
+/* 4. Authentication card
+   ========================================================================== */
 
 .login-card {
   width: 100%;
   max-width: 480px;
-  padding: clamp(1.5rem, 5vw, 2.75rem);
+  min-width: 0;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
   background: var(--color-surface);
   border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
-  box-shadow: 0 18px 50px -30px rgba(16, 36, 58, 0.4);
+  box-shadow: var(--shadow-lift);
 }
 
-/* --------------------------------------------------------------------------
-   4. Login heading
-   -------------------------------------------------------------------------- */
+/* 5. Card heading
+   ========================================================================== */
 
 .login-card__heading {
   margin-bottom: var(--space-3);
@@ -106,11 +121,11 @@
 }
 
 .login-heart-icon {
+  width: 58px;
+  height: 58px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 58px;
-  height: 58px;
   margin: 0 auto var(--space-2);
   border-radius: 18px;
   background: rgba(196, 34, 58, 0.09);
@@ -130,24 +145,25 @@
 
 .login-card__heading h1 {
   margin-bottom: 0.75rem;
+  color: var(--color-ink);
   font-size: clamp(1.65rem, 5vw, 2rem);
   letter-spacing: -0.035em;
 }
 
 .login-subtitle {
-  margin: 0 auto;
+  max-width: 38ch;
+  margin-inline: auto;
   color: var(--color-ink-soft);
-  font-size: 0.98rem;
+  font-size: 0.96rem;
   line-height: 1.6;
 }
 
-/* --------------------------------------------------------------------------
-   5. Form fields
-   -------------------------------------------------------------------------- */
+/* 6. Form layout
+   ========================================================================== */
 
 .login-form {
   display: grid;
-  gap: 1.25rem;
+  gap: 1.15rem;
 }
 
 .form-group {
@@ -156,7 +172,8 @@
   min-width: 0;
 }
 
-.form-group label {
+.form-group > label,
+.form-label-row > label {
   color: var(--color-ink);
   font-size: 0.94rem;
   font-weight: 600;
@@ -183,21 +200,23 @@
   text-underline-offset: 3px;
 }
 
-.login-form input[type="email"],
-.login-form input[type="password"],
-.login-form input[type="text"] {
+/* Text, email, password, phone, date and dropdown fields */
+
+.login-form input:not([type="checkbox"]),
+.login-form select {
   width: 100%;
+  min-width: 0;
   min-height: 50px;
   padding: 0.8rem 0.95rem;
   border: 1px solid var(--color-line);
   border-radius: var(--radius-sm);
-  background: #fff;
+  background-color: #fff;
   color: var(--color-ink);
-  font: inherit;
+  font-family: var(--font-body);
   font-size: 0.96rem;
   transition:
-    border-color 0.15s ease,
-    box-shadow 0.15s ease;
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .login-form input::placeholder {
@@ -205,50 +224,58 @@
   opacity: 1;
 }
 
-.login-form input[type="email"]:hover,
-.login-form input[type="password"]:hover,
-.login-form input[type="text"]:hover {
+/* Dropdown */
+
+.login-form select {
+  cursor: pointer;
+}
+
+/* Hover states */
+
+.login-form input:not([type="checkbox"]):hover,
+.login-form select:hover {
   border-color: #a7b9c8;
 }
 
-.login-form input[type="email"]:focus,
-.login-form input[type="password"]:focus,
-.login-form input[type="text"]:focus {
+/* Keyboard focus */
+
+.login-form input:not([type="checkbox"]):focus,
+.login-form select:focus {
   outline: none;
   border-color: var(--color-blue);
   box-shadow: 0 0 0 3px rgba(47, 100, 134, 0.13);
 }
 
-/* --------------------------------------------------------------------------
-   6. Remember me
-   -------------------------------------------------------------------------- */
+/* 7. Checkbox and terms
+   ========================================================================== */
 
 .login-options {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
 }
 
 .remember-me {
   display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
+  align-items: flex-start;
+  gap: 0.6rem;
   color: var(--color-ink-soft);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
+  line-height: 1.5;
   cursor: pointer;
 }
 
 .remember-me input[type="checkbox"] {
+  flex: 0 0 auto;
   width: 17px;
   height: 17px;
-  margin: 0;
+  margin-top: 2px;
   accent-color: var(--color-red);
   cursor: pointer;
 }
 
-/* --------------------------------------------------------------------------
-   7. Sign-in button
-   -------------------------------------------------------------------------- */
+/* 8. Submit button
+   ========================================================================== */
 
 .login-button {
   width: 100%;
@@ -267,14 +294,14 @@
   font-weight: 600;
   cursor: pointer;
   transition:
-    background-color 0.15s ease,
-    border-color 0.15s ease,
-    transform 0.15s ease;
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .login-button span {
   font-size: 1.2rem;
-  transition: transform 0.15s ease;
+  transition: transform 0.2s ease;
 }
 
 .login-button:hover {
@@ -290,9 +317,13 @@
   transform: translateY(1px);
 }
 
-/* --------------------------------------------------------------------------
-   8. Divider and registration prompt
-   -------------------------------------------------------------------------- */
+.login-button:focus-visible {
+  outline: 3px solid rgba(47, 100, 134, 0.35);
+  outline-offset: 3px;
+}
+
+/* 9. Divider and account link
+   ========================================================================== */
 
 .login-divider {
   display: flex;
@@ -318,6 +349,7 @@
   margin-bottom: var(--space-2);
   color: var(--color-ink-soft);
   font-size: 0.92rem;
+  line-height: 1.6;
   text-align: center;
 }
 
@@ -333,9 +365,8 @@
   text-underline-offset: 3px;
 }
 
-/* --------------------------------------------------------------------------
-   9. Privacy note and footer
-   -------------------------------------------------------------------------- */
+/* 10. Privacy note and footer
+   ========================================================================== */
 
 .login-security-note {
   margin: 0;
@@ -348,16 +379,39 @@
 }
 
 .login-footer {
-  margin: var(--space-3) 0 0;
-  color: #718191;
-  font-size: 0.8rem;
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--color-ink-soft);
+  font-size: var(--text-sm);
   line-height: 1.6;
   text-align: center;
 }
 
-/* --------------------------------------------------------------------------
-   10. Responsive adjustments
-   -------------------------------------------------------------------------- */
+/* 11. Tablet and mobile
+   ========================================================================== */
+
+@media (max-width: 800px) {
+  .login-main {
+    grid-template-columns: minmax(0, 1fr);
+    width: min(calc(100% - 2rem), 480px);
+    gap: 1.5rem;
+    padding-block: 2rem;
+  }
+
+  .login-main::before {
+    min-height: 220px;
+    max-height: 260px;
+    background-position: center 45%;
+  }
+
+  .login-card {
+    max-width: none;
+  }
+
+  .login-footer {
+    grid-column: 1;
+  }
+}
 
 @media (max-width: 480px) {
   .login-header {
@@ -381,102 +435,44 @@
   }
 
   .login-main {
-    justify-content: flex-start;
-    padding: var(--space-3) 0.85rem var(--space-2);
+    width: 100%;
+    gap: 1.25rem;
+    padding: 1.25rem 0.85rem 1rem;
+  }
+
+  .login-main::before {
+    min-height: 150px;
+    max-height: 180px;
   }
 
   .login-card {
     padding: 1.5rem 1.15rem;
   }
 
+  .login-form {
+    gap: 1rem;
+  }
+
+  .login-card__heading h1 {
+    font-size: 1.65rem;
+  }
+
   .login-footer {
     max-width: 34ch;
-    margin-top: var(--space-2);
+    margin-inline: auto;
+    font-size: 0.76rem;
   }
 }
 
-/* --------------------------------------------------------------------------
-   11. Reduced motion
-   -------------------------------------------------------------------------- */
+/* 12. Reduced motion accessibility
+   ========================================================================== */
 
 @media (prefers-reduced-motion: reduce) {
   .login-home-link,
   .login-form input,
+  .login-form select,
   .login-button,
   .login-button span {
     transition: none;
-  }
-}
-
-/* Two-column login layout */
-.login-main {
-  flex: 1;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(380px, 480px);
-  align-items: center;
-  gap: clamp(2rem, 5vw, 5rem);
-  width: min(100% - 3rem, 1140px);
-  margin-inline: auto;
-  padding-block: 3rem;
-}
-
-/* Healthcare image panel */
-.login-main::before {
-  content: "";
-  display: block;
-  min-height: 580px;
-  border-radius: 16px;
-  background:
-    linear-gradient(180deg, rgba(16, 36, 58, 0.05), rgba(16, 36, 58, 0.35)),
-    url("../images/heartcare-hero.jpg") center / cover no-repeat;
-  box-shadow: var(--shadow-lift);
-}
-
-/* Login form card */
-.login-card {
-  width: 100%;
-  max-width: 480px;
-  padding: clamp(1.5rem, 4vw, 2.5rem);
-  background: var(--color-surface);
-  border: 1px solid var(--color-line);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lift);
-}
-
-/* Footer spans the login layout */
-.login-footer {
-  grid-column: 1 / -1;
-  margin: 0;
-  color: var(--color-ink-soft);
-  font-size: var(--text-sm);
-  text-align: center;
-}
-
-/* Responsive layout */
-@media (max-width: 800px) {
-  .login-main {
-    grid-template-columns: 1fr;
-    width: min(100% - 2rem, 480px);
-    gap: 1.5rem;
-    padding-block: 2rem;
-  }
-
-  .login-main::before {
-    min-height: 220px;
-    max-height: 260px;
-  }
-
-  .login-card {
-    max-width: none;
-  }
-
-  .login-footer {
-    grid-column: 1;
-  }
-}
-
-@media (max-width: 480px) {
-  .login-main::before {
-    min-height: 160px;
   }
 }
