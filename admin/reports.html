@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monthly Reports | HeartCare Admin</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/admin-dashboard.css" />
+  </head>
+  <body class="admin-body">
+    <div class="adm-shell">
+      <aside class="adm-sidebar">
+        <a href="../index.html" class="adm-brand">
+          <span class="adm-brand__mark" aria-hidden="true">♥</span>
+          <span class="adm-brand__text">HeartCare</span>
+        </a>
+        <div class="adm-role">
+          <span class="adm-role__badge">Administrator</span>
+          <span class="adm-role__name">Clinic Admin</span>
+        </div>
+        <nav class="adm-nav" aria-label="Administrator navigation">
+          <p class="adm-nav__label">Overview</p>
+          <a href="dashboard.html" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">▦</span>
+            Dashboard
+          </a>
+          <p class="adm-nav__label">Clinic setup</p>
+          <a href="manage-departments.html" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">▤</span>
+            Departments
+          </a>
+          <a href="manage-doctors.html" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">✚</span>
+            Doctors
+          </a>
+          <a href="manage-labtechs.html" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">⚗</span>
+            Lab Technicians
+          </a>
+          <a href="manage-tests.html" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">◉</span>
+            Test Catalogue
+          </a>
+          <p class="adm-nav__label">Operations</p>
+          <a href="manage-appointments.html" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">▣</span>
+            Appointments
+          </a>
+          <a
+            href="reports.html"
+            class="adm-nav__link is-active"
+            aria-current="page"
+          >
+            <span class="adm-nav__icon" aria-hidden="true">▥</span>
+            Monthly Reports
+          </a>
+          <a href="audit-log.html" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">☰</span>
+            Audit Log
+          </a>
+          <a href="../auth/login.html" class="adm-nav__link adm-nav__link--out">
+            <span class="adm-nav__icon" aria-hidden="true">↪</span>
+            Sign Out
+          </a>
+        </nav>
+      </aside>
+
+      <div class="adm-main">
+        <header class="adm-topbar">
+          <div class="adm-crumbs">
+            <span>Admin</span>
+            <span aria-hidden="true">/</span>
+            <strong>Monthly Reports</strong>
+          </div>
+          <div class="adm-topbar__right">
+            <span class="adm-date" id="today-date"></span>
+            <span class="adm-avatar" aria-label="Administrator">AD</span>
+          </div>
+        </header>
+
+        <main class="adm-content">
+          <section class="adm-head">
+            <div>
+              <p class="adm-eyebrow">OPERATIONS</p>
+              <h1>Monthly Reports</h1>
+              <p class="adm-lead">
+                Select a month and year to generate a printable clinic report.
+              </p>
+            </div>
+            <div class="adm-head__actions">
+              <button
+                type="button"
+                class="adm-btn adm-btn--ghost"
+                onclick="window.print()"
+              >
+                Print / Save as PDF
+              </button>
+            </div>
+          </section>
+
+          <section class="adm-card adm-noprint">
+            <form class="adm-toolbar adm-toolbar--form" method="get" action="#">
+              <div class="adm-field">
+                <label for="rep_month">Month</label>
+                <select class="adm-input" id="rep_month" name="month">
+                  <option>January</option>
+                  <option>February</option>
+                  <option>March</option>
+                  <option>April</option>
+                  <option>May</option>
+                  <option>June</option>
+                  <option>July</option>
+                  <option>August</option>
+                  <option>September</option>
+                  <option selected>October</option>
+                  <option>November</option>
+                  <option>December</option>
+                </select>
+              </div>
+              <div class="adm-field">
+                <label for="rep_year">Year</label>
+                <select class="adm-input" id="rep_year" name="year">
+                  <option>2025</option>
+                  <option selected>2026</option>
+                </select>
+              </div>
+              <button type="submit" class="adm-btn adm-btn--solid">
+                Generate Report
+              </button>
+              <button
+                type="button"
+                class="adm-btn adm-btn--ghost"
+                onclick="window.print()"
+              >
+                Print / Save as PDF
+              </button>
+            </form>
+          </section>
+
+          <section class="adm-card adm-report" style="margin-top: 1.25rem">
+            <header class="adm-report__head">
+              <div>
+                <p class="adm-eyebrow">HEARTCARE CLINIC</p>
+                <h2>Monthly Report: October 2026</h2>
+              </div>
+              <p class="adm-report__meta">Generated 31 Oct 2026</p>
+            </header>
+
+            <div class="adm-stats">
+              <div class="adm-stat">
+                <span>New patients (this month)</span><strong>32</strong>
+              </div>
+              <div class="adm-stat">
+                <span>Total patients (all time)</span><strong>1,248</strong>
+              </div>
+              <div class="adm-stat">
+                <span>Total appointments</span><strong>271</strong>
+              </div>
+              <div class="adm-stat">
+                <span>Completed consultations</span><strong>214</strong>
+              </div>
+              <div class="adm-stat">
+                <span>Cancellations</span><strong>29</strong>
+              </div>
+              <div class="adm-stat">
+                <span>Revenue collected</span><strong>৳4,82,500</strong>
+              </div>
+            </div>
+            <p class="adm-note">
+              Revenue counts payments actually completed during the selected
+              month. New patients are separate from the clinic's historical
+              total.
+            </p>
+
+            <div class="adm-grid adm-report__grid">
+              <div class="adm-span-6">
+                <h3>Revenue by doctor</h3>
+                <div class="adm-table-wrap">
+                  <table class="adm-table">
+                    <thead>
+                      <tr>
+                        <th>Doctor</th>
+                        <th>Revenue</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Dr. Rahman</td>
+                        <td>৳1,45,000</td>
+                      </tr>
+                      <tr>
+                        <td>Dr. Haque</td>
+                        <td>৳1,20,000</td>
+                      </tr>
+                      <tr>
+                        <td>Dr. Sultana</td>
+                        <td>৳88,500</td>
+                      </tr>
+                      <tr>
+                        <td>Dr. Chowdhury</td>
+                        <td>৳72,000</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="adm-span-6">
+                <h3>Five busiest doctors</h3>
+                <div class="adm-table-wrap">
+                  <table class="adm-table">
+                    <thead>
+                      <tr>
+                        <th>Doctor</th>
+                        <th>Appointments</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Dr. Rahman</td>
+                        <td>68</td>
+                      </tr>
+                      <tr>
+                        <td>Dr. Haque</td>
+                        <td>55</td>
+                      </tr>
+                      <tr>
+                        <td>Dr. Sultana</td>
+                        <td>47</td>
+                      </tr>
+                      <tr>
+                        <td>Dr. Chowdhury</td>
+                        <td>41</td>
+                      </tr>
+                      <tr>
+                        <td>Dr. Islam</td>
+                        <td>28</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="adm-span-6">
+                <h3>Most ordered lab tests</h3>
+                <div class="adm-table-wrap">
+                  <table class="adm-table">
+                    <thead>
+                      <tr>
+                        <th>Test</th>
+                        <th>Orders</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Fasting Blood Glucose</td>
+                        <td>74</td>
+                      </tr>
+                      <tr>
+                        <td>Total Cholesterol</td>
+                        <td>61</td>
+                      </tr>
+                      <tr>
+                        <td>Hemoglobin</td>
+                        <td>43</td>
+                      </tr>
+                      <tr>
+                        <td>Serum Creatinine</td>
+                        <td>27</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="adm-span-6">
+                <h3>Abnormal-result rate</h3>
+                <div class="adm-table-wrap">
+                  <table class="adm-table">
+                    <thead>
+                      <tr>
+                        <th>Measure</th>
+                        <th>Value</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Results with valid numeric values</td>
+                        <td>196</td>
+                      </tr>
+                      <tr>
+                        <td>Flagged LOW or HIGH</td>
+                        <td>41</td>
+                      </tr>
+                      <tr>
+                        <td>Abnormal rate</td>
+                        <td>20.9%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p class="adm-note">
+                  Flags are informational and not a diagnosis.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <footer class="adm-footer">
+            <p>
+              © 2026 HeartCare Clinic Management System. Academic project
+              demonstration.
+            </p>
+          </footer>
+        </main>
+      </div>
+    </div>
+    <script>
+      document.getElementById("today-date").textContent =
+        new Date().toLocaleDateString("en-GB", {
+          weekday: "long",
+          day: "numeric",
+          month: "short",
+          year: "numeric",
+        });
+    </script>
+  </body>
+</html>

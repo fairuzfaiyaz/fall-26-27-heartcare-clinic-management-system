@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage Departments | HeartCare Admin</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/admin-dashboard.css" />
+  </head>
+  <body class="admin-body">
+    <div class="adm-shell">
+      <aside class="adm-sidebar">
+        <a href="../index.html" class="adm-brand">
+          <span class="adm-brand__mark" aria-hidden="true">♥</span>
+          <span class="adm-brand__text">HeartCare</span>
+        </a>
+        <div class="adm-role">
+          <span class="adm-role__badge">Administrator</span>
+          <span class="adm-role__name">Clinic Admin</span>
+        </div>
+        <nav class="adm-nav" aria-label="Administrator navigation">
+          <p class="adm-nav__label">Overview</p>
+          <a href="dashboard.html" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">▦</span>
+            Dashboard
+          </a>
+          <p class="adm-nav__label">Clinic setup</p>
+          <a href="manage-departments.html" class="adm-nav__link is-active" aria-current="page">
+            <span class="adm-nav__icon" aria-hidden="true">▤</span>
+            Departments
+          </a>
+          <a href="manage-doctors.html" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">✚</span>
+            Doctors
+          </a>
+          <a href="manage-labtechs.html" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">⚗</span>
+            Lab Technicians
+          </a>
+          <a href="manage-tests.html" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">◉</span>
+            Test Catalogue
+          </a>
+          <p class="adm-nav__label">Operations</p>
+          <a href="manage-appointments.html" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">▣</span>
+            Appointments
+          </a>
+          <a href="reports.html" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">▥</span>
+            Monthly Reports
+          </a>
+          <a href="audit-log.html" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">☰</span>
+            Audit Log
+          </a>
+          <a href="../auth/login.html" class="adm-nav__link adm-nav__link--out">
+            <span class="adm-nav__icon" aria-hidden="true">↪</span>
+            Sign Out
+          </a>
+        </nav>
+      </aside>
+
+      <div class="adm-main">
+        <header class="adm-topbar">
+          <div class="adm-crumbs">
+            <span>Admin</span>
+            <span aria-hidden="true">/</span>
+            <strong>Departments</strong>
+          </div>
+          <div class="adm-topbar__right">
+            <span class="adm-date" id="today-date"></span>
+            <span class="adm-avatar" aria-label="Administrator">AD</span>
+          </div>
+        </header>
+
+        <main class="adm-content">
+          <section class="adm-head">
+            <div>
+              <p class="adm-eyebrow">CLINIC SETUP</p>
+              <h1>Manage Departments</h1>
+              <p class="adm-lead">Add, edit and deactivate clinic departments.</p>
+            </div>
+            <div class="adm-head__actions"></div>
+          </section>
+
+          <div class="adm-grid">
+            <section class="adm-card adm-span-8">
+              <div class="adm-card__head"><div><h2>All Departments</h2><p>Deactivate unused departments instead of deleting them, to keep history intact.</p></div></div>
+<div class="adm-toolbar"><input type="search" class="adm-input adm-input--search" placeholder="Search departments…" aria-label="Search departments…" /><select class="adm-input" aria-label="Filter by status"><option>All statuses</option><option>Active</option><option>Inactive</option></select></div><div class="adm-table-wrap"><table class="adm-table"><thead><tr><th>Department</th><th>Description</th><th>Doctors</th><th>Status</th><th>Actions</th></tr></thead><tbody>
+<tr><td><strong>Cardiology</strong></td><td>Heart and vascular care</td><td>5</td><td><span class="adm-badge adm-badge--ok">Active</span></td><td><div class="adm-actions"><button type="button" class="adm-act">Edit</button><button type="button" class="adm-act adm-act--danger">Deactivate</button></div></td></tr>
+<tr><td><strong>General Medicine</strong></td><td>Primary and family consultations</td><td>6</td><td><span class="adm-badge adm-badge--ok">Active</span></td><td><div class="adm-actions"><button type="button" class="adm-act">Edit</button><button type="button" class="adm-act adm-act--danger">Deactivate</button></div></td></tr>
+<tr><td><strong>Preventive Care</strong></td><td>Screening and wellness</td><td>3</td><td><span class="adm-badge adm-badge--ok">Active</span></td><td><div class="adm-actions"><button type="button" class="adm-act">Edit</button><button type="button" class="adm-act adm-act--danger">Deactivate</button></div></td></tr>
+<tr><td><strong>Pathology</strong></td><td>Laboratory and diagnostics</td><td>2</td><td><span class="adm-badge adm-badge--ok">Active</span></td><td><div class="adm-actions"><button type="button" class="adm-act">Edit</button><button type="button" class="adm-act adm-act--danger">Deactivate</button></div></td></tr>
+<tr><td><strong>Pediatrics</strong></td><td>Child healthcare</td><td>2</td><td><span class="adm-badge adm-badge--off">Inactive</span></td><td><div class="adm-actions"><button type="button" class="adm-act">Edit</button><button type="button" class="adm-act adm-act--danger">Activate</button></div></td></tr>
+</tbody></table></div><div class="adm-pager"><span>Showing 1–5 of 5</span><div class="adm-pager__btns"><button type="button" class="adm-page" disabled>‹ Prev</button><button type="button" class="adm-page is-current">1</button><button type="button" class="adm-page">2</button><button type="button" class="adm-page">3</button><button type="button" class="adm-page">Next ›</button></div></div>
+            </section>
+            <section class="adm-card adm-span-4">
+              <div class="adm-card__head"><div><h2>Add Department</h2><p>Create or edit a department.</p></div></div>
+<form class="adm-form" method="post" action="#">
+<div class="adm-field"><label for="dept_name">Department name</label><input class="adm-input" id="dept_name" name="dept_name" type="text" placeholder="e.g. Cardiology" required  /></div>
+<div class="adm-field"><label for="dept_desc">Description</label><textarea class="adm-input" id="dept_desc" name="dept_desc" rows="3" placeholder="Short description"></textarea></div>
+<div class="adm-field"><label for="dept_status">Status</label><select class="adm-input" id="dept_status" name="dept_status"><option>Active</option><option>Inactive</option></select></div>
+<div class="adm-form__btns"><button type="submit" class="adm-btn adm-btn--solid">Save Department</button><button type="reset" class="adm-btn adm-btn--ghost">Clear</button></div></form>
+            </section>
+          </div>
+
+          <footer class="adm-footer">
+            <p>© 2026 HeartCare Clinic Management System. Academic project demonstration.</p>
+          </footer>
+        </main>
+      </div>
+    </div>
+    <script>
+      document.getElementById("today-date").textContent =
+        new Date().toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "short", year: "numeric" });
+    </script>
+  </body>
+</html>
