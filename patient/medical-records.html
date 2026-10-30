@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Medical Records - HeartCare patient portal." />
+    <title>Medical Records | HeartCare Clinic</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/patient-dashboard.css" />
+    <link rel="stylesheet" href="../assets/css/patient-pages.css" />
+  </head>
+
+  <body class="patient-dashboard">
+    <div class="dashboard-layout">
+      <aside class="dashboard-sidebar">
+        <a href="../index.html" class="dashboard-brand">
+          <span class="dashboard-brand__icon" aria-hidden="true">♥</span>
+          <span>HeartCare</span>
+        </a>
+
+        <div class="sidebar-profile">
+          <div class="avatar">FA</div>
+          <div>
+            <strong>Fairuz Ahmed</strong>
+            <span>Patient Account</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Patient navigation">
+          <p class="sidebar-label">MENU</p>
+
+          <a href="dashboard.html" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">▦</span>
+            Dashboard
+          </a>
+
+          <a href="appointments.html" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">▣</span>
+            My Appointments
+          </a>
+
+          <a href="health-tracker.html" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">♡</span>
+            Health Tracker
+          </a>
+
+          <a href="medical-records.html" class="sidebar-link is-active" aria-current="page">
+            <span class="nav-icon" aria-hidden="true">▤</span>
+            Medical Records
+          </a>
+
+          <a href="prescriptions.html" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">✚</span>
+            Prescriptions
+          </a>
+
+          <a href="invoices.html" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">৳</span>
+            Billing &amp; Invoices
+          </a>
+
+          <p class="sidebar-label sidebar-label--spaced">ACCOUNT</p>
+
+          <a href="profile.html" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">♙</span>
+            My Profile
+          </a>
+
+          <a href="payment-methods.html" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">▰</span>
+            Payment Methods
+          </a>
+
+          <a href="../auth/login.html" class="sidebar-link sidebar-link--logout">
+            <span class="nav-icon" aria-hidden="true">↪</span>
+            Sign Out
+          </a>
+        </nav>
+
+        <div class="sidebar-help">
+          <div class="help-icon" aria-hidden="true">?</div>
+          <strong>Need assistance?</strong>
+          <p>Contact the clinic team for help with your account.</p>
+          <a href="../index.html#contact">Contact Clinic →</a>
+        </div>
+      </aside>
+
+      <main class="dashboard-main">
+        <header class="dashboard-topbar">
+          <div class="breadcrumb">
+            <span>Patient Portal</span>
+            <span aria-hidden="true">/</span>
+            <strong>Medical Records</strong>
+          </div>
+          <div class="topbar-actions">
+            <span class="portal-status"><span class="status-dot"></span>Patient Portal</span>
+            <a href="profile.html" class="topbar-avatar" aria-label="Open profile">FA</a>
+          </div>
+        </header>
+
+        <div class="dashboard-content">
+          <section class="welcome-section">
+            <div>
+              <p class="section-eyebrow">RECORDS</p>
+              <h1>Medical Records</h1>
+              <p class="welcome-description">Consultations, prescriptions and reports from your visits.</p>
+            </div>
+            
+          </section>
+
+<div class="health-notice"><span aria-hidden="true">ⓘ</span><p>Medical records are written by your doctors and laboratory staff. You can view them but not edit them.</p></div>
+          <div class="dashboard-columns">
+            <section class="panel ">
+              <div class="panel-header">
+                <div>
+                  <p class="section-eyebrow">CHRONOLOGICAL HISTORY</p>
+                  <h2>Your Medical Timeline</h2>
+                </div>
+                
+              </div>
+<ol class="pp-tl">
+<li class="pp-tl__item"><span class="pp-tl__dot" aria-hidden="true"></span><div class="pp-tl__card"><time>20 Oct 2026</time><h3>Cardiology consultation</h3><p class="pp-tl__meta">Dr. Rahman · Cardiology</p><p>Recorded vitals: BP 120/80 mmHg, heart rate 72 bpm. Follow-up advised in 2 weeks.</p><div class="pp-tl__links"><a href="prescriptions.html" class="text-link">Prescription</a><a href="lab-results.html" class="text-link">Lab report</a></div></div></li>
+<li class="pp-tl__item"><span class="pp-tl__dot" aria-hidden="true"></span><div class="pp-tl__card"><time>20 Oct 2026</time><h3>Blood test ordered</h3><p class="pp-tl__meta">Dr. Rahman · LAB-0028</p><p>Fasting glucose, hemoglobin and cholesterol. Report completed the same day.</p><div class="pp-tl__links"><a href="lab-results.html" class="text-link">View report</a></div></div></li>
+<li class="pp-tl__item"><span class="pp-tl__dot" aria-hidden="true"></span><div class="pp-tl__card"><time>05 Oct 2026</time><h3>Cardiology consultation</h3><p class="pp-tl__meta">Dr. Rahman · Cardiology</p><p>Initial assessment and baseline measurements recorded.</p><div class="pp-tl__links"><a href="invoices.html" class="text-link">Invoice INV-00108</a></div></div></li>
+</ol>
+            </section>
+            <section class="panel records-panel">
+              <div class="panel-header">
+                <div>
+                  <p class="section-eyebrow">QUICK LINKS</p>
+                  <h2>Reports</h2>
+                </div>
+                
+              </div>
+<a href="prescriptions.html" class="record-item"><span class="record-icon record-icon--red" aria-hidden="true">✚</span><span class="record-details"><strong>Prescriptions</strong><small>2 records</small></span><span class="record-arrow" aria-hidden="true">→</span></a>
+<a href="lab-results.html" class="record-item"><span class="record-icon record-icon--blue" aria-hidden="true">▤</span><span class="record-details"><strong>Laboratory Reports</strong><small>1 report</small></span><span class="record-arrow" aria-hidden="true">→</span></a>
+<a href="health-tracker.html" class="record-item"><span class="record-icon record-icon--green" aria-hidden="true">♡</span><span class="record-details"><strong>Health Trends</strong><small>Your own measurements</small></span><span class="record-arrow" aria-hidden="true">→</span></a>
+            </section>
+          </div>
+
+          <footer class="dashboard-footer">
+            <p>© 2026 HeartCare Clinic Management System. Academic project demonstration.</p>
+            <p>For emergencies, contact local emergency services.</p>
+          </footer>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

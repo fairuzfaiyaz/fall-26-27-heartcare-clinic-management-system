@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Prescriptions - HeartCare patient portal." />
+    <title>Prescriptions | HeartCare Clinic</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/patient-dashboard.css" />
+    <link rel="stylesheet" href="../assets/css/patient-pages.css" />
+  </head>
+
+  <body class="patient-dashboard">
+    <div class="dashboard-layout">
+      <aside class="dashboard-sidebar">
+        <a href="../index.html" class="dashboard-brand">
+          <span class="dashboard-brand__icon" aria-hidden="true">♥</span>
+          <span>HeartCare</span>
+        </a>
+
+        <div class="sidebar-profile">
+          <div class="avatar">FA</div>
+          <div>
+            <strong>Fairuz Ahmed</strong>
+            <span>Patient Account</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Patient navigation">
+          <p class="sidebar-label">MENU</p>
+
+          <a href="dashboard.html" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">▦</span>
+            Dashboard
+          </a>
+
+          <a href="appointments.html" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">▣</span>
+            My Appointments
+          </a>
+
+          <a href="health-tracker.html" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">♡</span>
+            Health Tracker
+          </a>
+
+          <a href="medical-records.html" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">▤</span>
+            Medical Records
+          </a>
+
+          <a href="prescriptions.html" class="sidebar-link is-active" aria-current="page">
+            <span class="nav-icon" aria-hidden="true">✚</span>
+            Prescriptions
+          </a>
+
+          <a href="invoices.html" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">৳</span>
+            Billing &amp; Invoices
+          </a>
+
+          <p class="sidebar-label sidebar-label--spaced">ACCOUNT</p>
+
+          <a href="profile.html" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">♙</span>
+            My Profile
+          </a>
+
+          <a href="payment-methods.html" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">▰</span>
+            Payment Methods
+          </a>
+
+          <a href="../auth/login.html" class="sidebar-link sidebar-link--logout">
+            <span class="nav-icon" aria-hidden="true">↪</span>
+            Sign Out
+          </a>
+        </nav>
+
+        <div class="sidebar-help">
+          <div class="help-icon" aria-hidden="true">?</div>
+          <strong>Need assistance?</strong>
+          <p>Contact the clinic team for help with your account.</p>
+          <a href="../index.html#contact">Contact Clinic →</a>
+        </div>
+      </aside>
+
+      <main class="dashboard-main">
+        <header class="dashboard-topbar">
+          <div class="breadcrumb">
+            <span>Patient Portal</span>
+            <span aria-hidden="true">/</span>
+            <strong>Prescriptions</strong>
+          </div>
+          <div class="topbar-actions">
+            <span class="portal-status"><span class="status-dot"></span>Patient Portal</span>
+            <a href="profile.html" class="topbar-avatar" aria-label="Open profile">FA</a>
+          </div>
+        </header>
+
+        <div class="dashboard-content">
+          <section class="welcome-section">
+            <div>
+              <p class="section-eyebrow">PRESCRIPTIONS</p>
+              <h1>Prescriptions</h1>
+              <p class="welcome-description">View and print prescriptions issued by your doctors.</p>
+            </div>
+            
+          </section>
+
+<div class="health-notice"><span aria-hidden="true">ⓘ</span><p>Prescriptions are issued by your doctor and cannot be edited here. Medicine names above are sample data.</p></div>
+            <section class="panel pp-print-area">
+              <div class="panel-header">
+                <div>
+                  <p class="section-eyebrow">DOCTOR-ISSUED</p>
+                  <h2>My Prescriptions</h2>
+                </div>
+                
+              </div>
+            <article class="pp-sheet">
+              <header class="pp-sheet__head">
+                <div><strong>HeartCare Clinic</strong><small>Dhaka, Bangladesh</small></div>
+                <div class="pp-sheet__meta"><span>Prescription RX-0031</span><span>20 Oct 2026</span></div>
+              </header>
+              <div class="pp-kv pp-kv--2">
+                <div><span>Doctor</span><strong>Dr. Rahman · Cardiology</strong></div>
+                <div><span>Patient</span><strong>Fairuz Ahmed (HC-P-00125)</strong></div>
+              </div>
+              <div class="table-wrapper"><table class="invoice-table"><thead><tr><th>Medicine</th><th>Dosage</th><th>Frequency</th><th>Duration</th><th>Instructions</th></tr></thead><tbody>
+<tr><td>Sample Medicine A</td><td>10 mg</td><td>Once daily</td><td>30 days</td><td>After dinner</td></tr>
+<tr><td>Sample Medicine B</td><td>1 capsule</td><td>Twice daily</td><td>14 days</td><td>With food</td></tr>
+</tbody></table></div>
+              <p class="pp-sheet__adv"><strong>Follow-up advice:</strong> Review in 2 weeks. Bring your health log to the visit.</p>
+              <button type="button" class="pp-act pp-noprint" onclick="window.print()">Print prescription</button>
+            </article>
+            <article class="pp-sheet">
+              <header class="pp-sheet__head">
+                <div><strong>HeartCare Clinic</strong><small>Dhaka, Bangladesh</small></div>
+                <div class="pp-sheet__meta"><span>Prescription RX-0022</span><span>05 Oct 2026</span></div>
+              </header>
+              <div class="pp-kv pp-kv--2">
+                <div><span>Doctor</span><strong>Dr. Rahman · Cardiology</strong></div>
+                <div><span>Patient</span><strong>Fairuz Ahmed (HC-P-00125)</strong></div>
+              </div>
+              <div class="table-wrapper"><table class="invoice-table"><thead><tr><th>Medicine</th><th>Dosage</th><th>Frequency</th><th>Duration</th><th>Instructions</th></tr></thead><tbody>
+<tr><td>Sample Medicine C</td><td>5 mg</td><td>Once daily</td><td>10 days</td><td>Morning</td></tr>
+</tbody></table></div>
+              <p class="pp-sheet__adv"><strong>Follow-up advice:</strong> Return if symptoms change.</p>
+              <button type="button" class="pp-act pp-noprint" onclick="window.print()">Print prescription</button>
+            </article>
+
+            </section>
+
+          <footer class="dashboard-footer">
+            <p>© 2026 HeartCare Clinic Management System. Academic project demonstration.</p>
+            <p>For emergencies, contact local emergency services.</p>
+          </footer>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
