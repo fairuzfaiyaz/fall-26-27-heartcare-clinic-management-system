@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Lab Results | HeartCare</title>
+
+    <link rel="stylesheet" href="../assets/css/add-labresult.css">
+
+
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+
+        <!-- SIDEBAR: SAME AS TEST CATALOGUE -->
+        <aside class="dashboard-sidebar">
+
+            <div class="dashboard-brand">
+                <span class="dashboard-brand__icon">♥</span>
+                <span>HeartCare</span>
+            </div>
+
+            <div class="sidebar-profile">
+                <div class="profile-avatar">LT</div>
+                <div>
+                    <h4>Lab Technician</h4>
+                    <p>Laboratory Department</p>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <p class="menu-title">MAIN MENU</p>
+
+                <a href="lab_dashboard.html" class="sidebar-link">
+                    <span class="nav-icon">▦</span>
+                    <span class="sidebar-label">Dashboard</span>
+                </a>
+
+                <a href="lab_queue.html" class="sidebar-link">
+                    <span class="nav-icon">▤</span>
+                    <span class="sidebar-label">Lab Queue</span>
+                </a>
+
+                <a href="add-lab-results.html" class="sidebar-link active">
+                    <span class="nav-icon">＋</span>
+                    <span class="sidebar-label">Add Test Result</span>
+                </a>
+
+                <a href="manage_results.html" class="sidebar-link">
+                    <span class="nav-icon">▣</span>
+                    <span class="sidebar-label">Manage Results</span>
+                </a>
+
+                <a href="test-catalogue.html" class="sidebar-link">
+                    <span class="nav-icon">☷</span>
+                    <span class="sidebar-label">Test Catalogue</span>
+                </a>
+
+                <a href="lab_reports.html" class="sidebar-link">
+                    <span class="nav-icon">▧</span>
+                    <span class="sidebar-label">Lab Reports</span>
+                </a>
+
+                <p class="menu-title account-title">ACCOUNT</p>
+
+                <a href="settings.html" class="sidebar-link">
+                    <span class="nav-icon">⚙</span>
+                    <span class="sidebar-label">Settings</span>
+                </a>
+
+                <a href="lab_profile.html" class="sidebar-link">
+                    <span class="nav-icon">♙</span>
+                    <span class="sidebar-label">My Profile</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="../auth/login.html" class="sidebar-link sidebar-link--logout">
+                    <span class="nav-icon">↪</span>
+                    <span class="sidebar-label">Logout</span>
+                </a>
+                <p>© 2026 HeartCare Hospital</p>
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="dashboard-main">
+
+            <!-- TOP HEADER -->
+            <header class="topbar">
+                <div>
+                    <h2>Add Lab Results</h2>
+                    <p>Welcome back, Lab Technician</p>
+                </div>
+
+                <div class="topbar-right">
+                    <button class="notification-btn" type="button">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="notification-dot"></span>
+                    </button>
+
+                    <div class="topbar-user">
+                        <div class="user-avatar">LT</div>
+                        <div>
+                            <h4>Lab Technician</h4>
+                            <span>Laboratory Staff</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+
+            <!-- PAGE CONTENT -->
+            <section class="page-content">
+
+                <div class="page-heading">
+                    <div>
+                        <h1>Aurpita Roy</h1>
+                        <p>Create, view and amend eligible result records.</p>
+                    </div>
+
+                    <div class="date-display">
+                        <i class="fa-regular fa-calendar"></i>
+                        October 30, 2026
+                    </div>
+                </div>
+
+
+                <!-- SUMMARY CARDS -->
+                <div class="summary-grid">
+
+                    <div class="summary-card">
+                        <div class="summary-icon blue">
+                            <i class="fa-solid fa-file-medical"></i>
+                        </div>
+                        <div>
+                            <p>Total Results</p>
+                            <h2>248</h2>
+                            <span>All recorded results</span>
+                        </div>
+                    </div>
+
+                    <div class="summary-card">
+                        <div class="summary-icon orange">
+                            <i class="fa-regular fa-clock"></i>
+                        </div>
+                        <div>
+                            <p>Pending Results</p>
+                            <h2>18</h2>
+                            <span>Awaiting result entry</span>
+                        </div>
+                    </div>
+
+                    <div class="summary-card">
+                        <div class="summary-icon green">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <div>
+                            <p>Completed Today</p>
+                            <h2>32</h2>
+                            <span>Results recorded today</span>
+                        </div>
+                    </div>
+
+                    <div class="summary-card">
+                        <div class="summary-icon purple">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </div>
+                        <div>
+                            <p>Amended Results</p>
+                            <h2>06</h2>
+                            <span>Updated result records</span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- RESULT ENTRY SECTION -->
+                <div class="content-card">
+
+                    <div class="card-heading">
+                        <div>
+                            <h3>New Lab Result Entry</h3>
+                            <p>Enter patient and laboratory test information.</p>
+                        </div>
+
+                        <span class="required-note">* Required fields</span>
+                    </div>
+
+                    <form class="result-form">
+
+                        <div class="form-section-title">
+                            <i class="fa-solid fa-user"></i>
+                            Patient Information
+                        </div>
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+                                <label for="patientId">Patient ID *</label>
+                                <input type="text" id="patientId" placeholder="Enter patient ID" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="patientName">Patient Name *</label>
+                                <input type="text" id="patientName" placeholder="Enter patient name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="requestId">Request ID *</label>
+                                <input type="text" id="requestId" placeholder="Enter request ID" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="age">Age *</label>
+                                <input type="number" id="age" placeholder="Enter age" min="0" required>
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-divider"></div>
+
+                        <div class="form-section-title">
+                            <i class="fa-solid fa-flask"></i>
+                            Test Information
+                        </div>
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+                                <label for="testName">Test Name *</label>
+                                <select id="testName" required>
+                                    <option value="">Select Test</option>
+                                    <option>Complete Blood Count (CBC)</option>
+                                    <option>Hemoglobin</option>
+                                    <option>Fasting Blood Sugar (FBS)</option>
+                                    <option>Serum Creatinine</option>
+                                    <option>Lipid Profile</option>
+                                    <option>Urine R/E</option>
+                                    <option>TSH</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="testDate">Test Date *</label>
+                                <input type="date" id="testDate" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="specimen">Specimen</label>
+                                <select id="specimen">
+                                    <option value="">Select Specimen</option>
+                                    <option>Blood</option>
+                                    <option>Serum</option>
+                                    <option>Urine</option>
+                                    <option>Plasma</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="technician">Technician Name</label>
+                                <input type="text" id="technician" value="Lab Technician">
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-divider"></div>
+
+                        <div class="form-section-title">
+                            <i class="fa-solid fa-vial"></i>
+                            Result Details
+                        </div>
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+                                <label for="resultValue">Result Value *</label>
+                                <input type="text" id="resultValue" placeholder="Enter test result" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="unit">Unit</label>
+                                <input type="text" id="unit" placeholder="e.g. mg/dL">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="referenceRange">Reference Range</label>
+                                <input type="text" id="referenceRange" placeholder="e.g. 70 - 100">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="resultStatus">Result Status *</label>
+                                <select id="resultStatus" required>
+                                    <option value="">Select Status</option>
+                                    <option>Normal</option>
+                                    <option>Abnormal</option>
+                                    <option>Critical</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="remarks">Remarks / Notes</label>
+                            <textarea id="remarks" rows="3"
+                                placeholder="Enter additional observations or remarks..."></textarea>
+                        </div>
+
+
+                        <div class="form-actions">
+                            <button type="reset" class="btn-reset">
+                                <i class="fa-solid fa-rotate-left"></i>
+                                Clear Form
+                            </button>
+
+                            <button type="submit" class="btn-submit">
+                                <i class="fa-solid fa-floppy-disk"></i>
+                                Save Lab Result
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+
+                <!-- RECENT RESULTS -->
+                <div class="content-card recent-card">
+
+                    <div class="card-heading">
+                        <div>
+                            <h3>Recent Lab Results</h3>
+                            <p>Recently recorded laboratory results.</p>
+                        </div>
+
+                        <a href="manage_results.html" class="view-all">
+                            View All <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="table-wrapper">
+                        <table class="result-table">
+
+                            <thead>
+                                <tr>
+                                    <th>RESULT ID</th>
+                                    <th>PATIENT NAME</th>
+                                    <th>TEST NAME</th>
+                                    <th>RESULT</th>
+                                    <th>UNIT</th>
+                                    <th>DATE</th>
+                                    <th>STATUS</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>RES001</td>
+                                    <td>
+                                        <strong>Rahim Ahmed</strong>
+                                        <small>PID: P1001</small>
+                                    </td>
+                                    <td>Complete Blood Count</td>
+                                    <td>13.5</td>
+                                    <td>g/dL</td>
+                                    <td>30 Oct 2026</td>
+                                    <td><span class="status normal">Normal</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>RES002</td>
+                                    <td>
+                                        <strong>Nusrat Jahan</strong>
+                                        <small>PID: P1002</small>
+                                    </td>
+                                    <td>Fasting Blood Sugar</td>
+                                    <td>145</td>
+                                    <td>mg/dL</td>
+                                    <td>30 Oct 2026</td>
+                                    <td><span class="status abnormal">Abnormal</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>RES003</td>
+                                    <td>
+                                        <strong>Karim Hossain</strong>
+                                        <small>PID: P1003</small>
+                                    </td>
+                                    <td>Serum Creatinine</td>
+                                    <td>0.9</td>
+                                    <td>mg/dL</td>
+                                    <td>29 Oct 2026</td>
+                                    <td><span class="status normal">Normal</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>RES004</td>
+                                    <td>
+                                        <strong>Sumaiya Akter</strong>
+                                        <small>PID: P1004</small>
+                                    </td>
+                                    <td>TSH</td>
+                                    <td>8.2</td>
+                                    <td>mIU/L</td>
+                                    <td>29 Oct 2026</td>
+                                    <td><span class="status critical">Critical</span></td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                </div>
+
+                <footer class="page-footer">
+                    © 2026 HeartCare Hospital. All rights reserved.
+                </footer>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
