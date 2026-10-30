@@ -2,6 +2,7 @@
    HeartCare Clinic — Patient Dashboard
    File: assets/css/patient-dashboard.css
    Requires: assets/css/style.css
+   Covers the dashboard AND all patient inner pages.
    ========================================================================== */
 
 /* 1. Global dashboard styles
@@ -1149,5 +1150,733 @@
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+  }
+}
+
+/* ==========================================================================
+   17. INNER PAGES (appointments, booking, health tracker, records,
+       prescriptions, lab results, invoices, payment methods, profile)
+       Classes prefixed "pp-"
+   ========================================================================== */
+
+/* Extra status badges (reuse .status-badge from patient-dashboard.css) */
+.status-badge--done {
+  background: #e8effb;
+  color: #3a5a9a;
+}
+
+/* Forms
+   ========================================================================== */
+.pp-form {
+  display: grid;
+  gap: 0.95rem;
+}
+.pp-field {
+  display: grid;
+  gap: 0.35rem;
+  min-width: 0;
+}
+.pp-row2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.pp-field label,
+.pp-methods legend {
+  color: var(--color-ink);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.pp-input {
+  width: 100%;
+  min-height: 43px;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font: inherit;
+  font-size: 0.86rem;
+}
+
+textarea.pp-input {
+  min-height: 72px;
+  resize: vertical;
+}
+.pp-input:disabled {
+  background: var(--color-page);
+  cursor: not-allowed;
+}
+
+.pp-input:focus {
+  border-color: var(--color-blue);
+  outline: 3px solid rgba(47, 100, 134, 0.18);
+}
+
+.pp-submit {
+  width: 100%;
+  cursor: pointer;
+  font-family: inherit;
+}
+.pp-hint {
+  margin: 0.5rem 0 0;
+  color: var(--color-ink-soft);
+  font-size: 0.76rem;
+  line-height: 1.6;
+  max-width: none;
+}
+.pp-empty {
+  padding: 1.5rem 0;
+  color: var(--color-ink-soft);
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+/* Alerts */
+.pp-alert {
+  padding: 0.8rem 0.95rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+.pp-alert--ok {
+  background: #e5f5ec;
+  color: #247a50;
+}
+.pp-alert--error {
+  background: #fbe8eb;
+  color: #b32139;
+}
+
+/* Row action buttons / tabs
+   ========================================================================== */
+.pp-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.pp-act {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid var(--color-line);
+  border-radius: 6px;
+  background: var(--color-surface);
+  color: var(--color-blue);
+  font: inherit;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.pp-act:hover {
+  border-color: var(--color-blue);
+}
+.pp-act--danger {
+  color: #b32139;
+}
+.pp-act--danger:hover {
+  border-color: #b32139;
+  background: #fbe8eb;
+}
+
+.pp-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.pp-tab {
+  padding: 0.5rem 0.95rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  color: var(--color-ink-soft);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pp-tab.is-active {
+  background: var(--color-ink);
+  border-color: var(--color-ink);
+  color: #fff;
+}
+.appointment-item[hidden] {
+  display: none;
+}
+
+/* Booking
+   ========================================================================== */
+.pp-step {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.25rem;
+  font-size: 0.88rem;
+}
+
+.pp-step__n {
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--color-red);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.pp-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pp-slot {
+  min-width: 82px;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pp-slot:hover {
+  border-color: var(--color-blue);
+}
+.pp-slot.is-selected {
+  background: var(--color-red);
+  border-color: var(--color-red);
+  color: #fff;
+}
+
+/* Key/value lists */
+.pp-kv {
+  display: grid;
+  gap: 0.9rem;
+  padding-block: 0.25rem 1rem;
+}
+.pp-kv > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+.pp-kv span {
+  color: var(--color-ink-soft);
+  font-size: 0.78rem;
+}
+.pp-kv strong {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+.pp-kv--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem 1.5rem;
+  padding-block: 1rem;
+}
+.pp-kv--2 > div {
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.pp-kv--2 strong {
+  text-align: left;
+}
+
+/* Health tracker
+   ========================================================================== */
+.dashboard-content > .health-notice {
+  margin-top: 0;
+}
+.pp-charts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 1.25rem 0;
+}
+.pp-chart {
+  position: relative;
+  height: 220px;
+}
+
+.pp-flag {
+  display: inline-flex;
+  padding: 0.28rem 0.55rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.68rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.pp-flag--in {
+  background: #e5f5ec;
+  color: #247a50;
+}
+.pp-flag--out {
+  background: #fff2d9;
+  color: #94640c;
+}
+
+/* Timeline
+   ========================================================================== */
+.pp-tl {
+  position: relative;
+  display: grid;
+  gap: 1.1rem;
+  padding-left: 1.6rem;
+  margin: 0;
+  list-style: none;
+}
+.pp-tl::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: var(--color-line);
+}
+.pp-tl__item {
+  position: relative;
+}
+
+.pp-tl__dot {
+  position: absolute;
+  left: -1.6rem;
+  top: 0.35rem;
+  width: 14px;
+  height: 14px;
+  border: 3px solid var(--color-surface);
+  border-radius: 50%;
+  background: var(--color-red);
+  box-shadow: 0 0 0 1px var(--color-line);
+}
+
+.pp-tl__card {
+  padding: 1rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  background: var(--color-page);
+}
+.pp-tl__card time {
+  color: var(--color-red);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.pp-tl__card h3 {
+  margin: 0.2rem 0 0.2rem;
+  font-size: 0.95rem;
+}
+.pp-tl__card p {
+  margin: 0.25rem 0;
+  font-size: 0.8rem;
+  color: var(--color-ink-soft);
+  max-width: none;
+}
+.pp-tl__meta {
+  font-weight: 600;
+}
+.pp-tl__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  margin-top: 0.6rem;
+}
+
+/* Printable sheets (prescription / lab report / receipt)
+   ========================================================================== */
+.pp-sheet {
+  padding: 1.25rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+}
+.pp-sheet + .pp-sheet {
+  margin-top: 1.25rem;
+}
+
+.pp-sheet__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 2px solid var(--color-ink);
+}
+
+.pp-sheet__head strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+}
+.pp-sheet__head small {
+  color: var(--color-ink-soft);
+  font-size: 0.76rem;
+}
+.pp-sheet__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+  color: var(--color-ink-soft);
+  font-size: 0.78rem;
+}
+.pp-sheet__adv {
+  margin: 1rem 0;
+  font-size: 0.82rem;
+  max-width: none;
+}
+
+/* Invoices & payment
+   ========================================================================== */
+.pp-status-line {
+  margin: 0 0 1rem;
+  font-size: 0.82rem;
+  color: var(--color-ink-soft);
+}
+.pp-methods {
+  display: grid;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.pp-methods legend {
+  margin-bottom: 0.5rem;
+  padding: 0;
+}
+
+.pp-method {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  cursor: pointer;
+}
+
+.pp-method:has(input:checked) {
+  border-color: var(--color-red);
+  background: rgba(196, 34, 58, 0.04);
+}
+.pp-method input {
+  accent-color: var(--color-red);
+}
+.pp-method strong,
+.pp-method small {
+  display: block;
+}
+.pp-method strong {
+  font-size: 0.85rem;
+}
+.pp-method small {
+  margin-top: 0.15rem;
+  color: var(--color-ink-soft);
+  font-size: 0.74rem;
+}
+
+/* Saved payment cards */
+.pp-cards {
+  display: grid;
+  gap: 1rem;
+}
+
+.pp-card {
+  padding: 1.1rem 1.2rem;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--color-ink), #1f4a6b);
+  color: #fff;
+}
+
+.pp-card__top,
+.pp-card__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+.pp-card__num {
+  margin: 1.4rem 0 1rem;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  letter-spacing: 0.08em;
+  max-width: none;
+}
+.pp-card__foot span {
+  color: #b9c9d8;
+  font-size: 0.74rem;
+}
+.pp-card .pp-act {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #fff;
+}
+.pp-card .pp-act:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+.pp-chip {
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-red);
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.pp-danger {
+  border-color: #f1c9d0;
+}
+
+/* Responsive
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .pp-charts {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .pp-row2,
+  .pp-kv--2 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .pp-actions {
+    margin-left: calc(55px + 0.85rem);
+    width: 100%;
+  }
+  .appointment-item .pp-actions {
+    margin-top: 0.25rem;
+  }
+}
+
+/* Print (prescriptions, lab reports, receipts)
+   ========================================================================== */
+@media print {
+  .dashboard-sidebar,
+  .dashboard-topbar,
+  .welcome-section,
+  .dashboard-footer,
+  .health-notice,
+  .pp-noprint,
+  .panel-header {
+    display: none !important;
+  }
+  .patient-dashboard {
+    background: #fff;
+  }
+  .dashboard-layout {
+    display: block;
+  }
+  .dashboard-content {
+    padding: 0;
+    max-width: none;
+  }
+  .panel {
+    border: 0;
+    box-shadow: none;
+    padding: 0;
+  }
+  .panel:not(.pp-print-area) {
+    display: none;
+  }
+  .pp-sheet {
+    break-inside: avoid;
+    border-color: #999;
+  }
+  .table-wrapper {
+    overflow: visible;
+  }
+}
+
+/* ==========================================================================
+   18. Billing & Invoices page
+   ========================================================================== */
+
+.pp-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid #f1c9d0;
+  border-left: 4px solid var(--color-red);
+  border-radius: var(--radius-md);
+  background: #fdf3f5;
+}
+
+.pp-banner strong {
+  display: block;
+  font-size: 0.95rem;
+}
+.pp-banner p {
+  margin: 0.25rem 0 0;
+  color: var(--color-ink-soft);
+  font-size: 0.8rem;
+  max-width: none;
+}
+.pp-banner .primary-button {
+  cursor: pointer;
+  font-family: inherit;
+}
+.pp-banner--ok {
+  border-color: #cfe8da;
+  border-left-color: #269a6b;
+  background: #f1faf5;
+}
+
+.pp-bill-cols {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  align-items: start;
+  gap: 1.25rem;
+}
+
+.pp-inv-list {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.pp-inv {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+  padding: 0.85rem 0.95rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.pp-inv:hover {
+  border-color: var(--color-blue);
+}
+.pp-inv.is-active {
+  border-color: var(--color-red);
+  background: rgba(196, 34, 58, 0.04);
+}
+.pp-inv__main {
+  flex: 1;
+  min-width: 0;
+}
+.pp-inv__main strong,
+.pp-inv__main small {
+  display: block;
+}
+.pp-inv__main strong {
+  font-size: 0.86rem;
+}
+.pp-inv__main small {
+  margin-top: 0.2rem;
+  color: var(--color-ink-soft);
+  font-size: 0.74rem;
+}
+.pp-inv__side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.35rem;
+}
+.pp-inv__amt {
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.pp-lines {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.25rem;
+}
+.pp-lines th {
+  padding: 0.7rem 0.8rem;
+  background: var(--color-page);
+  color: var(--color-ink-soft);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-align: left;
+}
+.pp-lines td {
+  padding: 0.8rem;
+  border-bottom: 1px solid var(--color-line);
+  font-size: 0.82rem;
+}
+.pp-lines .pp-r,
+.pp-r {
+  text-align: right;
+}
+
+.pp-totals {
+  display: grid;
+  gap: 0.5rem;
+  margin: 1rem 0 0 auto;
+  max-width: 280px;
+}
+.pp-totals__grand {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.7rem;
+  border-top: 2px solid var(--color-ink);
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.pp-paybox {
+  margin-top: 1.25rem;
+  padding: 1rem;
+  border: 1px dashed var(--color-line);
+  border-radius: var(--radius-sm);
+  background: var(--color-page);
+}
+.pp-paid-info {
+  margin-top: 1.25rem;
+  padding: 0.25rem 1rem;
+  border: 1px solid #cfe8da;
+  border-radius: var(--radius-sm);
+  background: #f1faf5;
+}
+.pp-sheet > .pp-act {
+  margin-top: 1rem;
+}
+.pp-submit:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+@media (max-width: 1200px) {
+  .pp-bill-cols {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media print {
+  .summary-grid,
+  .pp-banner,
+  .pp-bill-list-panel {
+    display: none !important;
   }
 }

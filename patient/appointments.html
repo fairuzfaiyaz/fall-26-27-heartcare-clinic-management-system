@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="My Appointments - HeartCare patient portal." />
+    <title>My Appointments | HeartCare Clinic</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/patient-dashboard.css" />
+    <link rel="stylesheet" href="../assets/css/patient-pages.css" />
+  </head>
+
+  <body class="patient-dashboard">
+    <div class="dashboard-layout">
+      <aside class="dashboard-sidebar">
+        <a href="../index.html" class="dashboard-brand">
+          <span class="dashboard-brand__icon" aria-hidden="true">♥</span>
+          <span>HeartCare</span>
+        </a>
+
+        <div class="sidebar-profile">
+          <div class="avatar">FA</div>
+          <div>
+            <strong>Fairuz Ahmed</strong>
+            <span>Patient Account</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Patient navigation">
+          <p class="sidebar-label">MENU</p>
+
+          <a href="dashboard.html" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">▦</span>
+            Dashboard
+          </a>
+
+          <a href="appointments.html" class="sidebar-link is-active" aria-current="page">
+            <span class="nav-icon" aria-hidden="true">▣</span>
+            My Appointments
+          </a>
+
+          <a href="health-tracker.html" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">♡</span>
+            Health Tracker
+          </a>
+
+          <a href="medical-records.html" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">▤</span>
+            Medical Records
+          </a>
+
+          <a href="prescriptions.html" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">✚</span>
+            Prescriptions
+          </a>
+
+          <a href="invoices.html" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">৳</span>
+            Billing &amp; Invoices
+          </a>
+
+          <p class="sidebar-label sidebar-label--spaced">ACCOUNT</p>
+
+          <a href="profile.html" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">♙</span>
+            My Profile
+          </a>
+
+          <a href="payment-methods.html" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">▰</span>
+            Payment Methods
+          </a>
+
+          <a href="../auth/login.html" class="sidebar-link sidebar-link--logout">
+            <span class="nav-icon" aria-hidden="true">↪</span>
+            Sign Out
+          </a>
+        </nav>
+
+        <div class="sidebar-help">
+          <div class="help-icon" aria-hidden="true">?</div>
+          <strong>Need assistance?</strong>
+          <p>Contact the clinic team for help with your account.</p>
+          <a href="../index.html#contact">Contact Clinic →</a>
+        </div>
+      </aside>
+
+      <main class="dashboard-main">
+        <header class="dashboard-topbar">
+          <div class="breadcrumb">
+            <span>Patient Portal</span>
+            <span aria-hidden="true">/</span>
+            <strong>My Appointments</strong>
+          </div>
+          <div class="topbar-actions">
+            <span class="portal-status"><span class="status-dot"></span>Patient Portal</span>
+            <a href="profile.html" class="topbar-avatar" aria-label="Open profile">FA</a>
+          </div>
+        </header>
+
+        <div class="dashboard-content">
+          <section class="welcome-section">
+            <div>
+              <p class="section-eyebrow">PATIENT SCHEDULE</p>
+              <h1>My Appointments</h1>
+              <p class="welcome-description">View, reschedule or cancel your appointments.</p>
+            </div>
+            <a href="book-appointment.html" class="primary-button">
+              <span aria-hidden="true">+</span>
+              Book Appointment
+            </a>
+          </section>
+
+            <section class="panel ">
+              <div class="panel-header">
+                <div>
+                  <p class="section-eyebrow">YOUR SCHEDULE</p>
+                  <h2>All Appointments</h2>
+                </div>
+                
+              </div>
+<div class="pp-tabs" role="tablist"><button type="button" class="pp-tab is-active" data-tab="upcoming">Upcoming (2)</button><button type="button" class="pp-tab" data-tab="past">Past (2)</button><button type="button" class="pp-tab" data-tab="cancelled">Cancelled (1)</button></div>
+              <div id="appt-list">
+              <article class="appointment-item" data-group="upcoming">
+                <div class="appointment-date"><span> NOV </span><strong>04</strong></div>
+                <div class="appointment-details"><h3>Dr. Rahman</h3><p>Cardiology Department</p><span class="appointment-time">◷ 10:30 AM – 11:00 AM</span></div>
+                <span class="status-badge status-badge--confirmed">Confirmed</span>
+                <div class="pp-actions"><a href="book-appointment.html?reschedule=1" class="pp-act">Reschedule</a><button type="button" class="pp-act pp-act--danger js-cancel">Cancel</button></div>
+              </article>
+              <article class="appointment-item" data-group="upcoming">
+                <div class="appointment-date"><span> NOV </span><strong>12</strong></div>
+                <div class="appointment-details"><h3>Dr. Sultana</h3><p>Preventive Care</p><span class="appointment-time">◷ 02:00 PM – 02:30 PM</span></div>
+                <span class="status-badge status-badge--pending">Pending</span>
+                <div class="pp-actions"><a href="book-appointment.html?reschedule=1" class="pp-act">Reschedule</a><button type="button" class="pp-act pp-act--danger js-cancel">Cancel</button></div>
+              </article>
+              <article class="appointment-item" data-group="past">
+                <div class="appointment-date"><span> OCT </span><strong>20</strong></div>
+                <div class="appointment-details"><h3>Dr. Rahman</h3><p>Cardiology Department</p><span class="appointment-time">◷ 10:00 AM – 10:30 AM</span></div>
+                <span class="status-badge status-badge--done">Completed</span>
+                <div class="pp-actions"><a href="medical-records.html" class="pp-act">View record</a></div>
+              </article>
+              <article class="appointment-item" data-group="past">
+                <div class="appointment-date"><span> OCT </span><strong>05</strong></div>
+                <div class="appointment-details"><h3>Dr. Rahman</h3><p>Cardiology Department</p><span class="appointment-time">◷ 11:00 AM – 11:30 AM</span></div>
+                <span class="status-badge status-badge--done">Completed</span>
+                <div class="pp-actions"><a href="medical-records.html" class="pp-act">View record</a></div>
+              </article>
+              <article class="appointment-item" data-group="cancelled">
+                <div class="appointment-date"><span> SEP </span><strong>18</strong></div>
+                <div class="appointment-details"><h3>Dr. Chowdhury</h3><p>General Medicine</p><span class="appointment-time">◷ 09:30 AM – 10:00 AM</span></div>
+                <span class="status-badge status-badge--unpaid">Cancelled</span>
+                <div class="pp-actions"></div>
+              </article>
+              </div>
+              <p class="pp-empty" id="appt-empty" hidden>No appointments in this list.</p>
+            </section>
+
+<div class="health-notice"><span aria-hidden="true">ⓘ</span><p>Rescheduling and cancelling are checked again on the server. Past and completed appointments cannot be changed.</p></div>
+          <footer class="dashboard-footer">
+            <p>© 2026 HeartCare Clinic Management System. Academic project demonstration.</p>
+            <p>For emergencies, contact local emergency services.</p>
+          </footer>
+        </div>
+      </main>
+    </div>
+    <script>
+      const tabs = document.querySelectorAll(".pp-tab");
+      const rows = document.querySelectorAll("#appt-list .appointment-item");
+      function show(group) {
+        let n = 0;
+        rows.forEach((r) => { const on = r.dataset.group === group; r.hidden = !on; if (on) n++; });
+        document.getElementById("appt-empty").hidden = n > 0;
+        tabs.forEach((t) => t.classList.toggle("is-active", t.dataset.tab === group));
+      }
+      tabs.forEach((t) => t.addEventListener("click", () => show(t.dataset.tab)));
+      document.querySelectorAll(".js-cancel").forEach((b) =>
+        b.addEventListener("click", () => {
+          if (confirm("Cancel this appointment?")) {
+            /* PHP: POST appointment id, verify it belongs to this patient */
+            const row = b.closest(".appointment-item");
+            row.dataset.group = "cancelled";
+            row.querySelector(".status-badge").className = "status-badge status-badge--unpaid";
+            row.querySelector(".status-badge").textContent = "Cancelled";
+            row.querySelector(".pp-actions").innerHTML = "";
+            show("upcoming");
+          }
+        })
+      );
+      show("upcoming");
+    </script>
+  </body>
+</html>

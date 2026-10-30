@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Billing & Invoices - HeartCare patient portal."
+    />
+    <title>Billing & Invoices | HeartCare Clinic</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/patient-dashboard.css" />
+  </head>
+
+  <body class="patient-dashboard">
+    <div class="dashboard-layout">
+      <aside class="dashboard-sidebar">
+        <a href="../index.html" class="dashboard-brand">
+          <span class="dashboard-brand__icon" aria-hidden="true">♥</span>
+          <span>HeartCare</span>
+        </a>
+
+        <div class="sidebar-profile">
+          <div class="avatar">FA</div>
+          <div>
+            <strong>Fairuz Ahmed</strong>
+            <span>Patient Account</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Patient navigation">
+          <p class="sidebar-label">MENU</p>
+
+          <a href="dashboard.html" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">▦</span>
+            Dashboard
+          </a>
+
+          <a href="appointments.html" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">▣</span>
+            My Appointments
+          </a>
+
+          <a href="health-tracker.html" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">♡</span>
+            Health Tracker
+          </a>
+
+          <a href="medical-records.html" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">▤</span>
+            Medical Records
+          </a>
+
+          <a href="prescriptions.html" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">✚</span>
+            Prescriptions
+          </a>
+
+          <a
+            href="invoices.html"
+            class="sidebar-link is-active"
+            aria-current="page"
+          >
+            <span class="nav-icon" aria-hidden="true">৳</span>
+            Billing &amp; Invoices
+          </a>
+
+          <p class="sidebar-label sidebar-label--spaced">ACCOUNT</p>
+
+          <a href="profile.html" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">♙</span>
+            My Profile
+          </a>
+
+          <a href="payment-methods.html" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">▰</span>
+            Payment Methods
+          </a>
+
+          <a
+            href="../auth/login.html"
+            class="sidebar-link sidebar-link--logout"
+          >
+            <span class="nav-icon" aria-hidden="true">↪</span>
+            Sign Out
+          </a>
+        </nav>
+
+        <div class="sidebar-help">
+          <div class="help-icon" aria-hidden="true">?</div>
+          <strong>Need assistance?</strong>
+          <p>Contact the clinic team for help with your account.</p>
+          <a href="../index.html#contact">Contact Clinic →</a>
+        </div>
+      </aside>
+
+      <main class="dashboard-main">
+        <header class="dashboard-topbar">
+          <div class="breadcrumb">
+            <span>Patient Portal</span>
+            <span aria-hidden="true">/</span>
+            <strong>Billing & Invoices</strong>
+          </div>
+          <div class="topbar-actions">
+            <span class="portal-status"
+              ><span class="status-dot"></span>Patient Portal</span
+            >
+            <a
+              href="profile.html"
+              class="topbar-avatar"
+              aria-label="Open profile"
+              >FA</a
+            >
+          </div>
+        </header>
+
+        <div class="dashboard-content">
+          <section class="welcome-section">
+            <div>
+              <p class="section-eyebrow">PAYMENTS & BILLING</p>
+              <h1>Billing & Invoices</h1>
+              <p class="welcome-description">
+                Review invoices, pay in the demo checkout and keep your
+                receipts.
+              </p>
+            </div>
+            <a href="payment-methods.html" class="primary-button">
+              <span aria-hidden="true">▰</span>
+              Payment Methods
+            </a>
+          </section>
+
+          <section class="summary-grid" aria-label="Billing summary">
+            <article class="summary-card">
+              <div class="summary-card__top">
+                <span class="summary-icon summary-icon--gold" aria-hidden="true"
+                  >৳</span
+                ><span class="summary-caption">Awaiting payment</span>
+              </div>
+              <p class="summary-value" id="k-out">৳0</p>
+              <h2>Outstanding Balance</h2>
+              <a href="#invoice-detail">View invoice →</a>
+            </article>
+            <article class="summary-card">
+              <div class="summary-card__top">
+                <span
+                  class="summary-icon summary-icon--green"
+                  aria-hidden="true"
+                  >✓</span
+                ><span class="summary-caption">All time</span>
+              </div>
+              <p class="summary-value" id="k-paid">৳0</p>
+              <h2>Total Paid</h2>
+              <a href="#history">Payment history →</a>
+            </article>
+            <article class="summary-card">
+              <div class="summary-card__top">
+                <span class="summary-icon summary-icon--blue" aria-hidden="true"
+                  >▤</span
+                ><span class="summary-caption">On record</span>
+              </div>
+              <p class="summary-value" id="k-count">0</p>
+              <h2>Invoices</h2>
+              <a href="#invoice-list">Browse invoices →</a>
+            </article>
+            <article class="summary-card">
+              <div class="summary-card__top">
+                <span class="summary-icon summary-icon--red" aria-hidden="true"
+                  >▰</span
+                ><span class="summary-caption">Saved</span>
+              </div>
+              <p class="summary-value">02</p>
+              <h2>Payment Methods</h2>
+              <a href="payment-methods.html">Manage methods →</a>
+            </article>
+          </section>
+          <div id="banner"></div>
+          <div class="pp-bill-cols">
+            <section class="panel pp-bill-list-panel" id="invoice-list">
+              <div class="panel-header">
+                <div>
+                  <p class="section-eyebrow">YOUR INVOICES</p>
+                  <h2>Invoice List</h2>
+                </div>
+              </div>
+              <div class="pp-tabs" role="tablist">
+                <button
+                  type="button"
+                  class="pp-tab is-active"
+                  data-filter="all"
+                >
+                  All
+                </button>
+                <button type="button" class="pp-tab" data-filter="unpaid">
+                  Unpaid
+                </button>
+                <button type="button" class="pp-tab" data-filter="paid">
+                  Paid
+                </button>
+              </div>
+              <div class="pp-inv-list" id="inv-list"></div>
+            </section>
+            <section class="panel pp-print-area" id="invoice-detail">
+              <div class="panel-header">
+                <div>
+                  <p class="section-eyebrow">INVOICE</p>
+                  <h2>Invoice Details</h2>
+                </div>
+              </div>
+              <div id="inv-detail"></div>
+            </section>
+          </div>
+          <section class="panel" id="history" style="margin-top: 1.25rem">
+            <div class="panel-header">
+              <div>
+                <p class="section-eyebrow">PAYMENT RECORDS</p>
+                <h2>Payment History</h2>
+              </div>
+            </div>
+            <div class="table-wrapper">
+              <table class="invoice-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Invoice</th>
+                    <th>Method</th>
+                    <th>Reference</th>
+                    <th>Amount</th>
+                  </tr>
+                </thead>
+                <tbody id="hist-body"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <div class="health-notice">
+            <span aria-hidden="true">ⓘ</span>
+            <p>
+              This is a simulated academic checkout. No real payment is made,
+              and card numbers, CVV and expiry are never stored. Amounts shown
+              here come from your invoice records, not from the browser.
+            </p>
+          </div>
+          <footer class="dashboard-footer">
+            <p>
+              © 2026 HeartCare Clinic Management System. Academic project
+              demonstration.
+            </p>
+            <p>For emergencies, contact local emergency services.</p>
+          </footer>
+        </div>
+      </main>
+    </div>
+    <script>
+      /* Sample data. In PHP, load ONLY the logged-in patient's invoices and line
+         items from the database; fees must never be taken from the browser. */
+      const invoices = [
+        {
+          id: "INV-00125",
+          issued: "20 Oct 2026",
+          due: "04 Nov 2026",
+          doctor: "Dr. Rahman · Cardiology",
+          status: "unpaid",
+          items: [
+            ["Consultation fee", 1000],
+            ["Laboratory test A", 500],
+            ["Laboratory test B", 300],
+          ],
+        },
+        {
+          id: "INV-00108",
+          issued: "05 Oct 2026",
+          due: "—",
+          doctor: "Dr. Rahman · Cardiology",
+          status: "paid",
+          items: [["Cardiology consultation", 1000]],
+          paidOn: "05 Oct 2026",
+          ref: "TXN-20261005-0108",
+          method: "Visa •••• 4242",
+        },
+        {
+          id: "INV-00091",
+          issued: "12 Sep 2026",
+          due: "—",
+          doctor: "Dr. Sultana · Preventive Care",
+          status: "paid",
+          items: [
+            ["Consultation fee", 800],
+            ["Laboratory test C", 700],
+          ],
+          paidOn: "12 Sep 2026",
+          ref: "TXN-20260912-0091",
+          method: "Mastercard •••• 1881",
+        },
+      ];
+      const methods = [
+        { id: 1, label: "Visa •••• 4242", tag: "Primary" },
+        { id: 2, label: "Mastercard •••• 1881", tag: "" },
+      ];
+
+      let filter = "all";
+      let selected = "INV-00125";
+      const $ = (s) => document.querySelector(s);
+      const fmt = (n) => "৳" + n.toLocaleString("en-US");
+      const total = (inv) => inv.items.reduce((a, i) => a + i[1], 0);
+      const badge = (inv) =>
+        inv.status === "paid"
+          ? '<span class="status-badge status-badge--paid">Paid</span>'
+          : '<span class="status-badge status-badge--unpaid">Unpaid</span>';
+
+      function renderSummary() {
+        const unpaid = invoices.filter((i) => i.status === "unpaid");
+        const out = unpaid.reduce((a, i) => a + total(i), 0);
+        const paid = invoices
+          .filter((i) => i.status === "paid")
+          .reduce((a, i) => a + total(i), 0);
+        $("#k-out").textContent = fmt(out);
+        $("#k-paid").textContent = fmt(paid);
+        $("#k-count").textContent = String(invoices.length).padStart(2, "0");
+        $("#banner").innerHTML = unpaid.length
+          ? '<div class="pp-banner"><div><strong>Outstanding balance: ' +
+            fmt(out) +
+            "</strong><p>Invoice " +
+            unpaid[0].id +
+            " was issued " +
+            unpaid[0].issued +
+            " and is due " +
+            unpaid[0].due +
+            '.</p></div><button type="button" class="primary-button" data-pick="' +
+            unpaid[0].id +
+            '">Pay now</button></div>'
+          : '<div class="pp-banner pp-banner--ok"><div><strong>You are all paid up</strong><p>There are no outstanding invoices.</p></div></div>';
+      }
+
+      function renderList() {
+        const list = invoices.filter(
+          (i) => filter === "all" || i.status === filter,
+        );
+        $("#inv-list").innerHTML = list.length
+          ? list
+              .map(
+                (i) =>
+                  '<button type="button" class="pp-inv' +
+                  (i.id === selected ? " is-active" : "") +
+                  '" data-id="' +
+                  i.id +
+                  '">' +
+                  '<span class="pp-inv__main"><strong>' +
+                  i.id +
+                  "</strong><small>" +
+                  i.issued +
+                  " · " +
+                  i.items.length +
+                  (i.items.length > 1 ? " items" : " item") +
+                  "</small></span>" +
+                  '<span class="pp-inv__side"><span class="pp-inv__amt">' +
+                  fmt(total(i)) +
+                  "</span>" +
+                  badge(i) +
+                  "</span></button>",
+              )
+              .join("")
+          : '<p class="pp-empty">No invoices in this list.</p>';
+      }
+
+      function renderDetail() {
+        const inv = invoices.find((i) => i.id === selected);
+        if (!inv) {
+          $("#inv-detail").innerHTML =
+            '<p class="pp-empty">Select an invoice to see its details.</p>';
+          return;
+        }
+        const rows = inv.items
+          .map(
+            (it) =>
+              "<tr><td>" +
+              it[0] +
+              '</td><td class="pp-r">' +
+              fmt(it[1]) +
+              "</td></tr>",
+          )
+          .join("");
+        let foot;
+        if (inv.status === "unpaid") {
+          const opts = methods
+            .map(
+              (m, k) =>
+                '<label class="pp-method"><input type="radio" name="method" value="' +
+                m.id +
+                '"' +
+                (k === 0 ? " checked" : "") +
+                " /><span><strong>" +
+                m.label +
+                "</strong><small>" +
+                (m.tag || "Demo card") +
+                "</small></span></label>",
+            )
+            .join("");
+          foot =
+            '<form class="pp-paybox pp-noprint" id="pay-form" data-id="' +
+            inv.id +
+            '"><fieldset class="pp-methods"><legend>Pay with</legend>' +
+            opts +
+            "</fieldset>" +
+            '<div id="pay-msg" class="pp-alert" hidden></div>' +
+            '<button type="submit" class="primary-button pp-submit" id="pay-btn">Pay ' +
+            fmt(total(inv)) +
+            "</button>" +
+            '<p class="pp-hint">Need another method? <a class="text-link" href="payment-methods.html">Add one</a>. Simulated checkout only.</p></form>';
+        } else {
+          foot =
+            '<div class="pp-paid-info"><div class="pp-kv pp-kv--2"><div><span>Paid on</span><strong>' +
+            inv.paidOn +
+            "</strong></div><div><span>Payment method</span><strong>" +
+            inv.method +
+            "</strong></div><div><span>Transaction reference</span><strong>" +
+            inv.ref +
+            "</strong></div><div><span>Amount paid</span><strong>" +
+            fmt(total(inv)) +
+            "</strong></div></div></div>";
+        }
+        $("#inv-detail").innerHTML =
+          '<article class="pp-sheet"><header class="pp-sheet__head"><div><strong>HeartCare Clinic</strong><small>Dhaka, Bangladesh</small></div>' +
+          '<div class="pp-sheet__meta"><span>Invoice ' +
+          inv.id +
+          "</span>" +
+          badge(inv) +
+          "</div></header>" +
+          '<div class="pp-kv pp-kv--2"><div><span>Billed to</span><strong>Fairuz Ahmed (HC-P-00125)</strong></div><div><span>Doctor</span><strong>' +
+          inv.doctor +
+          "</strong></div><div><span>Issue date</span><strong>" +
+          inv.issued +
+          "</strong></div><div><span>Due date</span><strong>" +
+          inv.due +
+          "</strong></div></div>" +
+          '<table class="pp-lines"><thead><tr><th>Item</th><th class="pp-r">Amount</th></tr></thead><tbody>' +
+          rows +
+          "</tbody></table>" +
+          '<div class="pp-totals"><div class="pp-totals__grand"><span>Total</span><span>' +
+          fmt(total(inv)) +
+          "</span></div></div>" +
+          foot +
+          '<button type="button" class="pp-act pp-noprint" onclick="window.print()">' +
+          (inv.status === "paid" ? "Print receipt" : "Print invoice") +
+          "</button></article>";
+      }
+
+      function renderHistory() {
+        const paid = invoices.filter((i) => i.status === "paid");
+        $("#hist-body").innerHTML = paid.length
+          ? paid
+              .map(
+                (i) =>
+                  "<tr><td>" +
+                  i.paidOn +
+                  "</td><td>" +
+                  i.id +
+                  "</td><td>" +
+                  i.method +
+                  "</td><td>" +
+                  i.ref +
+                  '</td><td class="invoice-amount">' +
+                  fmt(total(i)) +
+                  "</td></tr>",
+              )
+              .join("")
+          : '<tr><td colspan="5">No payments yet.</td></tr>';
+      }
+
+      function renderAll() {
+        renderSummary();
+        renderList();
+        renderDetail();
+        renderHistory();
+      }
+
+      document.addEventListener("click", (e) => {
+        const tab = e.target.closest("[data-filter]");
+        if (tab) {
+          filter = tab.dataset.filter;
+          document
+            .querySelectorAll("[data-filter]")
+            .forEach((t) => t.classList.toggle("is-active", t === tab));
+          renderList();
+        }
+        const item = e.target.closest("[data-id]");
+        if (item && item.classList.contains("pp-inv")) {
+          selected = item.dataset.id;
+          renderList();
+          renderDetail();
+        }
+        const pick = e.target.closest("[data-pick]");
+        if (pick) {
+          selected = pick.dataset.pick;
+          renderList();
+          renderDetail();
+          $("#invoice-detail").scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      });
+
+      document.addEventListener("submit", (e) => {
+        if (e.target.id !== "pay-form") return;
+        e.preventDefault();
+        const inv = invoices.find((i) => i.id === e.target.dataset.id);
+        const btn = $("#pay-btn");
+        btn.disabled = true;
+        btn.textContent = "Processing…"; /* blocks double submit */
+        /* PHP: inside a DB transaction, lock the invoice row, confirm it belongs to this
+           patient and is still unpaid, insert the payment record, set status = paid. */
+        setTimeout(() => {
+          const m = methods.find(
+            (x) => String(x.id) === new FormData(e.target).get("method"),
+          );
+          const d = new Date();
+          inv.status = "paid";
+          inv.paidOn = d.toLocaleDateString("en-GB", {
+            day: "2-digit",
+            month: "short",
+            year: "numeric",
+          });
+          inv.ref =
+            "TXN-" +
+            d.toISOString().slice(0, 10).replace(/-/g, "") +
+            "-" +
+            inv.id.slice(-4);
+          inv.method = m.label;
+          renderAll();
+          $("#invoice-detail").scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }, 900);
+      });
+
+      renderAll();
+    </script>
+  </body>
+</html>
