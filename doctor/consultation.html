@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patient Consultation | HeartCare Clinic</title>
+
+    <link rel="stylesheet" href="../assets/css/doctor-dashboard.css" />
+    <link rel="stylesheet" href="../assets/css/doctor-consultation.css" />
+  </head>
+
+  <body>
+    <div class="dashboard-layout">
+      <!-- ================= SIDEBAR ================= -->
+      <aside class="dashboard-sidebar">
+        <a class="dashboard-brand" href="../index.html">
+          <span class="dashboard-brand__icon">&hearts;</span>
+          <span>HeartCare</span>
+        </a>
+    <div class="sidebar-profile">
+          <div class="avatar">BP</div>
+
+          <div>
+            <strong>Dr. Badhon Pal </strong>
+            <span>Cardiology Department</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <p class="sidebar-label">WORKSPACE</p>
+        
+        <nav class="sidebar-nav">
+          <a href="dashboard.html" class="sidebar-link"> Dashboard </a>
+
+          <a href="myProfile.html" class="sidebar-link"> My Profile </a>
+
+          <a href="my_schedule.html" class="sidebar-link"> My Schedule </a>
+
+          <a href="my_appointments.html" class="sidebar-link">
+            My Appointments
+          </a>
+
+          <a href="consultation.html" class="sidebar-link is-active">
+            Consultation
+          </a>
+
+          <a href="prescription.html" class="sidebar-link"> Prescription </a>
+
+          <a href="order_tests.html" class="sidebar-link"> Order Lab Tests </a>
+
+          <a href="patient_timeline.html" class="sidebar-link">
+            Patient Timeline
+          </a>
+        </nav>
+        <a class="sidebar-link sidebar-link--logout" href="../auth/login.html">
+          Log out
+        </a>
+       
+      </aside>
+
+      <!-- ================= MAIN CONTENT ================= -->
+      <main class="dashboard-main">
+        <div class="dashboard-content">
+          <!-- Header -->
+          <header class="welcome-section">
+            <div>
+              <span class="section-eyebrow">DOCTOR PANEL</span>
+              <h1>Patient Consultation</h1>
+              <p>View patient information and manage consultations.</p>
+            </div>
+          </header>
+
+          <!-- ================= PATIENT LIST ================= -->
+          <section class="panel" id="patient-list">
+            <div class="panel-header">
+              <div>
+                <h2>Patient Consultation List</h2>
+                
+              </div>
+            </div>
+
+            <div class="table-container">
+              <table class="consultation-table">
+                <thead>
+                  <tr>
+                    <th>Patient ID</th>
+                    <th>Patient Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Appointment Date</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>HC-P-00125</td>
+                    <td>Fairuz Ahmed</td>
+                    <td>35</td>
+                    <td>Male</td>
+                    <td>31 Oct 2026</td>
+                    <td>
+                      <span class="status completed"> Completed </span>
+                    </td>
+                    <td>
+                      <a href="#fairuz" class="view-btn"> View Details </a>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>HC-P-00131</td>
+                    <td>Nusrat Jahan</td>
+                    <td>27</td>
+                    <td>Female</td>
+                    <td>31 Oct 2026</td>
+                    <td>
+                      <span class="status pending"> Pending </span>
+                    </td>
+                    <td>
+                      <a href="#nusrat" class="view-btn"> View Details </a>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>HC-P-00142</td>
+                    <td>Mahmud Hasan</td>
+                    <td>45</td>
+                    <td>Male</td>
+                    <td>31 Oct 2026</td>
+                    <td>
+                      <span class="status pending"> Pending </span>
+                    </td>
+                    <td>
+                      <a href="#mahmud" class="view-btn"> View Details </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- ================================================= -->
+          <!-- PATIENT 1 DETAILS -->
+          <!-- ================================================= -->
+
+          <section class="patient-details" id="fairuz">
+            <a href="#patient-list" class="back-btn">
+              ← Back to Patient List
+            </a>
+
+            <div class="panel">
+              
+              <h3 class="sub-heading">Patient Information</h3>
+
+              <div class="patient-info-grid">
+                <div>
+                  <label>Full Name</label>
+                  <p>Fairuz Ahmed</p>
+                </div>
+
+                <div>
+                  <label>Patient ID</label>
+                  <p>HC-P-00125</p>
+                </div>
+
+                <div>
+                  <label>Age</label>
+                  <p>35 Years</p>
+                </div>
+
+                <div>
+                  <label>Gender</label>
+                  <p>Male</p>
+                </div>
+
+                <div>
+                  <label>Phone Number</label>
+                  <p>01712345678</p>
+                </div>
+
+                <div>
+                  <label>Blood Group</label>
+                  <p>B+</p>
+                </div>
+              </div>
+
+              <h3 class="sub-heading">Patient Vital Signs</h3>
+
+              <div class="vitals-grid">
+                <div class="vital-card">
+                  <span>Heart Rate</span>
+                  <strong>82</strong>
+                  <small>bpm</small>
+                </div>
+
+                <div class="vital-card">
+                  <span>Blood Pressure</span>
+                  <strong>120/80</strong>
+                  <small>mmHg</small>
+                </div>
+
+                <div class="vital-card">
+                  <span>Temperature</span>
+                  <strong>98.6</strong>
+                  <small>°F</small>
+                </div>
+
+                <div class="vital-card">
+                  <span>Oxygen Level</span>
+                  <strong>98</strong>
+                  <small>% SpO2</small>
+                </div>
+              </div>
+
+              <h3 class="sub-heading">Consultation Details</h3>
+
+              <form class="consultation-form" action="#" method="get">
+                <div class="form-group">
+                  <label for="symptoms1">Patient Symptoms</label>
+                  <textarea
+                    id="symptoms1"
+                    name="symptoms"
+                    placeholder="Enter patient symptoms..."
+                  ></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="diagnosis1">Diagnosis</label>
+                  <textarea
+                    id="diagnosis1"
+                    name="diagnosis"
+                    placeholder="Enter diagnosis..."
+                  ></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="treatment1">Treatment Plan</label>
+                  <textarea
+                    id="treatment1"
+                    name="treatment"
+                    placeholder="Enter treatment plan..."
+                  ></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="notes1">Doctor's Notes</label>
+                  <textarea
+                    id="notes1"
+                    name="notes"
+                    placeholder="Enter additional notes..."
+                  ></textarea>
+                </div>
+
+                <div class="form-actions">
+                  <button type="reset" class="clear-btn">Clear Form</button>
+
+                  <button type="submit" class="save-btn">
+                    Save Consultation
+                  </button>
+                </div>
+              </form>
+            </div>
+          </section>
+
+          <!-- ================================================= -->
+          <!-- PATIENT 2 DETAILS -->
+          <!-- ================================================= -->
+
+          <section class="patient-details" id="nusrat">
+            <a href="#patient-list" class="back-btn">
+              ← Back to Patient List
+            </a>
+
+            
+
+              <h3 class="sub-heading">Patient Information</h3>
+
+              <div class="patient-info-grid">
+                <div>
+                  <label>Full Name</label>
+                  <p>Nusrat Jahan</p>
+                </div>
+
+                <div>
+                  <label>Patient ID</label>
+                  <p>HC-P-00131</p>
+                </div>
+
+                <div>
+                  <label>Age</label>
+                  <p>27 Years</p>
+                </div>
+
+                <div>
+                  <label>Gender</label>
+                  <p>Female</p>
+                </div>
+
+                <div>
+                  <label>Phone Number</label>
+                  <p>01812345678</p>
+                </div>
+
+                <div>
+                  <label>Blood Group</label>
+                  <p>A+</p>
+                </div>
+              </div>
+
+              <h3 class="sub-heading">Patient Vital Signs</h3>
+
+              <div class="vitals-grid">
+                <div class="vital-card">
+                  <span>Heart Rate</span>
+                  <strong>88</strong>
+                  <small>bpm</small>
+                </div>
+
+                <div class="vital-card">
+                  <span>Blood Pressure</span>
+                  <strong>110/75</strong>
+                  <small>mmHg</small>
+                </div>
+
+                <div class="vital-card">
+                  <span>Temperature</span>
+                  <strong>99.1</strong>
+                  <small>°F</small>
+                </div>
+
+                <div class="vital-card">
+                  <span>Oxygen Level</span>
+                  <strong>97</strong>
+                  <small>% SpO2</small>
+                </div>
+              </div>
+
+              <h3 class="sub-heading">Consultation Details</h3>
+
+              <form class="consultation-form" action="#" method="get">
+                <div class="form-group">
+                  <label for="symptoms2">Patient Symptoms</label>
+                  <textarea
+                    id="symptoms2"
+                    name="symptoms"
+                    placeholder="Enter patient symptoms..."
+                  ></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="diagnosis2">Diagnosis</label>
+                  <textarea
+                    id="diagnosis2"
+                    name="diagnosis"
+                    placeholder="Enter diagnosis..."
+                  ></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="treatment2">Treatment Plan</label>
+                  <textarea
+                    id="treatment2"
+                    name="treatment"
+                    placeholder="Enter treatment plan..."
+                  ></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="notes2">Doctor's Notes</label>
+                  <textarea
+                    id="notes2"
+                    name="notes"
+                    placeholder="Enter additional notes..."
+                  ></textarea>
+                </div>
+
+                <div class="form-actions">
+                  <button type="reset" class="clear-btn">Clear Form</button>
+
+                  <button type="submit" class="save-btn">
+                    Save Consultation
+                  </button>
+                </div>
+              </form>
+            </div>
+          </section>
+
+          <!-- ================================================= -->
+          <!-- PATIENT 3 DETAILS -->
+          <!-- ================================================= -->
+
+          <section class="patient-details" id="mahmud">
+            <a href="#patient-list" class="back-btn">
+              ← Back to Patient List
+            </a>
+
+            
+
+              <h3 class="sub-heading">Patient Information</h3>
+
+              <div class="patient-info-grid">
+                <div>
+                  <label>Full Name</label>
+                  <p>Mahmud Hasan</p>
+                </div>
+
+                <div>
+                  <label>Patient ID</label>
+                  <p>HC-P-00142</p>
+                </div>
+
+                <div>
+                  <label>Age</label>
+                  <p>45 Years</p>
+                </div>
+
+                <div>
+                  <label>Gender</label>
+                  <p>Male</p>
+                </div>
+
+                <div>
+                  <label>Phone Number</label>
+                  <p>01912345678</p>
+                </div>
+
+                <div>
+                  <label>Blood Group</label>
+                  <p>O+</p>
+                </div>
+              </div>
+
+              <h3 class="sub-heading">Patient Vital Signs</h3>
+
+              <div class="vitals-grid">
+                <div class="vital-card">
+                  <span>Heart Rate</span>
+                  <strong>76</strong>
+                  <small>bpm</small>
+                </div>
+
+                <div class="vital-card">
+                  <span>Blood Pressure</span>
+                  <strong>130/85</strong>
+                  <small>mmHg</small>
+                </div>
+
+                <div class="vital-card">
+                  <span>Temperature</span>
+                  <strong>98.4</strong>
+                  <small>°F</small>
+                </div>
+
+                <div class="vital-card">
+                  <span>Oxygen Level</span>
+                  <strong>96</strong>
+                  <small>% SpO2</small>
+                </div>
+              </div>
+
+              <h3 class="sub-heading">Consultation Details</h3>
+
+              <form class="consultation-form" action="#" method="get">
+                <div class="form-group">
+                  <label for="symptoms3">Patient Symptoms</label>
+                  <textarea
+                    id="symptoms3"
+                    name="symptoms"
+                    placeholder="Enter patient symptoms..."
+                  ></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="diagnosis3">Diagnosis</label>
+                  <textarea
+                    id="diagnosis3"
+                    name="diagnosis"
+                    placeholder="Enter diagnosis..."
+                  ></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="treatment3">Treatment Plan</label>
+                  <textarea
+                    id="treatment3"
+                    name="treatment"
+                    placeholder="Enter treatment plan..."
+                  ></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="notes3">Doctor's Notes</label>
+                  <textarea
+                    id="notes3"
+                    name="notes"
+                    placeholder="Enter additional notes..."
+                  ></textarea>
+                </div>
+
+                <div class="form-actions">
+                  <button type="reset" class="clear-btn">Clear Form</button>
+
+                  <button type="submit" class="save-btn">
+                    Save Consultation
+                  </button>
+                </div>
+              </form>
+            </div>
+          </section>
+
+          <!-- Footer -->
+          <footer class="dashboard-footer">
+            <p>© 2026 HeartCare Clinic. All Rights Reserved.</p>
+          </footer>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
