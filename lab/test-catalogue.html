@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Catalogue | HeartCare</title>
+    <link rel="stylesheet" href="../assets/css/lab-test-catalogue.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- LEFT SIDEBAR - PRESERVED DASHBOARD MENU -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <span class="heart-icon">♥</span>
+                Heart<span>Care</span>
+            </div>
+
+            <div class="profile">
+                <div class="avatar">LT</div>
+                <div>
+                    <h3>Aurpita Roy</h3>
+                    <p>Laboratory Department</p>
+                </div>
+            </div>
+
+            <p class="menu-title">MAIN MENU</p>
+
+            <nav>
+                <a class="sidebar-link" href="dashboard.html">
+                    <span class="nav-icon">▦</span>
+                    Dashboard
+                </a>
+                <a class="sidebar-link" href="lab-queue.html">
+
+                    ☷ Lab Queue
+                </a>
+                <a class="sidebar-link" href="add-labresult.html">
+
+                    ✚ Add Test Result
+                </a>
+                <a class="sidebar-link" href="manage-labresult.html">
+
+                    ▤ Manage Results
+                </a>
+                <a class="sidebar-link is-active" href="test-catalogue.html">
+
+                    ♧ Test Catalogue
+                </a>
+                <a class="sidebar-link" href="lab-reports.html">
+
+                    ▣ Lab Reports
+                </a>
+
+
+
+                <p class="menu-title">ACCOUNT</p>
+                <a class="sidebar-link" href="profile.html">
+                    ♙My Profile
+                </a>
+
+                <a class="sidebar-link sidebar-link--logout" href="../auth/login.html">
+                    Log out
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                HeartCare Hospital
+                <small>Laboratory Management System</small>
+            </div>
+
+        </aside>
+
+
+        <!-- RIGHT MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <div>
+                    <h2>Good Morning</h2>
+                    <p>Welcome back, Lab Technician</p>
+                </div>
+
+                <div class="header-right">
+                    <button class="notification">🔔</button>
+
+                    <div class="user-info">
+                        <div class="small-avatar">LT</div>
+                        <span>Lab Technician</span>
+                    </div>
+                </div>
+
+            </header>
+
+
+            <!-- PAGE CONTENT -->
+            <section class="content">
+
+                <!-- PAGE HEADING -->
+                <div class="page-heading">
+
+                    <div>
+                        <h1>Test Catalogue</h1>
+                        <p>View test definitions and reference ranges</p>
+                    </div>
+
+                    <button class="add-btn">+ Add New Test</button>
+
+                </div>
+
+
+                <!-- STATISTICS -->
+                <div class="stats-grid">
+
+                    <div class="stat-card blue">
+                        <div class="stat-icon">🧪</div>
+                        <p>Total Tests</p>
+                        <h2>24</h2>
+                        <small>Available test definitions</small>
+                    </div>
+
+                    <div class="stat-card green">
+                        <div class="stat-icon">✓</div>
+                        <p>Active Tests</p>
+                        <h2>21</h2>
+                        <small>Currently available</small>
+                    </div>
+
+                    <div class="stat-card orange">
+                        <div class="stat-icon">📋</div>
+                        <p>Test Categories</p>
+                        <h2>6</h2>
+                        <small>Different test groups</small>
+                    </div>
+
+                    <div class="stat-card purple">
+                        <div class="stat-icon">⏱</div>
+                        <p>Inactive Tests</p>
+                        <h2>3</h2>
+                        <small>Currently unavailable</small>
+                    </div>
+
+                </div>
+
+
+                <!-- TEST CATALOGUE PANEL -->
+                <div class="panel">
+
+                    <div class="panel-header">
+                        <div>
+                            <h3>All Laboratory Tests</h3>
+                            <p>Manage test information and normal reference ranges</p>
+                        </div>
+                    </div>
+
+
+                    <!-- SEARCH AND FILTER -->
+                    <div class="filter-section">
+
+                        <div class="search-box">
+                            <span>🔍</span>
+                            <input type="text" placeholder="Search by test name or code...">
+                        </div>
+
+                        <select>
+                            <option value="">All Categories</option>
+                            <option>Blood Test</option>
+                            <option>Biochemistry</option>
+                            <option>Hematology</option>
+                            <option>Urine Test</option>
+                            <option>Hormone Test</option>
+                            <option>Immunology</option>
+                        </select>
+
+                        <select>
+                            <option value="">All Status</option>
+                            <option>Active</option>
+                            <option>Inactive</option>
+                        </select>
+
+                    </div>
+
+
+                    <!-- TEST TABLE - NO ACTION COLUMN -->
+                    <div class="table-responsive">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>TEST CODE</th>
+                                    <th>TEST NAME</th>
+                                    <th>CATEGORY</th>
+                                    <th>SPECIMEN</th>
+                                    <th>REFERENCE RANGE</th>
+                                    <th>UNIT</th>
+                                    <th>STATUS</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>TC001</td>
+                                    <td>
+                                        <strong>Complete Blood Count</strong>
+                                        <small>CBC Test</small>
+                                    </td>
+                                    <td>Hematology</td>
+                                    <td>Blood</td>
+                                    <td>Depends on individual parameters</td>
+                                    <td>-</td>
+                                    <td><span class="status active">Active</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>TC002</td>
+                                    <td>
+                                        <strong>Hemoglobin</strong>
+                                        <small>Hb Test</small>
+                                    </td>
+                                    <td>Hematology</td>
+                                    <td>Blood</td>
+                                    <td>12.0–16.0</td>
+                                    <td>g/dL</td>
+                                    <td><span class="status active">Active</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>TC003</td>
+                                    <td>
+                                        <strong>Blood Glucose (Fasting)</strong>
+                                        <small>FBS Test</small>
+                                    </td>
+                                    <td>Biochemistry</td>
+                                    <td>Blood</td>
+                                    <td>70–99</td>
+                                    <td>mg/dL</td>
+                                    <td><span class="status active">Active</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>TC004</td>
+                                    <td>
+                                        <strong>Serum Creatinine</strong>
+                                        <small>Creatinine Test</small>
+                                    </td>
+                                    <td>Biochemistry</td>
+                                    <td>Blood</td>
+                                    <td>0.6–1.3</td>
+                                    <td>mg/dL</td>
+                                    <td><span class="status active">Active</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>TC005</td>
+                                    <td>
+                                        <strong>Lipid Profile</strong>
+                                        <small>Cholesterol Test</small>
+                                    </td>
+                                    <td>Biochemistry</td>
+                                    <td>Blood</td>
+                                    <td>Varies by parameter</td>
+                                    <td>mg/dL</td>
+                                    <td><span class="status active">Active</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>TC006</td>
+                                    <td>
+                                        <strong>Urine Routine Examination</strong>
+                                        <small>Urine R/E</small>
+                                    </td>
+                                    <td>Urine Test</td>
+                                    <td>Urine</td>
+                                    <td>Normal findings</td>
+                                    <td>-</td>
+                                    <td><span class="status active">Active</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>TC007</td>
+                                    <td>
+                                        <strong>Thyroid Stimulating Hormone</strong>
+                                        <small>TSH Test</small>
+                                    </td>
+                                    <td>Hormone Test</td>
+                                    <td>Blood</td>
+                                    <td>0.4–4.0</td>
+                                    <td>mIU/L</td>
+                                    <td><span class="status inactive">Inactive</span></td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <!-- PAGINATION -->
+                    <div class="pagination">
+
+                        <p>Showing 1–7 of 24 tests</p>
+
+                        <div>
+                            <button disabled>Previous</button>
+                            <button class="current">1</button>
+                            <button>2</button>
+                            <button>3</button>
+                            <button>Next</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- INFORMATION PANEL -->
+                <div class="info-panel">
+
+                    <div class="info-icon">ℹ</div>
+
+                    <div>
+                        <h3>Reference Range Information</h3>
+
+                        <p>
+                            Reference ranges may vary depending on age, sex,
+                            laboratory methods and clinical conditions.
+                            Always follow the reference intervals approved
+                            by your laboratory.
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+            <footer>
+                © 2026 HeartCare Hospital. All rights reserved.
+            </footer>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

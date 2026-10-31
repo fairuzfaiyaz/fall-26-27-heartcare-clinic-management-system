@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Technician Dashboard | HeartCare</title>
+    <link rel="stylesheet" href="../assets/css/lab-dashboard.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <span>♥</span> HeartCare
+            </div>
+
+            <div class="profile">
+                <div class="avatar">LT</div>
+                <div>
+                    <h3>Aurpita Roy</h3>
+                    <p>Laboratory Department</p>
+                </div>
+            </div>
+
+            <nav>
+                <p class="menu-title">MAIN MENU</p>
+
+                <a class="sidebar-link is-active" href="dashboard.html">
+                    <span class="nav-icon">▦</span>
+                    Dashboard
+                </a>
+                <a class="sidebar-link" href="lab-queue.html">
+
+                    ☷ Lab Queue
+                </a>
+                <a class="sidebar-link" href="add-labresult.html">
+
+                    ✚ Add Test Result
+                </a>
+                <a class="sidebar-link" href="manage-labresult.html">
+
+                    ▤ Manage Results
+                </a>
+                <a class="sidebar-link" href="test-catalogue.html">
+
+                    ♧ Test Catalogue
+                </a>
+                <a class="sidebar-link" href="lab-reports.html">
+
+                    ▣ Lab Reports
+                </a>
+
+
+
+                <p class="menu-title">ACCOUNT</p>
+                <a class="sidebar-link" href="profile.html">
+                    ♙My Profile
+                </a>
+
+                <a class="sidebar-link sidebar-link--logout" href="../auth/login.html">
+                    Log out
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>HeartCare Hospital</p>
+                <small>Laboratory Management System</small>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Header -->
+            <header class="topbar">
+                <div>
+                    <h2>Good Morning</h2>
+                    <p>Welcome back! Here's your laboratory overview.</p>
+                </div>
+
+                <div class="header-right">
+                    <button class="notification">♧</button>
+                    <div class="user-info">
+                        <div class="small-avatar">LT</div>
+                        <span>Lab Technician</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <section class="content">
+
+                <div class="page-heading">
+                    <div>
+                        <h1>Dashboard Overview</h1>
+                        <p>Monitor laboratory activities and test results.</p>
+                    </div>
+                    <div class="date">📅 October 30, 2026</div>
+                </div>
+
+                <!-- Statistics Cards -->
+                <div class="stats-grid">
+
+                    <div class="stat-card blue">
+                        <div class="stat-icon">☷</div>
+                        <p>Total Lab Orders</p>
+                        <h2>25</h2>
+                        <small>All assigned orders</small>
+                    </div>
+
+                    <div class="stat-card orange">
+                        <div class="stat-icon">◷</div>
+                        <p>Pending Orders</p>
+                        <h2>12</h2>
+                        <small>Waiting for collection</small>
+                    </div>
+
+                    <div class="stat-card purple">
+                        <div class="stat-icon">⚗</div>
+                        <p>Processing</p>
+                        <h2>8</h2>
+                        <small>Tests in progress</small>
+                    </div>
+
+                    <div class="stat-card green">
+                        <div class="stat-icon">✓</div>
+                        <p>Completed</p>
+                        <h2>5</h2>
+                        <small>Results completed</small>
+                    </div>
+
+                </div>
+
+                <!-- Main Grid -->
+                <div class="main-grid">
+
+                    <!-- Lab Orders -->
+                    <div class="panel orders-panel">
+                        <div class="panel-header">
+                            <div>
+                                <h3>Recent Lab Orders</h3>
+                                <p>Latest assigned laboratory tests</p>
+                            </div>
+                            <a href="#">View All →</a>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Patient Name</th>
+                                        <th>Test Name</th>
+                                        <th>Doctor</th>
+                                        <th>Priority</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>#LAB001</td>
+                                        <td>Rahim Ahmed</td>
+                                        <td>Complete Blood Count</td>
+                                        <td>Dr. Hasan</td>
+                                        <td><span class="priority high">High</span></td>
+                                        <td><span class="status pending">Pending</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>#LAB002</td>
+                                        <td>Nusrat Jahan</td>
+                                        <td>Blood Sugar</td>
+                                        <td>Dr. Karim</td>
+                                        <td><span class="priority normal">Normal</span></td>
+                                        <td><span class="status processing">Processing</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>#LAB003</td>
+                                        <td>Tanvir Hasan</td>
+                                        <td>Lipid Profile</td>
+                                        <td>Dr. Rahman</td>
+                                        <td><span class="priority normal">Normal</span></td>
+                                        <td><span class="status completed">Completed</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>#LAB004</td>
+                                        <td>Sumaiya Akter</td>
+                                        <td>Thyroid Test</td>
+                                        <td>Dr. Hasan</td>
+                                        <td><span class="priority high">High</span></td>
+                                        <td><span class="status pending">Pending</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>#LAB005</td>
+                                        <td>Arif Hossain</td>
+                                        <td>Urine R/E</td>
+                                        <td>Dr. Karim</td>
+                                        <td><span class="priority normal">Normal</span></td>
+                                        <td><span class="status processing">Processing</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="panel actions-panel">
+                        <div class="panel-header">
+                            <div>
+                                <h3>Quick Actions</h3>
+                                <p>Frequently used features</p>
+                            </div>
+                        </div>
+
+                        <div class="action-list">
+                            <a href="#" class="action-item">
+                                <span class="action-icon blue-bg">＋</span>
+                                <span>
+                                    <strong>Add Test Result</strong>
+                                    <small>Enter patient test results</small>
+                                </span>
+                                <b>→</b>
+                            </a>
+
+                            <a href="#" class="action-item">
+                                <span class="action-icon orange-bg">☷</span>
+                                <span>
+                                    <strong>View Lab Queue</strong>
+                                    <small>Check pending test orders</small>
+                                </span>
+                                <b>→</b>
+                            </a>
+
+                            <a href="#" class="action-item">
+                                <span class="action-icon green-bg">▤</span>
+                                <span>
+                                    <strong>Manage Results</strong>
+                                    <small>Review submitted results</small>
+                                </span>
+                                <b>→</b>
+                            </a>
+
+                            <a href="#" class="action-item">
+                                <span class="action-icon purple-bg">▣</span>
+                                <span>
+                                    <strong>Generate Reports</strong>
+                                    <small>View laboratory reports</small>
+                                </span>
+                                <b>→</b>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Bottom Grid -->
+                <div class="bottom-grid">
+
+                    <!-- Test Result Overview -->
+                    <div class="panel">
+                        <div class="panel-header">
+                            <div>
+                                <h3>Test Result Overview</h3>
+                                <p>Distribution of laboratory orders</p>
+                            </div>
+                        </div>
+
+                        <div class="result-overview">
+
+                            <div class="result-row">
+                                <span>Completed</span>
+                                <strong>20%</strong>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-fill completed-fill"></div>
+                            </div>
+
+                            <div class="result-row">
+                                <span>Processing</span>
+                                <strong>32%</strong>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-fill processing-fill"></div>
+                            </div>
+
+                            <div class="result-row">
+                                <span>Pending</span>
+                                <strong>48%</strong>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-fill pending-fill"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <footer>
+                    © 2026 HeartCare Hospital. All Rights Reserved.
+                </footer>
+
+            </section>
+        </main>
+
+    </div>
+
+</body>
+
+</html>

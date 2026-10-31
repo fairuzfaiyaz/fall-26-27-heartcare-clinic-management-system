@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Reports | HeartCare</title>
+    <link rel="stylesheet" href="../assets/css/lab-reports.css">
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <span>♥</span> HeartCare
+            </div>
+
+            <div class="profile">
+                <div class="avatar">LT</div>
+                <div>
+                    <h3>Aurpita Roy</h3>
+                    <p>Laboratory Department</p>
+                </div>
+            </div>
+
+            <nav>
+                <p class="menu-title">MAIN MENU</p>
+
+                <a class="sidebar-link" href="dashboard.html">
+                    <span class="nav-icon">▦</span>
+                    Dashboard
+                </a>
+                <a class="sidebar-link" href="lab-queue.html">
+
+                    ☷ Lab Queue
+                </a>
+                <a class="sidebar-link" href="add-labresult.html">
+
+                    ✚ Add Test Result
+                </a>
+                <a class="sidebar-link" href="manage-labresult.html">
+
+                    ▤ Manage Results
+                </a>
+                <a class="sidebar-link" href="test-catalogue.html">
+
+                    ♧ Test Catalogue
+                </a>
+                <a class="sidebar-link is-active" href="lab-reports.html">
+
+                    ▣ Lab Reports
+                </a>
+
+
+
+                <p class="menu-title">ACCOUNT</p>
+                <a class="sidebar-link" href="profile.html">
+                    ♙My Profile
+                </a>
+
+                <a class="sidebar-link sidebar-link--logout" href="../auth/login.html">
+                    Log out
+                </a>
+
+            </nav>
+
+
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <header class="topbar">
+                <h1>Lab Reports</h1>
+                <span>Lab Technician</span>
+            </header>
+
+            <!-- PATIENT SEARCH -->
+            <section class="card search-card">
+                <h2>Search Patient Reports</h2>
+                <p>Enter Patient ID or Patient Name to find all laboratory reports.</p>
+
+                <form class="search-form">
+                    <div class="form-group">
+                        <label for="patientId">Patient ID</label>
+                        <input type="text" id="patientId" placeholder="Enter Patient ID">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="patientName">Patient Name</label>
+                        <input type="text" id="patientName" placeholder="Enter Patient Name">
+                    </div>
+
+                    <button type="button" class="btn primary">Search</button>
+                    <button type="reset" class="btn secondary">Clear</button>
+                </form>
+
+                <small class="demo-note">
+                    Search functionality requires database integration.
+                </small>
+            </section>
+
+            <!-- PATIENT INFORMATION -->
+            <section class="card">
+                <h2>Patient Information</h2>
+
+                <div class="patient-grid">
+                    <div>
+                        <span>Patient Name</span>
+                        <strong>Ahmed Rahman</strong>
+                    </div>
+
+                    <div>
+                        <span>Patient ID</span>
+                        <strong>P-1001</strong>
+                    </div>
+
+                    <div>
+                        <span>Age</span>
+                        <strong>35 Years</strong>
+                    </div>
+
+                    <div>
+                        <span>Gender</span>
+                        <strong>Male</strong>
+                    </div>
+
+                    <div>
+                        <span>Contact Number</span>
+                        <strong>017XXXXXXXX</strong>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ALL LAB REPORTS -->
+            <section class="card">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>All Lab Reports</h2>
+                        <p>All reports associated with this patient</p>
+                    </div>
+
+                    <span class="count">2 Reports</span>
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Report ID</th>
+                                <th>Test Name</th>
+                                <th>Sample Date</th>
+                                <th>Report Date</th>
+                                <th>Result</th>
+                                <th>Authorization</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>LR-1001</td>
+                                <td>Complete Blood Count (CBC)</td>
+                                <td>25 Oct 2026</td>
+                                <td>26 Oct 2026</td>
+                                <td>
+                                    <span class="badge normal">Normal</span>
+                                </td>
+                                <td>
+                                    <span class="badge authorized">Authorized</span>
+                                </td>
+                                <td>
+                                    <a href="#full-report" class="view-link">
+                                        View Report
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>LR-1002</td>
+                                <td>Blood Glucose</td>
+                                <td>27 Oct 2026</td>
+                                <td>27 Oct 2026</td>
+                                <td>
+                                    <span class="badge abnormal">Abnormal</span>
+                                </td>
+                                <td>
+                                    <span class="badge pending">Pending</span>
+                                </td>
+                                <td>
+                                    <a href="#full-report" class="view-link">
+                                        View Report
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- COMPLETE LAB REPORT -->
+            <section class="card report-card" id="full-report">
+
+                <div class="report-toolbar">
+                    <div>
+                        <h2>Laboratory Test Report</h2>
+                        <p>Selected Report: LR-1001</p>
+                    </div>
+
+                    <button class="btn primary print-btn" type="button" onclick="window.print()">
+                        Print / Save as PDF
+                    </button>
+                </div>
+
+                <div class="report-sheet">
+
+                    <!-- HOSPITAL HEADER -->
+                    <header class="hospital-header">
+                        <h2>HeartCare Hospital</h2>
+                        <p>Laboratory Investigation Report</p>
+                        <p>Hospital Address | Contact Number</p>
+                    </header>
+
+                    <div class="report-meta">
+                        <p><strong>Report ID:</strong> LR-1001</p>
+                        <p>
+                            <strong>Report Status:</strong>
+                            <span class="badge normal">Normal</span>
+                        </p>
+                    </div>
+
+                    <!-- A. PATIENT INFORMATION -->
+                    <section class="report-section">
+                        <h3>A. Patient Information</h3>
+
+                        <div class="details-grid">
+                            <p><strong>Patient Name:</strong> Ahmed Rahman</p>
+                            <p><strong>Patient ID:</strong> P-1001</p>
+                            <p><strong>Age:</strong> 35 Years</p>
+                            <p><strong>Gender:</strong> Male</p>
+                            <p><strong>Contact Number:</strong> 017XXXXXXXX</p>
+                        </div>
+                    </section>
+
+                    <!-- B. TEST INFORMATION -->
+                    <section class="report-section">
+                        <h3>B. Test Information</h3>
+
+                        <div class="details-grid">
+                            <p><strong>Report ID:</strong> LR-1001</p>
+                            <p><strong>Test Name:</strong> Complete Blood Count (CBC)</p>
+                            <p><strong>Test Category:</strong> Hematology</p>
+                            <p><strong>Sample Collection Date:</strong> 25 Oct 2026</p>
+                            <p><strong>Report Date:</strong> 26 Oct 2026</p>
+                            <p><strong>Referring Doctor:</strong> Dr. Rahman</p>
+                        </div>
+                    </section>
+
+                    <!-- C. TEST RESULTS -->
+                    <section class="report-section">
+                        <h3>C. Test Results</h3>
+
+                        <div class="table-wrapper">
+                            <table class="result-table">
+                                <thead>
+                                    <tr>
+                                        <th>Test Parameter</th>
+                                        <th>Result</th>
+                                        <th>Reference Range</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>Hemoglobin</td>
+                                        <td>13.5 g/dL</td>
+                                        <td>12–16 g/dL</td>
+                                        <td>
+                                            <span class="badge normal">Normal</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>WBC</td>
+                                        <td>7,500 /µL</td>
+                                        <td>4,000–11,000 /µL</td>
+                                        <td>
+                                            <span class="badge normal">Normal</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Platelets</td>
+                                        <td>250,000 /µL</td>
+                                        <td>150,000–450,000 /µL</td>
+                                        <td>
+                                            <span class="badge normal">Normal</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="overall">
+                            <strong>Overall Result:</strong>
+                            <span class="badge normal">Normal</span>
+                        </div>
+                    </section>
+
+                    <!-- D. ADDITIONAL INFORMATION -->
+                    <section class="report-section">
+                        <h3>D. Additional Information</h3>
+
+                        <div class="details-grid">
+                            <p>
+                                <strong>Result Indicator:</strong>
+                                <span class="badge normal">Normal</span>
+                            </p>
+
+                            <p><strong>Technician Name:</strong> Lab Technician A</p>
+                            <p><strong>Verified By:</strong> Dr. Hasan</p>
+                            <p><strong>Doctor's Remarks:</strong> No significant abnormality detected.</p>
+                            <p><strong>Lab Address:</strong> HeartCare Hospital Laboratory</p>
+                        </div>
+                    </section>
+
+                    <!-- AUTHORIZATION -->
+                    <section class="authorization-section">
+                        <h3>Report Authorization</h3>
+
+                        <div class="authorization-box">
+                            <p>
+                                <strong>Authorization Status:</strong>
+                                <span class="badge authorized">Authorized</span>
+                            </p>
+
+                            <p><strong>Authorized By:</strong> Dr. Hasan</p>
+                            <p><strong>Authorization Date:</strong> 26 Oct 2026</p>
+                        </div>
+
+                        <div class="signature-row">
+                            <div>
+                                <span>________________________</span>
+                                <strong>Technician Signature</strong>
+                            </div>
+
+                            <div>
+                                <span>________________________</span>
+                                <strong>Authorized Signature</strong>
+                            </div>
+                        </div>
+
+                        <p class="footer-note">
+                            This report is generated by HeartCare Hospital Laboratory.
+                        </p>
+                    </section>
+
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+
+</html>

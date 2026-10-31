@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lab Queue | HeartCare</title>
+
+    <link rel="stylesheet" href="../assets/css/lab-queue.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- Sidebar: Same as Original Dashboard -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <span>♥</span> HeartCare
+            </div>
+
+            <div class="profile">
+                <div class="avatar">LT</div>
+                <div>
+                    <h3>Aurpita Roy</h3>
+                    <p>Laboratory Department</p>
+                </div>
+            </div>
+
+            <nav>
+                <p class="menu-title">MAIN MENU</p>
+
+                <a class="sidebar-link" href="dashboard.html">
+                    <span class="nav-icon">▦</span>
+                    Dashboard
+                </a>
+                <a class="sidebar-link is-active" href="lab-queue.html">
+
+                    ☷ Lab Queue
+                </a>
+                <a class="sidebar-link" href="add-labresult.html">
+
+                    ✚ Add Test Result
+                </a>
+                <a class="sidebar-link" href="manage-labresult.html">
+
+                    ▤ Manage Results
+                </a>
+                <a class="sidebar-link" href="test-catalogue.html">
+
+                    ♧ Test Catalogue
+                </a>
+                <a class="sidebar-link" href="lab-reports.html">
+
+                    ▣ Lab Reports
+                </a>
+
+
+
+                <p class="menu-title">ACCOUNT</p>
+                <a class="sidebar-link" href="profile.html">
+                    ♙My Profile
+                </a>
+
+                <a class="sidebar-link sidebar-link--logout" href="../auth/login.html">
+                    Log out
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>HeartCare Hospital</p>
+                <small>Laboratory Management System</small>
+            </div>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Header -->
+            <header class="topbar">
+
+                <div>
+                    <h2>Good Morning..</h2>
+                    <p>Manage and monitor assigned laboratory orders.</p>
+                </div>
+
+                <div class="header-right">
+
+                    <button class="notification">♧</button>
+
+                    <div class="user-info">
+                        <div class="small-avatar">LT</div>
+                        <span>Lab Technician</span>
+                    </div>
+
+                </div>
+
+            </header>
+
+            <!-- Page Content -->
+            <section class="content">
+
+                <!-- Page Heading -->
+                <div class="page-heading">
+
+                    <div>
+                        <h1>Laboratory Queue</h1>
+                        <p>Track patient test orders and their current status.</p>
+                    </div>
+
+                    <div class="date">
+                        📅 October 30, 2026
+                    </div>
+
+                </div>
+
+                <!-- Statistics Cards -->
+                <div class="stats-grid">
+
+                    <div class="stat-card blue">
+                        <div class="stat-icon">☷</div>
+                        <p>Total Orders</p>
+                        <h2>25</h2>
+                        <small>All assigned orders</small>
+                    </div>
+
+                    <div class="stat-card orange">
+                        <div class="stat-icon">◷</div>
+                        <p>Pending Orders</p>
+                        <h2>12</h2>
+                        <small>Waiting for processing</small>
+                    </div>
+
+                    <div class="stat-card purple">
+                        <div class="stat-icon">⚗</div>
+                        <p>Processing</p>
+                        <h2>8</h2>
+                        <small>Tests in progress</small>
+                    </div>
+
+                    <div class="stat-card green">
+                        <div class="stat-icon">✓</div>
+                        <p>Completed</p>
+                        <h2>5</h2>
+                        <small>Results completed</small>
+                    </div>
+
+                </div>
+
+                <!-- Queue Table Panel -->
+                <div class="panel queue-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <h3>Patient Test Orders</h3>
+                            <p>List of assigned laboratory orders</p>
+                        </div>
+
+                        <span class="total-label">25 Total Orders</span>
+
+                    </div>
+
+                    <!-- Search and Filter -->
+                    <div class="filter-section">
+
+                        <div class="search-box">
+                            <span>⌕</span>
+                            <input type="text" placeholder="Search by Order ID or Patient Name...">
+                        </div>
+
+                        <select>
+                            <option>All Status</option>
+                            <option>Pending</option>
+                            <option>Processing</option>
+                            <option>Completed</option>
+                        </select>
+
+                        <select>
+                            <option>All Priorities</option>
+                            <option>High</option>
+                            <option>Normal</option>
+                        </select>
+
+                    </div>
+
+                    <!-- Lab Queue Table -->
+                    <div class="table-responsive">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>ORDER ID</th>
+                                    <th>PATIENT NAME</th>
+                                    <th>TEST NAME</th>
+                                    <th>DOCTOR</th>
+                                    <th>ORDER DATE</th>
+                                    <th>PRIORITY</th>
+                                    <th>STATUS</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td><strong>#LAB001</strong></td>
+                                    <td>
+                                        <div class="patient-name">Rahim Ahmed</div>
+                                        <small class="patient-id">PID: 1001</small>
+                                    </td>
+                                    <td>Complete Blood Count</td>
+                                    <td>Dr. Hasan</td>
+                                    <td>30 Oct 2026</td>
+                                    <td><span class="priority high">High</span></td>
+                                    <td><span class="status pending">Pending</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>#LAB002</strong></td>
+                                    <td>
+                                        <div class="patient-name">Nusrat Jahan</div>
+                                        <small class="patient-id">PID: 1002</small>
+                                    </td>
+                                    <td>Blood Sugar</td>
+                                    <td>Dr. Karim</td>
+                                    <td>30 Oct 2026</td>
+                                    <td><span class="priority normal">Normal</span></td>
+                                    <td><span class="status processing">Processing</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>#LAB003</strong></td>
+                                    <td>
+                                        <div class="patient-name">Tanvir Hasan</div>
+                                        <small class="patient-id">PID: 1003</small>
+                                    </td>
+                                    <td>Lipid Profile</td>
+                                    <td>Dr. Rahman</td>
+                                    <td>29 Oct 2026</td>
+                                    <td><span class="priority normal">Normal</span></td>
+                                    <td><span class="status completed">Completed</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>#LAB004</strong></td>
+                                    <td>
+                                        <div class="patient-name">Sumaiya Akter</div>
+                                        <small class="patient-id">PID: 1004</small>
+                                    </td>
+                                    <td>Thyroid Test</td>
+                                    <td>Dr. Hasan</td>
+                                    <td>29 Oct 2026</td>
+                                    <td><span class="priority high">High</span></td>
+                                    <td><span class="status pending">Pending</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>#LAB005</strong></td>
+                                    <td>
+                                        <div class="patient-name">Arif Hossain</div>
+                                        <small class="patient-id">PID: 1005</small>
+                                    </td>
+                                    <td>Urine R/E</td>
+                                    <td>Dr. Karim</td>
+                                    <td>28 Oct 2026</td>
+                                    <td><span class="priority normal">Normal</span></td>
+                                    <td><span class="status processing">Processing</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>#LAB006</strong></td>
+                                    <td>
+                                        <div class="patient-name">Mim Akter</div>
+                                        <small class="patient-id">PID: 1006</small>
+                                    </td>
+                                    <td>Serum Creatinine</td>
+                                    <td>Dr. Rahman</td>
+                                    <td>28 Oct 2026</td>
+                                    <td><span class="priority high">High</span></td>
+                                    <td><span class="status pending">Pending</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>#LAB007</strong></td>
+                                    <td>
+                                        <div class="patient-name">Sakib Ahmed</div>
+                                        <small class="patient-id">PID: 1007</small>
+                                    </td>
+                                    <td>Hemoglobin</td>
+                                    <td>Dr. Hasan</td>
+                                    <td>27 Oct 2026</td>
+                                    <td><span class="priority normal">Normal</span></td>
+                                    <td><span class="status completed">Completed</span></td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+
+                        <p>Showing 1–7 of 25 orders</p>
+
+                        <div class="page-buttons">
+                            <button disabled>‹</button>
+                            <button class="selected">1</button>
+                            <button>2</button>
+                            <button>3</button>
+                            <button>4</button>
+                            <button>›</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Queue Information -->
+                <div class="info-panel">
+
+                    <div class="info-icon">ⓘ</div>
+
+                    <div>
+                        <h3>Laboratory Queue Information</h3>
+                        <p>
+                            High-priority orders should receive attention first.
+                            Pending orders are waiting for processing, while
+                            processing orders are currently under laboratory examination.
+                            Completed orders have finished the testing process.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Footer -->
+                <footer>
+                    © 2026 HeartCare Hospital. All Rights Reserved.
+                </footer>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

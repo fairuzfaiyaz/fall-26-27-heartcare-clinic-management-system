@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manage Lab Results | HeartCare</title>
+    <link rel="stylesheet" href="../assets/css/lab-dashboard.css">
+
+    <link rel="stylesheet" href="../assets/css/manage-labresults.css">
+</head>
+
+<body class="patient-dashboard">
+
+    <div class="dashboard-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <span class="logo-icon">♥</span>
+                <span>HeartCare</span>
+            </div>
+
+            <div class="profile-summary">
+                <div class="profile-avatar">LT</div>
+                <div class="profile-info">
+                    <h3>Aurpita Roy Sreya</h3>
+                    <p>Laboratory Department</p>
+                </div>
+            </div>
+
+            <nav>
+
+                <p class="nav-heading">MAIN MENU</p>
+
+                <a class="sidebar-link" href="dashboard.html">
+                    <span class="nav-icon">▦</span>
+                    Dashboard
+                </a>
+                <a class="sidebar-link" href="lab-queue.html">
+
+                    ☷ Lab Queue
+                </a>
+                <a class="sidebar-link" href="add-labresult.html">
+
+                    ✚ Add Test Result
+                </a>
+                <a class="sidebar-link is-active" href="manage-labresult.html">
+
+                    ▤ Manage Results
+                </a>
+                <a class="sidebar-link" href="test-catalogue.html">
+
+                    ♧ Test Catalogue
+                </a>
+                <a class="sidebar-link" href="lab-reports.html">
+
+                    ▣ Lab Reports
+                </a>
+
+
+
+                <p class="menu-title">ACCOUNT</p>
+                <a class="sidebar-link" href="profile.html">
+                    ♙My Profile
+                </a>
+
+                <a class="sidebar-link sidebar-link--logout" href="../auth/login.html">
+                    Log out
+                </a>
+
+            </nav>
+
+
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+
+
+            <!-- PAGE CONTENT -->
+            <section class="page-content">
+
+                <!-- PAGE HEADING -->
+                <div class="page-heading">
+                    <div>
+                        <h2>Manage Test Results</h2>
+                        <p>Manage previously submitted laboratory test results.</p>
+                    </div>
+
+                    <a href="add-lab-results.html" class="add-result-btn">
+                        + Add New Result
+                    </a>
+                </div>
+
+
+                <!-- SUMMARY CARDS -->
+                <div class="summary-grid">
+
+                    <div class="summary-card">
+                        <div class="summary-icon total-icon">▤</div>
+                        <div>
+                            <p>Total Results</p>
+                            <h2>248</h2>
+                        </div>
+                    </div>
+
+                    <div class="summary-card">
+                        <div class="summary-icon completed-icon">✓</div>
+                        <div>
+                            <p>Completed</p>
+                            <h2>210</h2>
+                        </div>
+                    </div>
+
+                    <div class="summary-card">
+                        <div class="summary-icon pending-icon">◷</div>
+                        <div>
+                            <p>Pending</p>
+                            <h2>28</h2>
+                        </div>
+                    </div>
+
+                    <div class="summary-card">
+                        <div class="summary-icon reviewed-icon">↻</div>
+                        <div>
+                            <p>Under Review</p>
+                            <h2>10</h2>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- SEARCH AND FILTER SECTION -->
+                <div class="filter-card">
+
+                    <div class="filter-title">
+                        <div>
+                            <h3>Search & Filter Results</h3>
+                            <p>Find test results using patient information and test details.</p>
+                        </div>
+                    </div>
+
+                    <form class="filter-form">
+
+                        <div class="form-group search-group">
+                            <label for="search">Search Patient</label>
+                            <input type="search" id="search" placeholder="Search by Patient ID or Name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="test-name">Test Name</label>
+                            <select id="test-name">
+                                <option value="">All Test Names</option>
+                                <option>Complete Blood Count (CBC)</option>
+                                <option>Blood Glucose</option>
+                                <option>Lipid Profile</option>
+                                <option>Urine R/E</option>
+                                <option>Thyroid Function Test</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="test-date">Date</label>
+                            <input type="date" id="test-date">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="result-status">Result Status</label>
+                            <select id="result-status">
+                                <option value="">All Status</option>
+                                <option>Completed</option>
+                                <option>Pending</option>
+                                <option>Under Review</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-actions">
+                            <button type="submit" class="search-btn">
+                                Search
+                            </button>
+
+                            <button type="reset" class="reset-btn">
+                                Reset
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+
+                <!-- RESULTS TABLE -->
+                <div class="results-card">
+
+                    <div class="results-header">
+                        <div>
+                            <h3>Submitted Test Results</h3>
+                            <p>All previously submitted laboratory results</p>
+                        </div>
+
+                        <span class="result-count">248 Results</span>
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Result ID</th>
+                                    <th>Patient Information</th>
+                                    <th>Test Name</th>
+                                    <th>Submitted Date</th>
+                                    <th>Result Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td class="result-id">#LR-1001</td>
+
+                                    <td>
+                                        <div class="patient-cell">
+                                            <div class="patient-avatar">AR</div>
+                                            <div>
+                                                <strong>Ahmed Rahman</strong>
+                                                <small>ID: P-1001</small>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td>Complete Blood Count</td>
+
+                                    <td>30 Oct 2026</td>
+
+                                    <td>
+                                        <span class="status completed">Completed</span>
+                                    </td>
+
+                                    <td>
+                                        <div class="action-buttons">
+                                            <a href="result-details.html" class="action-btn view-btn"
+                                                title="View Details">◉</a>
+                                            <a href="edit-lab-result.html" class="action-btn edit-btn"
+                                                title="Edit Result">✎</a>
+                                            <button type="button" class="action-btn delete-btn"
+                                                title="Delete Result">×</button>
+                                            <a href="#" class="action-btn download-btn" title="Download PDF">↓</a>
+                                        </div>
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+                                    <td class="result-id">#LR-1002</td>
+
+                                    <td>
+                                        <div class="patient-cell">
+                                            <div class="patient-avatar">SR</div>
+                                            <div>
+                                                <strong>Sarah Rahman</strong>
+                                                <small>ID: P-1002</small>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td>Blood Glucose</td>
+
+                                    <td>29 Oct 2026</td>
+
+                                    <td>
+                                        <span class="status pending">Pending</span>
+                                    </td>
+
+                                    <td>
+                                        <div class="action-buttons">
+                                            <a href="result-details.html" class="action-btn view-btn"
+                                                title="View Details">◉</a>
+                                            <a href="edit-lab-result.html" class="action-btn edit-btn"
+                                                title="Edit Result">✎</a>
+                                            <button type="button" class="action-btn delete-btn"
+                                                title="Delete Result">×</button>
+                                            <a href="#" class="action-btn download-btn" title="Download PDF">↓</a>
+                                        </div>
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+                                    <td class="result-id">#LR-1003</td>
+
+                                    <td>
+                                        <div class="patient-cell">
+                                            <div class="patient-avatar">MK</div>
+                                            <div>
+                                                <strong>Mahmud Karim</strong>
+                                                <small>ID: P-1003</small>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td>Lipid Profile</td>
+
+                                    <td>28 Oct 2026</td>
+
+                                    <td>
+                                        <span class="status completed">Completed</span>
+                                    </td>
+
+                                    <td>
+                                        <div class="action-buttons">
+                                            <a href="result-details.html" class="action-btn view-btn"
+                                                title="View Details">◉</a>
+                                            <a href="edit-lab-result.html" class="action-btn edit-btn"
+                                                title="Edit Result">✎</a>
+                                            <button type="button" class="action-btn delete-btn"
+                                                title="Delete Result">×</button>
+                                            <a href="#" class="action-btn download-btn" title="Download PDF">↓</a>
+                                        </div>
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+                                    <td class="result-id">#LR-1004</td>
+
+                                    <td>
+                                        <div class="patient-cell">
+                                            <div class="patient-avatar">FN</div>
+                                            <div>
+                                                <strong>Fatema Noor</strong>
+                                                <small>ID: P-1004</small>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td>Urine R/E</td>
+
+                                    <td>27 Oct 2026</td>
+
+                                    <td>
+                                        <span class="status review">Under Review</span>
+                                    </td>
+
+                                    <td>
+                                        <div class="action-buttons">
+                                            <a href="result-details.html" class="action-btn view-btn"
+                                                title="View Details">◉</a>
+                                            <a href="edit-lab-result.html" class="action-btn edit-btn"
+                                                title="Edit Result">✎</a>
+                                            <button type="button" class="action-btn delete-btn"
+                                                title="Delete Result">×</button>
+                                            <a href="#" class="action-btn download-btn" title="Download PDF">↓</a>
+                                        </div>
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+                                    <td class="result-id">#LR-1005</td>
+
+                                    <td>
+                                        <div class="patient-cell">
+                                            <div class="patient-avatar">RH</div>
+                                            <div>
+                                                <strong>Rafiq Hasan</strong>
+                                                <small>ID: P-1005</small>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td>Thyroid Function Test</td>
+
+                                    <td>26 Oct 2026</td>
+
+                                    <td>
+                                        <span class="status completed">Completed</span>
+                                    </td>
+
+                                    <td>
+                                        <div class="action-buttons">
+                                            <a href="result-details.html" class="action-btn view-btn"
+                                                title="View Details">◉</a>
+                                            <a href="edit-lab-result.html" class="action-btn edit-btn"
+                                                title="Edit Result">✎</a>
+                                            <button type="button" class="action-btn delete-btn"
+                                                title="Delete Result">×</button>
+                                            <a href="#" class="action-btn download-btn" title="Download PDF">↓</a>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <!-- TABLE FOOTER -->
+                    <div class="table-footer">
+
+                        <p>Showing 1–5 of 248 results</p>
+
+                        <div class="pagination">
+                            <button type="button" disabled>‹</button>
+                            <button type="button" class="current-page">1</button>
+                            <button type="button">2</button>
+                            <button type="button">3</button>
+                            <span>...</span>
+                            <button type="button">50</button>
+                            <button type="button">›</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+            <footer class="footer">
+                <p>© 2026 HeartCare Hospital. All rights reserved.</p>
+            </footer>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

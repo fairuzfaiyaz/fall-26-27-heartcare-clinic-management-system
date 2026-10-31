@@ -1,0 +1,679 @@
+
+/* ==============================
+   GENERAL
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #253047;
+}
+
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* ==============================
+   SIDEBAR
+============================== */
+
+.sidebar {
+    width: 255px;
+    background: #ffffff;
+    border-right: 1px solid #e8edf4;
+    padding: 25px 18px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #2463d4;
+    margin-bottom: 35px;
+}
+
+.logo span {
+    color: #ef5361;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 8px;
+    background: #f5f8ff;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.avatar,
+.small-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #dce8ff;
+    color: #2463d4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.profile h3 {
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.profile p {
+    font-size: 10px;
+    color: #8490a5;
+}
+
+.menu-title {
+    font-size: 11px;
+    font-weight: bold;
+    color: #9aa5b5;
+    margin: 20px 10px 12px;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #667085;
+    padding: 13px 12px;
+    font-size: 14px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    transition: 0.2s;
+}
+
+.menu-icon {
+    width: 20px;
+    text-align: center;
+    font-size: 17px;
+    flex-shrink: 0;
+}
+
+nav a:hover,
+nav a.active {
+    background: #eaf1ff;
+    color: #2463d4;
+    font-weight: bold;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    border-top: 1px solid #e8edf4;
+    padding-top: 20px;
+    color: #667085;
+    font-size: 12px;
+}
+
+.sidebar-footer small {
+    display: block;
+    margin-top: 6px;
+    color: #9aa5b5;
+}
+
+
+/* ==============================
+   MAIN CONTENT & TOPBAR
+============================== */
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.topbar {
+    height: 85px;
+    background: #ffffff;
+    border-bottom: 1px solid #e8edf4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 35px;
+}
+
+.topbar h2 {
+    font-size: 19px;
+    margin-bottom: 6px;
+}
+
+.topbar p {
+    font-size: 12px;
+    color: #8993a5;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.notification {
+    background: #f4f6fa;
+    border: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.small-avatar {
+    width: 35px;
+    height: 35px;
+}
+
+
+/* ==============================
+   CONTENT
+============================== */
+
+.content {
+    padding: 30px 35px;
+}
+
+.page-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.page-heading h1 {
+    font-size: 23px;
+    margin-bottom: 8px;
+}
+
+.page-heading p {
+    font-size: 13px;
+    color: #8993a5;
+}
+
+.breadcrumb {
+    font-size: 12px;
+    color: #8993a5;
+}
+
+
+/* ==============================
+   MAIN GRID
+============================== */
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.left-content,
+.right-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 0;
+}
+
+
+/* ==============================
+   PANELS
+============================== */
+
+.panel {
+    background: #ffffff;
+    border: 1px solid #edf0f5;
+    border-radius: 12px;
+    padding: 22px;
+    min-width: 0;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.panel-header h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.panel-header p {
+    font-size: 12px;
+    color: #98a2b3;
+}
+
+.panel-header a {
+    color: #2463d4;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* ==============================
+   FORM
+============================== */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.form-group label {
+    font-size: 12px;
+    font-weight: bold;
+    color: #596579;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    border: 1px solid #e0e6ef;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 12px;
+    color: #344054;
+    outline: none;
+    background: #ffffff;
+    transition: 0.2s;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #2463d4;
+    box-shadow: 0 0 0 3px rgba(36, 99, 212, 0.08);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #a0a8b5;
+}
+
+.form-group textarea {
+    resize: vertical;
+    line-height: 1.5;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+
+/* ==============================
+   FORM BUTTONS
+============================== */
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.clear-btn,
+.save-btn {
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.clear-btn {
+    background: #ffffff;
+    border: 1px solid #dce2eb;
+    color: #667085;
+}
+
+.clear-btn:hover {
+    background: #f5f7fb;
+}
+
+.save-btn {
+    background: #2463d4;
+    color: #ffffff;
+    border: 1px solid #2463d4;
+}
+
+.save-btn:hover {
+    background: #174eae;
+}
+
+
+/* ==============================
+   RESULT GUIDELINES
+============================== */
+
+.guideline-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.guideline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+}
+
+.guide-icon {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.guide-icon svg {
+    width: 19px;
+    height: 19px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.blue-bg {
+    background: #eaf1ff;
+    color: #2463d4;
+}
+
+.green-bg {
+    background: #e6f7ef;
+    color: #20a36b;
+}
+
+.orange-bg {
+    background: #fff3e5;
+    color: #e99a32;
+}
+
+.purple-bg {
+    background: #f1eaff;
+    color: #8957d5;
+}
+
+.guideline-item strong {
+    display: block;
+    font-size: 13px;
+    color: #344054;
+    margin-bottom: 6px;
+}
+
+.guideline-item p {
+    font-size: 11px;
+    color: #8993a5;
+    line-height: 1.5;
+}
+
+
+/* ==============================
+   RECENT RESULTS
+============================== */
+
+.recent-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.recent-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 0;
+    border-bottom: 1px solid #edf0f5;
+}
+
+.recent-item:first-child {
+    padding-top: 0;
+}
+
+.recent-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.recent-item strong {
+    display: block;
+    font-size: 12px;
+    color: #344054;
+    margin-bottom: 5px;
+}
+
+.recent-item p {
+    font-size: 11px;
+    color: #7d899c;
+    margin-bottom: 5px;
+}
+
+.recent-item small {
+    font-size: 10px;
+    color: #a0a8b5;
+}
+
+.result-badge {
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.normal {
+    background: #e6f7ef;
+    color: #20a36b;
+}
+
+.abnormal {
+    background: #fff0ed;
+    color: #e45c4f;
+}
+
+
+/* ==============================
+   RESULT OVERVIEW
+============================== */
+
+.overview-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 0;
+    border-bottom: 1px solid #edf0f5;
+    font-size: 12px;
+    color: #667085;
+}
+
+.overview-item:first-of-type {
+    padding-top: 0;
+}
+
+.overview-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.overview-item strong {
+    color: #344054;
+    font-size: 14px;
+}
+
+.overview-item span {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.overview-dot {
+    width: 9px;
+    height: 9px;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.normal-dot {
+    background: #20a36b;
+}
+
+.abnormal-dot {
+    background: #e45c4f;
+}
+
+.pending-dot {
+    background: #e99a32;
+}
+
+
+/* ==============================
+   FOOTER
+============================== */
+
+footer {
+    text-align: center;
+    padding: 15px;
+    color: #98a2b3;
+    font-size: 11px;
+}
+
+
+/* ==============================
+   RESPONSIVE
+============================== */
+
+@media (max-width: 1100px) {
+
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        width: 75px;
+        padding: 20px 8px;
+    }
+
+    .logo {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .profile {
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .profile > div:last-child,
+    .menu-title,
+    nav a:not(.active),
+    .sidebar-footer {
+        display: none;
+    }
+
+    nav a {
+        justify-content: center;
+        text-align: center;
+        padding: 13px 3px;
+    }
+
+    nav a.active {
+        font-size: 0;
+    }
+
+    nav a.active .menu-icon {
+        font-size: 18px;
+    }
+
+    .topbar {
+        padding: 15px;
+    }
+
+    .topbar h2 {
+        font-size: 15px;
+    }
+
+    .user-info span {
+        display: none;
+    }
+
+    .content {
+        padding: 20px 15px;
+    }
+
+    .page-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .panel {
+        padding: 15px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .clear-btn,
+    .save-btn {
+        width: 100%;
+    }
+
+    .topbar p {
+        font-size: 10px;
+    }
+
+}

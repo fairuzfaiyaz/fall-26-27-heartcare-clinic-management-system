@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Lab Results | HeartCare</title>
+
+    <link rel="stylesheet" href="../assets/css/add-labresult.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                Heart<span>Care</span>
+            </div>
+
+            <div class="profile">
+                <div class="avatar">LT</div>
+                <div>
+                    <h3>Aurpita Roy</h3>
+                    <p>Laboratory Department</p>
+                </div>
+            </div>
+
+            <p class="menu-title">MAIN MENU</p>
+
+            <nav>
+                <a class="sidebar-link" href="dashboard.html">
+                    <span class="nav-icon">▦</span>
+                    Dashboard
+                </a>
+                <a class="sidebar-link" href="lab-queue.html">
+
+                    ☷ Lab Queue
+                </a>
+                <a class="sidebar-link is-active" href="add-labresult.html">
+
+                    ✚ Add Test Result
+                </a>
+                <a class="sidebar-link" href="manage-labresult.html">
+
+                    ▤ Manage Results
+                </a>
+                <a class="sidebar-link" href="test-catalogue.html">
+
+                    ♧ Test Catalogue
+                </a>
+                <a class="sidebar-link" href="lab-reports.html">
+
+                    ▣ Lab Reports
+                </a>
+
+
+
+                <p class="menu-title">ACCOUNT</p>
+                <a class="sidebar-link" href="profile.html">
+                    ♙My Profile
+                </a>
+
+                <a class="sidebar-link sidebar-link--logout" href="../auth/login.html">
+                    Log out
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                HeartCare Hospital
+                <small>Laboratory Management System</small>
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <div>
+                    <h2>Good Morning, Aurpita</h2>
+                    <p>Welcome back, Lab Technician</p>
+                </div>
+
+                <div class="header-right">
+
+                    <button class="notification">♧</button>
+
+                    <div class="user-info">
+                        <div class="small-avatar">LT</div>
+                        <span>Lab Technician</span>
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- CONTENT -->
+            <section class="content">
+
+                <div class="page-heading">
+
+                    <div>
+                        <h1>Add Lab Results</h1>
+                        <p>Create, view and amend eligible result records</p>
+                    </div>
+
+                    <div class="breadcrumb">
+                        Dashboard / Add Test Result
+                    </div>
+
+                </div>
+
+
+                <div class="main-grid">
+
+                    <!-- LEFT SIDE -->
+                    <div class="left-content">
+
+                        <!-- PATIENT INFORMATION -->
+                        <div class="panel">
+
+                            <div class="panel-header">
+                                <div>
+                                    <h3>Patient Information</h3>
+                                    <p>Enter or identify the patient details</p>
+                                </div>
+                            </div>
+
+                            <div class="form-grid">
+
+                                <div class="form-group">
+                                    <label>Patient ID</label>
+                                    <input type="text" placeholder="Enter patient ID">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Patient Name</label>
+                                    <input type="text" placeholder="Enter patient name">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Age</label>
+                                    <input type="number" placeholder="Enter age">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Gender</label>
+                                    <select>
+                                        <option value="">Select gender</option>
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- LAB ORDER INFORMATION -->
+                        <div class="panel">
+
+                            <div class="panel-header">
+                                <div>
+                                    <h3>Lab Order Information</h3>
+                                    <p>Provide the associated laboratory order details</p>
+                                </div>
+                            </div>
+
+                            <div class="form-grid">
+
+                                <div class="form-group">
+                                    <label>Order ID</label>
+                                    <input type="text" placeholder="Enter order ID">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Doctor Name</label>
+                                    <input type="text" placeholder="Enter doctor name">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Sample Collection Date</label>
+                                    <input type="date">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Sample Type</label>
+                                    <select>
+                                        <option value="">Select sample type</option>
+                                        <option>Blood</option>
+                                        <option>Urine</option>
+                                        <option>Serum</option>
+                                        <option>Plasma</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- TEST RESULT DETAILS -->
+                        <div class="panel">
+
+                            <div class="panel-header">
+                                <div>
+                                    <h3>Test Result Details</h3>
+                                    <p>Enter the laboratory test result and reference information</p>
+                                </div>
+                            </div>
+
+                            <div class="form-grid">
+
+                                <div class="form-group">
+                                    <label>Test Name</label>
+                                    <select>
+                                        <option value="">Select laboratory test</option>
+                                        <option>Complete Blood Count</option>
+                                        <option>Hemoglobin</option>
+                                        <option>Blood Glucose (Fasting)</option>
+                                        <option>Serum Creatinine</option>
+                                        <option>Lipid Profile</option>
+                                        <option>Urine Routine Examination</option>
+                                        <option>TSH</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Test Code</label>
+                                    <input type="text" placeholder="Enter test code">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Result Value</label>
+                                    <input type="text" placeholder="Enter result value">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Unit</label>
+                                    <input type="text" placeholder="e.g. mg/dL, g/dL">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Reference Range</label>
+                                    <input type="text" placeholder="Enter reference range">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Result Status</label>
+                                    <select>
+                                        <option value="">Select result status</option>
+                                        <option>Normal</option>
+                                        <option>Abnormal</option>
+                                        <option>Critical</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group full-width">
+                                    <label>Technician Remarks</label>
+                                    <textarea rows="4"
+                                        placeholder="Enter additional notes or observations..."></textarea>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- FORM BUTTONS -->
+                        <div class="form-actions">
+
+                            <button type="reset" class="clear-btn">
+                                Clear Form
+                            </button>
+
+                            <button type="button" class="save-btn">
+                                Save Lab Result
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- RIGHT SIDE -->
+                    <div class="right-content">
+
+                        <!-- RESULT GUIDELINES -->
+                        <div class="panel">
+
+                            <div class="panel-header">
+                                <div>
+                                    <h3>Result Guidelines</h3>
+                                    <p>Important information</p>
+                                </div>
+                            </div>
+
+                            <div class="guideline-list">
+
+                                <div class="guideline-item">
+
+                                    <span class="guide-icon blue-bg">
+                                        <svg viewBox="0 0 24 24">
+                                            <path d="M5 12.5L10 17L19 7" />
+                                        </svg>
+                                    </span>
+
+                                    <div>
+                                        <strong>Verify Patient</strong>
+                                        <p>Confirm patient ID before entering results.</p>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="guideline-item">
+
+                                    <span class="guide-icon green-bg">
+                                        <svg viewBox="0 0 24 24">
+                                            <path d="M9 3H15" />
+                                            <path d="M10 3V9L5 18C4 20 6 21 8 21H16C18 21 20 20 19 18L14 9V3" />
+                                            <path d="M7 16H17" />
+                                        </svg>
+                                    </span>
+
+                                    <div>
+                                        <strong>Check Test Details</strong>
+                                        <p>Ensure the selected test matches the lab order.</p>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="guideline-item">
+
+                                    <span class="guide-icon orange-bg">
+                                        <svg viewBox="0 0 24 24">
+                                            <path d="M12 8V13" />
+                                            <path d="M12 17H12.01" />
+                                            <path
+                                                d="M10.3 3.8L2.7 17C1.8 18.6 3 20.5 4.8 20.5H19.2C21 20.5 22.2 18.6 21.3 17L13.7 3.8C12.9 2.3 11.1 2.3 10.3 3.8Z" />
+                                        </svg>
+                                    </span>
+
+                                    <div>
+                                        <strong>Verify Result</strong>
+                                        <p>Check result values and units before saving.</p>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="guideline-item">
+
+                                    <span class="guide-icon purple-bg">
+                                        <svg viewBox="0 0 24 24">
+                                            <path d="M4 12L9 17L20 6" />
+                                            <path d="M20 12V19H4V5H16" />
+                                        </svg>
+                                    </span>
+
+                                    <div>
+                                        <strong>Review Before Submit</strong>
+                                        <p>Review all information before final submission.</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- RECENT RESULTS -->
+                        <div class="panel">
+
+                            <div class="panel-header">
+                                <div>
+                                    <h3>Recent Lab Results</h3>
+                                    <p>Recently entered results</p>
+                                </div>
+
+                                <a href="#">View All</a>
+                            </div>
+
+                            <div class="recent-list">
+
+                                <div class="recent-item">
+                                    <div>
+                                        <strong>Hemoglobin</strong>
+                                        <p>Patient: P-1024</p>
+                                        <small>Today, 10:30 AM</small>
+                                    </div>
+
+                                    <span class="result-badge normal">Normal</span>
+                                </div>
+
+                                <div class="recent-item">
+                                    <div>
+                                        <strong>Blood Glucose</strong>
+                                        <p>Patient: P-1031</p>
+                                        <small>Today, 09:45 AM</small>
+                                    </div>
+
+                                    <span class="result-badge abnormal">Abnormal</span>
+                                </div>
+
+                                <div class="recent-item">
+                                    <div>
+                                        <strong>Serum Creatinine</strong>
+                                        <p>Patient: P-1018</p>
+                                        <small>Yesterday, 04:20 PM</small>
+                                    </div>
+
+                                    <span class="result-badge normal">Normal</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- RESULT OVERVIEW -->
+                        <div class="panel">
+
+                            <div class="panel-header">
+                                <div>
+                                    <h3>Result Overview</h3>
+                                    <p>Today's result summary</p>
+                                </div>
+                            </div>
+
+                            <div class="overview-item">
+                                <span>
+                                    <i class="overview-dot normal-dot"></i>
+                                    Normal Results
+                                </span>
+                                <strong>20</strong>
+                            </div>
+
+                            <div class="overview-item">
+                                <span>
+                                    <i class="overview-dot abnormal-dot"></i>
+                                    Abnormal Results
+                                </span>
+                                <strong>08</strong>
+                            </div>
+
+                            <div class="overview-item">
+                                <span>
+                                    <i class="overview-dot pending-dot"></i>
+                                    Pending Verification
+                                </span>
+                                <strong>04</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+            <footer>
+                © 2026 HeartCare Hospital. All rights reserved.
+            </footer>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
