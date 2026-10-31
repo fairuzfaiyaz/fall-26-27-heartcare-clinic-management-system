@@ -1,0 +1,389 @@
+/* =========================================
+   CONSULTATION PAGE DESIGN
+========================================= */
+
+body {
+  background: #f4f7fb;
+}
+
+/* Patient Details */
+
+.patient-details {
+  display: none;
+  margin-top: 22px;
+}
+
+.patient-details:target {
+  display: block;
+}
+
+body:has(.patient-details:target) #patient-list {
+  display: none;
+}
+
+/* =========================================
+   PATIENT CONSULTATION TABLE
+========================================= */
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 10px;
+}
+
+.consultation-table {
+  width: 100%;
+  min-width: 750px;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+.consultation-table thead {
+  background: #edf4f8;
+}
+
+.consultation-table th {
+  padding: 17px 15px;
+  color: #354b63;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: left;
+  border-bottom: 1px solid #e1eaf1;
+}
+
+.consultation-table td {
+  padding: 18px 15px;
+  color: #52647a;
+  font-size: 14px;
+  border-bottom: 1px solid #edf1f5;
+}
+
+.consultation-table tbody tr:hover td {
+  background: #f5faff;
+}
+
+.consultation-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* =========================================
+   VIEW DETAILS BUTTON
+========================================= */
+
+.view-btn {
+  display: inline-block;
+  padding: 9px 15px;
+  background: #e5f3f8;
+  color: #176b87;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 7px;
+  transition: 0.3s;
+}
+
+.view-btn:hover {
+  background: #176b87;
+  color: #ffffff;
+}
+
+/* =========================================
+   STATUS BADGES
+========================================= */
+
+.status {
+  display: inline-block;
+  min-width: 75px;
+  padding: 7px 12px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.completed {
+  background: #e2f6e9;
+  color: #218653;
+}
+
+.pending {
+  background: #fff2d8;
+  color: #b77a15;
+}
+
+.confirmed {
+  background: #e4efff;
+  color: #2871c7;
+}
+
+/* =========================================
+   BACK TO PATIENT LIST
+========================================= */
+
+.back-btn {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #176b87;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  color: #104b60;
+}
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.sub-heading {
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  color: #263957;
+  font-size: 17px;
+  font-weight: 700;
+  border-bottom: 1px solid #e6edf3;
+}
+
+.sub-heading::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 50px;
+  height: 3px;
+  background: #2193b0;
+  border-radius: 5px;
+}
+
+/* =========================================
+   PATIENT INFORMATION
+========================================= */
+
+.patient-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  padding: 5px 0;
+}
+
+.patient-info-grid > div {
+  padding: 18px;
+  background: #f7fafd;
+  border: 1px solid #e6edf3;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.patient-info-grid > div:hover {
+  background: #edf6fa;
+  border-color: #c8e0eb;
+}
+
+.patient-info-grid label {
+  display: block;
+  margin-bottom: 9px;
+  color: #7a899c;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.patient-info-grid p {
+  margin: 0;
+  color: #263957;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* =========================================
+   PATIENT VITAL SIGNS
+========================================= */
+
+.vitals-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.vital-card {
+  padding: 23px 15px;
+  text-align: center;
+  background: #f1f7fb;
+  border: 1px solid #e0ebf3;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.vital-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(35, 90, 120, 0.1);
+}
+
+.vital-card span {
+  display: block;
+  margin-bottom: 12px;
+  color: #708198;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.vital-card strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #176b87;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.vital-card small {
+  color: #8795a7;
+  font-size: 12px;
+}
+
+/* =========================================
+   CONSULTATION FORM
+========================================= */
+
+.consultation-form {
+  margin-top: 22px;
+}
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  color: #354761;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.form-group textarea {
+  display: block;
+  width: 100%;
+  min-height: 105px;
+  padding: 15px;
+  box-sizing: border-box;
+  background: #fbfdff;
+  border: 1px solid #dce6ef;
+  border-radius: 9px;
+  outline: none;
+  resize: vertical;
+  color: #263957;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.6;
+  transition: 0.3s;
+}
+
+.form-group textarea:focus {
+  background: #ffffff;
+  border-color: #2193b0;
+  box-shadow: 0 0 0 3px rgba(33, 147, 176, 0.1);
+}
+
+.form-group textarea::placeholder {
+  color: #a4afbd;
+}
+
+/* =========================================
+   CLEAR & SAVE BUTTONS
+========================================= */
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 14px;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid #edf1f5;
+}
+
+.clear-btn,
+.save-btn {
+  min-width: 140px;
+  padding: 13px 22px;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Clear Button */
+
+.clear-btn {
+  background: #edf1f5;
+  color: #596a80;
+  border: 1px solid #e1e7ee;
+}
+
+.clear-btn:hover {
+  background: #dce4ed;
+  color: #34445b;
+}
+
+/* Save Button */
+
+.save-btn {
+  background: #176b87;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(23, 107, 135, 0.15);
+}
+
+.save-btn:hover {
+  background: #10546c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(23, 107, 135, 0.2);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 992px) {
+  .patient-info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .vitals-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .patient-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vitals-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .vital-card {
+    padding: 18px 10px;
+  }
+
+  .vital-card strong {
+    font-size: 22px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .clear-btn,
+  .save-btn {
+    width: 100%;
+  }
+}

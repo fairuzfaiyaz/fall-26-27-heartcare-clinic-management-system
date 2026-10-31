@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>My Appointments | HeartCare</title>
+
+    <link rel="stylesheet" href="../assets/css/doctor-dashboard.css" />
+    <link rel="stylesheet" href="../assets/css/doctorMy-appoinments.css" />
+  </head>
+
+  <body class="doctor-dashboard">
+    <div class="dashboard-layout">
+      <!-- SIDEBAR -->
+      <aside class="dashboard-sidebar">
+        <a class="dashboard-brand" href="../index.html">
+          <span class="dashboard-brand__icon">&hearts;</span>
+          <span>HeartCare</span>
+        </a>
+
+        <div class="sidebar-profile">
+          <div class="avatar">BP</div>
+
+          <div>
+            <strong>Dr. Badhon Pal</strong>
+            <span>Cardiology Department</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <p class="sidebar-label">WORKSPACE</p>
+
+          <a class="sidebar-link" href="dashboard.html"> Dashboard </a>
+
+          <a class="sidebar-link" href="myProfile.html"> My Profile </a>
+
+          <a class="sidebar-link" href="my_schedule.html"> My Schedule </a>
+
+          <a class="sidebar-link is-active" href="my_appointments.html">
+            My Appointments
+          </a>
+
+          <a class="sidebar-link" href="consultation.html"> Consultation </a>
+
+          <a class="sidebar-link" href="prescription.html"> Prescriptions </a>
+
+          <a class="sidebar-link" href="order_tests.html"> Laboratory Tests </a>
+
+          <a class="sidebar-link" href="patient_timeline.html">
+            Patient Timeline
+          </a>
+        </nav>
+
+        <a class="sidebar-link sidebar-link--logout" href="../auth/login.html">
+          Log out
+        </a>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="dashboard-main">
+        <div class="dashboard-content">
+          <!-- PAGE HEADER -->
+          <section class="welcome-section">
+            <div>
+              <p class="section-eyebrow">PATIENT MANAGEMENT</p>
+
+              <h1>My Appointments</h1>
+
+              <p class="welcome-description">
+                View and manage your patient appointments.
+              </p>
+            </div>
+          </section>
+
+          <!-- SUMMARY CARDS -->
+          <section class="summary-grid">
+            <article class="summary-card">
+              <div class="summary-card__top">
+                <span class="summary-icon summary-icon--blue">▣</span>
+                <span class="summary-caption">Today</span>
+              </div>
+
+              <p class="summary-value">08</p>
+              <h2>Total Appointments</h2>
+            </article>
+
+            <article class="summary-card">
+              <div class="summary-card__top">
+                <span class="summary-icon summary-icon--gold">◷</span>
+                <span class="summary-caption">Waiting</span>
+              </div>
+
+              <p class="summary-value">03</p>
+              <h2>Pending</h2>
+            </article>
+
+            <article class="summary-card">
+              <div class="summary-card__top">
+                <span class="summary-icon summary-icon--green">✓</span>
+                <span class="summary-caption">Completed</span>
+              </div>
+
+              <p class="summary-value">05</p>
+              <h2>Completed</h2>
+            </article>
+          </section>
+
+          <!-- APPOINTMENT TABLE -->
+          <section class="panel appointment-panel">
+            <div class="panel-header">
+              <div>
+                <p class="section-eyebrow">APPOINTMENT LIST</p>
+                <h2>All Appointments</h2>
+              </div>
+            </div>
+
+            <div class="table-wrapper">
+              <table class="data-table appointment-table">
+                <thead>
+                  <tr>
+                    <th>Patient Name</th>
+                    <th>Patient ID</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Reason</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td><strong>Fairuz Ahmed</strong></td>
+                    <td>HC-P-00125</td>
+                    <td>31 Oct 2026</td>
+                    <td>09:00 AM</td>
+                    <td>Follow-up</td>
+                    <td>
+                      <span class="appointment-status confirmed">
+                        Confirmed
+                      </span>
+                    </td>
+                    <td>
+                      <a href="consultation.html" class="view-link"> View </a>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><strong>Nusrat Jahan</strong></td>
+                    <td>HC-P-00131</td>
+                    <td>31 Oct 2026</td>
+                    <td>09:30 AM</td>
+                    <td>General Checkup</td>
+                    <td>
+                      <span class="appointment-status pending"> Pending </span>
+                    </td>
+                    <td>
+                      <a href="consultation.html" class="view-link"> View </a>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><strong>Mahmud Hasan</strong></td>
+                    <td>HC-P-00142</td>
+                    <td>31 Oct 2026</td>
+                    <td>10:00 AM</td>
+                    <td>Heart Checkup</td>
+                    <td>
+                      <span class="appointment-status pending"> Pending </span>
+                    </td>
+                    <td>
+                      <a href="consultation.html" class="view-link"> View </a>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><strong>Sumaiya Akter</strong></td>
+                    <td>HC-P-00150</td>
+                    <td>31 Oct 2026</td>
+                    <td>10:30 AM</td>
+                    <td>Chest Pain</td>
+                    <td>
+                      <span class="appointment-status completed">
+                        Completed
+                      </span>
+                    </td>
+                    <td>
+                      <a href="consultation.html" class="view-link"> View </a>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><strong>Rahim Uddin</strong></td>
+                    <td>HC-P-00155</td>
+                    <td>31 Oct 2026</td>
+                    <td>11:00 AM</td>
+                    <td>Blood Pressure</td>
+                    <td>
+                      <span class="appointment-status completed">
+                        Completed
+                      </span>
+                    </td>
+                    <td>
+                      <a href="consultation.html" class="view-link"> View </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- FOOTER -->
+          <footer class="dashboard-footer">
+            <p>
+              &copy; 2026 HeartCare Clinic Management System. Academic project
+              demonstration.
+            </p>
+          </footer>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

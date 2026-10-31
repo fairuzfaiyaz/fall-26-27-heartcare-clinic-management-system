@@ -1,0 +1,173 @@
+/* ==============================
+   MY SCHEDULE PAGE
+============================== */
+
+.schedule-management,
+.today-schedule {
+  margin-top: 28px;
+}
+
+/* Schedule Label */
+
+.schedule-label {
+  display: inline-block;
+  padding: 8px 14px;
+  background: #eaf3ff;
+  color: #2463a5;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Weekly Schedule Table */
+
+.schedule-table {
+  width: 100%;
+  min-width: 650px;
+  border-collapse: collapse;
+}
+
+.schedule-table th {
+  background: #f3f7fc;
+  color: #52647a;
+  padding: 16px;
+  text-align: left;
+  font-size: 13px;
+}
+
+.schedule-table td {
+  padding: 17px 16px;
+  border-bottom: 1px solid #edf0f5;
+  color: #526174;
+  font-size: 14px;
+}
+
+.schedule-table tbody tr:hover {
+  background: #f8fbff;
+}
+
+/* Availability Status */
+
+.schedule-status {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.schedule-status.available {
+  background: #e6f7ee;
+  color: #18864b;
+}
+
+.schedule-status.unavailable {
+  background: #fdeaea;
+  color: #d33b3b;
+}
+
+/* ==============================
+   TODAY'S TIMELINE
+============================== */
+
+.timeline {
+  margin-top: 20px;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 25px;
+  padding: 20px 0;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.timeline-item:last-child {
+  border-bottom: none;
+}
+
+.timeline-time {
+  min-width: 95px;
+  color: #2463a5;
+  font-size: 14px;
+  font-weight: 700;
+  padding-top: 3px;
+}
+
+.timeline-content {
+  position: relative;
+  padding-left: 22px;
+  border-left: 3px solid #d9e8fa;
+}
+
+.timeline-content h3 {
+  margin: 0 0 7px;
+  color: #1b2d45;
+  font-size: 16px;
+}
+
+.timeline-content p {
+  margin: 0 0 10px;
+  color: #718096;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Timeline Tags */
+
+.timeline-tag {
+  display: inline-block;
+  padding: 5px 11px;
+  background: #eaf3ff;
+  color: #2463a5;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.break-tag {
+  background: #fff4df;
+  color: #b7791f;
+}
+
+.end-tag {
+  background: #e6f7ee;
+  color: #18864b;
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+============================== */
+
+@media (max-width: 768px) {
+  .schedule-table {
+    min-width: 650px;
+  }
+
+  .timeline-item {
+    gap: 12px;
+  }
+
+  .timeline-time {
+    min-width: 80px;
+    font-size: 12px;
+  }
+
+  .timeline-content h3 {
+    font-size: 14px;
+  }
+
+  .timeline-content p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-item {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .timeline-content {
+    margin-left: 2px;
+  }
+}

@@ -1,0 +1,591 @@
+/* =====================================
+   PATIENT TIMELINE PAGE
+===================================== */
+
+.timeline-description {
+  color: #7a899c;
+  font-size: 14px;
+  margin-top: 9px;
+}
+
+.timeline-search-panel,
+.patient-overview,
+.vital-overview,
+.medical-timeline-panel {
+  padding: 25px;
+  margin-bottom: 23px;
+}
+
+/* =====================================
+   SEARCH PATIENT
+===================================== */
+
+.timeline-panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.timeline-panel-heading h2 {
+  color: #263957;
+  font-size: 20px;
+  margin: 5px 0;
+}
+
+.timeline-panel-heading p {
+  color: #8290a3;
+  font-size: 13px;
+  margin: 6px 0 0;
+}
+
+.patient-search-form {
+  display: flex;
+  gap: 12px;
+}
+
+.patient-search-form input {
+  flex: 1;
+  min-width: 0;
+  height: 45px;
+  padding: 10px 14px;
+  border: 1px solid #dce6ef;
+  border-radius: 8px;
+  outline: none;
+  font-size: 13px;
+  box-sizing: border-box;
+}
+
+.patient-search-form input:focus {
+  border-color: #159bb8;
+}
+
+.timeline-search-btn {
+  padding: 0 22px;
+  background: #176b87;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.timeline-search-btn:hover {
+  background: #10546c;
+}
+
+/* =====================================
+   PATIENT OVERVIEW
+===================================== */
+
+.patient-overview-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #e8edf2;
+}
+
+.patient-avatar {
+  width: 65px;
+  height: 65px;
+  min-width: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e5f3fa;
+  color: #176b87;
+  border-radius: 50%;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.patient-main-info {
+  flex: 1;
+}
+
+.patient-main-info h2 {
+  margin: 0 0 6px;
+  color: #263957;
+  font-size: 21px;
+}
+
+.patient-main-info p {
+  margin: 0 0 8px;
+  color: #8492a4;
+  font-size: 13px;
+}
+
+.patient-active-status {
+  display: inline-block;
+  padding: 5px 10px;
+  background: #e5f6ed;
+  color: #168454;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.timeline-print-btn {
+  padding: 10px 15px;
+  background: #edf4f8;
+  color: #176b87;
+  border: 1px solid #dceaf1;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.timeline-print-btn:hover {
+  background: #dceef5;
+}
+
+/* =====================================
+   PATIENT DETAILS
+===================================== */
+
+.patient-details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  padding-top: 22px;
+}
+
+.patient-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.patient-detail-item span {
+  color: #8492a4;
+  font-size: 12px;
+}
+
+.patient-detail-item strong {
+  color: #354761;
+  font-size: 13px;
+}
+
+/* =====================================
+   VITAL SIGNS
+===================================== */
+
+.latest-date {
+  padding: 8px 12px;
+  background: #edf4f8;
+  color: #176b87;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.vital-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.vital-summary-card {
+  padding: 18px;
+  background: #fbfdff;
+  border: 1px solid #e8edf2;
+  border-radius: 10px;
+}
+
+.vital-icon {
+  width: 37px;
+  height: 37px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  border-radius: 9px;
+  font-size: 19px;
+}
+
+.bp-icon {
+  background: #ffe9eb;
+  color: #d94c5c;
+}
+
+.heart-icon {
+  background: #e9f1ff;
+  color: #477bd1;
+}
+
+.temp-icon {
+  background: #fff2df;
+  color: #e99a30;
+}
+
+.weight-icon {
+  background: #e5f6ed;
+  color: #249b65;
+}
+
+.vital-summary-card span {
+  display: block;
+  color: #8492a4;
+  font-size: 12px;
+}
+
+.vital-summary-card h3 {
+  margin: 8px 0 3px;
+  color: #263957;
+  font-size: 23px;
+}
+
+.vital-summary-card small {
+  color: #9aa6b5;
+  font-size: 11px;
+}
+
+/* =====================================
+   TIMELINE HEADING
+===================================== */
+
+.timeline-subtitle {
+  color: #8290a3;
+  font-size: 13px;
+  margin-top: 7px;
+}
+
+.timeline-count {
+  padding: 8px 13px;
+  background: #e5f3fa;
+  color: #176b87;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* =====================================
+   TIMELINE FILTER
+===================================== */
+
+.timeline-filter {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+  padding-bottom: 17px;
+  border-bottom: 1px solid #e8edf2;
+}
+
+.timeline-filter span {
+  color: #8492a4;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.timeline-filter a {
+  padding: 7px 12px;
+  color: #64758a;
+  background: #f3f6f9;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.timeline-filter a:hover,
+.timeline-filter a.filter-active {
+  background: #176b87;
+  color: #ffffff;
+}
+
+/* =====================================
+   TIMELINE STRUCTURE
+===================================== */
+
+.timeline-container {
+  position: relative;
+  padding-left: 35px;
+}
+
+.timeline-container::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  bottom: 15px;
+  left: 12px;
+  width: 2px;
+  background: #dce8ef;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-marker {
+  position: absolute;
+  top: 5px;
+  left: -35px;
+  width: 27px;
+  height: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 800;
+  z-index: 1;
+}
+
+.consultation-marker {
+  background: #e1f2fb;
+  color: #2384ae;
+}
+
+.prescription-marker {
+  background: #f0eaff;
+  color: #8057bb;
+}
+
+.lab-marker {
+  background: #e4f6eb;
+  color: #279660;
+}
+
+.timeline-date {
+  margin-bottom: 10px;
+  color: #8290a3;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* =====================================
+   TIMELINE CARDS
+===================================== */
+
+.timeline-card {
+  padding: 19px;
+  background: #ffffff;
+  border: 1px solid #e7edf2;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+.timeline-card:hover {
+  border-color: #c5dce8;
+  box-shadow: 0 5px 15px rgba(30, 55, 85, 0.05);
+}
+
+.record-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.record-heading h3 {
+  margin: 8px 0 0;
+  color: #263957;
+  font-size: 16px;
+}
+
+.record-type {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+}
+
+.consultation-type {
+  background: #e5f3fa;
+  color: #267da2;
+}
+
+.prescription-type {
+  background: #f0eaff;
+  color: #8057bb;
+}
+
+.laboratory-type {
+  background: #e5f6ed;
+  color: #249b65;
+}
+
+/* =====================================
+   RECORD STATUS
+===================================== */
+
+.record-status {
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.completed-status {
+  background: #e5f6ed;
+  color: #168454;
+}
+
+.active-status {
+  background: #e5f3fa;
+  color: #176b87;
+}
+
+/* =====================================
+   RECORD INFORMATION
+===================================== */
+
+.record-information {
+  padding-top: 12px;
+  border-top: 1px solid #edf1f5;
+}
+
+.record-information p {
+  margin: 9px 0;
+  color: #728197;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.record-information strong {
+  color: #354761;
+}
+
+/* =====================================
+   TIMELINE ACTION
+===================================== */
+
+.timeline-action {
+  display: inline-block;
+  margin-top: 9px;
+  padding: 8px 12px;
+  background: #edf6fa;
+  color: #176b87;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.timeline-action:hover {
+  background: #dceef5;
+}
+
+/* =====================================
+   PRINT
+===================================== */
+
+@media print {
+  .dashboard-sidebar,
+  .welcome-section,
+  .timeline-search-panel,
+  .timeline-print-btn,
+  .timeline-filter,
+  .dashboard-footer {
+    display: none !important;
+  }
+
+  .dashboard-main {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .dashboard-content {
+    padding: 0;
+  }
+
+  .patient-overview,
+  .vital-overview,
+  .medical-timeline-panel {
+    box-shadow: none;
+    border: 1px solid #dddddd;
+    break-inside: avoid;
+  }
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 1000px) {
+  .vital-summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .patient-details-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .timeline-search-panel,
+  .patient-overview,
+  .vital-overview,
+  .medical-timeline-panel {
+    padding: 16px;
+  }
+
+  .patient-search-form {
+    flex-direction: column;
+  }
+
+  .timeline-search-btn {
+    min-height: 43px;
+  }
+
+  .patient-overview-header {
+    flex-wrap: wrap;
+  }
+
+  .patient-overview-actions {
+    width: 100%;
+  }
+
+  .timeline-print-btn {
+    width: 100%;
+  }
+
+  .patient-details-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 12px;
+  }
+
+  .vital-summary-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .record-heading {
+    flex-direction: column;
+  }
+
+  .timeline-panel-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .timeline-container {
+    padding-left: 30px;
+  }
+
+  .timeline-marker {
+    left: -30px;
+  }
+
+  .timeline-container::before {
+    left: 10px;
+  }
+}

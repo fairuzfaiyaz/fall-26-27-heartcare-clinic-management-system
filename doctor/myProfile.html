@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Doctor Profile | HeartCare</title>
+
+    <link rel="stylesheet" href="../assets/css/doctorProfile.css" />
+  </head>
+
+  <body>
+    <div class="dashboard-layout">
+      <!-- SIDEBAR -->
+      <aside class="dashboard-sidebar">
+        <a class="dashboard-brand" href="doctor-dashboard.html">
+          <span class="brand-icon">♥</span>
+          <span>HeartCare</span>
+        </a>
+
+        <div class="sidebar-profile">
+          <div class="avatar">BP</div>
+
+          <div>
+            <strong>Dr. Badhon Pal </strong>
+            <span>Cardiology Department</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <p class="sidebar-label">WORKSPACE</p>
+
+          <a class="sidebar-link" href="dashboard.html">
+            <span class="nav-icon">▦</span>
+            Dashboard
+          </a>
+
+          <a class="sidebar-link is-active" href="myProfile.html">
+            <span class="nav-icon">♙</span>
+            My Profile
+          </a>
+
+          <a class="sidebar-link" href="my_schedule.html">
+            <span class="nav-icon">▣</span>
+            My Schedule
+          </a>
+
+          <a class="sidebar-link" href="my_appointments.html">
+            <span class="nav-icon">☷</span>
+            My Appointments
+          </a>
+
+          <a class="sidebar-link" href="consultation.html">
+            <span class="nav-icon">✚</span>
+            Consultation
+          </a>
+
+          <a class="sidebar-link" href="prescription.html">
+            <span class="nav-icon">▤</span>
+            Prescriptions
+          </a>
+
+          <a class="sidebar-link" href="order_tests.html">
+            <span class="nav-icon">⚕</span>
+            Laboratory Tests
+          </a>
+
+          <a class="sidebar-link" href="patient_timeline.html">
+            <span class="nav-icon">◷</span>
+            Patient Timeline
+          </a>
+        </nav>
+
+        <a class="sidebar-link sidebar-link--logout" href="../auth/login.html">
+          Log out
+        </a>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="dashboard-main">
+        <!-- TOPBAR -->
+
+        <!-- PROFILE CONTENT -->
+        <div class="profile-content">
+          <!-- PAGE HEADING -->
+          <section class="page-heading">
+            <div>
+              <p class="section-eyebrow">ACCOUNT MANAGEMENT</p>
+
+              <h1>My Profile</h1>
+
+              <p>Manage your personal and professional information.</p>
+            </div>
+
+            <a href="dashboard.html" class="back-button">
+              ← Back to Dashboard
+            </a>
+          </section>
+
+          <!-- PROFILE HEADER CARD -->
+          <section class="profile-header-card">
+            <div class="profile-avatar">AR</div>
+
+            <div class="profile-header-info">
+              <span class="verified-badge"> ● Verified Doctor </span>
+
+              <h2>Dr. Ahmed Rahman</h2>
+
+              <p>Cardiologist | HeartCare Clinic</p>
+
+              <div class="profile-meta">
+                <span>✉ ahmed.rahman@email.com</span>
+                <span>☎ +880 1712-345678</span>
+              </div>
+            </div>
+
+            <a href="#edit-profile" class="edit-button"> ✎ Edit Profile </a>
+          </section>
+
+          <!-- PERSONAL INFORMATION -->
+          <section class="profile-card" id="edit-profile">
+            <div class="card-heading">
+              <div>
+                <h2>Personal Information</h2>
+                <p>Your basic personal details</p>
+              </div>
+
+              <span class="card-icon">♙</span>
+            </div>
+
+            <div class="profile-form">
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" value="Dr. Ahmed Rahman" />
+              </div>
+
+              <div class="form-group">
+                <label>Gender</label>
+                <select>
+                  <option selected>Male</option>
+                  <option>Female</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Date of Birth</label>
+                <input type="date" value="1985-05-15" />
+              </div>
+
+              <div class="form-group">
+                <label>Blood Group</label>
+                <select>
+                  <option>A+</option>
+                  <option>A-</option>
+                  <option selected>B+</option>
+                  <option>B-</option>
+                  <option>AB+</option>
+                  <option>AB-</option>
+                  <option>O+</option>
+                  <option>O-</option>
+                </select>
+              </div>
+            </div>
+          </section>
+
+          <!-- CONTACT INFORMATION -->
+          <section class="profile-card">
+            <div class="card-heading">
+              <div>
+                <h2>Contact Information</h2>
+                <p>Your contact and communication details</p>
+              </div>
+
+              <span class="card-icon">✉</span>
+            </div>
+
+            <div class="profile-form">
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" value="ahmed.rahman@email.com" />
+              </div>
+
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" value="+880 1712-345678" />
+              </div>
+
+              <div class="form-group full-width">
+                <label>Address</label>
+                <textarea rows="3">Dhanmondi, Dhaka, Bangladesh</textarea>
+              </div>
+            </div>
+          </section>
+
+          <!-- PROFESSIONAL INFORMATION -->
+          <section class="profile-card">
+            <div class="card-heading">
+              <div>
+                <h2>Professional Information</h2>
+                <p>Your medical career and qualifications</p>
+              </div>
+
+              <span class="card-icon">✚</span>
+            </div>
+
+            <div class="profile-form">
+              <div class="form-group">
+                <label>Doctor ID</label>
+                <input type="text" value="DOC-00125" readonly />
+              </div>
+
+              <div class="form-group">
+                <label>Specialization</label>
+                <input type="text" value="Cardiology" />
+              </div>
+
+              <div class="form-group">
+                <label>Qualification</label>
+                <input type="text" value="MBBS, MD (Cardiology)" />
+              </div>
+
+              <div class="form-group">
+                <label>Experience</label>
+                <input type="text" value="10 Years" />
+              </div>
+
+              <div class="form-group">
+                <label>Department</label>
+                <input type="text" value="Cardiology Department" />
+              </div>
+
+              <div class="form-group">
+                <label>Hospital</label>
+                <input type="text" value="HeartCare Clinic" />
+              </div>
+
+              <div class="form-group full-width">
+                <label>Professional Biography</label>
+
+                <textarea rows="4">
+Experienced cardiologist specializing in heart health, cardiovascular disease prevention and patient care.</textarea
+                >
+              </div>
+            </div>
+          </section>
+
+          <!-- PROFILE ACTIONS -->
+          <div class="profile-actions">
+            <a href="doctor-dashboard.html" class="cancel-button"> Cancel </a>
+
+            <button type="button" class="save-button">✓ Save Changes</button>
+          </div>
+
+          <!-- FOOTER -->
+          <footer class="dashboard-footer">
+            <p>© 2026 HeartCare Clinic Management System.</p>
+
+            <p>Doctor Portal</p>
+          </footer>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

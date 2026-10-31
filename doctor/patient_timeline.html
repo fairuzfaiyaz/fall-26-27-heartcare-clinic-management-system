@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Patient Timeline | HeartCare Clinic</title>
+
+    <link rel="stylesheet" href="../assets/css/doctor-dashboard.css" />
+    <link rel="stylesheet" href="../assets/css/doctorpatient-timeline.css" />
+  </head>
+
+  <body>
+    <div class="dashboard-layout">
+      <!-- ================= SIDEBAR ================= -->
+      <aside class="dashboard-sidebar">
+        <a class="dashboard-brand" href="doctor-dashboard.html">
+          <span class="brand-icon">♥</span>
+          <span>HeartCare</span>
+        </a>
+
+        <div class="sidebar-profile">
+          <div class="avatar">BP</div>
+
+          <div>
+            <strong>Dr. Badhon Pal </strong>
+            <span>Cardiology Department</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <p class="sidebar-label">WORKSPACE</p>
+
+          <a href="dashboard.html" class="sidebar-link"> Dashboard </a>
+
+          <a href="myProfile.html" class="sidebar-link"> My Profile </a>
+
+          <a href="my_schedule.html" class="sidebar-link"> My Schedule </a>
+
+          <a href="my_appointments.html" class="sidebar-link">
+            My Appointments
+          </a>
+
+          <a href="consultation.html" class="sidebar-link"> Consultation </a>
+
+          <a href="prescription.html" class="sidebar-link"> Prescriptions </a>
+
+          <a href="order_tests.html" class="sidebar-link"> Laboratory Tests </a>
+
+          <a href="patient_timeline.html" class="sidebar-link is-active">
+            <span class="nav-icon">◷</span>
+            Patient Timeline
+          </a>
+          <a
+            class="sidebar-link sidebar-link--logout"
+            href="../auth/login.html"
+          >
+            Log out
+          </a>
+        </nav>
+      </aside>
+
+      <!-- ================= MAIN CONTENT ================= -->
+      <main class="dashboard-main">
+        <div class="dashboard-content">
+          <!-- PAGE HEADER -->
+          <header class="welcome-section">
+            <div>
+              <p class="section-eyebrow">PATIENT MEDICAL RECORDS</p>
+              <h1>Patient Timeline</h1>
+
+              <p class="timeline-description">
+                Track patient medical history, treatments and reports.
+              </p>
+            </div>
+          </header>
+
+          <!-- ================= PATIENT SEARCH ================= -->
+          <section class="panel timeline-search-panel">
+            <div class="timeline-panel-heading">
+              <div>
+                <h2>Find Patient</h2>
+                <p>Search patient using Patient ID or name.</p>
+              </div>
+            </div>
+
+            <form action="#" method="get" class="patient-search-form">
+              <input
+                type="text"
+                name="patient_search"
+                placeholder="Enter Patient ID or Patient Name..."
+              />
+
+              <button type="submit" class="timeline-search-btn">
+                Search Patient
+              </button>
+            </form>
+          </section>
+
+          <!-- ================= PATIENT PROFILE ================= -->
+          <section class="panel patient-overview">
+            <div class="patient-overview-header">
+              <div class="patient-avatar">FA</div>
+
+              <div class="patient-main-info">
+                <h2>Fairuz Ahmed</h2>
+                <p>Patient ID: HC-P-00125</p>
+                <span class="patient-active-status"> Active Patient </span>
+              </div>
+
+              <div class="patient-overview-actions">
+                <button
+                  type="button"
+                  onclick="window.print()"
+                  class="timeline-print-btn"
+                >
+                  Print History
+                </button>
+              </div>
+            </div>
+
+            <div class="patient-details-grid">
+              <div class="patient-detail-item">
+                <span>Age</span>
+                <strong>35 Years</strong>
+              </div>
+
+              <div class="patient-detail-item">
+                <span>Gender</span>
+                <strong>Male</strong>
+              </div>
+
+              <div class="patient-detail-item">
+                <span>Blood Group</span>
+                <strong>B+</strong>
+              </div>
+
+              <div class="patient-detail-item">
+                <span>Phone Number</span>
+                <strong>017XXXXXXXX</strong>
+              </div>
+
+              <div class="patient-detail-item">
+                <span>Department</span>
+                <strong>Cardiology</strong>
+              </div>
+
+              <div class="patient-detail-item">
+                <span>First Visit</span>
+                <strong>12 March 2026</strong>
+              </div>
+            </div>
+          </section>
+
+          <!-- ================= VITAL SIGNS ================= -->
+          <section class="panel vital-overview">
+            <div class="timeline-panel-heading">
+              <div>
+                <p class="section-eyebrow">HEALTH OVERVIEW</p>
+                <h2>Latest Vital Signs</h2>
+              </div>
+
+              <span class="latest-date">31 October 2026</span>
+            </div>
+
+            <div class="vital-summary-grid">
+              <div class="vital-summary-card">
+                <div class="vital-icon bp-icon">♥</div>
+                <span>Blood Pressure</span>
+                <h3>120/80</h3>
+                <small>mmHg</small>
+              </div>
+
+              <div class="vital-summary-card">
+                <div class="vital-icon heart-icon">♡</div>
+                <span>Heart Rate</span>
+                <h3>76</h3>
+                <small>bpm</small>
+              </div>
+
+              <div class="vital-summary-card">
+                <div class="vital-icon temp-icon">♨</div>
+                <span>Temperature</span>
+                <h3>98.6</h3>
+                <small>°F</small>
+              </div>
+
+              <div class="vital-summary-card">
+                <div class="vital-icon weight-icon">⚖</div>
+                <span>Weight</span>
+                <h3>68</h3>
+                <small>kg</small>
+              </div>
+            </div>
+          </section>
+
+          <!-- ================= TIMELINE ================= -->
+          <section class="panel medical-timeline-panel">
+            <div class="timeline-panel-heading">
+              <div>
+                <p class="section-eyebrow">MEDICAL RECORD</p>
+                <h2>Medical History Timeline</h2>
+                <p class="timeline-subtitle">
+                  Complete history of patient visits and treatments.
+                </p>
+              </div>
+
+              <span class="timeline-count">4 Records</span>
+            </div>
+
+            <div class="timeline-filter">
+              <span>Filter History:</span>
+
+              <a href="#all-records" class="filter-active">All</a>
+              <a href="#consultation-records">Consultation</a>
+              <a href="#prescription-records">Prescription</a>
+              <a href="#lab-records">Laboratory</a>
+            </div>
+
+            <div class="timeline-container" id="all-records">
+              <!-- RECORD 1 -->
+              <article class="timeline-item" id="consultation-records">
+                <div class="timeline-marker consultation-marker">+</div>
+
+                <div class="timeline-content">
+                  <div class="timeline-date">31 October 2026</div>
+
+                  <div class="timeline-card">
+                    <div class="record-heading">
+                      <div>
+                        <span class="record-type consultation-type">
+                          CONSULTATION
+                        </span>
+
+                        <h3>Cardiology Follow-up</h3>
+                      </div>
+
+                      <span class="record-status completed-status">
+                        Completed
+                      </span>
+                    </div>
+
+                    <div class="record-information">
+                      <p>
+                        <strong>Doctor:</strong>
+                        Dr. Badhon Pal
+                      </p>
+
+                      <p>
+                        <strong>Diagnosis:</strong>
+                        Mild Hypertension
+                      </p>
+
+                      <p>
+                        <strong>Notes:</strong>
+                        Patient reported improvement in general condition. Blood
+                        pressure was monitored.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- RECORD 2 -->
+              <article class="timeline-item" id="prescription-records">
+                <div class="timeline-marker prescription-marker">Rx</div>
+
+                <div class="timeline-content">
+                  <div class="timeline-date">31 October 2026</div>
+
+                  <div class="timeline-card">
+                    <div class="record-heading">
+                      <div>
+                        <span class="record-type prescription-type">
+                          PRESCRIPTION
+                        </span>
+
+                        <h3>Medication Prescribed</h3>
+                      </div>
+
+                      <span class="record-status active-status"> Issued </span>
+                    </div>
+
+                    <div class="record-information">
+                      <p>
+                        <strong>Prescription ID:</strong>
+                        RX-2026-00125
+                      </p>
+
+                      <p>
+                        <strong>Prescribed By:</strong>
+                        Dr. Badhon Pal
+                      </p>
+
+                      <p>
+                        <strong>Medicine:</strong>
+                        Sample medication record
+                      </p>
+
+                      <p>
+                        <strong>Instructions:</strong>
+                        Follow the instructions written in the prescription.
+                      </p>
+                    </div>
+
+                    <a href="prescription.html" class="timeline-action">
+                      View Prescription →
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- RECORD 3 -->
+              <article class="timeline-item" id="lab-records">
+                <div class="timeline-marker lab-marker">L</div>
+
+                <div class="timeline-content">
+                  <div class="timeline-date">25 October 2026</div>
+
+                  <div class="timeline-card">
+                    <div class="record-heading">
+                      <div>
+                        <span class="record-type laboratory-type">
+                          LABORATORY
+                        </span>
+
+                        <h3>Laboratory Test Report</h3>
+                      </div>
+
+                      <span class="record-status completed-status">
+                        Completed
+                      </span>
+                    </div>
+
+                    <div class="record-information">
+                      <p>
+                        <strong>Test Order ID:</strong>
+                        LAB-00125
+                      </p>
+
+                      <p>
+                        <strong>Test Name:</strong>
+                        ECG
+                      </p>
+
+                      <p>
+                        <strong>Department:</strong>
+                        Cardiology
+                      </p>
+
+                      <p>
+                        <strong>Report Status:</strong>
+                        Report Available
+                      </p>
+                    </div>
+
+                    <a href="order_tests.html" class="timeline-action">
+                      View Test Details →
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- RECORD 4 -->
+              <article class="timeline-item">
+                <div class="timeline-marker consultation-marker">+</div>
+
+                <div class="timeline-content">
+                  <div class="timeline-date">12 March 2026</div>
+
+                  <div class="timeline-card">
+                    <div class="record-heading">
+                      <div>
+                        <span class="record-type consultation-type">
+                          FIRST VISIT
+                        </span>
+
+                        <h3>Initial Cardiology Consultation</h3>
+                      </div>
+
+                      <span class="record-status completed-status">
+                        Completed
+                      </span>
+                    </div>
+
+                    <div class="record-information">
+                      <p>
+                        <strong>Doctor:</strong>
+                        Dr. Badhon Pal
+                      </p>
+
+                      <p>
+                        <strong>Reason for Visit:</strong>
+                        Routine cardiac health check-up.
+                      </p>
+
+                      <p>
+                        <strong>Notes:</strong>
+                        Initial patient assessment and medical history
+                        collection.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <!-- ================= FOOTER ================= -->
+          <footer class="dashboard-footer">
+            <p>© 2026 HeartCare Clinic. All Rights Reserved.</p>
+          </footer>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

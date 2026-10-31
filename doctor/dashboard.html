@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="HeartCare Doctor Dashboard" />
+    <title>Doctor Dashboard | HeartCare Clinic</title>
+
+    <link rel="stylesheet" href="../assets/css/doctor-dashboard.css" />
+  </head>
+
+  <body class="doctor-dashboard">
+    <div class="dashboard-layout">
+      <!-- SIDEBAR -->
+      <aside class="dashboard-sidebar">
+        <a class="dashboard-brand" href="../index.html">
+          <span class="dashboard-brand__icon">&hearts;</span>
+          <span>HeartCare</span>
+        </a>
+
+        <div class="sidebar-profile">
+          <div class="avatar">BP</div>
+
+          <div>
+            <strong>Dr. Badhon Pal</strong>
+            <span>Cardiology Department</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <p class="sidebar-label">WORKSPACE</p>
+
+          <a class="sidebar-link is-active" href="dashboard.html">
+            <span class="nav-icon">▦</span>
+            Dashboard
+          </a>
+
+          <a class="sidebar-link" href="myProfile.html">
+            <span class="nav-icon">👤</span>
+            My Profile
+          </a>
+
+          <a class="sidebar-link" href="my_schedule.html">
+            <span class="nav-icon">▣</span>
+            My Schedule
+          </a>
+
+          <a class="sidebar-link" href="my_appointments.html">
+            <span class="nav-icon">☷</span>
+            My Appointments
+          </a>
+
+          <a class="sidebar-link" href="consultation.html">
+            <span class="nav-icon">✚</span>
+            Consultation
+          </a>
+
+          <a class="sidebar-link" href="prescription.html">
+            <span class="nav-icon">▤</span>
+            Prescriptions
+          </a>
+
+          <a class="sidebar-link" href="order_tests.html">
+            <span class="nav-icon">⚕</span>
+            Laboratory Tests
+          </a>
+
+          <a class="sidebar-link" href="patient_timeline.html">
+            <span class="nav-icon">◷</span>
+            Patient Timeline
+          </a>
+        </nav>
+
+        <a class="sidebar-link sidebar-link--logout" href="../auth/login.html">
+          Log out
+        </a>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="dashboard-main">
+        <!-- TOPBAR -->
+
+        <div class="dashboard-content">
+          <!-- WELCOME SECTION -->
+          <section class="welcome-section">
+            <div>
+              <p class="section-eyebrow">DOCTOR OVERVIEW</p>
+
+              <h1>Good morning, Dr. Badhon👋</h1>
+
+              <p class="welcome-description">
+                Here is your clinical overview, today's schedule and patient
+                activity.
+              </p>
+            </div>
+
+            <a class="primary-button" href="consultation.html">
+              + Start Consultation
+            </a>
+          </section>
+
+          <!-- SUMMARY CARDS -->
+          <section class="summary-grid">
+            <article class="summary-card">
+              <div class="summary-card__top">
+                <span class="summary-icon summary-icon--blue">▣</span>
+                <span class="summary-caption">Today</span>
+              </div>
+
+              <p class="summary-value">08</p>
+              <h2>Total Appointments</h2>
+
+              <a href="my_appointments.html"> View appointment queue &rarr; </a>
+            </article>
+
+            <article class="summary-card">
+              <div class="summary-card__top">
+                <span class="summary-icon summary-icon--red">♡</span>
+                <span class="summary-caption">Waiting</span>
+              </div>
+
+              <p class="summary-value">03</p>
+              <h2>Pending Patients</h2>
+
+              <a href="my_appointments.html"> Check patient queue &rarr; </a>
+            </article>
+
+            <article class="summary-card">
+              <div class="summary-card__top">
+                <span class="summary-icon summary-icon--gold">✚</span>
+                <span class="summary-caption">This month</span>
+              </div>
+
+              <p class="summary-value">42</p>
+              <h2>Completed Consultations</h2>
+
+              <a href="consultation.html"> View consultations &rarr; </a>
+            </article>
+
+            <article class="summary-card">
+              <div class="summary-card__top">
+                <span class="summary-icon summary-icon--green">▤</span>
+                <span class="summary-caption">This month</span>
+              </div>
+
+              <p class="summary-value">36</p>
+              <h2>Prescriptions Issued</h2>
+
+              <a href="prescription.html"> Manage prescriptions &rarr; </a>
+            </article>
+          </section>
+
+          <!-- TODAY'S APPOINTMENTS -->
+          <div class="dashboard-columns dashboard-columns--single">
+            <section class="panel schedule-panel">
+              <div class="panel-header">
+                <div>
+                  <p class="section-eyebrow">YOUR SCHEDULE</p>
+                  <h2>Today's Appointments</h2>
+                </div>
+
+                <a class="text-link" href="my_schedule.html"> View schedule </a>
+              </div>
+
+              <article class="appointment-item">
+                <div class="appointment-date">
+                  <span>OCT</span>
+                  <strong>30</strong>
+                </div>
+
+                <div class="appointment-details">
+                  <h3>Fairuz Ahmed</h3>
+
+                  <p>Patient ID: HC-P-00125 · Follow-up</p>
+
+                  <span class="appointment-time"> ◷ 09:00 AM – 09:20 AM </span>
+                </div>
+
+                <span class="status-badge status-badge--confirmed">
+                  Confirmed
+                </span>
+              </article>
+
+              <article class="appointment-item">
+                <div class="appointment-date">
+                  <span>OCT</span>
+                  <strong>30</strong>
+                </div>
+
+                <div class="appointment-details">
+                  <h3>Nusrat Jahan</h3>
+
+                  <p>Patient ID: HC-P-00131 · General checkup</p>
+
+                  <span class="appointment-time"> ◷ 09:30 AM – 09:50 AM </span>
+                </div>
+
+                <span class="status-badge status-badge--pending">
+                  Waiting
+                </span>
+              </article>
+
+              <article class="appointment-item">
+                <div class="appointment-date">
+                  <span>OCT</span>
+                  <strong>30</strong>
+                </div>
+
+                <div class="appointment-details">
+                  <h3>Mahmud Hasan</h3>
+
+                  <p>Patient ID: HC-P-00142 · Heart checkup</p>
+
+                  <span class="appointment-time"> ◷ 10:00 AM – 10:20 AM </span>
+                </div>
+
+                <span class="status-badge status-badge--pending">
+                  Waiting
+                </span>
+              </article>
+
+              <a class="secondary-button" href="my_appointments.html">
+                Open Appointment Queue
+              </a>
+            </section>
+          </div>
+
+          <!-- RECENT PATIENT QUEUE -->
+          <div class="dashboard-columns dashboard-columns--single">
+            <section class="panel queue-panel">
+              <div class="panel-header">
+                <div>
+                  <p class="section-eyebrow">PATIENT MANAGEMENT</p>
+
+                  <h2>Recent Patient Queue</h2>
+                </div>
+
+                <a class="text-link" href="my_appointments.html"> View all </a>
+              </div>
+
+              <div class="table-wrapper">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Patient</th>
+                      <th>Patient ID</th>
+                      <th>Appointment</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                      <td><strong>Fairuz Ahmed</strong></td>
+                      <td>HC-P-00125</td>
+                      <td>09:00 AM</td>
+
+                      <td>
+                        <span class="status-badge status-badge--confirmed">
+                          Confirmed
+                        </span>
+                      </td>
+
+                      <td>
+                        <a class="table-link" href="consultation.html">
+                          Open
+                        </a>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td><strong>Nusrat Jahan</strong></td>
+                      <td>HC-P-00131</td>
+                      <td>09:30 AM</td>
+
+                      <td>
+                        <span class="status-badge status-badge--pending">
+                          Waiting
+                        </span>
+                      </td>
+
+                      <td>
+                        <a class="table-link" href="consultation.html">
+                          Open
+                        </a>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td><strong>Mahmud Hasan</strong></td>
+                      <td>HC-P-00142</td>
+                      <td>10:00 AM</td>
+
+                      <td>
+                        <span class="status-badge status-badge--pending">
+                          Waiting
+                        </span>
+                      </td>
+
+                      <td>
+                        <a class="table-link" href="consultation.html">
+                          Open
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+
+          <!-- ADVANCED FEATURES -->
+          <section class="panel advanced-panel">
+            <div class="panel-header">
+              <div>
+                <p class="section-eyebrow">ADVANCED CLINICAL FEATURES</p>
+
+                <h2>Doctor Tools</h2>
+              </div>
+            </div>
+
+            <div class="feature-grid">
+              <a class="feature-card" href="heart_rate_calculator.html">
+                <span class="feature-icon feature-icon--red"> &hearts; </span>
+
+                <strong>Heart Rate Calculator</strong>
+
+                <small>
+                  Calculate and save a patient's heart-rate result.
+                </small>
+
+                <span class="feature-link"> Open calculator &rarr; </span>
+              </a>
+
+              <a class="feature-card" href="print_prescription.php">
+                <span class="feature-icon feature-icon--blue"> ▤ </span>
+
+                <strong>Printable Prescription</strong>
+
+                <small>
+                  Generate a print-ready prescription from saved records.
+                </small>
+
+                <span class="feature-link"> View prescriptions &rarr; </span>
+              </a>
+
+              <a class="feature-card" href="patient_timeline.html">
+                <span class="feature-icon feature-icon--green"> ◷ </span>
+
+                <strong>Medical Timeline</strong>
+
+                <small>
+                  Review consultations, vitals, lab results and history.
+                </small>
+
+                <span class="feature-link"> View patient timeline &rarr; </span>
+              </a>
+            </div>
+          </section>
+
+          <!-- FOOTER -->
+          <footer class="dashboard-footer">
+            <p>
+              &copy; 2026 HeartCare Clinic Management System. Academic project
+              demonstration.
+            </p>
+
+            <p>
+              Patient information must only be accessed by authorized clinical
+              staff.
+            </p>
+          </footer>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

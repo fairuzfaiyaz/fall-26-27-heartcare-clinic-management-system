@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>My Schedule | HeartCare Clinic</title>
+
+    <!-- Main Dashboard CSS -->
+    <link rel="stylesheet" href="../assets/css/doctor-dashboard.css" />
+
+    <!-- Schedule Page CSS -->
+    <link rel="stylesheet" href="../assets/css/doctormy_schedule.css" />
+  </head>
+
+  <body class="doctor-dashboard">
+    <div class="dashboard-layout">
+      <!-- SIDEBAR -->
+      <aside class="dashboard-sidebar">
+        <a class="dashboard-brand" href="../index.html">
+          <span class="dashboard-brand__icon">&hearts;</span>
+          <span>HeartCare</span>
+        </a>
+
+        <div class="sidebar-profile">
+          <div class="avatar">BP</div>
+
+          <div>
+            <strong>Dr. Badhon Pal</strong>
+            <span>Cardiology Department</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <p class="sidebar-label">WORKSPACE</p>
+
+          <a class="sidebar-link" href="dashboard.html"> Dashboard </a>
+
+          <a class="sidebar-link" href="myProfile.html"> My Profile </a>
+
+          <a class="sidebar-link is-active" href="my_schedule.html">
+            My Schedule
+          </a>
+
+          <a class="sidebar-link" href="my_appointments.html">
+            My Appointments
+          </a>
+
+          <a class="sidebar-link" href="consultation.html"> Consultation </a>
+
+          <a class="sidebar-link" href="prescription.html"> Prescriptions </a>
+
+          <a class="sidebar-link" href="order_tests.html"> Laboratory Tests </a>
+
+          <a class="sidebar-link" href="patient_timeline.html">
+            Patient Timeline
+          </a>
+        </nav>
+
+        <a class="sidebar-link sidebar-link--logout" href="../auth/login.html">
+          Log out
+        </a>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="dashboard-main">
+        <div class="dashboard-content">
+          <!-- PAGE HEADER -->
+          <section class="welcome-section">
+            <div>
+              <p class="section-eyebrow">DOCTOR WORKSPACE</p>
+
+              <h1>My Schedule</h1>
+
+              <p class="welcome-description">
+                Manage your weekly working hours and appointment availability.
+              </p>
+            </div>
+
+            <a class="primary-button" href="my_appointments.html">
+              View Appointments
+            </a>
+          </section>
+
+          <!-- SUMMARY CARDS -->
+          <section class="summary-grid">
+            <article class="summary-card">
+              <div class="summary-card__top">
+                <span class="summary-icon summary-icon--blue">▣</span>
+                <span class="summary-caption">Weekly</span>
+              </div>
+
+              <p class="summary-value">05</p>
+              <h2>Working Days</h2>
+            </article>
+
+            <article class="summary-card">
+              <div class="summary-card__top">
+                <span class="summary-icon summary-icon--green">◷</span>
+                <span class="summary-caption">Daily</span>
+              </div>
+
+              <p class="summary-value">06</p>
+              <h2>Working Hours</h2>
+            </article>
+
+            <article class="summary-card">
+              <div class="summary-card__top">
+                <span class="summary-icon summary-icon--gold">☷</span>
+                <span class="summary-caption">Today</span>
+              </div>
+
+              <p class="summary-value">08</p>
+              <h2>Total Appointments</h2>
+            </article>
+
+            <article class="summary-card">
+              <div class="summary-card__top">
+                <span class="summary-icon summary-icon--red">♡</span>
+                <span class="summary-caption">Weekly</span>
+              </div>
+
+              <p class="summary-value">02</p>
+              <h2>Available Days Off</h2>
+            </article>
+          </section>
+
+          <!-- WEEKLY SCHEDULE -->
+          <section class="panel schedule-management">
+            <div class="panel-header">
+              <div>
+                <p class="section-eyebrow">WEEKLY AVAILABILITY</p>
+                <h2>My Weekly Schedule</h2>
+              </div>
+
+              <span class="schedule-label">Regular Schedule</span>
+            </div>
+
+            <div class="table-wrapper">
+              <table class="data-table schedule-table">
+                <thead>
+                  <tr>
+                    <th>Day</th>
+                    <th>Working Hours</th>
+                    <th>Break Time</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td><strong>Saturday</strong></td>
+                    <td>09:00 AM - 03:00 PM</td>
+                    <td>12:00 PM - 12:30 PM</td>
+                    <td>
+                      <span class="schedule-status available"> Available </span>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><strong>Sunday</strong></td>
+                    <td>09:00 AM - 03:00 PM</td>
+                    <td>12:00 PM - 12:30 PM</td>
+                    <td>
+                      <span class="schedule-status available"> Available </span>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><strong>Monday</strong></td>
+                    <td>09:00 AM - 03:00 PM</td>
+                    <td>12:00 PM - 12:30 PM</td>
+                    <td>
+                      <span class="schedule-status available"> Available </span>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><strong>Tuesday</strong></td>
+                    <td>09:00 AM - 03:00 PM</td>
+                    <td>12:00 PM - 12:30 PM</td>
+                    <td>
+                      <span class="schedule-status available"> Available </span>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><strong>Wednesday</strong></td>
+                    <td>09:00 AM - 03:00 PM</td>
+                    <td>12:00 PM - 12:30 PM</td>
+                    <td>
+                      <span class="schedule-status available"> Available </span>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><strong>Thursday</strong></td>
+                    <td>09:00 AM - 01:00 PM</td>
+                    <td>Not Scheduled</td>
+                    <td>
+                      <span class="schedule-status available"> Available </span>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><strong>Friday</strong></td>
+                    <td>--</td>
+                    <td>--</td>
+                    <td>
+                      <span class="schedule-status unavailable"> Day Off </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- TODAY'S SCHEDULE -->
+          <section class="panel today-schedule">
+            <div class="panel-header">
+              <div>
+                <p class="section-eyebrow">DAILY OVERVIEW</p>
+                <h2>Today's Schedule</h2>
+              </div>
+
+              <span class="schedule-label">Saturday</span>
+            </div>
+
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-time">09:00 AM</div>
+
+                <div class="timeline-content">
+                  <h3>Morning Consultation</h3>
+                  <p>Patient appointments and general checkups.</p>
+                  <span class="timeline-tag">Consultation</span>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-time">12:00 PM</div>
+
+                <div class="timeline-content">
+                  <h3>Lunch Break</h3>
+                  <p>30 minutes break time.</p>
+                  <span class="timeline-tag break-tag">Break</span>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-time">12:30 PM</div>
+
+                <div class="timeline-content">
+                  <h3>Afternoon Consultation</h3>
+                  <p>Follow-up appointments and patient checkups.</p>
+                  <span class="timeline-tag">Consultation</span>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-time">03:00 PM</div>
+
+                <div class="timeline-content">
+                  <h3>Working Hours End</h3>
+                  <p>Today's scheduled working hours are completed.</p>
+                  <span class="timeline-tag end-tag">End Time</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- FOOTER -->
+          <footer class="dashboard-footer">
+            <p>
+              &copy; 2026 HeartCare Clinic Management System. Academic project
+              demonstration.
+            </p>
+          </footer>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
