@@ -1,0 +1,451 @@
+/* ==========================================================================
+   HeartCare Clinic — Appointments Page
+   File: assets/css/appointments.css
+   Requires: style.css and patient-dashboard.css
+   ========================================================================== */
+
+.appointments-page .appointments-content {
+    max-width: 1450px;
+}
+
+.appointments-page .breadcrumb a {
+    color: var(--color-ink-soft);
+    text-decoration: none;
+}
+
+.appointments-page .breadcrumb a:hover {
+    color: var(--color-blue);
+}
+
+.appointments-welcome {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.appointments-welcome h1 {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: clamp(1.7rem, 3vw, 2.25rem);
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+}
+
+.appointments-welcome .welcome-description {
+    max-width: 62ch;
+}
+
+.appointment-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.appointment-stat {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    min-width: 0;
+    padding: 1.1rem 1.2rem;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+}
+
+.appointment-stat__icon {
+    width: 43px;
+    height: 43px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.appointment-stat__icon--blue {
+    color: #4267ad;
+    background: #e8effb;
+}
+
+.appointment-stat__icon--green {
+    color: #24855b;
+    background: #e4f5ec;
+}
+
+.appointment-stat__icon--gold {
+    color: #a87513;
+    background: #fff3dc;
+}
+
+.appointment-stat strong,
+.appointment-stat span:last-child {
+    display: block;
+}
+
+.appointment-stat strong {
+    margin-bottom: 0.15rem;
+    font-family: var(--font-heading);
+    font-size: 1.45rem;
+    line-height: 1.2;
+}
+
+.appointment-stat div span {
+    color: var(--color-ink-soft);
+    font-size: 0.78rem;
+}
+
+.appointments-section {
+    margin-bottom: 2rem;
+}
+
+.appointments-section__heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.appointments-section__heading h2 {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    letter-spacing: -0.025em;
+}
+
+.appointments-section__heading p:not(.section-eyebrow) {
+    margin: 0.4rem 0 0;
+    color: var(--color-ink-soft);
+    font-size: 0.84rem;
+}
+
+.appointment-count {
+    flex: 0 0 auto;
+    padding: 0.35rem 0.7rem;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-pill);
+    color: var(--color-ink-soft);
+    background: var(--color-surface);
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+
+.appointment-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.appointment-card {
+    display: flex;
+    align-items: stretch;
+    gap: 1.2rem;
+    padding: 1.2rem;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    box-shadow: 0 5px 18px rgba(16, 36, 58, 0.025);
+}
+
+.appointment-card__date {
+    width: 76px;
+    min-width: 76px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+    border: 1px solid #f0d6db;
+    border-radius: 11px;
+    background: #fff7f8;
+}
+
+.appointment-card__date span {
+    color: var(--color-red);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.appointment-card__date strong {
+    margin: 0.1rem 0;
+    color: var(--color-ink);
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    line-height: 1.15;
+}
+
+.appointment-card__date small {
+    color: var(--color-ink-soft);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.appointment-card__main {
+    flex: 1;
+    min-width: 0;
+}
+
+.appointment-card__title-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.appointment-type {
+    margin: 0 0 0.25rem;
+    color: var(--color-red);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.045em;
+    text-transform: uppercase;
+}
+
+.appointment-card__title-row h3 {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    letter-spacing: -0.02em;
+}
+
+.appointment-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem 1.25rem;
+    margin-top: 0.9rem;
+    color: var(--color-ink-soft);
+    font-size: 0.76rem;
+}
+
+.appointment-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.appointment-meta b {
+    color: var(--color-blue);
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.appointment-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.8rem 1rem;
+    margin-top: 1rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--color-line);
+}
+
+.appointment-note {
+    color: var(--color-ink-soft);
+    font-size: 0.73rem;
+}
+
+.appointment-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.65rem 1rem;
+}
+
+.appointment-text-link,
+.appointment-outline-link {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.appointment-text-link {
+    color: var(--color-blue);
+}
+
+.appointment-text-link:hover {
+    color: var(--color-red);
+}
+
+.appointment-outline-link {
+    padding: 0.45rem 0.75rem;
+    border: 1px solid var(--color-line);
+    border-radius: 6px;
+    color: var(--color-ink);
+    background: var(--color-surface);
+}
+
+.appointment-outline-link:hover {
+    border-color: var(--color-blue);
+    color: var(--color-blue);
+}
+
+.appointments-page .status-badge--completed {
+    color: #247a50;
+    background: #e5f5ec;
+}
+
+.appointment-card--past {
+    opacity: 0.9;
+}
+
+.appointment-card__date--past {
+    border-color: var(--color-line);
+    background: var(--color-page);
+}
+
+.appointment-card__date--past span {
+    color: var(--color-ink-soft);
+}
+
+.appointment-reminder {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    margin: 0 0 1.5rem;
+    padding: 1rem 1.1rem;
+    border: 1px solid #dce8f3;
+    border-radius: var(--radius-md);
+    color: #46647e;
+    background: #f3f8fc;
+}
+
+.appointment-reminder__icon {
+    flex: 0 0 auto;
+    font-size: 1.1rem;
+}
+
+.appointment-reminder strong {
+    display: block;
+    margin-bottom: 0.2rem;
+    color: var(--color-ink);
+    font-size: 0.82rem;
+}
+
+.appointment-reminder p {
+    margin: 0;
+    font-size: 0.76rem;
+    line-height: 1.6;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .appointment-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .appointment-stat:last-child {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .appointments-welcome {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .appointments-welcome .primary-button {
+        width: 100%;
+    }
+
+    .appointment-stats {
+        grid-template-columns: 1fr;
+        gap: 0.7rem;
+    }
+
+    .appointment-stat:last-child {
+        grid-column: auto;
+    }
+
+    .appointments-section__heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .appointment-card {
+        gap: 0.85rem;
+        padding: 0.9rem;
+    }
+
+    .appointment-card__date {
+        width: 62px;
+        min-width: 62px;
+        min-height: 88px;
+    }
+
+    .appointment-card__date strong {
+        font-size: 1.7rem;
+    }
+
+    .appointment-card__title-row {
+        flex-wrap: wrap;
+        gap: 0.65rem;
+    }
+
+    .appointment-card__title-row .status-badge {
+        order: 2;
+    }
+
+    .appointment-meta {
+        flex-direction: column;
+        gap: 0.45rem;
+    }
+
+    .appointment-card__footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .appointment-actions {
+        width: 100%;
+    }
+}
+
+@media (max-width: 420px) {
+    .appointment-card {
+        flex-direction: column;
+    }
+
+    .appointment-card__date {
+        width: 100%;
+        min-height: auto;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 0.55rem;
+        padding: 0.55rem 0.75rem;
+    }
+
+    .appointment-card__date strong {
+        font-size: 1.2rem;
+    }
+
+    .appointment-card__date small {
+        margin-left: auto;
+    }
+
+    .appointment-card__title-row {
+        align-items: flex-start;
+    }
+
+    .appointment-actions {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .appointments-page * {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
