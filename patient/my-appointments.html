@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Manage upcoming and past appointments at HeartCare Clinic." />
+    <title>My Appointments | HeartCare Clinic</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/patient-dashboard.css" />
+    <link rel="stylesheet" href="../assets/css/appointments.css" />
+</head>
+<!-- a -->
+
+<body class="patient-dashboard appointments-page">
+    <div class="dashboard-layout">
+        <!-- Sidebar: kept consistent with dashboard.html -->
+        <aside class="dashboard-sidebar">
+            <a href="../index.html" class="dashboard-brand">
+                <span class="dashboard-brand__icon" aria-hidden="true">♥</span>
+                <span>HeartCare</span>
+            </a>
+
+            <div class="sidebar-profile">
+                <div class="avatar">FA</div>
+                <div>
+                    <strong>Fairuz Ahmed</strong>
+                    <span>Patient Account</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav" aria-label="Patient navigation">
+                <p class="sidebar-label">MENU</p>
+
+                <a href="dashboard.html" class="sidebar-link">
+                    <span class="nav-icon" aria-hidden="true">▦</span>
+                    Dashboard
+                </a>
+
+                <a href="appointments.html" class="sidebar-link is-active" aria-current="page">
+                    <span class="nav-icon" aria-hidden="true">▣</span>
+                    My Appointments
+                </a>
+
+                <a href="health-tracker.html" class="sidebar-link">
+                    <span class="nav-icon" aria-hidden="true">♡</span>
+                    Health Tracker
+                </a>
+
+                <a href="medical-records.html" class="sidebar-link">
+                    <span class="nav-icon" aria-hidden="true">▤</span>
+                    Medical Records
+                </a>
+
+                <a href="prescriptions.html" class="sidebar-link">
+                    <span class="nav-icon" aria-hidden="true">✚</span>
+                    Prescriptions
+                </a>
+
+                <a href="invoices.html" class="sidebar-link">
+                    <span class="nav-icon" aria-hidden="true">৳</span>
+                    Billing &amp; Invoices
+                </a>
+
+                <p class="sidebar-label sidebar-label--spaced">ACCOUNT</p>
+
+                <a href="profile.html" class="sidebar-link">
+                    <span class="nav-icon" aria-hidden="true">♙</span>
+                    My Profile
+                </a>
+
+                <a href="payment-methods.html" class="sidebar-link">
+                    <span class="nav-icon" aria-hidden="true">▰</span>
+                    Payment Methods
+                </a>
+
+                <a href="../auth/login.html" class="sidebar-link sidebar-link--logout">
+                    <span class="nav-icon" aria-hidden="true">↪</span>
+                    Sign Out
+                </a>
+            </nav>
+
+            <div class="sidebar-help">
+                <div class="help-icon" aria-hidden="true">?</div>
+                <strong>Need assistance?</strong>
+                <p>Contact the clinic team for help with your appointments.</p>
+                <a href="../index.html#contact">Contact Clinic →</a>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+            <header class="dashboard-topbar">
+                <div class="breadcrumb">
+                    <a href="dashboard.html">Patient Portal</a>
+                    <span aria-hidden="true">/</span>
+                    <strong>My Appointments</strong>
+                </div>
+
+                <div class="topbar-actions">
+                    <span class="portal-status">
+                        <span class="status-dot"></span>
+                        Patient Portal
+                    </span>
+                    <a href="profile.html" class="topbar-avatar" aria-label="Open profile">FA</a>
+                </div>
+            </header>
+
+            <div class="dashboard-content appointments-content">
+                <section class="appointments-welcome">
+                    <div>
+                        <p class="section-eyebrow">YOUR CARE, ORGANIZED</p>
+                        <h1>My Appointments</h1>
+                        <p class="welcome-description">
+                            View your upcoming visits, check appointment details, and keep
+                            track of your consultation history.
+                        </p>
+                    </div>
+
+                    <a href="book-appointment.html" class="primary-button">
+                        <span aria-hidden="true">+</span>
+                        Book Appointment
+                    </a>
+                </section>
+
+                <section class="appointment-stats" aria-label="Appointment summary">
+                    <article class="appointment-stat">
+                        <span class="appointment-stat__icon appointment-stat__icon--blue" aria-hidden="true">▣</span>
+                        <div>
+                            <strong>02</strong>
+                            <span>Upcoming appointments</span>
+                        </div>
+                    </article>
+
+                    <article class="appointment-stat">
+                        <span class="appointment-stat__icon appointment-stat__icon--green" aria-hidden="true">✓</span>
+                        <div>
+                            <strong>01</strong>
+                            <span>Completed visits</span>
+                        </div>
+                    </article>
+
+                    <article class="appointment-stat">
+                        <span class="appointment-stat__icon appointment-stat__icon--gold" aria-hidden="true">◷</span>
+                        <div>
+                            <strong>01</strong>
+                            <span>Awaiting confirmation</span>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="appointments-section" aria-labelledby="upcoming-title">
+                    <div class="appointments-section__heading">
+                        <div>
+                            <p class="section-eyebrow">PLAN AHEAD</p>
+                            <h2 id="upcoming-title">Upcoming appointments</h2>
+                            <p>Make a note of your next visits to the clinic.</p>
+                        </div>
+                        <span class="appointment-count">2 appointments</span>
+                    </div>
+
+                    <div class="appointment-list">
+                        <article class="appointment-card">
+                            <div class="appointment-card__date" aria-label="November 4, 2026">
+                                <span>NOV</span>
+                                <strong>04</strong>
+                                <small>WED</small>
+                            </div>
+
+                            <div class="appointment-card__main">
+                                <div class="appointment-card__title-row">
+                                    <div>
+                                        <p class="appointment-type">Cardiology consultation</p>
+                                        <h3>Dr. Rahman</h3>
+                                    </div>
+                                    <span class="status-badge status-badge--confirmed">
+                                        Confirmed
+                                    </span>
+                                </div>
+
+                                <div class="appointment-meta">
+                                    <span><b aria-hidden="true">◷</b> 10:30 AM – 11:00 AM</span>
+                                    <span><b aria-hidden="true">⌖</b> Cardiology Department</span>
+                                    <span><b aria-hidden="true">▤</b> Appointment ID: HC-A-00214</span>
+                                </div>
+
+                                <div class="appointment-card__footer">
+                                    <span class="appointment-note">
+                                        Please arrive 10 minutes before your appointment.
+                                    </span>
+                                    <div class="appointment-actions">
+                                        <a href="medical-records.html" class="appointment-text-link">
+                                            View details
+                                        </a>
+                                        <a href="book-appointment.html" class="appointment-outline-link">
+                                            Reschedule
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="appointment-card">
+                            <div class="appointment-card__date" aria-label="November 12, 2026">
+                                <span>NOV</span>
+                                <strong>12</strong>
+                                <small>THU</small>
+                            </div>
+
+                            <div class="appointment-card__main">
+                                <div class="appointment-card__title-row">
+                                    <div>
+                                        <p class="appointment-type">Preventive care</p>
+                                        <h3>Dr. Sultana</h3>
+                                    </div>
+                                    <span class="status-badge status-badge--pending">
+                                        Pending
+                                    </span>
+                                </div>
+
+                                <div class="appointment-meta">
+                                    <span><b aria-hidden="true">◷</b> 02:00 PM – 02:30 PM</span>
+                                    <span><b aria-hidden="true">⌖</b> Preventive Care</span>
+                                    <span><b aria-hidden="true">▤</b> Appointment ID: HC-A-00219</span>
+                                </div>
+
+                                <div class="appointment-card__footer">
+                                    <span class="appointment-note">
+                                        Your request is waiting for clinic confirmation.
+                                    </span>
+                                    <div class="appointment-actions">
+                                        <a href="medical-records.html" class="appointment-text-link">
+                                            View details
+                                        </a>
+                                        <a href="book-appointment.html" class="appointment-outline-link">
+                                            Change request
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="appointments-section past-appointments" aria-labelledby="past-title">
+                    <div class="appointments-section__heading">
+                        <div>
+                            <p class="section-eyebrow">YOUR VISIT HISTORY</p>
+                            <h2 id="past-title">Past appointments</h2>
+                            <p>Your recently completed clinic visits.</p>
+                        </div>
+                        <span class="appointment-count">1 completed</span>
+                    </div>
+
+                    <article class="appointment-card appointment-card--past">
+                        <div class="appointment-card__date appointment-card__date--past" aria-label="October 20, 2026">
+                            <span>OCT</span>
+                            <strong>20</strong>
+                            <small>TUE</small>
+                        </div>
+
+                        <div class="appointment-card__main">
+                            <div class="appointment-card__title-row">
+                                <div>
+                                    <p class="appointment-type">Cardiology consultation</p>
+                                    <h3>Dr. Rahman</h3>
+                                </div>
+                                <span class="status-badge status-badge--completed">
+                                    Completed
+                                </span>
+                            </div>
+
+                            <div class="appointment-meta">
+                                <span><b aria-hidden="true">◷</b> 11:00 AM – 11:30 AM</span>
+                                <span><b aria-hidden="true">⌖</b> Cardiology Department</span>
+                                <span><b aria-hidden="true">▤</b> Appointment ID: HC-A-00187</span>
+                            </div>
+
+                            <div class="appointment-card__footer">
+                                <span class="appointment-note">
+                                    Consultation completed successfully.
+                                </span>
+                                <div class="appointment-actions">
+                                    <a href="medical-records.html" class="appointment-text-link">
+                                        View medical record →
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+
+                <aside class="appointment-reminder" aria-label="Appointment reminder">
+                    <span class="appointment-reminder__icon" aria-hidden="true">ⓘ</span>
+                    <div>
+                        <strong>Before your visit</strong>
+                        <p>
+                            Bring your patient ID and any relevant previous reports or
+                            prescriptions. If you need to change an appointment, contact
+                            the clinic in advance.
+                        </p>
+                    </div>
+                </aside>
+
+                <footer class="dashboard-footer">
+                    <p>
+                        © 2026 HeartCare Clinic Management System. Academic project
+                        demonstration.
+                    </p>
+                    <p>For emergencies, contact local emergency services.</p>
+                </footer>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
