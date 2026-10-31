@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Laboratory Tests | HeartCare Clinic</title>
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="../assets/css/doctor-dashboard.css" />
+
+    <!-- Laboratory Test CSS -->
+    <link rel="stylesheet" href="../assets/css/doctor-laboratory-tests.css" />
+  </head>
+
+  <body>
+    <div class="dashboard-layout">
+      <!-- ================ SIDEBAR ================ -->
+      <aside class="dashboard-sidebar">
+        <a class="dashboard-brand" href="../index.html">
+          <span class="dashboard-brand__icon">&hearts;</span>
+          <span>HeartCare</span>
+        </a>
+
+        <div class="sidebar-profile">
+          <div class="avatar">BP</div>
+
+          <div>
+            <strong>Dr. Badhon Pal</strong>
+            <span>Cardiology Department</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <p class="sidebar-label">WORKSPACE</p>
+
+          <a href="dashboard.html" class="sidebar-link"> Dashboard </a>
+
+          <a href="myProfile.html" class="sidebar-link"> My Profile </a>
+
+          <a href="my_schedule.html" class="sidebar-link"> My Schedule </a>
+
+          <a href="my_appointments.html" class="sidebar-link">
+            My Appointments
+          </a>
+
+          <a href="consultation.html" class="sidebar-link"> Consultation </a>
+
+          <a href="prescription.html" class="sidebar-link"> Prescriptions </a>
+
+          <a href="order_tests.html" class="sidebar-link is-active">
+            Laboratory Tests
+          </a>
+
+          <a href="patient_timeline.html" class="sidebar-link">
+            Patient Timeline
+          </a>
+
+          <a
+            class="sidebar-link sidebar-link--logout"
+            href="../auth/login.html"
+          >
+            Log out
+          </a>
+        </nav>
+      </aside>
+
+      <!-- ================ MAIN CONTENT ================ -->
+      <main class="dashboard-main">
+        <div class="dashboard-content">
+          <!-- PAGE HEADER -->
+          <header class="welcome-section">
+            <div>
+              <p class="section-eyebrow">PATIENT DIAGNOSTICS</p>
+
+              <h1>Laboratory Tests</h1>
+
+              <p class="lab-description">
+                Order laboratory tests and manage patient test reports.
+              </p>
+            </div>
+          </header>
+
+          <!-- ================ SUMMARY CARDS ================ -->
+          <section class="lab-summary">
+            <div class="lab-summary-card">
+              <div class="summary-icon blue-icon">☷</div>
+              <div>
+                <p>Total Test Orders</p>
+                <h2>125</h2>
+              </div>
+            </div>
+
+            <div class="lab-summary-card">
+              <div class="summary-icon orange-icon">◷</div>
+              <div>
+                <p>Pending Tests</p>
+                <h2>18</h2>
+              </div>
+            </div>
+
+            <div class="lab-summary-card">
+              <div class="summary-icon green-icon">✓</div>
+              <div>
+                <p>Completed Tests</p>
+                <h2>107</h2>
+              </div>
+            </div>
+          </section>
+
+          <!-- ================ ORDER NEW TEST ================ -->
+          <section class="panel lab-order-panel">
+            <div class="panel-header">
+              <div>
+                <p class="section-eyebrow">NEW REQUEST</p>
+                <h2>Order Laboratory Test</h2>
+                <p class="lab-subtitle">
+                  Provide patient information and select required tests.
+                </p>
+              </div>
+
+              <span class="new-order-badge">NEW ORDER</span>
+            </div>
+
+            <form action="#" method="get">
+              <!-- PATIENT INFORMATION -->
+              <div class="lab-section">
+                <h3 class="lab-section-title">Patient Information</h3>
+
+                <div class="lab-form-grid">
+                  <div class="lab-form-group">
+                    <label>Patient ID</label>
+                    <input
+                      type="text"
+                      name="patient_id"
+                      placeholder="Enter patient ID"
+                      required
+                    />
+                  </div>
+
+                  <div class="lab-form-group">
+                    <label>Patient Name</label>
+                    <input
+                      type="text"
+                      name="patient_name"
+                      placeholder="Enter patient name"
+                      required
+                    />
+                  </div>
+
+                  <div class="lab-form-group">
+                    <label>Age</label>
+                    <input type="number" name="age" placeholder="Enter age" />
+                  </div>
+
+                  <div class="lab-form-group">
+                    <label>Gender</label>
+                    <select name="gender">
+                      <option value="">Select Gender</option>
+                      <option>Male</option>
+                      <option>Female</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+
+                  <div class="lab-form-group">
+                    <label>Appointment ID</label>
+                    <input
+                      type="text"
+                      name="appointment_id"
+                      placeholder="Enter appointment ID"
+                    />
+                  </div>
+
+                  <div class="lab-form-group">
+                    <label>Test Order Date</label>
+                    <input type="date" name="order_date" value="2026-10-31" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- TEST CATEGORY -->
+              <div class="lab-section">
+                <h3 class="lab-section-title">Select Laboratory Tests</h3>
+
+                <p class="lab-help-text">
+                  Select one or more tests required for the patient.
+                </p>
+
+                <div class="test-selection-grid">
+                  <label class="test-option">
+                    <input type="checkbox" name="tests" value="CBC" />
+                    <span class="test-check"></span>
+                    <span class="test-details">
+                      <strong>Complete Blood Count (CBC)</strong>
+                      <small>Hematology</small>
+                    </span>
+                    <span class="test-price">৳500</span>
+                  </label>
+
+                  <label class="test-option">
+                    <input type="checkbox" name="tests" value="Blood Sugar" />
+                    <span class="test-check"></span>
+                    <span class="test-details">
+                      <strong>Blood Sugar (Fasting)</strong>
+                      <small>Biochemistry</small>
+                    </span>
+                    <span class="test-price">৳300</span>
+                  </label>
+
+                  <label class="test-option">
+                    <input type="checkbox" name="tests" value="Lipid Profile" />
+                    <span class="test-check"></span>
+                    <span class="test-details">
+                      <strong>Lipid Profile</strong>
+                      <small>Biochemistry</small>
+                    </span>
+                    <span class="test-price">৳900</span>
+                  </label>
+
+                  <label class="test-option">
+                    <input type="checkbox" name="tests" value="ECG" />
+                    <span class="test-check"></span>
+                    <span class="test-details">
+                      <strong>ECG</strong>
+                      <small>Cardiology</small>
+                    </span>
+                    <span class="test-price">৳500</span>
+                  </label>
+
+                  <label class="test-option">
+                    <input type="checkbox" name="tests" value="Troponin I" />
+                    <span class="test-check"></span>
+                    <span class="test-details">
+                      <strong>Troponin I</strong>
+                      <small>Cardiac Marker</small>
+                    </span>
+                    <span class="test-price">৳1200</span>
+                  </label>
+
+                  <label class="test-option">
+                    <input
+                      type="checkbox"
+                      name="tests"
+                      value="Echocardiogram"
+                    />
+                    <span class="test-check"></span>
+                    <span class="test-details">
+                      <strong>Echocardiogram</strong>
+                      <small>Cardiology</small>
+                    </span>
+                    <span class="test-price">৳2500</span>
+                  </label>
+
+                  <label class="test-option">
+                    <input type="checkbox" name="tests" value="Chest X-Ray" />
+                    <span class="test-check"></span>
+                    <span class="test-details">
+                      <strong>Chest X-Ray</strong>
+                      <small>Radiology</small>
+                    </span>
+                    <span class="test-price">৳800</span>
+                  </label>
+
+                  <label class="test-option">
+                    <input
+                      type="checkbox"
+                      name="tests"
+                      value="Kidney Function"
+                    />
+                    <span class="test-check"></span>
+                    <span class="test-details">
+                      <strong>Kidney Function Test</strong>
+                      <small>Biochemistry</small>
+                    </span>
+                    <span class="test-price">৳1000</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- PRIORITY AND INSTRUCTIONS -->
+              <div class="lab-section">
+                <h3 class="lab-section-title">Test Instructions</h3>
+
+                <div class="lab-form-grid">
+                  <div class="lab-form-group">
+                    <label>Test Priority</label>
+
+                    <select name="priority">
+                      <option value="">Select Priority</option>
+                      <option>Normal</option>
+                      <option>Urgent</option>
+                      <option>Emergency</option>
+                    </select>
+                  </div>
+
+                  <div class="lab-form-group">
+                    <label>Preferred Sample Collection Date</label>
+                    <input type="date" name="collection_date" />
+                  </div>
+                </div>
+
+                <div class="lab-form-group full-width">
+                  <label>Doctor's Instructions</label>
+
+                  <textarea
+                    name="instructions"
+                    placeholder="Write any special instructions for the laboratory..."
+                  ></textarea>
+                </div>
+              </div>
+
+              <!-- DOCTOR INFORMATION -->
+              <div class="doctor-order-info">
+                <div>
+                  <span>Ordered By</span>
+                  <strong>Dr. Badhon Pal</strong>
+                </div>
+
+                <div>
+                  <span>Department</span>
+                  <strong>Cardiology</strong>
+                </div>
+              </div>
+
+              <!-- FORM BUTTONS -->
+              <div class="lab-form-actions">
+                <button type="reset" class="lab-reset-btn">Clear Form</button>
+
+                <button type="submit" class="lab-submit-btn">
+                  + Submit Test Order
+                </button>
+              </div>
+            </form>
+          </section>
+
+          <!-- ================ PREVIOUS TEST ORDERS ================ -->
+          <section class="panel lab-history-panel">
+            <div class="panel-header">
+              <div>
+                <p class="section-eyebrow">TEST MANAGEMENT</p>
+                <h2>Recent Laboratory Orders</h2>
+              </div>
+
+              <span class="order-count">3 Orders</span>
+            </div>
+
+            <div class="lab-table-container">
+              <table class="lab-table">
+                <thead>
+                  <tr>
+                    <th>Order ID</th>
+                    <th>Patient Name</th>
+                    <th>Test Name</th>
+                    <th>Order Date</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>LAB-00125</td>
+                    <td>Fairuz Ahmed</td>
+                    <td>ECG</td>
+                    <td>31 Oct 2026</td>
+                    <td>
+                      <span class="priority-normal">Normal</span>
+                    </td>
+                    <td>
+                      <span class="status-completed">Completed</span>
+                    </td>
+                    <td>
+                      <a href="#report-125" class="report-btn">View Report</a>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>LAB-00126</td>
+                    <td>Nusrat Jahan</td>
+                    <td>CBC, Lipid Profile</td>
+                    <td>31 Oct 2026</td>
+                    <td>
+                      <span class="priority-urgent">Urgent</span>
+                    </td>
+                    <td>
+                      <span class="status-pending">Pending</span>
+                    </td>
+                    <td>
+                      <a href="#report-126" class="report-btn">View Details</a>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>LAB-00127</td>
+                    <td>Mahmud Hasan</td>
+                    <td>Troponin I</td>
+                    <td>30 Oct 2026</td>
+                    <td>
+                      <span class="priority-emergency">Emergency</span>
+                    </td>
+                    <td>
+                      <span class="status-processing">Processing</span>
+                    </td>
+                    <td>
+                      <a href="#report-127" class="report-btn">View Details</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- FOOTER -->
+          <footer class="dashboard-footer">
+            <p>
+              © 2026 HeartCare Clinic Management System. Academic project
+              demonstration.
+            </p>
+          </footer>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
