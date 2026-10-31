@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile | HeartCare</title>
+
+    <link rel="stylesheet" href="../assets/css/lab-profile.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                Heart<span>Care</span>
+            </div>
+
+            <div class="profile">
+                <div class="avatar">LT</div>
+
+                <div>
+                    <h3>Aurpita Roy</h3>
+                    <p>Laboratory Department</p>
+                </div>
+            </div>
+
+            <p class="menu-title">MAIN MENU</p>
+
+            <nav>
+                <a class="sidebar-link" href="dashboard.html">
+                    <span class="nav-icon">▦</span>
+                    Dashboard
+                </a>
+                <a class="sidebar-link" href="lab-queue.html">
+
+                    ☷ Lab Queue
+                </a>
+                <a class="sidebar-link" href="add-labresult.html">
+
+                    ✚ Add Test Result
+                </a>
+                <a class="sidebar-link" href="manage-labresult.html">
+
+                    ▤ Manage Results
+                </a>
+                <a class="sidebar-link" href="test-catalogue.html">
+
+                    ♧ Test Catalogue
+                </a>
+                <a class="sidebar-link" href="lab-reports.html">
+
+                    ▣ Lab Reports
+                </a>
+
+
+
+                <p class="menu-title">ACCOUNT</p>
+                <a class="sidebar-link is-active" href="profile.html">
+                    ♙My Profile
+                </a>
+
+                <a class="sidebar-link sidebar-link--logout" href="../auth/login.html">
+                    Log out
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                HeartCare Hospital
+                <small>Laboratory Management System</small>
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <div>
+                    <h2>Hello,Aurpita Roy..</h2>
+                    <p>Manage your personal account information</p>
+                </div>
+
+                <div class="header-right">
+
+                    <button class="notification">♧</button>
+
+                    <div class="user-info">
+                        <div class="small-avatar">LT</div>
+                        <span>Lab Technician</span>
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- PROFILE CONTENT -->
+            <section class="content">
+
+                <!-- PAGE HEADING -->
+                <div class="page-heading">
+
+                    <div>
+                        <h1>Profile Settings</h1>
+
+                    </div>
+
+                    <div class="breadcrumb">
+                        Dashboard / My Profile
+                    </div>
+
+                </div>
+
+
+                <!-- PROFILE CARD -->
+                <div class="profile-container">
+
+                    <!-- PROFILE HEADER -->
+                    <div class="profile-header">
+
+                        <div class="profile-avatar">
+                            LT
+                        </div>
+
+                        <div class="profile-header-info">
+                            <h2>Aurpita Roy</h2>
+                            <p>Laboratory Department</p>
+
+                            <span class="account-status">
+                                <i></i>
+                                Active Account
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <!-- PROFILE FORM -->
+                    <form class="profile-form">
+
+                        <!-- PERSONAL INFORMATION -->
+                        <div class="section-heading">
+                            <div>
+                                <h3>Personal Information</h3>
+                                <p>Update your personal details below</p>
+                            </div>
+                        </div>
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+                                <label for="fullname">Full Name</label>
+                                <input type="text" id="fullname" name="fullname" value="Lab Technician" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="employeeid">Employee ID</label>
+                                <input type="text" id="employeeid" name="employeeid" value="LT-1024" readonly>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" value="labtech@heartcare.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="Enter phone number">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="gender">Gender</label>
+                                <select id="gender" name="gender">
+                                    <option value="">Select gender</option>
+                                    <option>Male</option>
+                                    <option selected>Female</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="dob">Date of Birth</label>
+                                <input type="date" id="dob" name="dob">
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label for="address">Address</label>
+                                <textarea id="address" name="address" rows="3"
+                                    placeholder="Enter your address"></textarea>
+                            </div>
+
+                        </div>
+
+
+                        <!-- PROFESSIONAL INFORMATION -->
+                        <div class="section-heading professional-heading">
+                            <div>
+                                <h3>Professional Information</h3>
+                                <p>Your hospital employment details</p>
+                            </div>
+                        </div>
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+                                <label for="designation">Designation</label>
+                                <input type="text" id="designation" value="Lab Technician" readonly>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="department">Department</label>
+                                <input type="text" id="department" value="Laboratory Department" readonly>
+                            </div>
+
+                        </div>
+
+
+                        <!-- SAVE BUTTONS -->
+                        <div class="form-actions">
+
+                            <button type="reset" class="cancel-btn">
+                                Cancel
+                            </button>
+
+                            <button type="submit" class="save-btn">
+                                Save Changes
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+            <footer>
+                © 2026 HeartCare Hospital. All rights reserved.
+            </footer>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
