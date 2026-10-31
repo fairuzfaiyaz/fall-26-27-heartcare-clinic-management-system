@@ -1,470 +1,438 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta
-      name="description"
-      content="HeartCare patient dashboard for appointments, invoices, health tracking and medical records."
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Patient Dashboard | HeartCare Clinic</title>
+  <meta name="description"
+    content="HeartCare patient dashboard for appointments, invoices, health tracking and medical records." />
+  <!-- abc -->
 
-    <link rel="stylesheet" href="../assets/css/style.css" />
-    <link rel="stylesheet" href="../assets/css/patient-dashboard.css" />
-  </head>
+  <title>Patient Dashboard | HeartCare Clinic</title>
 
-  <body class="patient-dashboard">
-    <div class="dashboard-layout">
-      <!-- Sidebar -->
-      <aside class="dashboard-sidebar">
-        <a href="../index.html" class="dashboard-brand">
-          <span class="dashboard-brand__icon" aria-hidden="true">♥</span>
-          <span>HeartCare</span>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/patient-dashboard.css" />
+</head>
+
+<body class="patient-dashboard">
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar">
+      <a href="../index.html" class="dashboard-brand">
+        <span class="dashboard-brand__icon" aria-hidden="true">♥</span>
+        <span>HeartCare</span>
+      </a>
+
+      <div class="sidebar-profile">
+        <div class="avatar">BIVA</div>
+        <div>
+          <strong>Bivaaaaaa</strong>
+          <span>Patient Account</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Patient navigation">
+        <p class="sidebar-label">MENU</p>
+
+        <a href="dashboard.html" class="sidebar-link is-active" aria-current="page">
+          <span class="nav-icon" aria-hidden="true">▦</span>
+          Dashboard
         </a>
 
-        <div class="sidebar-profile">
-          <div class="avatar">BIVA</div>
+        <a href="appointments.html" class="sidebar-link">
+          <span class="nav-icon" aria-hidden="true">▣</span>
+          My Appointments
+        </a>
+
+        <a href="health-tracker.html" class="sidebar-link">
+          <span class="nav-icon" aria-hidden="true">♡</span>
+          Health Tracker
+        </a>
+
+        <a href="medical-records.html" class="sidebar-link">
+          <span class="nav-icon" aria-hidden="true">▤</span>
+          Medical Records
+        </a>
+
+        <a href="prescriptions.html" class="sidebar-link">
+          <span class="nav-icon" aria-hidden="true">✚</span>
+          Prescriptions
+        </a>
+
+        <a href="invoices.html" class="sidebar-link">
+          <span class="nav-icon" aria-hidden="true">৳</span>
+          Billing & Invoices
+        </a>
+
+        <p class="sidebar-label sidebar-label--spaced">ACCOUNT</p>
+
+        <a href="profile.html" class="sidebar-link">
+          <span class="nav-icon" aria-hidden="true">♙</span>
+          My Profile
+        </a>
+
+        <a href="payment-methods.html" class="sidebar-link">
+          <span class="nav-icon" aria-hidden="true">▰</span>
+          Payment Methods
+        </a>
+
+        <a href="../auth/login.html" class="sidebar-link sidebar-link--logout">
+          <span class="nav-icon" aria-hidden="true">↪</span>
+          Sign Out
+        </a>
+      </nav>
+
+      <div class="sidebar-help">
+        <div class="help-icon" aria-hidden="true">?</div>
+        <strong>Need assistance?</strong>
+        <p>Contact the clinic team for help with your account.</p>
+        <a href="../index.html#contact">Contact Clinic →</a>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="dashboard-main">
+      <!-- Top bar -->
+      <header class="dashboard-topbar">
+        <div class="breadcrumb">
+          <span>Patient Portal</span>
+          <span aria-hidden="true">/</span>
+          <strong>Dashboard</strong>
+        </div>
+
+        <div class="topbar-actions">
+          <span class="portal-status">
+            <span class="status-dot"></span>
+            Patient Portal
+          </span>
+
+          <a href="profile.html" class="topbar-avatar" aria-label="Open profile">
+            BIVA
+          </a>
+        </div>
+      </header>
+
+      <div class="dashboard-content">
+        <!-- Welcome section -->
+        <section class="welcome-section">
           <div>
-            <strong>Bivaaaaaa</strong>
-            <span>Patient Account</span>
-          </div>
-        </div>
-
-        <nav class="sidebar-nav" aria-label="Patient navigation">
-          <p class="sidebar-label">MENU</p>
-
-          <a
-            href="dashboard.html"
-            class="sidebar-link is-active"
-            aria-current="page"
-          >
-            <span class="nav-icon" aria-hidden="true">▦</span>
-            Dashboard
-          </a>
-
-          <a href="appointments.html" class="sidebar-link">
-            <span class="nav-icon" aria-hidden="true">▣</span>
-            My Appointments
-          </a>
-
-          <a href="health-tracker.html" class="sidebar-link">
-            <span class="nav-icon" aria-hidden="true">♡</span>
-            Health Tracker
-          </a>
-
-          <a href="medical-records.html" class="sidebar-link">
-            <span class="nav-icon" aria-hidden="true">▤</span>
-            Medical Records
-          </a>
-
-          <a href="prescriptions.html" class="sidebar-link">
-            <span class="nav-icon" aria-hidden="true">✚</span>
-            Prescriptions
-          </a>
-
-          <a href="invoices.html" class="sidebar-link">
-            <span class="nav-icon" aria-hidden="true">৳</span>
-            Billing & Invoices
-          </a>
-
-          <p class="sidebar-label sidebar-label--spaced">ACCOUNT</p>
-
-          <a href="profile.html" class="sidebar-link">
-            <span class="nav-icon" aria-hidden="true">♙</span>
-            My Profile
-          </a>
-
-          <a href="payment-methods.html" class="sidebar-link">
-            <span class="nav-icon" aria-hidden="true">▰</span>
-            Payment Methods
-          </a>
-
-          <a
-            href="../auth/login.html"
-            class="sidebar-link sidebar-link--logout"
-          >
-            <span class="nav-icon" aria-hidden="true">↪</span>
-            Sign Out
-          </a>
-        </nav>
-
-        <div class="sidebar-help">
-          <div class="help-icon" aria-hidden="true">?</div>
-          <strong>Need assistance?</strong>
-          <p>Contact the clinic team for help with your account.</p>
-          <a href="../index.html#contact">Contact Clinic →</a>
-        </div>
-      </aside>
-
-      <!-- Main content -->
-      <main class="dashboard-main">
-        <!-- Top bar -->
-        <header class="dashboard-topbar">
-          <div class="breadcrumb">
-            <span>Patient Portal</span>
-            <span aria-hidden="true">/</span>
-            <strong>Dashboard</strong>
+            <p class="section-eyebrow">PATIENT OVERVIEW</p>
+            <h1>
+              Good morning, Bivaaaaaaaaa!!! <span aria-hidden="true">👋</span>
+            </h1>
+            <p class="welcome-description">
+              Here's an overview of your appointments and healthcare activity.
+            </p>
           </div>
 
-          <div class="topbar-actions">
-            <span class="portal-status">
-              <span class="status-dot"></span>
-              Patient Portal
-            </span>
+          <a href="book-appointment.html" class="primary-button">
+            <span aria-hidden="true">+</span>
+            Book Appointment
+          </a>
+        </section>
 
-            <a
-              href="profile.html"
-              class="topbar-avatar"
-              aria-label="Open profile"
-            >
-              BIVA
+        <!-- Summary cards -->
+        <section class="summary-grid" aria-label="Account summary">
+          <article class="summary-card">
+            <div class="summary-card__top">
+              <span class="summary-icon summary-icon--blue" aria-hidden="true">▣</span>
+              <span class="summary-caption">Upcoming</span>
+            </div>
+            <p class="summary-value">02</p>
+            <h2>Appointments</h2>
+            <a href="appointments.html">View schedule →</a>
+          </article>
+
+          <article class="summary-card">
+            <div class="summary-card__top">
+              <span class="summary-icon summary-icon--red" aria-hidden="true">♡</span>
+              <span class="summary-caption">Personal records</span>
+            </div>
+            <p class="summary-value">08</p>
+            <h2>Health Entries</h2>
+            <a href="health-tracker.html">Track your health →</a>
+          </article>
+
+          <article class="summary-card">
+            <div class="summary-card__top">
+              <span class="summary-icon summary-icon--gold" aria-hidden="true">৳</span>
+              <span class="summary-caption">Awaiting payment</span>
+            </div>
+            <p class="summary-value">৳1,800</p>
+            <h2>Outstanding Balance</h2>
+            <a href="invoices.html">View invoices →</a>
+          </article>
+
+          <article class="summary-card">
+            <div class="summary-card__top">
+              <span class="summary-icon summary-icon--green" aria-hidden="true">✓</span>
+              <span class="summary-caption">Latest visit</span>
+            </div>
+            <p class="summary-value summary-value--date">20 Oct</p>
+            <h2>Last Consultation</h2>
+            <a href="medical-records.html">View records →</a>
+          </article>
+        </section>
+
+        <!-- Appointment and profile panels -->
+        <div class="dashboard-columns">
+          <section class="panel appointments-panel">
+            <div class="panel-header">
+              <div>
+                <p class="section-eyebrow">YOUR SCHEDULE</p>
+                <h2>Upcoming Appointments</h2>
+              </div>
+              <a href="appointments.html" class="text-link">View all</a>
+            </div>
+
+            <article class="appointment-item">
+              <div class="appointment-date">
+                <span> NOV </span>
+                <strong>04</strong>
+              </div>
+
+              <div class="appointment-details">
+                <h3>Dr. Rahman</h3>
+                <p>Cardiology Department</p>
+                <span class="appointment-time">◷ 10:30 AM – 11:00 AM</span>
+              </div>
+
+              <span class="status-badge status-badge--confirmed">
+                Confirmed
+              </span>
+            </article>
+
+            <article class="appointment-item">
+              <div class="appointment-date">
+                <span> NOV </span>
+                <strong>12</strong>
+              </div>
+
+              <div class="appointment-details">
+                <h3>Dr. Sultana</h3>
+                <p>Preventive Care</p>
+                <span class="appointment-time">◷ 02:00 PM – 02:30 PM</span>
+              </div>
+
+              <span class="status-badge status-badge--pending">
+                Pending
+              </span>
+            </article>
+
+            <a href="book-appointment.html" class="secondary-button">
+              + Schedule Another Appointment
             </a>
-          </div>
-        </header>
+          </section>
 
-        <div class="dashboard-content">
-          <!-- Welcome section -->
-          <section class="welcome-section">
-            <div>
-              <p class="section-eyebrow">PATIENT OVERVIEW</p>
-              <h1>
-                Good morning, Bivaaaaaaaaa!!! <span aria-hidden="true">👋</span>
-              </h1>
-              <p class="welcome-description">
-                Here's an overview of your appointments and healthcare activity.
+          <section class="panel profile-panel">
+            <div class="panel-header">
+              <div>
+                <p class="section-eyebrow">YOUR INFORMATION</p>
+                <h2>Patient Profile</h2>
+              </div>
+              <a href="profile.html" class="text-link">Edit</a>
+            </div>
+
+            <div class="profile-summary">
+              <div class="profile-avatar">FA</div>
+              <div>
+                <h3>Fairuz Ahmed</h3>
+                <p>Patient ID: HC-P-00125</p>
+              </div>
+            </div>
+
+            <div class="profile-info">
+              <div>
+                <span>Email Address</span>
+                <strong>fairuz@example.com</strong>
+              </div>
+
+              <div>
+                <span>Phone Number</span>
+                <strong>+880 1XXX-XXX-XXX</strong>
+              </div>
+
+              <div>
+                <span>Date of Birth</span>
+                <strong>15 March 2003</strong>
+              </div>
+
+              <div>
+                <span>Account Status</span>
+                <strong class="account-active">
+                  <span class="status-dot"></span>
+                  Active
+                </strong>
+              </div>
+            </div>
+
+            <a href="profile.html" class="secondary-button">
+              Manage My Profile
+            </a>
+          </section>
+        </div>
+
+        <!-- Health tracker and latest records -->
+        <div class="dashboard-columns dashboard-columns--bottom">
+          <section class="panel health-panel">
+            <div class="panel-header">
+              <div>
+                <p class="section-eyebrow">PERSONAL HEALTH TRACKER</p>
+                <h2>Recent Measurements</h2>
+              </div>
+              <a href="health-tracker.html" class="text-link">View trends</a>
+            </div>
+
+            <div class="measurement-grid">
+              <article class="measurement-card">
+                <div class="measurement-heading">
+                  <span class="measurement-icon measurement-icon--red">♡</span>
+                  <span>Blood Pressure</span>
+                </div>
+                <p class="measurement-value">118/78 <small>mmHg</small></p>
+                <p class="measurement-date">Recorded 28 Oct 2026</p>
+              </article>
+
+              <article class="measurement-card">
+                <div class="measurement-heading">
+                  <span class="measurement-icon measurement-icon--blue">◉</span>
+                  <span>Blood Glucose</span>
+                </div>
+                <p class="measurement-value">95 <small>mg/dL</small></p>
+                <p class="measurement-date">Recorded 27 Oct 2026</p>
+              </article>
+
+              <article class="measurement-card">
+                <div class="measurement-heading">
+                  <span class="measurement-icon measurement-icon--green">⚖</span>
+                  <span>Weight</span>
+                </div>
+                <p class="measurement-value">71.0 <small>kg</small></p>
+                <p class="measurement-date">Recorded 25 Oct 2026</p>
+              </article>
+            </div>
+
+            <div class="health-notice">
+              <span aria-hidden="true">ⓘ</span>
+              <p>
+                These entries are for personal tracking only. Measurement
+                interpretation depends on individual circumstances and
+                clinical context. They are not a diagnosis.
               </p>
             </div>
 
-            <a href="book-appointment.html" class="primary-button">
-              <span aria-hidden="true">+</span>
-              Book Appointment
+            <a href="health-tracker.html" class="secondary-button">
+              + Add Measurement
             </a>
           </section>
 
-          <!-- Summary cards -->
-          <section class="summary-grid" aria-label="Account summary">
-            <article class="summary-card">
-              <div class="summary-card__top">
-                <span class="summary-icon summary-icon--blue" aria-hidden="true"
-                  >▣</span
-                >
-                <span class="summary-caption">Upcoming</span>
-              </div>
-              <p class="summary-value">02</p>
-              <h2>Appointments</h2>
-              <a href="appointments.html">View schedule →</a>
-            </article>
-
-            <article class="summary-card">
-              <div class="summary-card__top">
-                <span class="summary-icon summary-icon--red" aria-hidden="true"
-                  >♡</span
-                >
-                <span class="summary-caption">Personal records</span>
-              </div>
-              <p class="summary-value">08</p>
-              <h2>Health Entries</h2>
-              <a href="health-tracker.html">Track your health →</a>
-            </article>
-
-            <article class="summary-card">
-              <div class="summary-card__top">
-                <span class="summary-icon summary-icon--gold" aria-hidden="true"
-                  >৳</span
-                >
-                <span class="summary-caption">Awaiting payment</span>
-              </div>
-              <p class="summary-value">৳1,800</p>
-              <h2>Outstanding Balance</h2>
-              <a href="invoices.html">View invoices →</a>
-            </article>
-
-            <article class="summary-card">
-              <div class="summary-card__top">
-                <span
-                  class="summary-icon summary-icon--green"
-                  aria-hidden="true"
-                  >✓</span
-                >
-                <span class="summary-caption">Latest visit</span>
-              </div>
-              <p class="summary-value summary-value--date">20 Oct</p>
-              <h2>Last Consultation</h2>
-              <a href="medical-records.html">View records →</a>
-            </article>
-          </section>
-
-          <!-- Appointment and profile panels -->
-          <div class="dashboard-columns">
-            <section class="panel appointments-panel">
-              <div class="panel-header">
-                <div>
-                  <p class="section-eyebrow">YOUR SCHEDULE</p>
-                  <h2>Upcoming Appointments</h2>
-                </div>
-                <a href="appointments.html" class="text-link">View all</a>
-              </div>
-
-              <article class="appointment-item">
-                <div class="appointment-date">
-                  <span> NOV </span>
-                  <strong>04</strong>
-                </div>
-
-                <div class="appointment-details">
-                  <h3>Dr. Rahman</h3>
-                  <p>Cardiology Department</p>
-                  <span class="appointment-time">◷ 10:30 AM – 11:00 AM</span>
-                </div>
-
-                <span class="status-badge status-badge--confirmed">
-                  Confirmed
-                </span>
-              </article>
-
-              <article class="appointment-item">
-                <div class="appointment-date">
-                  <span> NOV </span>
-                  <strong>12</strong>
-                </div>
-
-                <div class="appointment-details">
-                  <h3>Dr. Sultana</h3>
-                  <p>Preventive Care</p>
-                  <span class="appointment-time">◷ 02:00 PM – 02:30 PM</span>
-                </div>
-
-                <span class="status-badge status-badge--pending">
-                  Pending
-                </span>
-              </article>
-
-              <a href="book-appointment.html" class="secondary-button">
-                + Schedule Another Appointment
-              </a>
-            </section>
-
-            <section class="panel profile-panel">
-              <div class="panel-header">
-                <div>
-                  <p class="section-eyebrow">YOUR INFORMATION</p>
-                  <h2>Patient Profile</h2>
-                </div>
-                <a href="profile.html" class="text-link">Edit</a>
-              </div>
-
-              <div class="profile-summary">
-                <div class="profile-avatar">FA</div>
-                <div>
-                  <h3>Fairuz Ahmed</h3>
-                  <p>Patient ID: HC-P-00125</p>
-                </div>
-              </div>
-
-              <div class="profile-info">
-                <div>
-                  <span>Email Address</span>
-                  <strong>fairuz@example.com</strong>
-                </div>
-
-                <div>
-                  <span>Phone Number</span>
-                  <strong>+880 1XXX-XXX-XXX</strong>
-                </div>
-
-                <div>
-                  <span>Date of Birth</span>
-                  <strong>15 March 2003</strong>
-                </div>
-
-                <div>
-                  <span>Account Status</span>
-                  <strong class="account-active">
-                    <span class="status-dot"></span>
-                    Active
-                  </strong>
-                </div>
-              </div>
-
-              <a href="profile.html" class="secondary-button">
-                Manage My Profile
-              </a>
-            </section>
-          </div>
-
-          <!-- Health tracker and latest records -->
-          <div class="dashboard-columns dashboard-columns--bottom">
-            <section class="panel health-panel">
-              <div class="panel-header">
-                <div>
-                  <p class="section-eyebrow">PERSONAL HEALTH TRACKER</p>
-                  <h2>Recent Measurements</h2>
-                </div>
-                <a href="health-tracker.html" class="text-link">View trends</a>
-              </div>
-
-              <div class="measurement-grid">
-                <article class="measurement-card">
-                  <div class="measurement-heading">
-                    <span class="measurement-icon measurement-icon--red"
-                      >♡</span
-                    >
-                    <span>Blood Pressure</span>
-                  </div>
-                  <p class="measurement-value">118/78 <small>mmHg</small></p>
-                  <p class="measurement-date">Recorded 28 Oct 2026</p>
-                </article>
-
-                <article class="measurement-card">
-                  <div class="measurement-heading">
-                    <span class="measurement-icon measurement-icon--blue"
-                      >◉</span
-                    >
-                    <span>Blood Glucose</span>
-                  </div>
-                  <p class="measurement-value">95 <small>mg/dL</small></p>
-                  <p class="measurement-date">Recorded 27 Oct 2026</p>
-                </article>
-
-                <article class="measurement-card">
-                  <div class="measurement-heading">
-                    <span class="measurement-icon measurement-icon--green"
-                      >⚖</span
-                    >
-                    <span>Weight</span>
-                  </div>
-                  <p class="measurement-value">71.0 <small>kg</small></p>
-                  <p class="measurement-date">Recorded 25 Oct 2026</p>
-                </article>
-              </div>
-
-              <div class="health-notice">
-                <span aria-hidden="true">ⓘ</span>
-                <p>
-                  These entries are for personal tracking only. Measurement
-                  interpretation depends on individual circumstances and
-                  clinical context. They are not a diagnosis.
-                </p>
-              </div>
-
-              <a href="health-tracker.html" class="secondary-button">
-                + Add Measurement
-              </a>
-            </section>
-
-            <section class="panel records-panel">
-              <div class="panel-header">
-                <div>
-                  <p class="section-eyebrow">RECENT ACTIVITY</p>
-                  <h2>Medical Records</h2>
-                </div>
-                <a href="medical-records.html" class="text-link">View all</a>
-              </div>
-
-              <a href="prescriptions.html" class="record-item">
-                <span class="record-icon record-icon--red" aria-hidden="true"
-                  >✚</span
-                >
-                <span class="record-details">
-                  <strong>Latest Prescription</strong>
-                  <small>Dr. Rahman · 20 Oct 2026</small>
-                </span>
-                <span class="record-arrow" aria-hidden="true">→</span>
-              </a>
-
-              <a href="lab-results.html" class="record-item">
-                <span class="record-icon record-icon--blue" aria-hidden="true"
-                  >▤</span
-                >
-                <span class="record-details">
-                  <strong>Laboratory Report</strong>
-                  <small>Blood Test · 20 Oct 2026</small>
-                </span>
-                <span class="record-arrow" aria-hidden="true">→</span>
-              </a>
-
-              <a href="medical-records.html" class="record-item">
-                <span class="record-icon record-icon--green" aria-hidden="true"
-                  >♡</span
-                >
-                <span class="record-details">
-                  <strong>Consultation Summary</strong>
-                  <small>Cardiology · 20 Oct 2026</small>
-                </span>
-                <span class="record-arrow" aria-hidden="true">→</span>
-              </a>
-            </section>
-          </div>
-
-          <!-- Billing -->
-          <section class="panel billing-panel">
+          <section class="panel records-panel">
             <div class="panel-header">
               <div>
-                <p class="section-eyebrow">PAYMENTS & BILLING</p>
-                <h2>Recent Invoices</h2>
+                <p class="section-eyebrow">RECENT ACTIVITY</p>
+                <h2>Medical Records</h2>
               </div>
-              <a href="invoices.html" class="text-link">View all invoices</a>
+              <a href="medical-records.html" class="text-link">View all</a>
             </div>
 
-            <div class="table-wrapper">
-              <table class="invoice-table">
-                <thead>
-                  <tr>
-                    <th>Invoice ID</th>
-                    <th>Description</th>
-                    <th>Issue Date</th>
-                    <th>Amount</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
+            <a href="prescriptions.html" class="record-item">
+              <span class="record-icon record-icon--red" aria-hidden="true">✚</span>
+              <span class="record-details">
+                <strong>Latest Prescription</strong>
+                <small>Dr. Rahman · 20 Oct 2026</small>
+              </span>
+              <span class="record-arrow" aria-hidden="true">→</span>
+            </a>
 
-                <tbody>
-                  <tr>
-                    <td>INV-00125</td>
-                    <td>Consultation and laboratory tests</td>
-                    <td>20 Oct 2026</td>
-                    <td class="invoice-amount">৳1,800</td>
-                    <td>
-                      <span class="status-badge status-badge--unpaid">
-                        Unpaid
-                      </span>
-                    </td>
-                    <td>
-                      <a href="invoices.html" class="table-link">View / Pay</a>
-                    </td>
-                  </tr>
+            <a href="lab-results.html" class="record-item">
+              <span class="record-icon record-icon--blue" aria-hidden="true">▤</span>
+              <span class="record-details">
+                <strong>Laboratory Report</strong>
+                <small>Blood Test · 20 Oct 2026</small>
+              </span>
+              <span class="record-arrow" aria-hidden="true">→</span>
+            </a>
 
-                  <tr>
-                    <td>INV-00108</td>
-                    <td>Cardiology consultation</td>
-                    <td>05 Oct 2026</td>
-                    <td class="invoice-amount">৳1,000</td>
-                    <td>
-                      <span class="status-badge status-badge--paid">
-                        Paid
-                      </span>
-                    </td>
-                    <td>
-                      <a href="invoices.html" class="table-link">Receipt</a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            <a href="medical-records.html" class="record-item">
+              <span class="record-icon record-icon--green" aria-hidden="true">♡</span>
+              <span class="record-details">
+                <strong>Consultation Summary</strong>
+                <small>Cardiology · 20 Oct 2026</small>
+              </span>
+              <span class="record-arrow" aria-hidden="true">→</span>
+            </a>
           </section>
-
-          <footer class="dashboard-footer">
-            <p>
-              © 2026 HeartCare Clinic Management System. Academic project
-              demonstration.
-            </p>
-            <p>For emergencies, contact local emergency services.</p>
-          </footer>
         </div>
-      </main>
-    </div>
-  </body>
+
+        <!-- Billing -->
+        <section class="panel billing-panel">
+          <div class="panel-header">
+            <div>
+              <p class="section-eyebrow">PAYMENTS & BILLING</p>
+              <h2>Recent Invoices</h2>
+            </div>
+            <a href="invoices.html" class="text-link">View all invoices</a>
+          </div>
+
+          <div class="table-wrapper">
+            <table class="invoice-table">
+              <thead>
+                <tr>
+                  <th>Invoice ID</th>
+                  <th>Description</th>
+                  <th>Issue Date</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>INV-00125</td>
+                  <td>Consultation and laboratory tests</td>
+                  <td>20 Oct 2026</td>
+                  <td class="invoice-amount">৳1,800</td>
+                  <td>
+                    <span class="status-badge status-badge--unpaid">
+                      Unpaid
+                    </span>
+                  </td>
+                  <td>
+                    <a href="invoices.html" class="table-link">View / Pay</a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>INV-00108</td>
+                  <td>Cardiology consultation</td>
+                  <td>05 Oct 2026</td>
+                  <td class="invoice-amount">৳1,000</td>
+                  <td>
+                    <span class="status-badge status-badge--paid">
+                      Paid
+                    </span>
+                  </td>
+                  <td>
+                    <a href="invoices.html" class="table-link">Receipt</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <footer class="dashboard-footer">
+          <p>
+            © 2026 HeartCare Clinic Management System. Academic project
+            demonstration.
+          </p>
+          <p>For emergencies, contact local emergency services.</p>
+        </footer>
+      </div>
+    </main>
+  </div>
+</body>
+
 </html>
