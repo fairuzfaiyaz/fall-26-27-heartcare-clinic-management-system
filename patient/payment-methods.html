@@ -1,158 +1,176 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Payment Methods - HeartCare patient portal." />
-    <title>Payment Methods | HeartCare Clinic</title>
-    <link rel="stylesheet" href="../assets/css/style.css" />
-    <link rel="stylesheet" href="../assets/css/patient-dashboard.css" />
-    <link rel="stylesheet" href="../assets/css/patient-pages.css" />
-  </head>
 
-  <body class="patient-dashboard">
-    <div class="dashboard-layout">
-      <aside class="dashboard-sidebar">
-        <a href="../index.html" class="dashboard-brand">
-          <span class="dashboard-brand__icon" aria-hidden="true">♥</span>
-          <span>HeartCare</span>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Payment Methods - HeartCare patient portal." />
+  <title>Payment Methods | HeartCare Clinic</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/patient-dashboard.css" />
+  <link rel="stylesheet" href="../assets/css/patient-pages.css" />
+</head>
+
+<body class="patient-dashboard">
+  <div class="dashboard-layout">
+    <aside class="dashboard-sidebar">
+      <a href="../index.html" class="dashboard-brand">
+        <span class="dashboard-brand__icon" aria-hidden="true">♥</span>
+        <span>HeartCare</span>
+      </a>
+      <!-- a -->
+
+      <div class="sidebar-profile">
+        <div class="avatar">FA</div>
+        <div>
+          <strong>Fairuz Ahmed</strong>
+          <span>Patient Account</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Patient navigation">
+        <p class="sidebar-label">MENU</p>
+
+        <a href="dashboard.html" class="sidebar-link">
+          <span class="nav-icon" aria-hidden="true">▦</span>
+          Dashboard
         </a>
 
-        <div class="sidebar-profile">
-          <div class="avatar">FA</div>
+        <a href="appointments.html" class="sidebar-link">
+          <span class="nav-icon" aria-hidden="true">▣</span>
+          My Appointments
+        </a>
+
+        <a href="health-tracker.html" class="sidebar-link">
+          <span class="nav-icon" aria-hidden="true">♡</span>
+          Health Tracker
+        </a>
+
+        <a href="medical-records.html" class="sidebar-link">
+          <span class="nav-icon" aria-hidden="true">▤</span>
+          Medical Records
+        </a>
+
+        <a href="prescriptions.html" class="sidebar-link">
+          <span class="nav-icon" aria-hidden="true">✚</span>
+          Prescriptions
+        </a>
+
+        <a href="invoices.html" class="sidebar-link">
+          <span class="nav-icon" aria-hidden="true">৳</span>
+          Billing &amp; Invoices
+        </a>
+
+        <p class="sidebar-label sidebar-label--spaced">ACCOUNT</p>
+
+        <a href="profile.html" class="sidebar-link">
+          <span class="nav-icon" aria-hidden="true">♙</span>
+          My Profile
+        </a>
+
+        <a href="payment-methods.html" class="sidebar-link is-active" aria-current="page">
+          <span class="nav-icon" aria-hidden="true">▰</span>
+          Payment Methods
+        </a>
+
+        <a href="../auth/login.html" class="sidebar-link sidebar-link--logout">
+          <span class="nav-icon" aria-hidden="true">↪</span>
+          Sign Out
+        </a>
+      </nav>
+
+      <div class="sidebar-help">
+        <div class="help-icon" aria-hidden="true">?</div>
+        <strong>Need assistance?</strong>
+        <p>Contact the clinic team for help with your account.</p>
+        <a href="../index.html#contact">Contact Clinic →</a>
+      </div>
+    </aside>
+
+    <main class="dashboard-main">
+      <header class="dashboard-topbar">
+        <div class="breadcrumb">
+          <span>Patient Portal</span>
+          <span aria-hidden="true">/</span>
+          <strong>Payment Methods</strong>
+        </div>
+        <div class="topbar-actions">
+          <span class="portal-status"><span class="status-dot"></span>Patient Portal</span>
+          <a href="profile.html" class="topbar-avatar" aria-label="Open profile">FA</a>
+        </div>
+      </header>
+
+      <div class="dashboard-content">
+        <section class="welcome-section">
           <div>
-            <strong>Fairuz Ahmed</strong>
-            <span>Patient Account</span>
+            <p class="section-eyebrow">ACCOUNT</p>
+            <h1>Payment Methods</h1>
+            <p class="welcome-description">Manage your saved payment references for the demo checkout.</p>
           </div>
-        </div>
 
-        <nav class="sidebar-nav" aria-label="Patient navigation">
-          <p class="sidebar-label">MENU</p>
+        </section>
 
-          <a href="dashboard.html" class="sidebar-link">
-            <span class="nav-icon" aria-hidden="true">▦</span>
-            Dashboard
-          </a>
-
-          <a href="appointments.html" class="sidebar-link">
-            <span class="nav-icon" aria-hidden="true">▣</span>
-            My Appointments
-          </a>
-
-          <a href="health-tracker.html" class="sidebar-link">
-            <span class="nav-icon" aria-hidden="true">♡</span>
-            Health Tracker
-          </a>
-
-          <a href="medical-records.html" class="sidebar-link">
-            <span class="nav-icon" aria-hidden="true">▤</span>
-            Medical Records
-          </a>
-
-          <a href="prescriptions.html" class="sidebar-link">
-            <span class="nav-icon" aria-hidden="true">✚</span>
-            Prescriptions
-          </a>
-
-          <a href="invoices.html" class="sidebar-link">
-            <span class="nav-icon" aria-hidden="true">৳</span>
-            Billing &amp; Invoices
-          </a>
-
-          <p class="sidebar-label sidebar-label--spaced">ACCOUNT</p>
-
-          <a href="profile.html" class="sidebar-link">
-            <span class="nav-icon" aria-hidden="true">♙</span>
-            My Profile
-          </a>
-
-          <a href="payment-methods.html" class="sidebar-link is-active" aria-current="page">
-            <span class="nav-icon" aria-hidden="true">▰</span>
-            Payment Methods
-          </a>
-
-          <a href="../auth/login.html" class="sidebar-link sidebar-link--logout">
-            <span class="nav-icon" aria-hidden="true">↪</span>
-            Sign Out
-          </a>
-        </nav>
-
-        <div class="sidebar-help">
-          <div class="help-icon" aria-hidden="true">?</div>
-          <strong>Need assistance?</strong>
-          <p>Contact the clinic team for help with your account.</p>
-          <a href="../index.html#contact">Contact Clinic →</a>
-        </div>
-      </aside>
-
-      <main class="dashboard-main">
-        <header class="dashboard-topbar">
-          <div class="breadcrumb">
-            <span>Patient Portal</span>
-            <span aria-hidden="true">/</span>
-            <strong>Payment Methods</strong>
-          </div>
-          <div class="topbar-actions">
-            <span class="portal-status"><span class="status-dot"></span>Patient Portal</span>
-            <a href="profile.html" class="topbar-avatar" aria-label="Open profile">FA</a>
-          </div>
-        </header>
-
-        <div class="dashboard-content">
-          <section class="welcome-section">
-            <div>
-              <p class="section-eyebrow">ACCOUNT</p>
-              <h1>Payment Methods</h1>
-              <p class="welcome-description">Manage your saved payment references for the demo checkout.</p>
-            </div>
-            
-          </section>
-
-          <div class="dashboard-columns">
-            <section class="panel ">
-              <div class="panel-header">
-                <div>
-                  <p class="section-eyebrow">SAVED REFERENCES</p>
-                  <h2>My Payment Methods</h2>
-                </div>
-                
+        <div class="dashboard-columns">
+          <section class="panel ">
+            <div class="panel-header">
+              <div>
+                <p class="section-eyebrow">SAVED REFERENCES</p>
+                <h2>My Payment Methods</h2>
               </div>
-<div class="pp-cards">
+
+            </div>
+            <div class="pp-cards">
               <div class="pp-card">
                 <div class="pp-card__top"><strong>Visa</strong><span class="pp-chip">Primary</span></div>
                 <p class="pp-card__num">•••• •••• •••• 4242</p>
-                <div class="pp-card__foot"><span>Demo reference</span><button type="button" class="pp-act pp-act--danger">Remove</button></div>
+                <div class="pp-card__foot"><span>Demo reference</span><button type="button"
+                    class="pp-act pp-act--danger">Remove</button></div>
               </div>
               <div class="pp-card">
-                <div class="pp-card__top"><strong>Mastercard</strong><button type="button" class="pp-act">Set as primary</button></div>
+                <div class="pp-card__top"><strong>Mastercard</strong><button type="button" class="pp-act">Set as
+                    primary</button></div>
                 <p class="pp-card__num">•••• •••• •••• 1881</p>
-                <div class="pp-card__foot"><span>Demo reference</span><button type="button" class="pp-act pp-act--danger">Remove</button></div>
+                <div class="pp-card__foot"><span>Demo reference</span><button type="button"
+                    class="pp-act pp-act--danger">Remove</button></div>
               </div>
-</div>
-            </section>
-            <section class="panel ">
-              <div class="panel-header">
-                <div>
-                  <p class="section-eyebrow">ADD NEW</p>
-                  <h2>Add a Payment Method</h2>
-                </div>
-                
+            </div>
+          </section>
+          <section class="panel ">
+            <div class="panel-header">
+              <div>
+                <p class="section-eyebrow">ADD NEW</p>
+                <h2>Add a Payment Method</h2>
               </div>
-<form class="pp-form" method="post" action="#">
-<div class="pp-field"><label for="c_nick">Nickname</label><input class="pp-input" id="c_nick" name="c_nick" type="text" placeholder="e.g. Personal card" required  /></div>
-<div class="pp-field"><label for="c_brand">Brand</label><select class="pp-input" id="c_brand" name="c_brand" ><option>Visa</option><option>Mastercard</option><option>Other</option></select></div>
-<div class="pp-field"><label for="c_last4">Last 4 digits</label><input class="pp-input" id="c_last4" name="c_last4" type="text" placeholder="4242" required inputmode="numeric" pattern="[0-9]{4}" maxlength="4" /></div>
-<button type="submit" class="primary-button pp-submit">Save Payment Method</button></form>
-<div class="health-notice"><span aria-hidden="true">ⓘ</span><p>For safety, HeartCare stores only a masked reference (brand and last 4 digits). Full card numbers, CVV and expiry are never stored.</p></div>
-            </section>
-          </div>
 
-          <footer class="dashboard-footer">
-            <p>© 2026 HeartCare Clinic Management System. Academic project demonstration.</p>
-            <p>For emergencies, contact local emergency services.</p>
-          </footer>
+            </div>
+            <form class="pp-form" method="post" action="#">
+              <div class="pp-field"><label for="c_nick">Nickname</label><input class="pp-input" id="c_nick"
+                  name="c_nick" type="text" placeholder="e.g. Personal card" required /></div>
+              <div class="pp-field"><label for="c_brand">Brand</label><select class="pp-input" id="c_brand"
+                  name="c_brand">
+                  <option>Visa</option>
+                  <option>Mastercard</option>
+                  <option>Other</option>
+                </select></div>
+              <div class="pp-field"><label for="c_last4">Last 4 digits</label><input class="pp-input" id="c_last4"
+                  name="c_last4" type="text" placeholder="4242" required inputmode="numeric" pattern="[0-9]{4}"
+                  maxlength="4" /></div>
+              <button type="submit" class="primary-button pp-submit">Save Payment Method</button>
+            </form>
+            <div class="health-notice"><span aria-hidden="true">ⓘ</span>
+              <p>For safety, HeartCare stores only a masked reference (brand and last 4 digits). Full card numbers, CVV
+                and expiry are never stored.</p>
+            </div>
+          </section>
         </div>
-      </main>
-    </div>
-  </body>
+
+        <footer class="dashboard-footer">
+          <p>© 2026 HeartCare Clinic Management System. Academic project demonstration.</p>
+          <p>For emergencies, contact local emergency services.</p>
+        </footer>
+      </div>
+    </main>
+  </div>
+</body>
+
 </html>
