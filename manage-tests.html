@@ -37,7 +37,11 @@
             <span class="adm-nav__icon" aria-hidden="true">⚗</span>
             Lab Technicians
           </a>
-          <a href="manage-tests.html" class="adm-nav__link is-active" aria-current="page">
+          <a
+            href="manage-tests.html"
+            class="adm-nav__link is-active"
+            aria-current="page"
+          >
             <span class="adm-nav__icon" aria-hidden="true">◉</span>
             Test Catalogue
           </a>
@@ -79,43 +83,192 @@
             <div>
               <p class="adm-eyebrow">CLINIC SETUP</p>
               <h1>Test Catalogue</h1>
-              <p class="adm-lead">Define lab tests, prices and reference ranges.</p>
+              <p class="adm-lead">
+                Define lab tests, prices and reference ranges.
+              </p>
             </div>
             <div class="adm-head__actions"></div>
           </section>
 
           <div class="adm-grid">
+            <!-- ========== List (Read + Search + Filter) ========== -->
             <section class="adm-card adm-span-8">
-              <div class="adm-card__head"><div><h2>Test Catalogue</h2><p>The administrator owns prices and reference ranges.</p></div></div>
-<div class="adm-toolbar"><input type="search" class="adm-input adm-input--search" placeholder="Search tests…" aria-label="Search tests…" /><select class="adm-input" aria-label="Status"><option>All statuses</option><option>Active</option><option>Inactive</option></select></div><div class="adm-table-wrap"><table class="adm-table"><thead><tr><th>Test</th><th>Unit</th><th>Min</th><th>Max</th><th>Price</th><th>Status</th><th>Actions</th></tr></thead><tbody>
-<tr><td><strong>Fasting Blood Glucose</strong></td><td>mg/dL</td><td>70</td><td>99</td><td>৳300</td><td><span class="adm-badge adm-badge--ok">Active</span></td><td><div class="adm-actions"><button type="button" class="adm-act">Edit</button><button type="button" class="adm-act adm-act--danger">Deactivate</button></div></td></tr>
-<tr><td><strong>Total Cholesterol</strong></td><td>mg/dL</td><td>0</td><td>200</td><td>৳500</td><td><span class="adm-badge adm-badge--ok">Active</span></td><td><div class="adm-actions"><button type="button" class="adm-act">Edit</button><button type="button" class="adm-act adm-act--danger">Deactivate</button></div></td></tr>
-<tr><td><strong>Hemoglobin</strong></td><td>g/dL</td><td>12.0</td><td>17.5</td><td>৳250</td><td><span class="adm-badge adm-badge--ok">Active</span></td><td><div class="adm-actions"><button type="button" class="adm-act">Edit</button><button type="button" class="adm-act adm-act--danger">Deactivate</button></div></td></tr>
-<tr><td><strong>Serum Creatinine</strong></td><td>mg/dL</td><td>0.6</td><td>1.3</td><td>৳400</td><td><span class="adm-badge adm-badge--ok">Active</span></td><td><div class="adm-actions"><button type="button" class="adm-act">Edit</button><button type="button" class="adm-act adm-act--danger">Deactivate</button></div></td></tr>
-<tr><td><strong>Troponin I</strong></td><td>ng/mL</td><td>0</td><td>0.04</td><td>৳900</td><td><span class="adm-badge adm-badge--off">Inactive</span></td><td><div class="adm-actions"><button type="button" class="adm-act">Edit</button><button type="button" class="adm-act adm-act--danger">Activate</button></div></td></tr>
-</tbody></table></div><div class="adm-pager"><span>Showing 1–5 of 12</span><div class="adm-pager__btns"><button type="button" class="adm-page" disabled>‹ Prev</button><button type="button" class="adm-page is-current">1</button><button type="button" class="adm-page">2</button><button type="button" class="adm-page">3</button><button type="button" class="adm-page">Next ›</button></div></div>
+              <div class="adm-card__head">
+                <div>
+                  <h2>Test Catalogue</h2>
+                  <p>The administrator owns prices and reference ranges.</p>
+                </div>
+              </div>
+
+              <div class="adm-toolbar">
+                <input
+                  type="search"
+                  id="search-box"
+                  class="adm-input adm-input--search"
+                  placeholder="Search tests…"
+                  aria-label="Search tests"
+                  onkeyup="renderTests()"
+                />
+                <select
+                  id="status-filter"
+                  class="adm-input"
+                  aria-label="Status"
+                  onchange="renderTests()"
+                >
+                  <option value="All">All statuses</option>
+                  <option value="Active">Active</option>
+                  <option value="Inactive">Inactive</option>
+                </select>
+              </div>
+
+              <div class="adm-table-wrap">
+                <table class="adm-table">
+                  <thead>
+                    <tr>
+                      <th>Test</th>
+                      <th>Unit</th>
+                      <th>Min</th>
+                      <th>Max</th>
+                      <th>Price</th>
+                      <th>Status</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <!-- rows are built by renderTests() -->
+                  <tbody id="test-rows"></tbody>
+                </table>
+              </div>
+
+              <div class="adm-pager"><span id="row-count"></span></div>
             </section>
+
+            <!-- ========== Form (Create + Update) ========== -->
             <section class="adm-card adm-span-4">
-              <div class="adm-card__head"><div><h2>Add / Edit Test</h2><p>Define a test and its reference range.</p></div></div>
-<form class="adm-form" method="post" action="#">
-<div class="adm-field"><label for="test_name">Test name</label><input class="adm-input" id="test_name" name="test_name" type="text" placeholder="e.g. Hemoglobin" required  /></div>
-<div class="adm-field"><label for="test_unit">Unit</label><input class="adm-input" id="test_unit" name="test_unit" type="text" placeholder="e.g. g/dL" required  /></div>
-<div class="adm-field-row"><div class="adm-field"><label for="test_min">Normal min</label><input class="adm-input" id="test_min" name="test_min" type="number" placeholder="0" required step="any" /></div><div class="adm-field"><label for="test_max">Normal max</label><input class="adm-input" id="test_max" name="test_max" type="number" placeholder="0" required step="any" /></div></div>
-<div class="adm-field"><label for="test_price">Price (৳)</label><input class="adm-input" id="test_price" name="test_price" type="number" placeholder="0" required min="0" step="10" /></div>
-<div class="adm-field"><label for="test_status">Status</label><select class="adm-input" id="test_status" name="test_status"><option>Active</option><option>Inactive</option></select></div>
-<p class="adm-note">Reference ranges are informational. Flags are not diagnoses and ranges depend on method and patient context.</p><div class="adm-form__btns"><button type="submit" class="adm-btn adm-btn--solid">Save Test</button><button type="reset" class="adm-btn adm-btn--ghost">Clear</button></div></form>
+              <div class="adm-card__head">
+                <div>
+                  <h2 id="form-title">Add Test</h2>
+                  <p>Define a test and its reference range.</p>
+                </div>
+              </div>
+
+              <form
+                class="adm-form"
+                method="post"
+                action="#"
+                onsubmit="return saveTest();"
+                novalidate
+              >
+                <div class="adm-field">
+                  <label for="test_name">Test name</label>
+                  <input
+                    class="adm-input"
+                    id="test_name"
+                    name="test_name"
+                    type="text"
+                    placeholder="e.g. Hemoglobin"
+                    maxlength="60"
+                  />
+                  <span id="test_name-error"></span>
+                </div>
+
+                <div class="adm-field">
+                  <label for="test_unit">Unit</label>
+                  <input
+                    class="adm-input"
+                    id="test_unit"
+                    name="test_unit"
+                    type="text"
+                    placeholder="e.g. g/dL"
+                    maxlength="15"
+                  />
+                  <span id="test_unit-error"></span>
+                </div>
+
+                <div class="adm-field-row">
+                  <div class="adm-field">
+                    <label for="test_min">Normal min</label>
+                    <input
+                      class="adm-input"
+                      id="test_min"
+                      name="test_min"
+                      type="number"
+                      placeholder="0"
+                      step="any"
+                    />
+                    <span id="test_min-error"></span>
+                  </div>
+                  <div class="adm-field">
+                    <label for="test_max">Normal max</label>
+                    <input
+                      class="adm-input"
+                      id="test_max"
+                      name="test_max"
+                      type="number"
+                      placeholder="0"
+                      step="any"
+                    />
+                    <span id="test_max-error"></span>
+                  </div>
+                </div>
+
+                <div class="adm-field">
+                  <label for="test_price">Price (৳)</label>
+                  <input
+                    class="adm-input"
+                    id="test_price"
+                    name="test_price"
+                    type="number"
+                    placeholder="0"
+                  />
+                  <span id="test_price-error"></span>
+                </div>
+
+                <div class="adm-field">
+                  <label for="test_status">Status</label>
+                  <select class="adm-input" id="test_status" name="test_status">
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                  </select>
+                </div>
+
+                <p class="adm-note">
+                  Reference ranges are informational. Flags are not diagnoses
+                  and ranges depend on method and patient context.
+                </p>
+
+                <div class="adm-form__btns">
+                  <button
+                    type="submit"
+                    id="save-btn"
+                    class="adm-btn adm-btn--solid"
+                  >
+                    Save Test
+                  </button>
+                  <button
+                    type="button"
+                    class="adm-btn adm-btn--ghost"
+                    onclick="clearForm()"
+                  >
+                    Clear
+                  </button>
+                </div>
+              </form>
             </section>
           </div>
 
           <footer class="adm-footer">
-            <p>© 2026 HeartCare Clinic Management System. Academic project demonstration.</p>
+            <p>
+              © 2026 HeartCare Clinic Management System. Academic project
+              demonstration.
+            </p>
           </footer>
         </main>
       </div>
     </div>
-    <script>
-      document.getElementById("today-date").textContent =
-        new Date().toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "short", year: "numeric" });
-    </script>
+
+    <!-- order matters: data, helpers, then this page's code -->
+    <script src="js/admin-manage-tests-data.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/admin-manage-tests.js"></script>
   </body>
 </html>

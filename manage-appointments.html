@@ -42,7 +42,11 @@
             Test Catalogue
           </a>
           <p class="adm-nav__label">Operations</p>
-          <a href="manage-appointments.html" class="adm-nav__link is-active" aria-current="page">
+          <a
+            href="manage-appointments.html"
+            class="adm-nav__link is-active"
+            aria-current="page"
+          >
             <span class="adm-nav__icon" aria-hidden="true">▣</span>
             Appointments
           </a>
@@ -79,32 +83,213 @@
             <div>
               <p class="adm-eyebrow">OPERATIONS</p>
               <h1>Manage Appointments</h1>
-              <p class="adm-lead">Monitor and correct appointments across the whole clinic.</p>
+              <p class="adm-lead">
+                Monitor and correct appointments across the whole clinic.
+              </p>
             </div>
             <div class="adm-head__actions"></div>
           </section>
 
-          <section class="adm-card">
-            <div class="adm-card__head"><div><h2>Clinic-wide Appointments</h2><p>Appointments are cancelled, never erased, so history is preserved.</p></div></div>
-<div class="adm-toolbar"><input type="search" class="adm-input adm-input--search" placeholder="Search patient or ID…" aria-label="Search patient or ID…" /><input type="date" class="adm-input" aria-label="Date" /><select class="adm-input" aria-label="Doctor"><option>All doctors</option><option>Dr. Rahman</option><option>Dr. Sultana</option><option>Dr. Chowdhury</option></select><select class="adm-input" aria-label="Department"><option>All departments</option><option>Cardiology</option><option>General Medicine</option><option>Preventive Care</option><option>Pathology</option><option>Pediatrics</option><option>Radiology</option></select><select class="adm-input" aria-label="Status"><option>All statuses</option><option>Pending</option><option>Confirmed</option><option>Completed</option><option>Cancelled</option></select></div><div class="adm-table-wrap"><table class="adm-table"><thead><tr><th>ID</th><th>Date & time</th><th>Patient</th><th>Doctor</th><th>Department</th><th>Status</th><th>Actions</th></tr></thead><tbody>
-<tr><td>#1042</td><td>31 Oct 2026, 10:00 AM</td><td>Fairuz Ahmed</td><td>Dr. Rahman</td><td>Cardiology</td><td><span class="adm-badge adm-badge--ok">Confirmed</span></td><td><div class="adm-actions"><button type="button" class="adm-act">Correct</button><button type="button" class="adm-act adm-act--danger">Cancel</button></div></td></tr>
-<tr><td>#1043</td><td>31 Oct 2026, 10:30 AM</td><td>Nusrat Jahan</td><td>Dr. Sultana</td><td>Preventive Care</td><td><span class="adm-badge adm-badge--wait">Pending</span></td><td><div class="adm-actions"><button type="button" class="adm-act">Correct</button><button type="button" class="adm-act adm-act--danger">Cancel</button></div></td></tr>
-<tr><td>#1044</td><td>31 Oct 2026, 11:00 AM</td><td>Tanvir Hasan</td><td>Dr. Rahman</td><td>Cardiology</td><td><span class="adm-badge adm-badge--done">Completed</span></td><td><div class="adm-actions"><button type="button" class="adm-act">View</button></div></td></tr>
-<tr><td>#1045</td><td>31 Oct 2026, 11:30 AM</td><td>Maliha Karim</td><td>Dr. Chowdhury</td><td>General Medicine</td><td><span class="adm-badge adm-badge--bad">Cancelled</span></td><td><div class="adm-actions"><button type="button" class="adm-act">View</button></div></td></tr>
-<tr><td>#1046</td><td>04 Nov 2026, 10:30 AM</td><td>Fairuz Ahmed</td><td>Dr. Rahman</td><td>Cardiology</td><td><span class="adm-badge adm-badge--ok">Confirmed</span></td><td><div class="adm-actions"><button type="button" class="adm-act">Correct</button><button type="button" class="adm-act adm-act--danger">Cancel</button></div></td></tr>
-<tr><td>#1047</td><td>12 Nov 2026, 02:00 PM</td><td>Fairuz Ahmed</td><td>Dr. Sultana</td><td>Preventive Care</td><td><span class="adm-badge adm-badge--wait">Pending</span></td><td><div class="adm-actions"><button type="button" class="adm-act">Correct</button><button type="button" class="adm-act adm-act--danger">Cancel</button></div></td></tr>
-</tbody></table></div><div class="adm-pager"><span>Showing 1–6 of 312</span><div class="adm-pager__btns"><button type="button" class="adm-page" disabled>‹ Prev</button><button type="button" class="adm-page is-current">1</button><button type="button" class="adm-page">2</button><button type="button" class="adm-page">3</button><button type="button" class="adm-page">Next ›</button></div></div>
-          </section>
+          <div class="adm-grid">
+            <!-- ========== List (Read + Search + Filters) ========== -->
+            <section class="adm-card adm-span-8">
+              <div class="adm-card__head">
+                <div>
+                  <h2>Clinic-wide Appointments</h2>
+                  <p>
+                    Appointments are cancelled, never erased, so history is
+                    preserved.
+                  </p>
+                </div>
+              </div>
+
+              <div class="adm-toolbar">
+                <input
+                  type="search"
+                  id="search-box"
+                  class="adm-input adm-input--search"
+                  placeholder="Search patient or ID…"
+                  aria-label="Search patient or ID"
+                  onkeyup="renderAppointments()"
+                />
+                <input
+                  type="date"
+                  id="date-filter"
+                  class="adm-input"
+                  aria-label="Date"
+                  onchange="renderAppointments()"
+                />
+                <select
+                  id="doctor-filter"
+                  class="adm-input"
+                  aria-label="Doctor"
+                  onchange="renderAppointments()"
+                >
+                  <option value="All">All doctors</option>
+                  <option value="Dr. Rahman">Dr. Rahman</option>
+                  <option value="Dr. Sultana">Dr. Sultana</option>
+                  <option value="Dr. Chowdhury">Dr. Chowdhury</option>
+                </select>
+                <select
+                  id="dept-filter"
+                  class="adm-input"
+                  aria-label="Department"
+                  onchange="renderAppointments()"
+                >
+                  <option value="All">All departments</option>
+                  <option value="Cardiology">Cardiology</option>
+                  <option value="General Medicine">General Medicine</option>
+                  <option value="Preventive Care">Preventive Care</option>
+                  <option value="Pathology">Pathology</option>
+                  <option value="Pediatrics">Pediatrics</option>
+                  <option value="Radiology">Radiology</option>
+                </select>
+                <select
+                  id="status-filter"
+                  class="adm-input"
+                  aria-label="Status"
+                  onchange="renderAppointments()"
+                >
+                  <option value="All">All statuses</option>
+                  <option value="Pending">Pending</option>
+                  <option value="Confirmed">Confirmed</option>
+                  <option value="Completed">Completed</option>
+                  <option value="Cancelled">Cancelled</option>
+                </select>
+              </div>
+
+              <div class="adm-table-wrap">
+                <table class="adm-table">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Date &amp; time</th>
+                      <th>Patient</th>
+                      <th>Doctor</th>
+                      <th>Department</th>
+                      <th>Status</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <!-- rows are built by renderAppointments() -->
+                  <tbody id="appointment-rows"></tbody>
+                </table>
+              </div>
+
+              <div class="adm-pager"><span id="row-count"></span></div>
+            </section>
+
+            <!-- ========== Form (Update) ========== -->
+            <section class="adm-card adm-span-4">
+              <div class="adm-card__head">
+                <div>
+                  <h2>Correct Appointment</h2>
+                  <p>Click Correct on a row to load it here.</p>
+                </div>
+              </div>
+
+              <form
+                class="adm-form"
+                method="post"
+                action="#"
+                onsubmit="return saveAppointment();"
+                novalidate
+              >
+                <div class="adm-field-row">
+                  <div class="adm-field">
+                    <label for="ap_id">Appointment</label>
+                    <input class="adm-input" id="ap_id" type="text" readonly />
+                  </div>
+                  <div class="adm-field">
+                    <label for="ap_patient">Patient</label>
+                    <input
+                      class="adm-input"
+                      id="ap_patient"
+                      type="text"
+                      readonly
+                    />
+                  </div>
+                </div>
+
+                <div class="adm-field">
+                  <label for="ap_doctor">Doctor</label>
+                  <select
+                    class="adm-input"
+                    id="ap_doctor"
+                    name="ap_doctor"
+                    onchange="showDepartment()"
+                  >
+                    <option value="Dr. Rahman">Dr. Rahman</option>
+                    <option value="Dr. Sultana">Dr. Sultana</option>
+                    <option value="Dr. Chowdhury">Dr. Chowdhury</option>
+                  </select>
+                </div>
+
+                <div class="adm-field">
+                  <label for="ap_dept">Department</label>
+                  <input class="adm-input" id="ap_dept" type="text" readonly />
+                </div>
+
+                <div class="adm-field-row">
+                  <div class="adm-field">
+                    <label for="ap_date">Date</label>
+                    <input
+                      class="adm-input"
+                      id="ap_date"
+                      name="ap_date"
+                      type="date"
+                    />
+                    <span id="ap_date-error"></span>
+                  </div>
+                  <div class="adm-field">
+                    <label for="ap_time">Time</label>
+                    <input
+                      class="adm-input"
+                      id="ap_time"
+                      name="ap_time"
+                      type="time"
+                    />
+                    <span id="ap_time-error"></span>
+                  </div>
+                </div>
+
+                <div class="adm-field">
+                  <label for="ap_status">Status</label>
+                  <select class="adm-input" id="ap_status" name="ap_status">
+                    <option value="Pending">Pending</option>
+                    <option value="Confirmed">Confirmed</option>
+                  </select>
+                </div>
+
+                <div class="adm-form__btns">
+                  <button type="submit" class="adm-btn adm-btn--solid">
+                    Save Correction
+                  </button>
+                  <button
+                    type="button"
+                    class="adm-btn adm-btn--ghost"
+                    onclick="clearForm()"
+                  >
+                    Clear
+                  </button>
+                </div>
+              </form>
+            </section>
+          </div>
 
           <footer class="adm-footer">
-            <p>© 2026 HeartCare Clinic Management System. Academic project demonstration.</p>
+            <p>
+              © 2026 HeartCare Clinic Management System. Academic project
+              demonstration.
+            </p>
           </footer>
         </main>
       </div>
     </div>
-    <script>
-      document.getElementById("today-date").textContent =
-        new Date().toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "short", year: "numeric" });
-    </script>
+
+    <!-- order matters: data, helpers, then this page's code -->
+    <script src="js/admin-manage-appointments-data.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/admin-manage-appointments.js"></script>
   </body>
 </html>

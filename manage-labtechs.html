@@ -33,7 +33,11 @@
             <span class="adm-nav__icon" aria-hidden="true">✚</span>
             Doctors
           </a>
-          <a href="manage-labtechs.html" class="adm-nav__link is-active" aria-current="page">
+          <a
+            href="manage-labtechs.html"
+            class="adm-nav__link is-active"
+            aria-current="page"
+          >
             <span class="adm-nav__icon" aria-hidden="true">⚗</span>
             Lab Technicians
           </a>
@@ -79,41 +83,171 @@
             <div>
               <p class="adm-eyebrow">CLINIC SETUP</p>
               <h1>Manage Lab Technicians</h1>
-              <p class="adm-lead">Create and manage laboratory technician accounts.</p>
+              <p class="adm-lead">
+                Create and manage laboratory technician accounts.
+              </p>
             </div>
             <div class="adm-head__actions"></div>
           </section>
 
           <div class="adm-grid">
+            <!-- ========== List (Read + Search + Filter) ========== -->
             <section class="adm-card adm-span-8">
-              <div class="adm-card__head"><div><h2>Laboratory Technicians</h2><p>Technicians handle lab orders and results only.</p></div></div>
-<div class="adm-toolbar"><input type="search" class="adm-input adm-input--search" placeholder="Search technicians…" aria-label="Search technicians…" /><select class="adm-input" aria-label="Status"><option>All statuses</option><option>Active</option><option>Inactive</option></select></div><div class="adm-table-wrap"><table class="adm-table"><thead><tr><th>Technician</th><th>Phone</th><th>Status</th><th>Actions</th></tr></thead><tbody>
-<tr><td><div class="adm-person"><span class="adm-person__av">RU</span><div><strong>Rafiq Uddin</strong><small>rafiq@heartcare.com</small></div></div></td><td>+880 1711-000111</td><td><span class="adm-badge adm-badge--ok">Active</span></td><td><div class="adm-actions"><button type="button" class="adm-act">Edit</button><button type="button" class="adm-act adm-act--danger">Deactivate</button></div></td></tr>
-<tr><td><div class="adm-person"><span class="adm-person__av">SY</span><div><strong>Sabina Yasmin</strong><small>sabina@heartcare.com</small></div></div></td><td>+880 1811-000222</td><td><span class="adm-badge adm-badge--ok">Active</span></td><td><div class="adm-actions"><button type="button" class="adm-act">Edit</button><button type="button" class="adm-act adm-act--danger">Deactivate</button></div></td></tr>
-<tr><td><div class="adm-person"><span class="adm-person__av">IH</span><div><strong>Imran Hossain</strong><small>imran@heartcare.com</small></div></div></td><td>+880 1911-000333</td><td><span class="adm-badge adm-badge--off">Inactive</span></td><td><div class="adm-actions"><button type="button" class="adm-act">Edit</button><button type="button" class="adm-act adm-act--danger">Activate</button></div></td></tr>
-</tbody></table></div><div class="adm-pager"><span>Showing 1–3 of 3</span><div class="adm-pager__btns"><button type="button" class="adm-page" disabled>‹ Prev</button><button type="button" class="adm-page is-current">1</button><button type="button" class="adm-page">2</button><button type="button" class="adm-page">3</button><button type="button" class="adm-page">Next ›</button></div></div>
+              <div class="adm-card__head">
+                <div>
+                  <h2>Laboratory Technicians</h2>
+                  <p>Technicians handle lab orders and results only.</p>
+                </div>
+              </div>
+
+              <div class="adm-toolbar">
+                <input
+                  type="search"
+                  id="search-box"
+                  class="adm-input adm-input--search"
+                  placeholder="Search technicians…"
+                  aria-label="Search technicians"
+                  onkeyup="renderTechs()"
+                />
+                <select
+                  id="status-filter"
+                  class="adm-input"
+                  aria-label="Status"
+                  onchange="renderTechs()"
+                >
+                  <option value="All">All statuses</option>
+                  <option value="Active">Active</option>
+                  <option value="Inactive">Inactive</option>
+                </select>
+              </div>
+
+              <div class="adm-table-wrap">
+                <table class="adm-table">
+                  <thead>
+                    <tr>
+                      <th>Technician</th>
+                      <th>Phone</th>
+                      <th>Status</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <!-- rows are built by renderTechs() -->
+                  <tbody id="tech-rows"></tbody>
+                </table>
+              </div>
+
+              <div class="adm-pager"><span id="row-count"></span></div>
             </section>
+
+            <!-- ========== Form (Create + Update) ========== -->
             <section class="adm-card adm-span-4">
-              <div class="adm-card__head"><div><h2>Add Technician</h2><p>Create a technician account.</p></div></div>
-<form class="adm-form" method="post" action="#">
-<div class="adm-field"><label for="lt_name">Full name</label><input class="adm-input" id="lt_name" name="lt_name" type="text" placeholder="Full name" required  /></div>
-<div class="adm-field"><label for="lt_email">Email</label><input class="adm-input" id="lt_email" name="lt_email" type="email" placeholder="tech@heartcare.com" required  /></div>
-<div class="adm-field"><label for="lt_phone">Phone</label><input class="adm-input" id="lt_phone" name="lt_phone" type="tel" placeholder="+880 1XXX-XXX-XXX" required  /></div>
-<div class="adm-field"><label for="lt_pass">Temporary password</label><input class="adm-input" id="lt_pass" name="lt_pass" type="password" placeholder="Min. 8 characters" required minlength="8" /></div>
-<div class="adm-field"><label for="lt_status">Status</label><select class="adm-input" id="lt_status" name="lt_status"><option>Active</option><option>Inactive</option></select></div>
-<div class="adm-form__btns"><button type="submit" class="adm-btn adm-btn--solid">Create Technician</button><button type="reset" class="adm-btn adm-btn--ghost">Clear</button></div></form>
+              <div class="adm-card__head">
+                <div>
+                  <h2 id="form-title">Add Technician</h2>
+                  <p>Create a technician account.</p>
+                </div>
+              </div>
+
+              <form
+                class="adm-form"
+                method="post"
+                action="#"
+                onsubmit="return saveTech();"
+                novalidate
+              >
+                <div class="adm-field">
+                  <label for="lt_name">Full name</label>
+                  <input
+                    class="adm-input"
+                    id="lt_name"
+                    name="lt_name"
+                    type="text"
+                    placeholder="Full name"
+                    maxlength="60"
+                  />
+                  <span id="lt_name-error"></span>
+                </div>
+
+                <div class="adm-field">
+                  <label for="lt_email">Email</label>
+                  <input
+                    class="adm-input"
+                    id="lt_email"
+                    name="lt_email"
+                    type="email"
+                    placeholder="tech@heartcare.com"
+                    maxlength="100"
+                  />
+                  <span id="lt_email-error"></span>
+                </div>
+
+                <div class="adm-field">
+                  <label for="lt_phone">Phone</label>
+                  <input
+                    class="adm-input"
+                    id="lt_phone"
+                    name="lt_phone"
+                    type="tel"
+                    placeholder="01XXXXXXXXX"
+                    maxlength="11"
+                  />
+                  <span id="lt_phone-error"></span>
+                </div>
+
+                <div class="adm-field">
+                  <label for="lt_pass">Temporary password</label>
+                  <input
+                    class="adm-input"
+                    id="lt_pass"
+                    name="lt_pass"
+                    type="password"
+                    placeholder="Min. 8 characters"
+                  />
+                  <span id="lt_pass-error"></span>
+                </div>
+
+                <div class="adm-field">
+                  <label for="lt_status">Status</label>
+                  <select class="adm-input" id="lt_status" name="lt_status">
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                  </select>
+                </div>
+
+                <div class="adm-form__btns">
+                  <button
+                    type="submit"
+                    id="save-btn"
+                    class="adm-btn adm-btn--solid"
+                  >
+                    Create Technician
+                  </button>
+                  <button
+                    type="button"
+                    class="adm-btn adm-btn--ghost"
+                    onclick="clearForm()"
+                  >
+                    Clear
+                  </button>
+                </div>
+              </form>
             </section>
           </div>
 
           <footer class="adm-footer">
-            <p>© 2026 HeartCare Clinic Management System. Academic project demonstration.</p>
+            <p>
+              © 2026 HeartCare Clinic Management System. Academic project
+              demonstration.
+            </p>
           </footer>
         </main>
       </div>
     </div>
-    <script>
-      document.getElementById("today-date").textContent =
-        new Date().toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "short", year: "numeric" });
-    </script>
+
+    <!-- order matters: data, helpers, then this page's code -->
+    <script src="js/admin-manage-labtechs-data.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/admin-validators.js"></script>
+    <script src="js/admin-manage-labtechs.js"></script>
   </body>
 </html>

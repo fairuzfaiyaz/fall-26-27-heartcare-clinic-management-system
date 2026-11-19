@@ -1,0 +1,186 @@
+// admin-manage-labtechs-data.js
+// Dummy data for manage-labtechs.html.
+// Passwords are NOT stored here. Later PHP will hash them in MySQL.
+
+let labTechs = [
+  {
+    name: "Rafiq Uddin",
+    email: "rafiq@heartcare.com",
+    phone: "01711000111",
+    status: "Active",
+  },
+  {
+    name: "Sabina Yasmin",
+    email: "sabina@heartcare.com",
+    phone: "01811000222",
+    status: "Active",
+  },
+  {
+    name: "Imran Hossain",
+    email: "imran@heartcare.com",
+    phone: "01911000333",
+    status: "Inactive",
+  },
+  {
+    name: "Nusrat Jahan",
+    email: "nusrat@heartcare.com",
+    phone: "01611000444",
+    status: "Active",
+  },
+  {
+    name: "Tanvir Ahmed",
+    email: "tanvir@heartcare.com",
+    phone: "01711000555",
+    status: "Active",
+  },
+  {
+    name: "Farzana Akter",
+    email: "farzana@heartcare.com",
+    phone: "01811000666",
+    status: "Active",
+  },
+  {
+    name: "Mahmudul Hasan",
+    email: "mahmudul@heartcare.com",
+    phone: "01911000777",
+    status: "Inactive",
+  },
+  {
+    name: "Sharmin Sultana",
+    email: "sharmin@heartcare.com",
+    phone: "01611000888",
+    status: "Active",
+  },
+  {
+    name: "Rakibul Islam",
+    email: "rakibul@heartcare.com",
+    phone: "01711000999",
+    status: "Active",
+  },
+  {
+    name: "Tanjina Rahman",
+    email: "tanjina@heartcare.com",
+    phone: "01811001010",
+    status: "Active",
+  },
+  {
+    name: "Arif Hossain",
+    email: "arif@heartcare.com",
+    phone: "01911001111",
+    status: "Inactive",
+  },
+  {
+    name: "Maliha Chowdhury",
+    email: "maliha@heartcare.com",
+    phone: "01611001212",
+    status: "Active",
+  },
+  {
+    name: "Sabbir Ahmed",
+    email: "sabbir@heartcare.com",
+    phone: "01711001313",
+    status: "Active",
+  },
+  {
+    name: "Jannatul Ferdous",
+    email: "jannatul@heartcare.com",
+    phone: "01811001414",
+    status: "Active",
+  },
+  {
+    name: "Mehedi Hasan",
+    email: "mehedi@heartcare.com",
+    phone: "01911001515",
+    status: "Active",
+  },
+  {
+    name: "Sumaiya Akter",
+    email: "sumaiya@heartcare.com",
+    phone: "01611001616",
+    status: "Inactive",
+  },
+  {
+    name: "Shakil Ahmed",
+    email: "shakil@heartcare.com",
+    phone: "01711001717",
+    status: "Active",
+  },
+  {
+    name: "Afroza Begum",
+    email: "afroza@heartcare.com",
+    phone: "01811001818",
+    status: "Active",
+  },
+  {
+    name: "Hasan Mahmud",
+    email: "hasan@heartcare.com",
+    phone: "01911001919",
+    status: "Active",
+  },
+  {
+    name: "Nabila Islam",
+    email: "nabila@heartcare.com",
+    phone: "01611002020",
+    status: "Active",
+  },
+  {
+    name: "Fahim Rahman",
+    email: "fahim@heartcare.com",
+    phone: "01711002121",
+    status: "Inactive",
+  },
+  {
+    name: "Rumana Akter",
+    email: "rumana@heartcare.com",
+    phone: "01811002222",
+    status: "Active",
+  },
+  {
+    name: "Anisur Rahman",
+    email: "anisur@heartcare.com",
+    phone: "01911002323",
+    status: "Active",
+  },
+  {
+    name: "Tasmia Jahan",
+    email: "tasmia@heartcare.com",
+    phone: "01611002424",
+    status: "Active",
+  },
+  {
+    name: "Omar Faruk",
+    email: "omar@heartcare.com",
+    phone: "01711002525",
+    status: "Active",
+  },
+  {
+    name: "Sadia Sultana",
+    email: "sadia@heartcare.com",
+    phone: "01811002626",
+    status: "Inactive",
+  },
+  {
+    name: "Abdullah Al Mamun",
+    email: "abdullah@heartcare.com",
+    phone: "01911002727",
+    status: "Active",
+  },
+  {
+    name: "Mst. Roksana Khatun",
+    email: "roksana@heartcare.com",
+    phone: "01611002828",
+    status: "Active",
+  },
+  {
+    name: "Nayeem Hossain",
+    email: "nayeem@heartcare.com",
+    phone: "01711002929",
+    status: "Active",
+  },
+  {
+    name: "Ishrat Jahan",
+    email: "ishrat@heartcare.com",
+    phone: "01811003030",
+    status: "Active",
+  },
+];
