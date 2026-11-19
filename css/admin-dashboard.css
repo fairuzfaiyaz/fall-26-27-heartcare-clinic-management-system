@@ -970,6 +970,64 @@ textarea.adm-input {
 }
 
 /* ==========================================================================
+   Add this at the END of css/admin-dashboard.css
+   Simple bar charts (made with divs) + small select in a card header
+   ========================================================================== */
+
+.adm-bars {
+  display: grid;
+  gap: 0.85rem;
+  padding-top: 0.5rem;
+}
+
+.adm-bar-row {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr) 90px;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.8rem;
+  color: var(--color-ink-soft);
+}
+
+.adm-bar-track {
+  height: 14px;
+  border-radius: var(--radius-pill);
+  background: #eef3f7;
+  overflow: hidden;
+}
+
+.adm-bar-fill {
+  height: 100%;
+  border-radius: var(--radius-pill);
+  background: var(--color-blue);
+}
+
+.adm-bar-fill--red {
+  background: var(--color-red);
+}
+
+.adm-bar-fill--dark {
+  background: var(--color-ink);
+}
+
+.adm-bar-value {
+  text-align: right;
+  color: var(--color-ink);
+  font-weight: 700;
+}
+
+.adm-card__head .adm-input {
+  width: auto;
+  min-height: 36px;
+}
+
+@media (max-width: 760px) {
+  .adm-bar-row {
+    grid-template-columns: 90px minmax(0, 1fr) 70px;
+  }
+}
+
+/* ==========================================================================
    19. Responsive additions
    ========================================================================== */
 
