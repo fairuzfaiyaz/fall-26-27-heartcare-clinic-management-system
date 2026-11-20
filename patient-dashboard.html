@@ -7,7 +7,6 @@
 
   <meta name="description"
     content="HeartCare patient dashboard for appointments, invoices, health tracking and medical records." />
-  <!-- abc -->
 
   <title>Patient Dashboard | HeartCare Clinic</title>
 
@@ -25,9 +24,10 @@
       </a>
 
       <div class="sidebar-profile">
-        <div class="avatar">BIVA</div>
+        <!-- filled by showGreeting() -->
+        <div class="avatar" id="sidebar-initials"></div>
         <div>
-          <strong>Bivaaaaaa</strong>
+          <strong id="sidebar-name"></strong>
           <span>Patient Account</span>
         </div>
       </div>
@@ -62,7 +62,7 @@
 
         <a href="invoices.html" class="sidebar-link">
           <span class="nav-icon" aria-hidden="true">৳</span>
-          Billing & Invoices
+          Billing &amp; Invoices
         </a>
 
         <p class="sidebar-label sidebar-label--spaced">ACCOUNT</p>
@@ -107,9 +107,7 @@
             Patient Portal
           </span>
 
-          <a href="patient-profile.html" class="topbar-avatar" aria-label="Open profile">
-            BIVA
-          </a>
+          <a href="patient-profile.html" class="topbar-avatar" id="topbar-initials" aria-label="Open profile"></a>
         </div>
       </header>
 
@@ -118,9 +116,8 @@
         <section class="welcome-section">
           <div>
             <p class="section-eyebrow">PATIENT OVERVIEW</p>
-            <h1>
-              Good morning, Bivaaaaaaaaa!!! <span aria-hidden="true">👋</span>
-            </h1>
+            <!-- greeting and first name are filled by showGreeting() -->
+            <h1 id="greeting"></h1>
             <p class="welcome-description">
               Here's an overview of your appointments and healthcare activity.
             </p>
@@ -132,14 +129,14 @@
           </a>
         </section>
 
-        <!-- Summary cards -->
+        <!-- Summary cards: the numbers are filled by renderSummary() -->
         <section class="summary-grid" aria-label="Account summary">
           <article class="summary-card">
             <div class="summary-card__top">
               <span class="summary-icon summary-icon--blue" aria-hidden="true">▣</span>
               <span class="summary-caption">Upcoming</span>
             </div>
-            <p class="summary-value">02</p>
+            <p class="summary-value" id="sum-upcoming"></p>
             <h2>Appointments</h2>
             <a href="appointments.html">View schedule →</a>
           </article>
@@ -149,7 +146,7 @@
               <span class="summary-icon summary-icon--red" aria-hidden="true">♡</span>
               <span class="summary-caption">Personal records</span>
             </div>
-            <p class="summary-value">08</p>
+            <p class="summary-value" id="sum-health"></p>
             <h2>Health Entries</h2>
             <a href="health-tracker.html">Track your health →</a>
           </article>
@@ -159,7 +156,7 @@
               <span class="summary-icon summary-icon--gold" aria-hidden="true">৳</span>
               <span class="summary-caption">Awaiting payment</span>
             </div>
-            <p class="summary-value">৳1,800</p>
+            <p class="summary-value" id="sum-balance"></p>
             <h2>Outstanding Balance</h2>
             <a href="invoices.html">View invoices →</a>
           </article>
@@ -169,7 +166,7 @@
               <span class="summary-icon summary-icon--green" aria-hidden="true">✓</span>
               <span class="summary-caption">Latest visit</span>
             </div>
-            <p class="summary-value summary-value--date">20 Oct</p>
+            <p class="summary-value summary-value--date" id="sum-last"></p>
             <h2>Last Consultation</h2>
             <a href="medical-records.html">View records →</a>
           </article>
@@ -186,39 +183,8 @@
               <a href="appointments.html" class="text-link">View all</a>
             </div>
 
-            <article class="appointment-item">
-              <div class="appointment-date">
-                <span> NOV </span>
-                <strong>04</strong>
-              </div>
-
-              <div class="appointment-details">
-                <h3>Dr. Rahman</h3>
-                <p>Cardiology Department</p>
-                <span class="appointment-time">◷ 10:30 AM – 11:00 AM</span>
-              </div>
-
-              <span class="status-badge status-badge--confirmed">
-                Confirmed
-              </span>
-            </article>
-
-            <article class="appointment-item">
-              <div class="appointment-date">
-                <span> NOV </span>
-                <strong>12</strong>
-              </div>
-
-              <div class="appointment-details">
-                <h3>Dr. Sultana</h3>
-                <p>Preventive Care</p>
-                <span class="appointment-time">◷ 02:00 PM – 02:30 PM</span>
-              </div>
-
-              <span class="status-badge status-badge--pending">
-                Pending
-              </span>
-            </article>
+            <!-- items are built by renderAppointments() -->
+            <div id="appointment-list"></div>
 
             <a href="book-appointment.html" class="secondary-button">
               + Schedule Another Appointment
@@ -234,36 +200,34 @@
               <a href="patient-profile.html" class="text-link">Edit</a>
             </div>
 
+            <!-- filled by renderProfile() -->
             <div class="profile-summary">
-              <div class="profile-avatar">FA</div>
+              <div class="profile-avatar" id="profile-initials"></div>
               <div>
-                <h3>Fairuz Ahmed</h3>
-                <p>Patient ID: HC-P-00125</p>
+                <h3 id="profile-name"></h3>
+                <p id="profile-id"></p>
               </div>
             </div>
 
             <div class="profile-info">
               <div>
                 <span>Email Address</span>
-                <strong>fairuz@example.com</strong>
+                <strong id="profile-email"></strong>
               </div>
 
               <div>
                 <span>Phone Number</span>
-                <strong>+880 1XXX-XXX-XXX</strong>
+                <strong id="profile-phone"></strong>
               </div>
 
               <div>
                 <span>Date of Birth</span>
-                <strong>15 March 2003</strong>
+                <strong id="profile-dob"></strong>
               </div>
 
               <div>
                 <span>Account Status</span>
-                <strong class="account-active">
-                  <span class="status-dot"></span>
-                  Active
-                </strong>
+                <strong class="account-active" id="profile-status"></strong>
               </div>
             </div>
 
@@ -284,34 +248,8 @@
               <a href="health-tracker.html" class="text-link">View trends</a>
             </div>
 
-            <div class="measurement-grid">
-              <article class="measurement-card">
-                <div class="measurement-heading">
-                  <span class="measurement-icon measurement-icon--red">♡</span>
-                  <span>Blood Pressure</span>
-                </div>
-                <p class="measurement-value">118/78 <small>mmHg</small></p>
-                <p class="measurement-date">Recorded 28 Oct 2026</p>
-              </article>
-
-              <article class="measurement-card">
-                <div class="measurement-heading">
-                  <span class="measurement-icon measurement-icon--blue">◉</span>
-                  <span>Blood Glucose</span>
-                </div>
-                <p class="measurement-value">95 <small>mg/dL</small></p>
-                <p class="measurement-date">Recorded 27 Oct 2026</p>
-              </article>
-
-              <article class="measurement-card">
-                <div class="measurement-heading">
-                  <span class="measurement-icon measurement-icon--green">⚖</span>
-                  <span>Weight</span>
-                </div>
-                <p class="measurement-value">71.0 <small>kg</small></p>
-                <p class="measurement-date">Recorded 25 Oct 2026</p>
-              </article>
-            </div>
+            <!-- cards are built by renderMeasurements() -->
+            <div class="measurement-grid" id="measurement-grid"></div>
 
             <div class="health-notice">
               <span aria-hidden="true">ⓘ</span>
@@ -336,32 +274,8 @@
               <a href="medical-records.html" class="text-link">View all</a>
             </div>
 
-            <a href="prescriptions.html" class="record-item">
-              <span class="record-icon record-icon--red" aria-hidden="true">✚</span>
-              <span class="record-details">
-                <strong>Latest Prescription</strong>
-                <small>Dr. Rahman · 20 Oct 2026</small>
-              </span>
-              <span class="record-arrow" aria-hidden="true">→</span>
-            </a>
-
-            <a href="lab-results.html" class="record-item">
-              <span class="record-icon record-icon--blue" aria-hidden="true">▤</span>
-              <span class="record-details">
-                <strong>Laboratory Report</strong>
-                <small>Blood Test · 20 Oct 2026</small>
-              </span>
-              <span class="record-arrow" aria-hidden="true">→</span>
-            </a>
-
-            <a href="medical-records.html" class="record-item">
-              <span class="record-icon record-icon--green" aria-hidden="true">♡</span>
-              <span class="record-details">
-                <strong>Consultation Summary</strong>
-                <small>Cardiology · 20 Oct 2026</small>
-              </span>
-              <span class="record-arrow" aria-hidden="true">→</span>
-            </a>
+            <!-- links are built by renderRecords() -->
+            <div id="record-list"></div>
           </section>
         </div>
 
@@ -369,7 +283,7 @@
         <section class="panel billing-panel">
           <div class="panel-header">
             <div>
-              <p class="section-eyebrow">PAYMENTS & BILLING</p>
+              <p class="section-eyebrow">PAYMENTS &amp; BILLING</p>
               <h2>Recent Invoices</h2>
             </div>
             <a href="invoices.html" class="text-link">View all invoices</a>
@@ -388,37 +302,8 @@
                 </tr>
               </thead>
 
-              <tbody>
-                <tr>
-                  <td>INV-00125</td>
-                  <td>Consultation and laboratory tests</td>
-                  <td>20 Oct 2026</td>
-                  <td class="invoice-amount">৳1,800</td>
-                  <td>
-                    <span class="status-badge status-badge--unpaid">
-                      Unpaid
-                    </span>
-                  </td>
-                  <td>
-                    <a href="invoices.html" class="table-link">View / Pay</a>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>INV-00108</td>
-                  <td>Cardiology consultation</td>
-                  <td>05 Oct 2026</td>
-                  <td class="invoice-amount">৳1,000</td>
-                  <td>
-                    <span class="status-badge status-badge--paid">
-                      Paid
-                    </span>
-                  </td>
-                  <td>
-                    <a href="invoices.html" class="table-link">Receipt</a>
-                  </td>
-                </tr>
-              </tbody>
+              <!-- rows are built by renderInvoices() -->
+              <tbody id="invoice-rows"></tbody>
             </table>
           </div>
         </section>
@@ -433,6 +318,12 @@
       </div>
     </main>
   </div>
+
+  <!-- order matters: account data, page data, helpers, then this page's code -->
+  <script src="js/patient-account-data.js"></script>
+  <script src="js/patient-dashboard-data.js"></script>
+  <script src="js/patient-common.js"></script>
+  <script src="js/patient-dashboard.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,381 @@
+// patient-dashboard-data.js
+// Data for patient-dashboard.html: arrays of objects.
+// (The logged-in patient is in patient-account-data.js.)
+// Later each of these becomes a MySQL table (patients, appointments,
+// health_entries, invoices ...) and the logged-in patient comes from $_SESSION.
+
+// date is "YYYY-MM-DD", start and end are "HH:MM" (24 hour)
+let appointments = [
+  // Upcoming appointments
+  {
+    id: 1072,
+    date: "2026-11-25",
+    start: "10:00",
+    end: "10:30",
+    doctor: "Dr. Rahman",
+    department: "Cardiology",
+    status: "Confirmed",
+  },
+  {
+    id: 1073,
+    date: "2026-11-28",
+    start: "11:00",
+    end: "11:30",
+    doctor: "Dr. Sultana",
+    department: "Preventive Care",
+    status: "Pending",
+  },
+  {
+    id: 1074,
+    date: "2026-12-03",
+    start: "14:00",
+    end: "14:30",
+    doctor: "Dr. Haque",
+    department: "Cardiology",
+    status: "Confirmed",
+  },
+  {
+    id: 1075,
+    date: "2026-12-08",
+    start: "09:30",
+    end: "10:00",
+    doctor: "Dr. Chowdhury",
+    department: "General Medicine",
+    status: "Pending",
+  },
+  {
+    id: 1076,
+    date: "2026-12-12",
+    start: "10:30",
+    end: "11:00",
+    doctor: "Dr. Rahman",
+    department: "Cardiology",
+    status: "Confirmed",
+  },
+
+  // Previous appointments
+  {
+    id: 1047,
+    date: "2026-11-12",
+    start: "14:00",
+    end: "14:30",
+    doctor: "Dr. Sultana",
+    department: "Preventive Care",
+    status: "Pending",
+  },
+  {
+    id: 1046,
+    date: "2026-11-04",
+    start: "10:30",
+    end: "11:00",
+    doctor: "Dr. Rahman",
+    department: "Cardiology",
+    status: "Confirmed",
+  },
+  {
+    id: 1031,
+    date: "2026-10-20",
+    start: "11:00",
+    end: "11:30",
+    doctor: "Dr. Rahman",
+    department: "Cardiology",
+    status: "Completed",
+  },
+  {
+    id: 1018,
+    date: "2026-10-05",
+    start: "09:30",
+    end: "10:00",
+    doctor: "Dr. Haque",
+    department: "Cardiology",
+    status: "Cancelled",
+  },
+  {
+    id: 1009,
+    date: "2026-09-22",
+    start: "10:00",
+    end: "10:30",
+    doctor: "Dr. Sultana",
+    department: "Preventive Care",
+    status: "Completed",
+  },
+  {
+    id: 998,
+    date: "2026-09-08",
+    start: "11:30",
+    end: "12:00",
+    doctor: "Dr. Rahman",
+    department: "Cardiology",
+    status: "Completed",
+  },
+  {
+    id: 987,
+    date: "2026-08-19",
+    start: "14:00",
+    end: "14:30",
+    doctor: "Dr. Chowdhury",
+    department: "General Medicine",
+    status: "Completed",
+  },
+  {
+    id: 976,
+    date: "2026-08-05",
+    start: "09:00",
+    end: "09:30",
+    doctor: "Dr. Haque",
+    department: "Cardiology",
+    status: "Cancelled",
+  },
+  {
+    id: 965,
+    date: "2026-07-21",
+    start: "10:30",
+    end: "11:00",
+    doctor: "Dr. Rahman",
+    department: "Cardiology",
+    status: "Completed",
+  },
+  {
+    id: 951,
+    date: "2026-07-07",
+    start: "13:00",
+    end: "13:30",
+    doctor: "Dr. Sultana",
+    department: "Preventive Care",
+    status: "Completed",
+  },
+  {
+    id: 938,
+    date: "2026-06-18",
+    start: "11:00",
+    end: "11:30",
+    doctor: "Dr. Chowdhury",
+    department: "General Medicine",
+    status: "Completed",
+  },
+];
+
+// The patient's own measurements. value is text so "71.0" keeps its zero.
+let healthEntries = [
+  // November 2026
+  { type: "Blood Pressure", value: "116/76", unit: "mmHg", date: "2026-11-18" },
+  { type: "Blood Glucose", value: "94", unit: "mg/dL", date: "2026-11-16" },
+  { type: "Weight", value: "70.8", unit: "kg", date: "2026-11-14" },
+  { type: "Blood Pressure", value: "119/79", unit: "mmHg", date: "2026-11-10" },
+  { type: "Blood Glucose", value: "97", unit: "mg/dL", date: "2026-11-08" },
+  { type: "Weight", value: "71.1", unit: "kg", date: "2026-11-05" },
+
+  // October 2026
+  { type: "Blood Pressure", value: "118/78", unit: "mmHg", date: "2026-10-28" },
+  { type: "Blood Glucose", value: "95", unit: "mg/dL", date: "2026-10-27" },
+  { type: "Weight", value: "71.0", unit: "kg", date: "2026-10-25" },
+  { type: "Blood Pressure", value: "120/80", unit: "mmHg", date: "2026-10-21" },
+  { type: "Blood Glucose", value: "101", unit: "mg/dL", date: "2026-10-18" },
+  { type: "Weight", value: "71.4", unit: "kg", date: "2026-10-15" },
+  { type: "Blood Pressure", value: "122/82", unit: "mmHg", date: "2026-10-12" },
+  { type: "Blood Glucose", value: "98", unit: "mg/dL", date: "2026-10-09" },
+  { type: "Weight", value: "71.2", unit: "kg", date: "2026-10-06" },
+
+  // September 2026
+  { type: "Blood Pressure", value: "121/81", unit: "mmHg", date: "2026-09-28" },
+  { type: "Blood Glucose", value: "99", unit: "mg/dL", date: "2026-09-25" },
+  { type: "Weight", value: "71.5", unit: "kg", date: "2026-09-22" },
+  { type: "Blood Pressure", value: "117/77", unit: "mmHg", date: "2026-09-18" },
+  { type: "Blood Glucose", value: "96", unit: "mg/dL", date: "2026-09-14" },
+  { type: "Weight", value: "71.3", unit: "kg", date: "2026-09-10" },
+  { type: "Blood Pressure", value: "120/79", unit: "mmHg", date: "2026-09-05" },
+
+  // August 2026
+  { type: "Blood Pressure", value: "119/80", unit: "mmHg", date: "2026-08-28" },
+  { type: "Blood Glucose", value: "102", unit: "mg/dL", date: "2026-08-24" },
+  { type: "Weight", value: "71.6", unit: "kg", date: "2026-08-20" },
+  { type: "Blood Pressure", value: "123/82", unit: "mmHg", date: "2026-08-15" },
+  { type: "Blood Glucose", value: "100", unit: "mg/dL", date: "2026-08-10" },
+  { type: "Weight", value: "71.8", unit: "kg", date: "2026-08-05" },
+
+  // July 2026
+  { type: "Blood Pressure", value: "120/80", unit: "mmHg", date: "2026-07-25" },
+  { type: "Blood Glucose", value: "98", unit: "mg/dL", date: "2026-07-20" },
+  { type: "Weight", value: "72.0", unit: "kg", date: "2026-07-15" },
+  { type: "Blood Pressure", value: "121/80", unit: "mmHg", date: "2026-07-08" },
+];
+
+// The three measurement cards shown on the dashboard (icon + colour class)
+const measurementTypes = [
+  { name: "Blood Pressure", icon: "♡", colour: "red" },
+  { name: "Blood Glucose", icon: "◉", colour: "blue" },
+  { name: "Weight", icon: "⚖", colour: "green" },
+];
+
+// Shortcuts to the latest medical records
+const records = [
+  {
+    title: "Latest Prescription",
+    detail: "Dr. Rahman",
+    date: "2026-11-18",
+    link: "prescriptions.html",
+    icon: "✚",
+    colour: "red",
+  },
+  {
+    title: "Laboratory Report",
+    detail: "Lipid Profile",
+    date: "2026-11-16",
+    link: "lab-results.html",
+    icon: "▤",
+    colour: "blue",
+  },
+  {
+    title: "Consultation Summary",
+    detail: "Cardiology",
+    date: "2026-11-04",
+    link: "medical-records.html",
+    icon: "♡",
+    colour: "green",
+  },
+  {
+    title: "Laboratory Report",
+    detail: "Blood Glucose Test",
+    date: "2026-10-27",
+    link: "lab-results.html",
+    icon: "▤",
+    colour: "blue",
+  },
+  {
+    title: "Latest Prescription",
+    detail: "Dr. Rahman",
+    date: "2026-10-20",
+    link: "prescriptions.html",
+    icon: "✚",
+    colour: "red",
+  },
+  {
+    title: "Consultation Summary",
+    detail: "Preventive Care",
+    date: "2026-09-22",
+    link: "medical-records.html",
+    icon: "♡",
+    colour: "green",
+  },
+  {
+    title: "Laboratory Report",
+    detail: "Complete Blood Count",
+    date: "2026-09-08",
+    link: "lab-results.html",
+    icon: "▤",
+    colour: "blue",
+  },
+  {
+    title: "Consultation Summary",
+    detail: "General Medicine",
+    date: "2026-08-19",
+    link: "medical-records.html",
+    icon: "♡",
+    colour: "green",
+  },
+  {
+    title: "Latest Prescription",
+    detail: "Dr. Sultana",
+    date: "2026-07-21",
+    link: "prescriptions.html",
+    icon: "✚",
+    colour: "red",
+  },
+  {
+    title: "Laboratory Report",
+    detail: "Fasting Blood Glucose",
+    date: "2026-06-18",
+    link: "lab-results.html",
+    icon: "▤",
+    colour: "blue",
+  },
+];
+
+// Patient invoices
+let invoices = [
+  // Recent invoices
+  {
+    id: "INV-00132",
+    description: "Cardiology consultation",
+    date: "2026-11-18",
+    amount: 1000,
+    status: "Unpaid",
+  },
+  {
+    id: "INV-00131",
+    description: "Lipid profile test",
+    date: "2026-11-16",
+    amount: 850,
+    status: "Paid",
+  },
+  {
+    id: "INV-00129",
+    description: "Cardiology consultation",
+    date: "2026-11-04",
+    amount: 1000,
+    status: "Paid",
+  },
+  {
+    id: "INV-00125",
+    description: "Consultation and laboratory tests",
+    date: "2026-10-20",
+    amount: 1800,
+    status: "Unpaid",
+  },
+  {
+    id: "INV-00122",
+    description: "Blood glucose test",
+    date: "2026-10-18",
+    amount: 300,
+    status: "Paid",
+  },
+  {
+    id: "INV-00108",
+    description: "Cardiology consultation",
+    date: "2026-10-05",
+    amount: 1000,
+    status: "Paid",
+  },
+  {
+    id: "INV-00098",
+    description: "Preventive care consultation",
+    date: "2026-09-22",
+    amount: 900,
+    status: "Paid",
+  },
+  {
+    id: "INV-00091",
+    description: "Blood test and consultation",
+    date: "2026-09-08",
+    amount: 1250,
+    status: "Paid",
+  },
+  {
+    id: "INV-00083",
+    description: "General medicine consultation",
+    date: "2026-08-19",
+    amount: 800,
+    status: "Paid",
+  },
+  {
+    id: "INV-00072",
+    description: "Cardiology consultation",
+    date: "2026-07-21",
+    amount: 1000,
+    status: "Paid",
+  },
+  {
+    id: "INV-00061",
+    description: "Laboratory tests",
+    date: "2026-06-18",
+    amount: 650,
+    status: "Paid",
+  },
+  {
+    id: "INV-00049",
+    description: "Preventive care consultation",
+    date: "2026-05-25",
+    amount: 900,
+    status: "Paid",
+  },
+];
