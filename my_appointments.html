@@ -2,20 +2,24 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>My Appointments | HeartCare</title>
 
     <link rel="stylesheet" href="css/doctor-dashboard.css" />
+
     <link rel="stylesheet" href="css/doctorMy-appoinments.css" />
   </head>
 
   <body class="doctor-dashboard">
     <div class="dashboard-layout">
       <!-- SIDEBAR -->
+
       <aside class="dashboard-sidebar">
         <a class="dashboard-brand" href="index.html">
           <span class="dashboard-brand__icon">&hearts;</span>
+
           <span>HeartCare</span>
         </a>
 
@@ -24,6 +28,7 @@
 
           <div>
             <strong>Dr. Badhon Pal</strong>
+
             <span>Cardiology Department</span>
           </div>
         </div>
@@ -58,9 +63,11 @@
       </aside>
 
       <!-- MAIN CONTENT -->
+
       <main class="dashboard-main">
         <div class="dashboard-content">
           <!-- PAGE HEADER -->
+
           <section class="welcome-section">
             <div>
               <p class="section-eyebrow">PATIENT MANAGEMENT</p>
@@ -74,143 +81,111 @@
           </section>
 
           <!-- SUMMARY CARDS -->
+
           <section class="summary-grid">
             <article class="summary-card">
               <div class="summary-card__top">
                 <span class="summary-icon summary-icon--blue">▣</span>
+
                 <span class="summary-caption">Today</span>
               </div>
 
-              <p class="summary-value">08</p>
+              <p class="summary-value" id="totalAppointments">08</p>
+
               <h2>Total Appointments</h2>
             </article>
 
             <article class="summary-card">
               <div class="summary-card__top">
                 <span class="summary-icon summary-icon--gold">◷</span>
+
                 <span class="summary-caption">Waiting</span>
               </div>
 
-              <p class="summary-value">03</p>
+              <p class="summary-value" id="pendingAppointments">03</p>
+
               <h2>Pending</h2>
             </article>
 
             <article class="summary-card">
               <div class="summary-card__top">
                 <span class="summary-icon summary-icon--green">✓</span>
+
                 <span class="summary-caption">Completed</span>
               </div>
 
-              <p class="summary-value">05</p>
+              <p class="summary-value" id="completedAppointments">05</p>
+
               <h2>Completed</h2>
             </article>
           </section>
 
           <!-- APPOINTMENT TABLE -->
+
           <section class="panel appointment-panel">
             <div class="panel-header">
               <div>
                 <p class="section-eyebrow">APPOINTMENT LIST</p>
+
                 <h2>All Appointments</h2>
               </div>
             </div>
+
+            <!-- SEARCH AND FILTER -->
+
+            <div class="appointment-controls">
+              <div class="appointment-search">
+                <input
+                  type="text"
+                  id="appointmentSearch"
+                  placeholder="Search patient name or ID..."
+                />
+              </div>
+
+              <div class="appointment-filter">
+                <select id="statusFilter">
+                  <option value="All">All Status</option>
+
+                  <option value="Confirmed">Confirmed</option>
+
+                  <option value="Pending">Pending</option>
+
+                  <option value="Completed">Completed</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- APPOINTMENT TABLE -->
 
             <div class="table-wrapper">
               <table class="data-table appointment-table">
                 <thead>
                   <tr>
                     <th>Patient Name</th>
+
                     <th>Patient ID</th>
+
                     <th>Date</th>
+
                     <th>Time</th>
+
                     <th>Reason</th>
+
                     <th>Status</th>
+
                     <th>Action</th>
                   </tr>
                 </thead>
 
-                <tbody>
-                  <tr>
-                    <td><strong>Fairuz Ahmed</strong></td>
-                    <td>HC-P-00125</td>
-                    <td>31 Oct 2026</td>
-                    <td>09:00 AM</td>
-                    <td>Follow-up</td>
-                    <td>
-                      <span class="appointment-status confirmed">
-                        Confirmed
-                      </span>
-                    </td>
-                    <td>
-                      <a href="consultation.html" class="view-link"> View </a>
-                    </td>
-                  </tr>
+                <!-- Dynamic appointment rows -->
 
-                  <tr>
-                    <td><strong>Nusrat Jahan</strong></td>
-                    <td>HC-P-00131</td>
-                    <td>31 Oct 2026</td>
-                    <td>09:30 AM</td>
-                    <td>General Checkup</td>
-                    <td>
-                      <span class="appointment-status pending"> Pending </span>
-                    </td>
-                    <td>
-                      <a href="consultation.html" class="view-link"> View </a>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td><strong>Mahmud Hasan</strong></td>
-                    <td>HC-P-00142</td>
-                    <td>31 Oct 2026</td>
-                    <td>10:00 AM</td>
-                    <td>Heart Checkup</td>
-                    <td>
-                      <span class="appointment-status pending"> Pending </span>
-                    </td>
-                    <td>
-                      <a href="consultation.html" class="view-link"> View </a>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td><strong>Sumaiya Akter</strong></td>
-                    <td>HC-P-00150</td>
-                    <td>31 Oct 2026</td>
-                    <td>10:30 AM</td>
-                    <td>Chest Pain</td>
-                    <td>
-                      <span class="appointment-status completed">
-                        Completed
-                      </span>
-                    </td>
-                    <td>
-                      <a href="consultation.html" class="view-link"> View </a>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td><strong>Rahim Uddin</strong></td>
-                    <td>HC-P-00155</td>
-                    <td>31 Oct 2026</td>
-                    <td>11:00 AM</td>
-                    <td>Blood Pressure</td>
-                    <td>
-                      <span class="appointment-status completed">
-                        Completed
-                      </span>
-                    </td>
-                    <td>
-                      <a href="consultation.html" class="view-link"> View </a>
-                    </td>
-                  </tr>
-                </tbody>
+                <tbody id="appointmentTable"></tbody>
               </table>
             </div>
           </section>
 
           <!-- FOOTER -->
+
           <footer class="dashboard-footer">
             <p>
               &copy; 2026 HeartCare Clinic Management System. Academic project
@@ -220,5 +195,13 @@
         </div>
       </main>
     </div>
+
+    <!-- JAVASCRIPT FILES -->
+
+    <script src="js/doctor-appointments-data.js"></script>
+
+    <script src="js/common.js"></script>
+
+    <script src="js/doctor-appointments.js"></script>
   </body>
 </html>

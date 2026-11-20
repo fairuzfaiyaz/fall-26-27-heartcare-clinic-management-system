@@ -76,6 +76,67 @@
   color: white;
 }
 
+.appointment-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.appointment-search input {
+  width: 320px;
+  max-width: 100%;
+  padding: 11px 14px;
+  border: 1px solid #dce3eb;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+.appointment-filter select {
+  padding: 11px 14px;
+  border: 1px solid #dce3eb;
+  border-radius: 8px;
+  font-size: 14px;
+  background: white;
+  cursor: pointer;
+}
+
+.appointment-search input:focus,
+.appointment-filter select:focus {
+  border-color: #3978c6;
+}
+
+/* Appointment Action Buttons */
+
+.appointment-action {
+  padding: 7px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.confirm-action {
+  background: #fff4d6;
+  color: #946200;
+}
+
+.complete-action {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.completed-label {
+  color: #15803d;
+  font-size: 12px;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
 /* Responsive Design */
 
 @media (max-width: 768px) {
