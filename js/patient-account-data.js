@@ -16,6 +16,24 @@
 // Stores the currently logged-in patient's information.
 // Later: PHP session + SELECT from the patients table.
 
+// const patient = {
+//   id: "HC-P-00125",
+//   fullName: "Nazibha Tabassum",
+//   email: "nazibha@example.com",
+//   phone: "01712345678",
+//   dob: "2003-03-15",
+//   gender: "Prefer not to say",
+//   address: "",
+//   emergencyName: "",
+//   emergencyPhone: "",
+//   status: "Active",
+// };
+
+// patient-account-data.js
+
+// Stores the currently logged-in patient's information.
+// Later: PHP session + SELECT from the patients table.
+
 const patient = {
   id: "HC-P-00125",
   fullName: "Nazibha Tabassum",
