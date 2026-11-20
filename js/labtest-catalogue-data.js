@@ -4,6 +4,7 @@
 ===================================== */
 
 var testCatalogue = [
+
     {
         code: "TC001",
         name: "Complete Blood Count",
@@ -12,8 +13,10 @@ var testCatalogue = [
         specimen: "Blood",
         referenceRange: "Depends on individual parameters",
         unit: "-",
+        cost: 500,
         status: "Active"
     },
+
     {
         code: "TC002",
         name: "Hemoglobin",
@@ -22,8 +25,10 @@ var testCatalogue = [
         specimen: "Blood",
         referenceRange: "12.0–16.0",
         unit: "g/dL",
+        cost: 200,
         status: "Active"
     },
+
     {
         code: "TC003",
         name: "Blood Glucose (Fasting)",
@@ -32,8 +37,10 @@ var testCatalogue = [
         specimen: "Blood",
         referenceRange: "70–99",
         unit: "mg/dL",
+        cost: 150,
         status: "Active"
     },
+
     {
         code: "TC004",
         name: "Serum Creatinine",
@@ -42,8 +49,10 @@ var testCatalogue = [
         specimen: "Blood",
         referenceRange: "0.6–1.3",
         unit: "mg/dL",
+        cost: 300,
         status: "Active"
     },
+
     {
         code: "TC005",
         name: "Lipid Profile",
@@ -52,8 +61,10 @@ var testCatalogue = [
         specimen: "Blood",
         referenceRange: "Varies by parameter",
         unit: "mg/dL",
+        cost: 700,
         status: "Active"
     },
+
     {
         code: "TC006",
         name: "Urine Routine Examination",
@@ -62,8 +73,10 @@ var testCatalogue = [
         specimen: "Urine",
         referenceRange: "Normal findings",
         unit: "-",
+        cost: 250,
         status: "Active"
     },
+
     {
         code: "TC007",
         name: "Thyroid Stimulating Hormone",
@@ -72,6 +85,8 @@ var testCatalogue = [
         specimen: "Blood",
         referenceRange: "0.4–4.0",
         unit: "mIU/L",
+        cost: 600,
         status: "Inactive"
     }
+
 ];

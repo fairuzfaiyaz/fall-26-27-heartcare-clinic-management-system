@@ -1,6 +1,6 @@
 
 /* =====================================
-   TEST CATALOGUE PAGE JAVASCRIPT
+   TEST CATALOGUE FUNCTIONALITIES
 ===================================== */
 
 // Global variables
@@ -11,7 +11,7 @@ var filteredTests = [];
 
 /* =====================================
    FUNCTION: GET FILTERED TESTS
-   Search and filter tests
+   Search and filter test records
 ===================================== */
 
 function getFilteredTests() {
@@ -39,7 +39,9 @@ function getFilteredTests() {
             statusValue === "" || test.status === statusValue;
 
         if (searchMatch && categoryMatch && statusMatch) {
+
             result.push(test);
+
         }
     }
 
@@ -56,20 +58,29 @@ function getFilteredTests() {
 function renderStatistics() {
 
     var total = testCatalogue.length;
+
     var active = 0;
+
     var inactive = 0;
+
     var categories = [];
 
     for (var i = 0; i < testCatalogue.length; i++) {
 
         if (testCatalogue[i].status === "Active") {
+
             active++;
+
         } else {
+
             inactive++;
+
         }
 
         if (categories.indexOf(testCatalogue[i].category) === -1) {
+
             categories.push(testCatalogue[i].category);
+
         }
     }
 
@@ -85,7 +96,7 @@ function renderStatistics() {
 
 /* =====================================
    FUNCTION: RENDER TEST TABLE
-   Display filtered tests in table
+   Display test information and cost
 ===================================== */
 
 function renderTestTable() {
@@ -104,7 +115,7 @@ function renderTestTable() {
 
     if (pageTests.length === 0) {
 
-        tableHTML = "<tr><td colspan='7'>No tests found.</td></tr>";
+        tableHTML = "<tr><td colspan='8'>No tests found.</td></tr>";
 
     } else {
 
@@ -115,24 +126,44 @@ function renderTestTable() {
             var statusClass = "";
 
             if (test.status === "Active") {
+
                 statusClass = "active";
+
             } else {
+
                 statusClass = "inactive";
+
             }
 
             tableHTML +=
+
                 "<tr>" +
+
                     "<td>" + test.code + "</td>" +
-                    "<td><strong>" + test.name + "</strong>" +
-                    "<small>" + test.shortName + "</small></td>" +
+
+                    "<td>" +
+                        "<strong>" + test.name + "</strong>" +
+                        "<small>" + test.shortName + "</small>" +
+                    "</td>" +
+
                     "<td>" + test.category + "</td>" +
+
                     "<td>" + test.specimen + "</td>" +
+
                     "<td>" + test.referenceRange + "</td>" +
+
                     "<td>" + test.unit + "</td>" +
-                    "<td><span class='status " + statusClass + "'>" +
-                    test.status +
-                    "</span></td>" +
+
+                    "<td><span class='cost'>৳" + test.cost + "</span></td>" +
+
+                    "<td>" +
+                        "<span class='status " + statusClass + "'>" +
+                            test.status +
+                        "</span>" +
+                    "</td>" +
+
                 "</tr>";
+
         }
     }
 
@@ -146,7 +177,7 @@ function renderTestTable() {
 
 /* =====================================
    FUNCTION: RENDER PAGINATION
-   Generate page buttons dynamically
+   Generate pagination buttons
 ===================================== */
 
 function renderPagination() {
@@ -156,6 +187,7 @@ function renderPagination() {
     var totalPages = Math.ceil(totalRecords / recordsPerPage);
 
     var start = 0;
+
     var end = 0;
 
     if (totalRecords > 0) {
@@ -165,7 +197,9 @@ function renderPagination() {
         end = start + recordsPerPage - 1;
 
         if (end > totalRecords) {
+
             end = totalRecords;
+
         }
     }
 
@@ -176,17 +210,22 @@ function renderPagination() {
 
     if (totalPages > 1) {
 
+        // Previous button
         paginationHTML +=
             "<button onclick='changePage(" + (currentPage - 1) + ")' " +
             (currentPage === 1 ? "disabled" : "") +
             ">Previous</button>";
 
+
+        // Numbered buttons
         for (var i = 1; i <= totalPages; i++) {
 
             var currentClass = "";
 
             if (i === currentPage) {
+
                 currentClass = "current";
+
             }
 
             paginationHTML +=
@@ -194,12 +233,16 @@ function renderPagination() {
                 "' onclick='changePage(" + i + ")'>" +
                 i +
                 "</button>";
+
         }
 
+
+        // Next button
         paginationHTML +=
             "<button onclick='changePage(" + (currentPage + 1) + ")' " +
             (currentPage === totalPages ? "disabled" : "") +
             ">Next</button>";
+
     }
 
     document.getElementById("pagination-buttons").innerHTML = paginationHTML;
@@ -208,7 +251,7 @@ function renderPagination() {
 
 /* =====================================
    FUNCTION: CHANGE PAGE
-   Move to selected page
+   Navigate between pages
 ===================================== */
 
 function changePage(pageNumber) {
@@ -220,13 +263,14 @@ function changePage(pageNumber) {
         currentPage = pageNumber;
 
         renderTestTable();
+
     }
 }
 
 
 /* =====================================
    FUNCTION: APPLY FILTERS
-   Search and filter the catalogue
+   Apply search and selected filters
 ===================================== */
 
 function applyFilters() {
@@ -239,7 +283,7 @@ function applyFilters() {
 
 /* =====================================
    FUNCTION: RESET FILTERS
-   Clear search and selected filters
+   Clear all search and filter values
 ===================================== */
 
 function resetFilters() {
@@ -258,19 +302,21 @@ function resetFilters() {
 
 /* =====================================
    FUNCTION: ADD NEW TEST NOTICE
-   Catalogue changes are controlled
-   by the Admin
+   Only Admin can manage catalogue
 ===================================== */
 
 function showAddTestNotice() {
 
-    alert("Test catalogue information is managed by the Admin. Please contact the Admin to add a new test.");
+    alert(
+        "Test catalogue information, including test costs and reference ranges, is managed by the Admin. Please contact the Admin to add a new test."
+    );
+
 }
 
 
 /* =====================================
    FUNCTION: INITIALIZE PAGE
-   Load statistics and table
+   Load statistics and test table
 ===================================== */
 
 function initializeTestCatalogue() {
@@ -278,6 +324,7 @@ function initializeTestCatalogue() {
     renderStatistics();
 
     renderTestTable();
+
 }
 
 
