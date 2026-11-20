@@ -12,7 +12,7 @@
 
     <div class="dashboard">
 
-        <!-- LEFT SIDEBAR - PRESERVED DASHBOARD MENU -->
+        <!-- SIDEBAR -->
         <aside class="sidebar">
 
             <div class="logo">
@@ -31,41 +31,42 @@
             <p class="menu-title">MAIN MENU</p>
 
             <nav>
+
                 <a class="sidebar-link" href="lab-dashboard.html">
                     <span class="nav-icon">▦</span>
                     Dashboard
                 </a>
-                <a class="sidebar-link" href="lab-queue.html">
 
+                <a class="sidebar-link" href="lab-queue.html">
                     ☷ Lab Queue
                 </a>
-                <a class="sidebar-link" href="add-labresult.html">
 
+                <a class="sidebar-link" href="add-labresult.html">
                     ✚ Add Test Result
                 </a>
-                <a class="sidebar-link" href="manage-labresult.html">
 
+                <a class="sidebar-link" href="manage-labresult.html">
                     ▤ Manage Results
                 </a>
-                <a class="sidebar-link is-active" href="test-catalogue.html">
 
+                <a class="sidebar-link is-active" href="test-catalogue.html">
                     ♧ Test Catalogue
                 </a>
-                <a class="sidebar-link" href="lab-reports.html">
 
+                <a class="sidebar-link" href="lab-reports.html">
                     ▣ Lab Reports
                 </a>
 
-
-
                 <p class="menu-title">ACCOUNT</p>
+
                 <a class="sidebar-link" href="profile.html">
-                    ♙My Profile
+                    ♙ My Profile
                 </a>
 
                 <a class="sidebar-link sidebar-link--logout" href="login.html">
                     Log out
                 </a>
+
             </nav>
 
             <div class="sidebar-footer">
@@ -76,7 +77,7 @@
         </aside>
 
 
-        <!-- RIGHT MAIN CONTENT -->
+        <!-- MAIN CONTENT -->
         <main class="main-content">
 
             <!-- TOPBAR -->
@@ -88,12 +89,14 @@
                 </div>
 
                 <div class="header-right">
+
                     <button class="notification">🔔</button>
 
                     <div class="user-info">
                         <div class="small-avatar">LT</div>
                         <span>Lab Technician</span>
                     </div>
+
                 </div>
 
             </header>
@@ -110,7 +113,9 @@
                         <p>View test definitions and reference ranges</p>
                     </div>
 
-                    <button class="add-btn">+ Add New Test</button>
+                    <button class="add-btn" type="button" onclick="showAddTestNotice()">
+                        + Add New Test
+                    </button>
 
                 </div>
 
@@ -121,28 +126,28 @@
                     <div class="stat-card blue">
                         <div class="stat-icon">🧪</div>
                         <p>Total Tests</p>
-                        <h2>24</h2>
+                        <h2 id="total-tests">0</h2>
                         <small>Available test definitions</small>
                     </div>
 
                     <div class="stat-card green">
                         <div class="stat-icon">✓</div>
                         <p>Active Tests</p>
-                        <h2>21</h2>
+                        <h2 id="active-tests">0</h2>
                         <small>Currently available</small>
                     </div>
 
                     <div class="stat-card orange">
                         <div class="stat-icon">📋</div>
                         <p>Test Categories</p>
-                        <h2>6</h2>
+                        <h2 id="category-count">0</h2>
                         <small>Different test groups</small>
                     </div>
 
                     <div class="stat-card purple">
                         <div class="stat-icon">⏱</div>
                         <p>Inactive Tests</p>
-                        <h2>3</h2>
+                        <h2 id="inactive-tests">0</h2>
                         <small>Currently unavailable</small>
                     </div>
 
@@ -153,10 +158,12 @@
                 <div class="panel">
 
                     <div class="panel-header">
+
                         <div>
                             <h3>All Laboratory Tests</h3>
-                            <p>Manage test information and normal reference ranges</p>
+                            <p>View test information and reference ranges</p>
                         </div>
+
                     </div>
 
 
@@ -164,30 +171,45 @@
                     <div class="filter-section">
 
                         <div class="search-box">
+
                             <span>🔍</span>
-                            <input type="text" placeholder="Search by test name or code...">
+
+                            <input type="text" id="test-search" placeholder="Search by test name or code..."
+                                onkeyup="applyFilters()">
+
                         </div>
 
-                        <select>
+
+                        <select id="category-filter" onchange="applyFilters()">
+
                             <option value="">All Categories</option>
-                            <option>Blood Test</option>
-                            <option>Biochemistry</option>
-                            <option>Hematology</option>
-                            <option>Urine Test</option>
-                            <option>Hormone Test</option>
-                            <option>Immunology</option>
+                            <option value="Blood Test">Blood Test</option>
+                            <option value="Biochemistry">Biochemistry</option>
+                            <option value="Hematology">Hematology</option>
+                            <option value="Urine Test">Urine Test</option>
+                            <option value="Hormone Test">Hormone Test</option>
+                            <option value="Immunology">Immunology</option>
+
                         </select>
 
-                        <select>
+
+                        <select id="status-filter" onchange="applyFilters()">
+
                             <option value="">All Status</option>
-                            <option>Active</option>
-                            <option>Inactive</option>
+                            <option value="Active">Active</option>
+                            <option value="Inactive">Inactive</option>
+
                         </select>
+
+
+                        <button type="button" class="btn secondary" onclick="resetFilters()">
+                            Reset
+                        </button>
 
                     </div>
 
 
-                    <!-- TEST TABLE - NO ACTION COLUMN -->
+                    <!-- TEST TABLE -->
                     <div class="table-responsive">
 
                         <table>
@@ -204,99 +226,8 @@
                                 </tr>
                             </thead>
 
-                            <tbody>
-
-                                <tr>
-                                    <td>TC001</td>
-                                    <td>
-                                        <strong>Complete Blood Count</strong>
-                                        <small>CBC Test</small>
-                                    </td>
-                                    <td>Hematology</td>
-                                    <td>Blood</td>
-                                    <td>Depends on individual parameters</td>
-                                    <td>-</td>
-                                    <td><span class="status active">Active</span></td>
-                                </tr>
-
-                                <tr>
-                                    <td>TC002</td>
-                                    <td>
-                                        <strong>Hemoglobin</strong>
-                                        <small>Hb Test</small>
-                                    </td>
-                                    <td>Hematology</td>
-                                    <td>Blood</td>
-                                    <td>12.0–16.0</td>
-                                    <td>g/dL</td>
-                                    <td><span class="status active">Active</span></td>
-                                </tr>
-
-                                <tr>
-                                    <td>TC003</td>
-                                    <td>
-                                        <strong>Blood Glucose (Fasting)</strong>
-                                        <small>FBS Test</small>
-                                    </td>
-                                    <td>Biochemistry</td>
-                                    <td>Blood</td>
-                                    <td>70–99</td>
-                                    <td>mg/dL</td>
-                                    <td><span class="status active">Active</span></td>
-                                </tr>
-
-                                <tr>
-                                    <td>TC004</td>
-                                    <td>
-                                        <strong>Serum Creatinine</strong>
-                                        <small>Creatinine Test</small>
-                                    </td>
-                                    <td>Biochemistry</td>
-                                    <td>Blood</td>
-                                    <td>0.6–1.3</td>
-                                    <td>mg/dL</td>
-                                    <td><span class="status active">Active</span></td>
-                                </tr>
-
-                                <tr>
-                                    <td>TC005</td>
-                                    <td>
-                                        <strong>Lipid Profile</strong>
-                                        <small>Cholesterol Test</small>
-                                    </td>
-                                    <td>Biochemistry</td>
-                                    <td>Blood</td>
-                                    <td>Varies by parameter</td>
-                                    <td>mg/dL</td>
-                                    <td><span class="status active">Active</span></td>
-                                </tr>
-
-                                <tr>
-                                    <td>TC006</td>
-                                    <td>
-                                        <strong>Urine Routine Examination</strong>
-                                        <small>Urine R/E</small>
-                                    </td>
-                                    <td>Urine Test</td>
-                                    <td>Urine</td>
-                                    <td>Normal findings</td>
-                                    <td>-</td>
-                                    <td><span class="status active">Active</span></td>
-                                </tr>
-
-                                <tr>
-                                    <td>TC007</td>
-                                    <td>
-                                        <strong>Thyroid Stimulating Hormone</strong>
-                                        <small>TSH Test</small>
-                                    </td>
-                                    <td>Hormone Test</td>
-                                    <td>Blood</td>
-                                    <td>0.4–4.0</td>
-                                    <td>mIU/L</td>
-                                    <td><span class="status inactive">Inactive</span></td>
-                                </tr>
-
+                            <tbody id="test-table-body">
+                                <!-- JavaScript displays test records here -->
                             </tbody>
 
                         </table>
@@ -307,14 +238,12 @@
                     <!-- PAGINATION -->
                     <div class="pagination">
 
-                        <p>Showing 1–7 of 24 tests</p>
+                        <p id="pagination-summary">
+                            Showing 0–0 of 0 tests
+                        </p>
 
-                        <div>
-                            <button disabled>Previous</button>
-                            <button class="current">1</button>
-                            <button>2</button>
-                            <button>3</button>
-                            <button>Next</button>
+                        <div id="pagination-buttons">
+                            <!-- JavaScript generates pagination buttons -->
                         </div>
 
                     </div>
@@ -351,6 +280,12 @@
         </main>
 
     </div>
+
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/labtest-catalogue-data.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/labtest-catalogue.js"></script>
 
 </body>
 
