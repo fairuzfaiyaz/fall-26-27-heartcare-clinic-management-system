@@ -402,6 +402,18 @@ a {
   font-weight: 700;
 
   transition: 0.3s ease;
+
+  
+  }
+
+  /* Validation Focus */
+
+  .profile-form input:focus,
+  .profile-form select:focus,
+  .profile-form textarea:focus {
+    outline: none;
+    border-color: #3978c6;
+  }
 }
 
 .edit-button:hover {
@@ -698,4 +710,12 @@ a {
   .portal-status {
     display: none;
   }
+}
+
+.field-error {
+  display: block !important;
+  color: red !important;
+  font-size: 13px;
+  margin-top: 5px;
+  font-weight: 500;
 }
