@@ -251,6 +251,30 @@
 }
 
 /* =====================================
+   TOTAL TEST PRICE
+===================================== */
+
+.lab-total-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  padding: 16px 20px;
+  background: #f3f8fb;
+  border: 1px solid #e4edf3;
+  border-radius: 9px;
+  color: #354761;
+  font-size: 14px;
+}
+
+.lab-total-price strong:last-child {
+  color: #167d9b;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+/* =====================================
    INSTRUCTIONS
 ===================================== */
 
@@ -303,6 +327,35 @@
 .doctor-order-info strong {
   color: #354761;
   font-size: 13px;
+}
+
+/* =====================================
+   FORM VALIDATION ERRORS
+===================================== */
+
+.field-error {
+  display: block;
+  min-height: 15px;
+  margin-top: 5px;
+  color: #dc2626;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+#tests-error {
+  margin-top: 10px;
+}
+
+/* =====================================
+   FORM SUCCESS / ERROR MESSAGE
+===================================== */
+
+.lab-message {
+  margin: 15px 0 0;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
 }
 
 /* =====================================
@@ -466,6 +519,84 @@
 }
 
 /* =====================================
+   TABLE ACTION BUTTONS
+===================================== */
+
+.lab-table button {
+  display: inline-block;
+  margin: 3px;
+  padding: 7px 10px;
+  border: none;
+  border-radius: 6px;
+  background: #e5f3fa;
+  color: #16718e;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.lab-table button:hover {
+  background: #16718e;
+  color: #ffffff;
+}
+
+/* =====================================
+   STATUS UPDATE SELECT
+===================================== */
+
+.lab-table select {
+  display: block;
+  width: 115px;
+  margin-top: 8px;
+  padding: 7px;
+  background: #fbfdff;
+  border: 1px solid #dce6ef;
+  border-radius: 6px;
+  outline: none;
+  color: #354761;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.lab-table select:focus {
+  border-color: #18a5c3;
+}
+
+/* =====================================
+   LABORATORY SEARCH
+===================================== */
+
+.lab-search {
+  margin-bottom: 20px;
+}
+
+.lab-search input {
+  width: 100%;
+  max-width: 380px;
+  height: 43px;
+  padding: 10px 14px;
+  box-sizing: border-box;
+  background: #fbfdff;
+  border: 1px solid #dce6ef;
+  border-radius: 7px;
+  outline: none;
+  color: #354761;
+  font-family: inherit;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.lab-search input:focus {
+  border-color: #18a5c3;
+  box-shadow: 0 0 0 3px rgba(24, 165, 195, 0.08);
+}
+
+.lab-search input::placeholder {
+  color: #a4afbd;
+}
+
+/* =====================================
    RESPONSIVE DESIGN
 ===================================== */
 
@@ -511,5 +642,22 @@
   .lab-reset-btn,
   .lab-submit-btn {
     width: 100%;
+  }
+
+  .lab-total-price {
+    padding: 13px;
+    font-size: 13px;
+  }
+
+  .lab-total-price strong:last-child {
+    font-size: 17px;
+  }
+
+  .lab-search input {
+    max-width: 100%;
+  }
+
+  .lab-table {
+    min-width: 850px;
   }
 }

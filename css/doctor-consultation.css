@@ -293,6 +293,28 @@ body:has(.patient-details:target) #patient-list {
 }
 
 /* =========================================
+   FORM VALIDATION ERRORS
+========================================= */
+
+.field-error {
+  display: block;
+  color: #dc2626;
+  font-size: 13px;
+  margin-top: 6px;
+  font-weight: 600;
+}
+
+/* =========================================
+   CONSULTATION SUCCESS / ERROR MESSAGE
+========================================= */
+
+.consultation-message {
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* =========================================
    CLEAR & SAVE BUTTONS
 ========================================= */
 
