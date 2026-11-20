@@ -10,20 +10,19 @@
     <link rel="stylesheet" href="css/doctorpatient-timeline.css" />
   </head>
 
-  <body>
+  <body class="doctor-dashboard">
     <div class="dashboard-layout">
-      <!-- ================= SIDEBAR ================= -->
+      <!-- SIDEBAR -->
       <aside class="dashboard-sidebar">
-        <a class="dashboard-brand" href="doctor/doctor-dashboard.html">
+        <a class="dashboard-brand" href="doctor-dashboard.html">
           <span class="brand-icon">♥</span>
           <span>HeartCare</span>
         </a>
 
         <div class="sidebar-profile">
           <div class="avatar">BP</div>
-
           <div>
-            <strong>Dr. Badhon Pal </strong>
+            <strong>Dr. Badhon Pal</strong>
             <span>Cardiology Department</span>
           </div>
         </div>
@@ -31,7 +30,9 @@
         <nav class="sidebar-nav">
           <p class="sidebar-label">WORKSPACE</p>
 
-          <a href="doctor-dashboard.html" class="sidebar-link"> Dashboard </a>
+          <a href="doctor-dashboard.html" class="sidebar-link">
+            <span class="nav-icon">▦</span> Dashboard
+          </a>
 
           <a href="myProfile.html" class="sidebar-link"> My Profile </a>
 
@@ -51,22 +52,21 @@
             <span class="nav-icon">◷</span>
             Patient Timeline
           </a>
-          <a
-            class="sidebar-link sidebar-link--logout"
-            href="login.html"
-          >
+
+          <a class="sidebar-link sidebar-link--logout" href="login.html">
             Log out
           </a>
         </nav>
       </aside>
 
-      <!-- ================= MAIN CONTENT ================= -->
+      <!-- MAIN CONTENT -->
       <main class="dashboard-main">
         <div class="dashboard-content">
           <!-- PAGE HEADER -->
           <header class="welcome-section">
             <div>
               <p class="section-eyebrow">PATIENT MEDICAL RECORDS</p>
+
               <h1>Patient Timeline</h1>
 
               <p class="timeline-description">
@@ -75,7 +75,7 @@
             </div>
           </header>
 
-          <!-- ================= PATIENT SEARCH ================= -->
+          <!-- PATIENT SEARCH -->
           <section class="panel timeline-search-panel">
             <div class="timeline-panel-heading">
               <div>
@@ -84,9 +84,16 @@
               </div>
             </div>
 
-            <form action="#" method="get" class="patient-search-form">
+            <form
+              action="#"
+              method="get"
+              class="patient-search-form"
+              id="patient-search-form"
+              novalidate
+            >
               <input
                 type="text"
+                id="patient_search"
                 name="patient_search"
                 placeholder="Enter Patient ID or Patient Name..."
               />
@@ -94,17 +101,21 @@
               <button type="submit" class="timeline-search-btn">
                 Search Patient
               </button>
+
+              <span id="patient_search-error" class="field-error"></span>
             </form>
           </section>
 
-          <!-- ================= PATIENT PROFILE ================= -->
+          <!-- PATIENT PROFILE -->
           <section class="panel patient-overview">
             <div class="patient-overview-header">
-              <div class="patient-avatar">FA</div>
+              <div class="patient-avatar" id="patient-avatar">FA</div>
 
               <div class="patient-main-info">
-                <h2>Fairuz Ahmed</h2>
-                <p>Patient ID: HC-P-00125</p>
+                <h2 id="patient-name">Fairuz Ahmed</h2>
+
+                <p id="patient-id">Patient ID: HC-P-00125</p>
+
                 <span class="patient-active-status"> Active Patient </span>
               </div>
 
@@ -122,37 +133,37 @@
             <div class="patient-details-grid">
               <div class="patient-detail-item">
                 <span>Age</span>
-                <strong>35 Years</strong>
+                <strong id="patient-age">35 Years</strong>
               </div>
 
               <div class="patient-detail-item">
                 <span>Gender</span>
-                <strong>Male</strong>
+                <strong id="patient-gender">Male</strong>
               </div>
 
               <div class="patient-detail-item">
                 <span>Blood Group</span>
-                <strong>B+</strong>
+                <strong id="patient-blood">B+</strong>
               </div>
 
               <div class="patient-detail-item">
                 <span>Phone Number</span>
-                <strong>017XXXXXXXX</strong>
+                <strong id="patient-phone">01712345678</strong>
               </div>
 
               <div class="patient-detail-item">
                 <span>Department</span>
-                <strong>Cardiology</strong>
+                <strong id="patient-department">Cardiology</strong>
               </div>
 
               <div class="patient-detail-item">
                 <span>First Visit</span>
-                <strong>12 March 2026</strong>
+                <strong id="patient-first-visit">12 March 2026</strong>
               </div>
             </div>
           </section>
 
-          <!-- ================= VITAL SIGNS ================= -->
+          <!-- VITAL SIGNS -->
           <section class="panel vital-overview">
             <div class="timeline-panel-heading">
               <div>
@@ -160,258 +171,216 @@
                 <h2>Latest Vital Signs</h2>
               </div>
 
-              <span class="latest-date">31 October 2026</span>
+              <span class="latest-date">Latest Record</span>
             </div>
 
             <div class="vital-summary-grid">
               <div class="vital-summary-card">
                 <div class="vital-icon bp-icon">♥</div>
                 <span>Blood Pressure</span>
-                <h3>120/80</h3>
+                <h3 id="patient-bp">120/80</h3>
                 <small>mmHg</small>
               </div>
 
               <div class="vital-summary-card">
                 <div class="vital-icon heart-icon">♡</div>
                 <span>Heart Rate</span>
-                <h3>76</h3>
+                <h3 id="patient-heart-rate">76</h3>
                 <small>bpm</small>
               </div>
 
               <div class="vital-summary-card">
                 <div class="vital-icon temp-icon">♨</div>
                 <span>Temperature</span>
-                <h3>98.6</h3>
+                <h3 id="patient-temperature">98.6</h3>
                 <small>°F</small>
               </div>
 
               <div class="vital-summary-card">
                 <div class="vital-icon weight-icon">⚖</div>
                 <span>Weight</span>
-                <h3>68</h3>
+                <h3 id="patient-weight">68</h3>
                 <small>kg</small>
               </div>
             </div>
           </section>
 
-          <!-- ================= TIMELINE ================= -->
+          <!-- ADD MEDICAL RECORD -->
+          <section class="panel timeline-add-panel">
+            <div class="timeline-panel-heading">
+              <div>
+                <p class="section-eyebrow">RECORD MANAGEMENT</p>
+                <h2 id="form-heading">Add Medical Record</h2>
+                <p>
+                  Add a new medical history record for the selected patient.
+                </p>
+              </div>
+            </div>
+
+            <form id="record-form" action="#" method="get" novalidate>
+              <div class="timeline-form-grid">
+                <div class="timeline-form-group">
+                  <label for="record_type">Record Type</label>
+
+                  <select id="record_type">
+                    <option value="">Select Type</option>
+                    <option value="Consultation">Consultation</option>
+                    <option value="Prescription">Prescription</option>
+                    <option value="Laboratory">Laboratory</option>
+                  </select>
+
+                  <span id="record_type-error" class="field-error"></span>
+                </div>
+
+                <div class="timeline-form-group">
+                  <label for="record_title">Record Title</label>
+
+                  <input
+                    type="text"
+                    id="record_title"
+                    placeholder="Enter record title"
+                  />
+
+                  <span id="record_title-error" class="field-error"></span>
+                </div>
+
+                <div class="timeline-form-group">
+                  <label for="record_date">Record Date</label>
+
+                  <input type="date" id="record_date" />
+
+                  <span id="record_date-error" class="field-error"></span>
+                </div>
+
+                <div class="timeline-form-group">
+                  <label for="record_status">Record Status</label>
+
+                  <select id="record_status">
+                    <option value="">Select Status</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Issued">Issued</option>
+                    <option value="Processing">Processing</option>
+                  </select>
+
+                  <span id="record_status-error" class="field-error"></span>
+                </div>
+
+                <div class="timeline-form-group full-width">
+                  <label for="record_details">Record Details</label>
+
+                  <textarea
+                    id="record_details"
+                    rows="4"
+                    placeholder="Enter medical record details..."
+                  ></textarea>
+
+                  <span id="record_details-error" class="field-error"></span>
+                </div>
+              </div>
+
+              <div class="timeline-form-actions">
+                <button
+                  type="button"
+                  class="timeline-cancel-btn"
+                  id="cancel-edit-btn"
+                  onclick="cancelEdit()"
+                  style="display: none"
+                >
+                  Cancel Edit
+                </button>
+
+                <button type="reset" class="timeline-reset-btn">
+                  Clear Form
+                </button>
+
+                <button
+                  type="submit"
+                  class="timeline-save-btn"
+                  id="save-record-btn"
+                >
+                  + Save Record
+                </button>
+              </div>
+            </form>
+          </section>
+
+          <!-- MEDICAL HISTORY -->
           <section class="panel medical-timeline-panel">
             <div class="timeline-panel-heading">
               <div>
                 <p class="section-eyebrow">MEDICAL RECORD</p>
+
                 <h2>Medical History Timeline</h2>
+
                 <p class="timeline-subtitle">
                   Complete history of patient visits and treatments.
                 </p>
               </div>
 
-              <span class="timeline-count">4 Records</span>
+              <span class="timeline-count" id="timeline-count">
+                4 Records
+              </span>
             </div>
 
+            <!-- SEARCH RECORDS -->
+            <div class="timeline-record-search">
+              <input
+                type="text"
+                id="record-search"
+                placeholder="Search medical records..."
+              />
+            </div>
+
+            <!-- FILTER -->
             <div class="timeline-filter">
-              <span>Filter History:</span>
+              <button
+                type="button"
+                class="filter-active"
+                onclick="filterRecords('All', this)"
+              >
+                All
+              </button>
 
-              <a href="#all-records" class="filter-active">All</a>
-              <a href="#consultation-records">Consultation</a>
-              <a href="#prescription-records">Prescription</a>
-              <a href="#lab-records">Laboratory</a>
+              <button
+                type="button"
+                onclick="filterRecords('Consultation', this)"
+              >
+                Consultation
+              </button>
+
+              <button
+                type="button"
+                onclick="filterRecords('Prescription', this)"
+              >
+                Prescription
+              </button>
+
+              <button type="button" onclick="filterRecords('Laboratory', this)">
+                Laboratory
+              </button>
             </div>
 
-            <div class="timeline-container" id="all-records">
-              <!-- RECORD 1 -->
-              <article class="timeline-item" id="consultation-records">
-                <div class="timeline-marker consultation-marker">+</div>
-
-                <div class="timeline-content">
-                  <div class="timeline-date">31 October 2026</div>
-
-                  <div class="timeline-card">
-                    <div class="record-heading">
-                      <div>
-                        <span class="record-type consultation-type">
-                          CONSULTATION
-                        </span>
-
-                        <h3>Cardiology Follow-up</h3>
-                      </div>
-
-                      <span class="record-status completed-status">
-                        Completed
-                      </span>
-                    </div>
-
-                    <div class="record-information">
-                      <p>
-                        <strong>Doctor:</strong>
-                        Dr. Badhon Pal
-                      </p>
-
-                      <p>
-                        <strong>Diagnosis:</strong>
-                        Mild Hypertension
-                      </p>
-
-                      <p>
-                        <strong>Notes:</strong>
-                        Patient reported improvement in general condition. Blood
-                        pressure was monitored.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </article>
-
-              <!-- RECORD 2 -->
-              <article class="timeline-item" id="prescription-records">
-                <div class="timeline-marker prescription-marker">Rx</div>
-
-                <div class="timeline-content">
-                  <div class="timeline-date">31 October 2026</div>
-
-                  <div class="timeline-card">
-                    <div class="record-heading">
-                      <div>
-                        <span class="record-type prescription-type">
-                          PRESCRIPTION
-                        </span>
-
-                        <h3>Medication Prescribed</h3>
-                      </div>
-
-                      <span class="record-status active-status"> Issued </span>
-                    </div>
-
-                    <div class="record-information">
-                      <p>
-                        <strong>Prescription ID:</strong>
-                        RX-2026-00125
-                      </p>
-
-                      <p>
-                        <strong>Prescribed By:</strong>
-                        Dr. Badhon Pal
-                      </p>
-
-                      <p>
-                        <strong>Medicine:</strong>
-                        Sample medication record
-                      </p>
-
-                      <p>
-                        <strong>Instructions:</strong>
-                        Follow the instructions written in the prescription.
-                      </p>
-                    </div>
-
-                    <a href="prescription.html" class="timeline-action">
-                      View Prescription →
-                    </a>
-                  </div>
-                </div>
-              </article>
-
-              <!-- RECORD 3 -->
-              <article class="timeline-item" id="lab-records">
-                <div class="timeline-marker lab-marker">L</div>
-
-                <div class="timeline-content">
-                  <div class="timeline-date">25 October 2026</div>
-
-                  <div class="timeline-card">
-                    <div class="record-heading">
-                      <div>
-                        <span class="record-type laboratory-type">
-                          LABORATORY
-                        </span>
-
-                        <h3>Laboratory Test Report</h3>
-                      </div>
-
-                      <span class="record-status completed-status">
-                        Completed
-                      </span>
-                    </div>
-
-                    <div class="record-information">
-                      <p>
-                        <strong>Test Order ID:</strong>
-                        LAB-00125
-                      </p>
-
-                      <p>
-                        <strong>Test Name:</strong>
-                        ECG
-                      </p>
-
-                      <p>
-                        <strong>Department:</strong>
-                        Cardiology
-                      </p>
-
-                      <p>
-                        <strong>Report Status:</strong>
-                        Report Available
-                      </p>
-                    </div>
-
-                    <a href="order_tests.html" class="timeline-action">
-                      View Test Details →
-                    </a>
-                  </div>
-                </div>
-              </article>
-
-              <!-- RECORD 4 -->
-              <article class="timeline-item">
-                <div class="timeline-marker consultation-marker">+</div>
-
-                <div class="timeline-content">
-                  <div class="timeline-date">12 March 2026</div>
-
-                  <div class="timeline-card">
-                    <div class="record-heading">
-                      <div>
-                        <span class="record-type consultation-type">
-                          FIRST VISIT
-                        </span>
-
-                        <h3>Initial Cardiology Consultation</h3>
-                      </div>
-
-                      <span class="record-status completed-status">
-                        Completed
-                      </span>
-                    </div>
-
-                    <div class="record-information">
-                      <p>
-                        <strong>Doctor:</strong>
-                        Dr. Badhon Pal
-                      </p>
-
-                      <p>
-                        <strong>Reason for Visit:</strong>
-                        Routine cardiac health check-up.
-                      </p>
-
-                      <p>
-                        <strong>Notes:</strong>
-                        Initial patient assessment and medical history
-                        collection.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            </div>
+            <!-- TIMELINE RECORDS -->
+            <div class="timeline-container" id="timeline-container"></div>
           </section>
 
-          <!-- ================= FOOTER ================= -->
+          <!-- FOOTER -->
           <footer class="dashboard-footer">
             <p>© 2026 HeartCare Clinic. All Rights Reserved.</p>
+
+            <p>
+              Patient information must only be accessed by authorized clinical
+              staff.
+            </p>
           </footer>
         </div>
       </main>
     </div>
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/doctor-patient-timeline-data.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/doctor-patient-timeline.js"></script>
   </body>
 </html>

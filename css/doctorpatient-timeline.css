@@ -11,7 +11,8 @@
 .timeline-search-panel,
 .patient-overview,
 .vital-overview,
-.medical-timeline-panel {
+.medical-timeline-panel,
+.timeline-add-panel {
   padding: 25px;
   margin-bottom: 23px;
 }
@@ -42,6 +43,7 @@
 
 .patient-search-form {
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
 }
 
@@ -285,6 +287,8 @@
   font-weight: 700;
 }
 
+/* Original anchor filter */
+
 .timeline-filter a {
   padding: 7px 12px;
   color: #64758a;
@@ -295,8 +299,25 @@
   font-weight: 600;
 }
 
+/* JavaScript button filter */
+
+.timeline-filter button {
+  padding: 8px 13px;
+  color: #64758a;
+  background: #f3f6f9;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
 .timeline-filter a:hover,
-.timeline-filter a.filter-active {
+.timeline-filter a.filter-active,
+.timeline-filter button:hover,
+.timeline-filter button.filter-active {
   background: #176b87;
   color: #ffffff;
 }
@@ -444,6 +465,16 @@
   color: #176b87;
 }
 
+.pending-status {
+  background: #fff2d8;
+  color: #b77a15;
+}
+
+.processing-status {
+  background: #e5f2fb;
+  color: #2474aa;
+}
+
 /* =====================================
    RECORD INFORMATION
 ===================================== */
@@ -485,19 +516,251 @@
 }
 
 /* =====================================
+   ADD MEDICAL RECORD FORM
+===================================== */
+
+.timeline-add-panel {
+  padding: 25px;
+  margin-bottom: 23px;
+}
+
+.timeline-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.timeline-form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.timeline-form-group label {
+  margin-bottom: 9px;
+  color: #52647c;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.timeline-form-group input,
+.timeline-form-group select,
+.timeline-form-group textarea {
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+  background: #fbfdff;
+  border: 1px solid #dce6ef;
+  border-radius: 8px;
+  outline: none;
+  color: #354761;
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.timeline-form-group input,
+.timeline-form-group select {
+  height: 44px;
+}
+
+.timeline-form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.timeline-form-group input:focus,
+.timeline-form-group select:focus,
+.timeline-form-group textarea:focus {
+  border-color: #2193b0;
+  box-shadow: 0 0 0 3px rgba(33, 147, 176, 0.08);
+}
+
+.timeline-form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+/* =====================================
+   FORM VALIDATION ERRORS
+===================================== */
+
+.field-error {
+  display: block;
+  min-height: 16px;
+  margin-top: 5px;
+  color: #dc2626;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.timeline-form-group input:invalid:focus,
+.timeline-form-group select:invalid:focus,
+.timeline-form-group textarea:invalid:focus {
+  border-color: #dc2626;
+}
+
+/* =====================================
+   FORM ACTION BUTTONS
+===================================== */
+
+.timeline-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e8edf2;
+}
+
+.timeline-form-actions button {
+  min-width: 120px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.timeline-reset-btn {
+  background: #edf1f5;
+  color: #596a80;
+}
+
+.timeline-reset-btn:hover {
+  background: #dce4ed;
+}
+
+.timeline-save-btn {
+  background: #176b87;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(23, 107, 135, 0.15);
+}
+
+.timeline-save-btn:hover {
+  background: #10546c;
+  transform: translateY(-2px);
+}
+
+.timeline-cancel-btn {
+  background: #fff0db;
+  color: #bd7819;
+}
+
+.timeline-cancel-btn:hover {
+  background: #ffe3b8;
+}
+
+/* =====================================
+   SEARCH MEDICAL RECORDS
+===================================== */
+
+.timeline-record-search {
+  margin: 20px 0;
+}
+
+.timeline-record-search input {
+  width: 100%;
+  max-width: 400px;
+  height: 43px;
+  padding: 10px 14px;
+  box-sizing: border-box;
+  border: 1px solid #dce6ef;
+  border-radius: 8px;
+  outline: none;
+  color: #354761;
+  font-family: inherit;
+  font-size: 13px;
+  background: #fbfdff;
+}
+
+.timeline-record-search input:focus {
+  border-color: #2193b0;
+  box-shadow: 0 0 0 3px rgba(33, 147, 176, 0.08);
+}
+
+.timeline-record-search input::placeholder {
+  color: #a4afbd;
+}
+
+/* =====================================
+   EDIT AND DELETE BUTTONS
+===================================== */
+
+.timeline-record-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid #edf1f5;
+}
+
+.timeline-record-actions button {
+  min-width: 75px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background: #e5f3fa;
+  color: #176b87;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.timeline-record-actions button:hover {
+  opacity: 0.8;
+  transform: translateY(-1px);
+}
+
+.timeline-record-actions button:last-child {
+  background: #ffe8e8;
+  color: #cf4141;
+}
+
+/* =====================================
+   EMPTY RECORD MESSAGE
+===================================== */
+
+.empty-record {
+  padding: 30px 15px;
+  text-align: center;
+  color: #8290a3;
+  font-size: 14px;
+  background: #f7fafd;
+  border: 1px dashed #dce6ef;
+  border-radius: 9px;
+}
+
+/* =====================================
    PRINT
 ===================================== */
 
 @media print {
+  body {
+    background: #ffffff !important;
+  }
+
   .dashboard-sidebar,
   .welcome-section,
   .timeline-search-panel,
+  .timeline-add-panel,
   .timeline-print-btn,
+  .patient-overview-actions,
   .timeline-filter,
+  .timeline-record-search,
+  .timeline-record-actions,
   .dashboard-footer {
     display: none !important;
   }
 
+  .dashboard-layout,
   .dashboard-main {
     width: 100%;
     margin: 0;
@@ -515,10 +778,19 @@
     border: 1px solid #dddddd;
     break-inside: avoid;
   }
+
+  .timeline-item,
+  .timeline-card {
+    break-inside: avoid;
+  }
+
+  .timeline-container::before {
+    background: #cccccc;
+  }
 }
 
 /* =====================================
-   RESPONSIVE
+   RESPONSIVE DESIGN
 ===================================== */
 
 @media (max-width: 1000px) {
@@ -531,11 +803,42 @@
   }
 }
 
+/* =====================================
+   TABLET AND MOBILE
+===================================== */
+
+@media (max-width: 768px) {
+  .timeline-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-form-group.full-width {
+    grid-column: auto;
+  }
+
+  .timeline-record-search input {
+    max-width: 100%;
+  }
+
+  .timeline-form-actions {
+    flex-direction: column;
+  }
+
+  .timeline-form-actions button {
+    width: 100%;
+  }
+}
+
+/* =====================================
+   SMALL MOBILE
+===================================== */
+
 @media (max-width: 600px) {
   .timeline-search-panel,
   .patient-overview,
   .vital-overview,
-  .medical-timeline-panel {
+  .medical-timeline-panel,
+  .timeline-add-panel {
     padding: 16px;
   }
 
@@ -587,5 +890,18 @@
 
   .timeline-container::before {
     left: 10px;
+  }
+
+  .timeline-filter {
+    gap: 7px;
+  }
+
+  .timeline-filter button,
+  .timeline-filter a {
+    padding: 7px 10px;
+  }
+
+  .timeline-record-actions {
+    flex-wrap: wrap;
   }
 }
