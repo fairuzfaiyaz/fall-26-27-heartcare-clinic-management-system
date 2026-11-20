@@ -129,7 +129,7 @@ nav a.active {
 }
 
 .topbar {
-    height: 85px;
+    min-height: 85px;
     background: #ffffff;
     border-bottom: 1px solid #e8edf4;
     display: flex;
@@ -162,6 +162,10 @@ nav a.active {
     border-radius: 50%;
     cursor: pointer;
     font-size: 18px;
+}
+
+.notification:hover {
+    background: #eaf1ff;
 }
 
 .user-info {
@@ -374,6 +378,38 @@ nav a.active {
 
 
 /* ==============================
+   FORM VALIDATION MESSAGES
+============================== */
+
+.error {
+    display: block;
+    color: #ef5361;
+    font-size: 12px;
+    margin-top: 2px;
+    min-height: 14px;
+}
+
+
+/* ==============================
+   FORM SUCCESS / ERROR MESSAGE
+============================== */
+
+#form-message {
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 18px;
+}
+
+#form-message.success {
+    color: #20a36b;
+}
+
+#form-message.error-message {
+    color: #ef5361;
+}
+
+
+/* ==============================
    FORM ACTIONS
 ============================== */
 
@@ -416,6 +452,11 @@ nav a.active {
     background: #174eae;
 }
 
+.cancel-btn:active,
+.save-btn:active {
+    transform: scale(0.98);
+}
+
 
 /* ==============================
    FOOTER
@@ -430,7 +471,7 @@ footer {
 
 
 /* ==============================
-   RESPONSIVE
+   RESPONSIVE - TABLET
 ============================== */
 
 @media (max-width: 768px) {
@@ -460,6 +501,7 @@ footer {
     nav a {
         text-align: center;
         padding: 13px 3px;
+        font-size: 11px;
     }
 
     .topbar {
@@ -485,6 +527,11 @@ footer {
     }
 
 }
+
+
+/* ==============================
+   RESPONSIVE - MOBILE
+============================== */
 
 @media (max-width: 480px) {
 
@@ -522,6 +569,22 @@ footer {
 
     .topbar p {
         font-size: 10px;
+    }
+
+    .topbar {
+        gap: 10px;
+    }
+
+    .header-right {
+        gap: 8px;
+    }
+
+    .page-heading h1 {
+        font-size: 20px;
+    }
+
+    .content {
+        padding: 15px 10px;
     }
 
 }
