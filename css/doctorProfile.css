@@ -402,18 +402,15 @@ a {
   font-weight: 700;
 
   transition: 0.3s ease;
+}
 
-  
-  }
+/* Validation Focus */
 
-  /* Validation Focus */
-
-  .profile-form input:focus,
-  .profile-form select:focus,
-  .profile-form textarea:focus {
-    outline: none;
-    border-color: #3978c6;
-  }
+.profile-form input:focus,
+.profile-form select:focus,
+.profile-form textarea:focus {
+  outline: none;
+  border-color: #3978c6;
 }
 
 .edit-button:hover {
