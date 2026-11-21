@@ -1,0 +1,23 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "colebemis"
+  ],
+  "use-cases": [],
+  "tags": [
+    "logo",
+    "bullseye",
+    "deadline",
+    "projects",
+    "overview",
+    "work",
+    "productivity",
+    "result",
+    "outcome",
+    "objective",
+    "okr"
+  ],
+  "categories": [
+    "gaming"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "AnnaSasDev",
+    "joffx",
+    "ericfennis",
+    "mittalyashu"
+  ],
+  "use-cases": [],
+  "tags": [
+    "$extends:banknote",
+    "$group:x",
+    "rejected",
+    "declined",
+    "lost"
+  ],
+  "categories": [
+    "$extends:banknote"
+  ]
+}

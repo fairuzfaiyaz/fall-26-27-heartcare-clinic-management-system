@@ -1,0 +1,23 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "colebemis",
+    "csandman",
+    "ericfennis"
+  ],
+  "use-cases": [],
+  "tags": [
+    "work",
+    "bag",
+    "baggage",
+    "folder",
+    "job",
+    "career",
+    "employment",
+    "hiring",
+    "experience"
+  ],
+  "categories": [
+    "travel"
+  ]
+}

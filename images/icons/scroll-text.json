@@ -1,0 +1,16 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "danielbayley",
+    "karsa-mistmere"
+  ],
+  "use-cases": [],
+  "tags": [
+    "$extends:scroll",
+    "changelog",
+    "release notes"
+  ],
+  "categories": [
+    "$extends:scroll"
+  ]
+}

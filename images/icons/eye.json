@@ -1,0 +1,30 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "colebemis",
+    "karsa-mistmere",
+    "ericfennis"
+  ],
+  "use-cases": [],
+  "tags": [
+    "view",
+    "watch",
+    "see",
+    "show",
+    "expose",
+    "reveal",
+    "display",
+    "visible",
+    "visibility",
+    "vision",
+    "preview",
+    "read",
+    "eyes"
+  ],
+  "categories": [
+    "accessibility",
+    "photography",
+    "design",
+    "security"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "mittalyashu",
+    "ahtohbi4",
+    "ericfennis"
+  ],
+  "use-cases": [],
+  "tags": [
+    "money",
+    "finance",
+    "pocket",
+    "budget"
+  ],
+  "categories": [
+    "account",
+    "finance"
+  ]
+}

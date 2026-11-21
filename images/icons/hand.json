@@ -1,0 +1,23 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ericfennis"
+  ],
+  "use-cases": [],
+  "tags": [
+    "wave",
+    "move",
+    "mouse",
+    "grab",
+    "welcome",
+    "hello",
+    "hi",
+    "greeting",
+    "goodbye",
+    "bye"
+  ],
+  "categories": [
+    "cursors",
+    "accessibility"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "llaenowyd",
+    "mishkaio",
+    "ericfennis",
+    "karsa-mistmere",
+    "chessurisme"
+  ],
+  "use-cases": [],
+  "tags": [
+    "$group:dashed",
+    "selection",
+    "square",
+    "rectangular",
+    "marquee",
+    "tool",
+    "box",
+    "region",
+    "area",
+    "region of interest"
+  ],
+  "categories": [
+    "design",
+    "cursors"
+  ],
+  "aliases": [
+    {
+      "name": "box-select",
+      "deprecationReason": "alias.name",
+      "deprecated": true
+    }
+  ]
+}

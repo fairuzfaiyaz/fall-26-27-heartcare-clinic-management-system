@@ -1,0 +1,19 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "danielbayley",
+    "karsa-mistmere"
+  ],
+  "use-cases": [],
+  "tags": [
+    "$extends:book-open",
+    "docs",
+    "wiki",
+    "knowledge base"
+  ],
+  "categories": [
+    "text",
+    "development",
+    "education"
+  ]
+}

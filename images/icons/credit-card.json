@@ -1,0 +1,21 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "colebemis",
+    "karsa-mistmere",
+    "ericfennis"
+  ],
+  "use-cases": [],
+  "tags": [
+    "bank",
+    "purchase",
+    "payment",
+    "cc",
+    "cashier",
+    "merchant"
+  ],
+  "categories": [
+    "account",
+    "finance"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "zenoamaro",
+    "ericfennis",
+    "csandman",
+    "mittalyashu",
+    "danielbayley"
+  ],
+  "use-cases": [],
+  "tags": [
+    "app",
+    "home",
+    "start",
+    "apps",
+    "menu",
+    "block",
+    "applications",
+    "collection",
+    "dashboard",
+    "overview",
+    "tiles",
+    "grid",
+    "matrix",
+    "launcher",
+    "widgets",
+    "ui",
+    "circles",
+    "shortcuts"
+  ],
+  "categories": [
+    "design",
+    "layout"
+  ]
+}

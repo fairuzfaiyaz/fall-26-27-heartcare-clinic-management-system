@@ -1,0 +1,42 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "karsa-mistmere",
+    "ericfennis",
+    "jguddas"
+  ],
+  "use-cases": [],
+  "tags": [
+    "toque blanche",
+    "culinary cap",
+    "cooking",
+    "baking",
+    "culinary",
+    "gastronomy",
+    "food",
+    "kitchen",
+    "restaurant",
+    "cuisine",
+    "catering",
+    "meal",
+    "dining",
+    "gourmet",
+    "apron",
+    "uniform",
+    "menu",
+    "toque",
+    "cook",
+    "baker",
+    "cookery",
+    "headwear",
+    "headgear",
+    "cap",
+    "kitchen staff",
+    "culinary professional",
+    "food service",
+    "hospitality"
+  ],
+  "categories": [
+    "food-beverage"
+  ]
+}

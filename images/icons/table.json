@@ -1,0 +1,23 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "colebemis",
+    "zenoamaro",
+    "ericfennis",
+    "csandman",
+    "mittalyashu"
+  ],
+  "use-cases": [],
+  "tags": [
+    "spreadsheet",
+    "grid",
+    "csv",
+    "xls",
+    "xlsx",
+    "excel"
+  ],
+  "categories": [
+    "text",
+    "files"
+  ]
+}

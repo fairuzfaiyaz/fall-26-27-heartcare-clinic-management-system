@@ -1,0 +1,21 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "mittalyashu",
+    "ericfennis",
+    "jguddas"
+  ],
+  "use-cases": [],
+  "tags": [
+    "$group:expand",
+    "scale",
+    "fullscreen",
+    "maximize",
+    "minimize",
+    "contract"
+  ],
+  "categories": [
+    "arrows",
+    "layout"
+  ]
+}
