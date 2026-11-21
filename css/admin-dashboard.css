@@ -67,10 +67,13 @@
   height: 38px;
   display: grid;
   place-items: center;
-  border-radius: 50%;
-  background: var(--color-red);
-  color: #fff;
-  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.adm-brand__mark img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
 }
 
 .adm-role {
@@ -140,6 +143,18 @@
   display: inline-grid;
   place-items: center;
   font-size: 1.1rem;
+}
+
+.adm-nav__icon img {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) saturate(100%) invert(87%) sepia(8%) saturate(585%)
+    hue-rotate(169deg) brightness(93%) contrast(90%);
+}
+
+.adm-nav__link.is-active .adm-nav__icon img,
+.adm-nav__link:hover .adm-nav__icon img {
+  filter: brightness(0) invert(1);
 }
 
 .adm-nav__link:hover {
@@ -355,6 +370,13 @@
   font-size: 1.3rem;
 }
 
+.adm-kpi__icon img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) saturate(100%);
+  opacity: 0.75;
+}
+
 .adm-kpi > div {
   min-width: 0;
 }
@@ -474,8 +496,17 @@
 }
 
 .adm-quick__item span {
+  width: 22px;
+  height: 22px;
+  display: inline-grid;
+  place-items: center;
   color: var(--color-red);
   font-size: 1.1rem;
+}
+
+.adm-quick__item span img {
+  width: 20px;
+  height: 20px;
 }
 
 .adm-quick__item:hover {
