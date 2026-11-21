@@ -464,6 +464,170 @@
   }
 }
 
+/* addition for login page also pass hide with eye */
+/* ==========================================================================
+   auth-additions.css
+   Extra styles for login.html. Link it AFTER css/auth.css.
+   - eye button inside the password field
+   - message box (error / ok / warning)
+   - Caps Lock warning
+   - demo accounts box
+   - forgot password link-button
+   ========================================================================== */
+
+/* Password field with the show / hide button */
+.password-wrap {
+  position: relative;
+}
+
+.password-wrap input {
+  width: 100%;
+  padding-right: 3rem; /* room for the eye button */
+}
+
+.toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--color-ink-soft);
+  cursor: pointer;
+}
+
+.toggle-password:hover {
+  background: rgba(47, 100, 134, 0.1);
+  color: var(--color-blue);
+}
+
+.toggle-password:focus-visible {
+  outline: 3px solid rgba(47, 100, 134, 0.4);
+}
+
+.toggle-password svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Message box above the form */
+.login-msg {
+  padding: 0.8rem 0.95rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.login-msg--error {
+  background: #fbe8eb;
+  color: #b32139;
+}
+
+.login-msg--ok {
+  background: #e5f5ec;
+  color: #247a50;
+}
+
+.login-msg--warn {
+  background: #fff2d9;
+  color: #94640c;
+}
+
+/* Caps Lock warning */
+.caps-warning {
+  color: #94640c;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+/* "← Back to sign in" button that looks like a link */
+.link-button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-blue);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+}
+
+.link-button:hover {
+  color: var(--color-red);
+}
+
+/* Disabled sign-in button (locked or redirecting) */
+.login-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Demo accounts box */
+.demo-box {
+  margin-top: 1.25rem;
+  padding: 1rem;
+  border: 1px dashed var(--color-line);
+  border-radius: var(--radius-md);
+  background: #f6f9fb;
+}
+
+.demo-box h2 {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.demo-box > p {
+  margin: 0.3rem 0 0.6rem;
+  color: var(--color-ink-soft);
+  font-size: 0.75rem;
+}
+
+.demo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.55rem 0;
+  border-top: 1px solid var(--color-line);
+}
+
+.demo-item strong,
+.demo-item small {
+  display: block;
+}
+
+.demo-item strong {
+  font-size: 0.8rem;
+}
+
+.demo-item small {
+  margin-top: 0.1rem;
+  color: var(--color-ink-soft);
+  font-size: 0.72rem;
+}
+
+.demo-use {
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--color-line);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--color-blue);
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.demo-use:hover {
+  border-color: var(--color-blue);
+}
 /* 12. Reduced motion accessibility
    ========================================================================== */
 
