@@ -2,10 +2,33 @@
 // Small helpers shared by all the patient pages.
 // Dates are "YYYY-MM-DD" text and times are "HH:MM" text.
 
-const shortMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const shortMonths = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
 const longMonths = [
-  "January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
 ];
 
 // 1800 -> "৳1,800"
@@ -21,7 +44,9 @@ function pad2(number) {
 // "2026-10-31" -> "31 Oct 2026"
 function formatDate(text) {
   let monthIndex = Number(text.slice(5, 7)) - 1;
-  return text.slice(8, 10) + " " + shortMonths[monthIndex] + " " + text.slice(0, 4);
+  return (
+    text.slice(8, 10) + " " + shortMonths[monthIndex] + " " + text.slice(0, 4)
+  );
 }
 
 // "2026-10-31" -> "31 Oct"
@@ -33,7 +58,9 @@ function formatDayMonth(text) {
 // "2003-03-15" -> "15 March 2003"
 function formatLongDate(text) {
   let monthIndex = Number(text.slice(5, 7)) - 1;
-  return text.slice(8, 10) + " " + longMonths[monthIndex] + " " + text.slice(0, 4);
+  return (
+    text.slice(8, 10) + " " + longMonths[monthIndex] + " " + text.slice(0, 4)
+  );
 }
 
 // "14:00" -> "02:00 PM"
@@ -84,4 +111,20 @@ function showPatientHeader() {
   document.getElementById("sidebar-initials").innerHTML = initials;
   document.getElementById("sidebar-name").innerHTML = patient.fullName;
   document.getElementById("topbar-initials").innerHTML = initials;
+}
+
+// true if "text" contains "search" (ignores upper/lower case).
+// An empty search matches everything, because indexOf("") is 0.
+function containsText(text, search) {
+  return text.toLowerCase().indexOf(search.toLowerCase()) !== -1;
+}
+
+// Returns a NEW array without the item at "index" (slice + concat)
+function removeAt(array, index) {
+  return array.slice(0, index).concat(array.slice(index + 1));
+}
+
+// true if the text is a real number (not empty, not letters)
+function isNumber(text) {
+  return text !== "" && !isNaN(Number(text));
 }

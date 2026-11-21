@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/patient-dashboard.css" />
     <link rel="stylesheet" href="assets/css/patient-pages.css" />
+    <link rel="stylesheet" href="css/patient-additions.css" />
   </head>
 
   <body class="patient-dashboard">
@@ -22,9 +23,10 @@
         </a>
 
         <div class="sidebar-profile">
-          <div class="avatar">FA</div>
+          <!-- filled by showPatientHeader() -->
+          <div class="avatar" id="sidebar-initials"></div>
           <div>
-            <strong>Fairuz Ahmed</strong>
+            <strong id="sidebar-name"></strong>
             <span>Patient Account</span>
           </div>
         </div>
@@ -106,9 +108,9 @@
             <a
               href="patient-profile.html"
               class="topbar-avatar"
+              id="topbar-initials"
               aria-label="Open profile"
-              >FA</a
-            >
+            ></a>
           </div>
         </header>
 
@@ -118,7 +120,7 @@
               <p class="section-eyebrow">RECORDS</p>
               <h1>Medical Records</h1>
               <p class="welcome-description">
-                Consultations, prescriptions and reports from your visits.
+                Consultations, prescriptions and lab reports from your visits.
               </p>
             </div>
           </section>
@@ -127,42 +129,152 @@
             <span aria-hidden="true">ⓘ</span>
             <p>
               Medical records are written by your doctors and laboratory staff.
-              You can view them but not edit them.
+              You can view them but not edit them. Lab flags are informational
+              and are not a diagnosis.
             </p>
           </div>
+
+          <!-- Summary cards: filled by renderSummary() -->
+          <section class="summary-grid" aria-label="Records summary">
+            <article class="summary-card">
+              <div class="summary-card__top">
+                <span class="summary-icon summary-icon--blue" aria-hidden="true"
+                  >♡</span
+                >
+                <span class="summary-caption">Doctor visits</span>
+              </div>
+              <p class="summary-value" id="sum-consult"></p>
+              <h2>Consultations</h2>
+            </article>
+
+            <article class="summary-card">
+              <div class="summary-card__top">
+                <span class="summary-icon summary-icon--gold" aria-hidden="true"
+                  >✚</span
+                >
+                <span class="summary-caption">Written by doctors</span>
+              </div>
+              <p class="summary-value" id="sum-presc"></p>
+              <h2>Prescriptions</h2>
+            </article>
+
+            <article class="summary-card">
+              <div class="summary-card__top">
+                <span
+                  class="summary-icon summary-icon--green"
+                  aria-hidden="true"
+                  >▤</span
+                >
+                <span class="summary-caption">Completed tests</span>
+              </div>
+              <p class="summary-value" id="sum-lab"></p>
+              <h2>Lab Reports</h2>
+            </article>
+
+            <article class="summary-card">
+              <div class="summary-card__top">
+                <span class="summary-icon summary-icon--red" aria-hidden="true"
+                  >▣</span
+                >
+                <span class="summary-caption">Latest visit</span>
+              </div>
+              <p class="summary-value summary-value--date" id="sum-last"></p>
+              <h2>Last Consultation</h2>
+            </article>
+          </section>
+
           <div class="dashboard-columns">
-            <section class="panel records-panel">
+            <!-- ========== Records timeline (Read + Search + Filter + Sort) ========== -->
+            <section class="panel pp-print-area">
               <div class="panel-header">
                 <div>
-                  <p class="section-eyebrow">QUICK LINKS</p>
-                  <h2>Reports</h2>
+                  <p class="section-eyebrow">YOUR HISTORY</p>
+                  <h2>All Records</h2>
                 </div>
               </div>
-              <a href="prescriptions.html" class="record-item"
-                ><span class="record-icon record-icon--red" aria-hidden="true"
-                  >✚</span
-                ><span class="record-details"
-                  ><strong>Prescriptions</strong
-                  ><small id="count-prescriptions">2 records</small></span
-                ><span class="record-arrow" aria-hidden="true">→</span></a
-              >
-              <a href="lab-results.html" class="record-item"
-                ><span class="record-icon record-icon--blue" aria-hidden="true"
-                  >▤</span
-                ><span class="record-details"
-                  ><strong>Laboratory Reports</strong
-                  ><small id="count-labs">1 report</small></span
-                ><span class="record-arrow" aria-hidden="true">→</span></a
-              >
-              <a href="health-tracker.html" class="record-item"
-                ><span class="record-icon record-icon--green" aria-hidden="true"
-                  >♡</span
-                ><span class="record-details"
-                  ><strong>Health Trends</strong
-                  ><small>Your own measurements</small></span
-                ><span class="record-arrow" aria-hidden="true">→</span></a
-              >
+
+              <div class="rec-toolbar">
+                <input
+                  class="pp-input"
+                  type="search"
+                  id="rec-search"
+                  placeholder="Search by doctor, medicine, test, diagnosis…"
+                  aria-label="Search records"
+                  onkeyup="renderRecords()"
+                />
+                <!-- options are added by fillTypes() -->
+                <select
+                  class="pp-input"
+                  id="rec-type"
+                  aria-label="Record type"
+                  onchange="renderRecords()"
+                >
+                  <option value="All">All types</option>
+                </select>
+                <select
+                  class="pp-input"
+                  id="rec-sort"
+                  aria-label="Sort order"
+                  onchange="renderRecords()"
+                >
+                  <option value="newest">Newest first</option>
+                  <option value="oldest">Oldest first</option>
+                </select>
+              </div>
+              <p class="pp-hint" id="rec-count"></p>
+
+              <!-- records are built by renderRecords() -->
+              <ol class="pp-tl" id="timeline"></ol>
             </section>
+
+            <div class="pp-stack">
+              <!-- ========== Personal health trends (from the Health Tracker) ========== -->
+              <section class="panel">
+                <div class="panel-header">
+                  <div>
+                    <p class="section-eyebrow">YOUR OWN MEASUREMENTS</p>
+                    <h2>Health Trends</h2>
+                  </div>
+                  <a href="health-tracker.html" class="text-link"
+                    >Open tracker</a
+                  >
+                </div>
+                <!-- filled by renderTrends() -->
+                <div class="pp-kv" id="trend-list"></div>
+                <p class="pp-hint">
+                  These readings are recorded by you and are for personal
+                  tracking only.
+                </p>
+              </section>
+
+              <!-- ========== Related pages ========== -->
+              <section class="panel records-panel">
+                <div class="panel-header">
+                  <div>
+                    <p class="section-eyebrow">QUICK LINKS</p>
+                    <h2>Full Pages</h2>
+                  </div>
+                </div>
+                <a href="prescriptions.html" class="record-item"
+                  ><span class="record-icon record-icon--red" aria-hidden="true"
+                    >✚</span
+                  ><span class="record-details"
+                    ><strong>Prescriptions</strong
+                    ><small id="count-prescriptions"></small></span
+                  ><span class="record-arrow" aria-hidden="true">→</span></a
+                >
+                <a href="lab-results.html" class="record-item"
+                  ><span
+                    class="record-icon record-icon--blue"
+                    aria-hidden="true"
+                    >▤</span
+                  ><span class="record-details"
+                    ><strong>Laboratory Reports</strong
+                    ><small id="count-labs"></small></span
+                  ><span class="record-arrow" aria-hidden="true">→</span></a
+                >
+              </section>
+            </div>
           </div>
 
           <footer class="dashboard-footer">
@@ -175,7 +287,12 @@
         </div>
       </main>
     </div>
-    <script src="js/medical-records-data.js"></script>
-    <script src="js/medical-records.js"></script>
+
+    <!-- order matters: account data, other data, helpers, then this page's code -->
+    <script src="js/patient-account-data.js"></script>
+    <script src="js/patient-health-tracker-data.js"></script>
+    <script src="js/patient-medical-records-data.js"></script>
+    <script src="js/patient-common.js"></script>
+    <script src="js/patient-medical-records.js"></script>
   </body>
 </html>
