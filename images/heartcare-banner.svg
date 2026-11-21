@@ -1,0 +1,136 @@
+<svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="HeartCare Clinic Management System. A role-based clinic prototype built with HTML5, CSS3 and JavaScript. Four roles: Administrator, Doctor, Patient, Laboratory Technician. Workflow: Register, Book, Consult, Lab Result, Invoice, Report.">
+  <desc>Animated banner: a heartbeat line draws across the top, each role card has a small looping animation, and a dot travels along the clinic workflow.</desc>
+  <defs>
+    <pattern id="hc_grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="hc_glow" cx="15%" cy="10%" r="55%">
+      <stop offset="0%" stop-color="#f43f5e" stop-opacity="0.16"/>
+      <stop offset="60%" stop-color="#6366f1" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#004e92" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="hc_glow2" cx="92%" cy="12%" r="35%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="hc_brand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f43f5e"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+    <path id="hc_ecg" d="M 60,205 L 330,205 L 350,205 L 365,185 L 380,220 L 400,160 L 420,245 L 440,205 L 600,205 L 620,205 L 635,185 L 650,220 L 670,160 L 690,245 L 710,205 L 870,205 L 890,205 L 905,185 L 920,220 L 940,160 L 960,245 L 980,205 L 1140,205"/>
+    <path id="hc_flow" d="M 100,490 L 1100,490"/>
+  </defs>
+
+  <rect width="1200" height="600" fill="#0b0e14"/>
+  <rect width="1200" height="600" fill="url(#hc_grid)"/>
+  <rect width="1200" height="600" fill="url(#hc_glow)"/>
+  <rect width="1200" height="600" fill="url(#hc_glow2)"/>
+
+  <!-- kicker -->
+  <text x="60" y="52" font-family="Consolas, 'Courier New', monospace" font-size="12" letter-spacing="2.5" fill="#fb7185">CSC 3215 &#183; WEB TECHNOLOGIES &#183; FALL 2026-27</text>
+  <g transform="translate(940, 34)">
+    <rect width="200" height="26" rx="13" fill="#161b22" stroke="#22c55e" stroke-opacity="0.6"/>
+    <circle cx="16" cy="13" r="3.2" fill="#22c55e">
+      <animate attributeName="opacity" values="1;0.3;1" dur="1.6s" repeatCount="indefinite"/>
+    </circle>
+    <text x="28" y="17" font-family="Consolas, 'Courier New', monospace" font-size="9.5" letter-spacing="1.2" font-weight="700" fill="#22c55e">FRONTEND PROTOTYPE</text>
+  </g>
+
+  <!-- title -->
+  <text x="60" y="112" font-family="Inter, 'Segoe UI', Arial, Helvetica, system-ui, sans-serif" font-size="46" font-weight="800" fill="#e9edf3">HeartCare Clinic <tspan fill="#fb7185">Management</tspan> System</text>
+  <text x="60" y="148" font-family="Inter, 'Segoe UI', Arial, Helvetica, system-ui, sans-serif" font-size="17" fill="#a1a1aa">A role-based clinic prototype: <tspan fill="#e9edf3" font-weight="700">HTML5</tspan> &#183; <tspan fill="#e9edf3" font-weight="700">CSS3</tspan> &#183; <tspan fill="#e9edf3" font-weight="700">JavaScript</tspan> &#8212; from registration to billing.</text>
+
+  <!-- heartbeat line -->
+  <use href="#hc_ecg" fill="none" stroke="#fb7185" stroke-opacity="0.18" stroke-width="2"/>
+  <path d="M 60,205 L 330,205 L 350,205 L 365,185 L 380,220 L 400,160 L 420,245 L 440,205 L 600,205 L 620,205 L 635,185 L 650,220 L 670,160 L 690,245 L 710,205 L 870,205 L 890,205 L 905,185 L 920,220 L 940,160 L 960,245 L 980,205 L 1140,205" pathLength="1000" fill="none" stroke="url(#hc_brand)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1000" stroke-dashoffset="0">
+    <animate attributeName="stroke-dashoffset" values="1000;0;0;-1000" keyTimes="0;0.55;0.85;1" dur="6s" repeatCount="indefinite"/>
+  </path>
+  <circle r="4.5" fill="#fff">
+    <animateMotion dur="6s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;0.55;1" calcMode="linear"><mpath href="#hc_ecg"/></animateMotion>
+    <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.55;0.6;1" dur="6s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- ===== Role cards ===== -->
+  <!-- Admin -->
+  <g transform="translate(60,270)">
+    <rect width="255" height="160" rx="14" fill="#161b22" stroke="#a78bfa" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text x="20" y="34" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="18" font-weight="800" fill="#e9edf3">Administrator</text>
+    <rect x="20" y="44" width="116" height="18" rx="9" fill="#211a3d" stroke="#a78bfa" stroke-opacity="0.5"/>
+    <text x="78" y="57" text-anchor="middle" font-family="Consolas, monospace" font-size="9.5" fill="#c4b5fd">CLINIC CONTROL</text>
+    <text font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12" fill="#a1a1aa"><tspan x="20" y="84">Departments, staff, tests, appointments,</tspan><tspan x="20" y="100">monthly reports and audit log.</tspan></text>
+    <line x1="20" y1="146" x2="130" y2="146" stroke="#232b38" stroke-width="1.5"/>
+    <rect x="24" width="14" y="134" height="12" rx="2" fill="#a78bfa"><animate attributeName="height" values="12;26;12" dur="3s" repeatCount="indefinite"/><animate attributeName="y" values="134;120;134" dur="3s" repeatCount="indefinite"/></rect>
+    <rect x="46" width="14" y="124" height="22" rx="2" fill="#8b5cf6"><animate attributeName="height" values="22;10;22" dur="3s" begin="0.4s" repeatCount="indefinite"/><animate attributeName="y" values="124;136;124" dur="3s" begin="0.4s" repeatCount="indefinite"/></rect>
+    <rect x="68" width="14" y="128" height="18" rx="2" fill="#a78bfa"><animate attributeName="height" values="18;28;18" dur="3s" begin="0.8s" repeatCount="indefinite"/><animate attributeName="y" values="128;118;128" dur="3s" begin="0.8s" repeatCount="indefinite"/></rect>
+    <rect x="90" width="14" y="120" height="26" rx="2" fill="#8b5cf6"><animate attributeName="height" values="26;14;26" dur="3s" begin="1.2s" repeatCount="indefinite"/><animate attributeName="y" values="120;132;120" dur="3s" begin="1.2s" repeatCount="indefinite"/></rect>
+    <rect x="112" width="14" y="130" height="16" rx="2" fill="#a78bfa"><animate attributeName="height" values="16;26;16" dur="3s" begin="1.6s" repeatCount="indefinite"/><animate attributeName="y" values="130;120;130" dur="3s" begin="1.6s" repeatCount="indefinite"/></rect>
+    <text x="146" y="138" font-family="Consolas, monospace" font-size="10" fill="#71717a">dashboard charts</text>
+  </g>
+
+  <!-- Doctor -->
+  <g transform="translate(335,270)">
+    <rect width="255" height="160" rx="14" fill="#161b22" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text x="20" y="34" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="18" font-weight="800" fill="#e9edf3">Doctor</text>
+    <rect x="20" y="44" width="104" height="18" rx="9" fill="#0d2436" stroke="#38bdf8" stroke-opacity="0.5"/>
+    <text x="72" y="57" text-anchor="middle" font-family="Consolas, monospace" font-size="9.5" fill="#7dd3fc">CONSULTATION</text>
+    <text font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12" fill="#a1a1aa"><tspan x="20" y="84">Schedule, prescriptions, lab orders</tspan><tspan x="20" y="100">and patient timeline.</tspan></text>
+    <rect x="20" y="118" width="110" height="26" rx="4" fill="#0b0e14" stroke="#38bdf8" stroke-opacity="0.35"/>
+    <rect x="28" y="123" width="70" height="4" rx="2" fill="#38bdf8" opacity="0"><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.2;0.9;1" dur="4s" repeatCount="indefinite"/></rect>
+    <rect x="28" y="130" width="90" height="4" rx="2" fill="#38bdf8" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.25;0.45;0.9;1" dur="4s" repeatCount="indefinite"/></rect>
+    <rect x="28" y="137" width="52" height="4" rx="2" fill="#38bdf8" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.5;0.7;0.9;1" dur="4s" repeatCount="indefinite"/></rect>
+    <text x="142" y="134" font-family="Consolas, monospace" font-size="10" fill="#71717a">medicine rows</text>
+  </g>
+
+  <!-- Patient -->
+  <g transform="translate(610,270)">
+    <rect width="255" height="160" rx="14" fill="#161b22" stroke="#f472b6" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text x="20" y="34" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="18" font-weight="800" fill="#e9edf3">Patient</text>
+    <rect x="20" y="44" width="104" height="18" rx="9" fill="#2b1224" stroke="#f472b6" stroke-opacity="0.5"/>
+    <text x="72" y="57" text-anchor="middle" font-family="Consolas, monospace" font-size="9.5" fill="#f9a8d4">SELF-SERVICE</text>
+    <text font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12" fill="#a1a1aa"><tspan x="20" y="84">Booking, health tracker, records,</tspan><tspan x="20" y="100">invoices and payments.</tspan></text>
+    <rect x="20" y="120" width="20" height="18" rx="3" fill="#2b1224" stroke="#f472b6" stroke-opacity="0.4"/>
+    <rect x="46" y="120" width="20" height="18" rx="3" fill="#2b1224" stroke="#f472b6" stroke-opacity="0.4"/>
+    <rect x="72" y="120" width="20" height="18" rx="3" fill="#2b1224" stroke="#f472b6" stroke-opacity="0.4"/>
+    <rect x="98" y="120" width="20" height="18" rx="3" fill="#2b1224" stroke="#f472b6" stroke-opacity="0.4"/>
+    <rect x="20" y="120" width="20" height="18" rx="3" fill="#f472b6" opacity="0"><animate attributeName="opacity" values="0;0.9;0;0;0;0;0;0" keyTimes="0;0.06;0.12;0.5;0.62;0.75;0.87;1" dur="4s" repeatCount="indefinite"/></rect>
+    <rect x="46" y="120" width="20" height="18" rx="3" fill="#f472b6" opacity="0"><animate attributeName="opacity" values="0;0;0.9;0;0;0" keyTimes="0;0.25;0.31;0.37;0.5;1" dur="4s" repeatCount="indefinite"/></rect>
+    <rect x="72" y="120" width="20" height="18" rx="3" fill="#ef4444" opacity="0"><animate attributeName="opacity" values="0;0;0.8;0.8;0" keyTimes="0;0.4;0.46;0.7;0.8" dur="4s" repeatCount="indefinite"/></rect>
+    <rect x="98" y="120" width="20" height="18" rx="3" fill="#f472b6" opacity="0"><animate attributeName="opacity" values="0;0;0.9;0.9;0" keyTimes="0;0.6;0.66;0.9;1" dur="4s" repeatCount="indefinite"/></rect>
+    <text x="130" y="134" font-family="Consolas, monospace" font-size="10" fill="#71717a">slot booked / blocked</text>
+  </g>
+
+  <!-- Lab tech -->
+  <g transform="translate(885,270)">
+    <rect width="255" height="160" rx="14" fill="#161b22" stroke="#7ee787" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text x="20" y="34" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="18" font-weight="800" fill="#e9edf3">Lab Technician</text>
+    <rect x="20" y="44" width="76" height="18" rx="9" fill="#122316" stroke="#7ee787" stroke-opacity="0.5"/>
+    <text x="58" y="57" text-anchor="middle" font-family="Consolas, monospace" font-size="9.5" fill="#86efac">RESULTS</text>
+    <text font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12" fill="#a1a1aa"><tspan x="20" y="84">Queue, result entry, range check</tspan><tspan x="20" y="100">and printable reports.</tspan></text>
+    <line x1="20" y1="128" x2="230" y2="128" stroke="#232b38" stroke-width="3" stroke-linecap="round"/>
+    <rect x="90" y="122" width="70" height="12" rx="3" fill="#22c55e" fill-opacity="0.25" stroke="#22c55e" stroke-opacity="0.6"/>
+    <circle cy="128" r="6" fill="#7ee787" cx="30">
+      <animate attributeName="cx" values="30;125;215;125;30" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fbbf24;#7ee787;#f87171;#7ee787;#fbbf24" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <text font-family="Consolas, monospace" font-size="9" fill="#71717a"><tspan x="20" y="148">LOW</tspan><tspan x="108" y="148">NORMAL</tspan><tspan x="200" y="148">HIGH</tspan></text>
+  </g>
+
+  <!-- ===== Workflow ===== -->
+  <text x="60" y="462" font-family="Consolas, 'Courier New', monospace" font-size="11" letter-spacing="2" fill="#71717a">CONNECTED CLINIC WORKFLOW</text>
+  <line x1="100" y1="490" x2="1100" y2="490" stroke="#232b38" stroke-width="2"/>
+  <g font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">
+    <circle cx="100" cy="490" r="9" fill="#161b22" stroke="#f472b6" stroke-width="2"/><text x="100" y="518" fill="#e9edf3">Register</text>
+    <circle cx="300" cy="490" r="9" fill="#161b22" stroke="#f472b6" stroke-width="2"/><text x="300" y="518" fill="#e9edf3">Book</text>
+    <circle cx="500" cy="490" r="9" fill="#161b22" stroke="#38bdf8" stroke-width="2"/><text x="500" y="518" fill="#e9edf3">Consult</text>
+    <circle cx="700" cy="490" r="9" fill="#161b22" stroke="#7ee787" stroke-width="2"/><text x="700" y="518" fill="#e9edf3">Lab Result</text>
+    <circle cx="900" cy="490" r="9" fill="#161b22" stroke="#f472b6" stroke-width="2"/><text x="900" y="518" fill="#e9edf3">Invoice</text>
+    <circle cx="1100" cy="490" r="9" fill="#161b22" stroke="#a78bfa" stroke-width="2"/><text x="1100" y="518" fill="#e9edf3">Report</text>
+  </g>
+  <circle r="6" fill="url(#hc_brand)">
+    <animateMotion dur="6s" repeatCount="indefinite"><mpath href="#hc_flow"/></animateMotion>
+  </circle>
+
+  <!-- footer -->
+  <rect x="60" y="540" width="1080" height="42" rx="12" fill="#161b22" stroke="#ffffff" stroke-opacity="0.08"/>
+  <text x="84" y="566" font-family="Inter, 'Segoe UI', Arial, Helvetica, system-ui, sans-serif" font-size="13" fill="#c9d1d9"><tspan font-weight="700" fill="#fb7185">Team:</tspan> Fairuz Faiyaz (Admin) &#183; Nazibha Tabassum (Patient) &#183; Aurpita Roy Sreya (Lab Tech) &#183; Badhon Pal (Doctor)</text>
+</svg>

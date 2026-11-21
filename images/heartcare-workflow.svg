@@ -1,0 +1,59 @@
+<svg viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="HeartCare clinic workflow across four roles: patient registers and books, doctor consults and issues prescription or lab order, lab technician enters result, patient pays invoice, administrator reads monthly report.">
+  <defs>
+    <pattern id="w_grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="w_glow" cx="85%" cy="10%" r="55%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="w_brand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f43f5e"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+    <path id="w_path" d="M 240,150 L 380,150 L 520,240 L 660,240 L 800,330 L 940,150 L 1080,420"/>
+  </defs>
+
+  <rect width="1200" height="500" fill="#0b0e14"/>
+  <rect width="1200" height="500" fill="url(#w_grid)"/>
+  <rect width="1200" height="500" fill="url(#w_glow)"/>
+
+  <text x="60" y="52" font-family="Consolas, 'Courier New', monospace" font-size="12" letter-spacing="2.5" fill="#fb7185">CONNECTED CLINIC WORKFLOW &#183; <tspan fill="#67e8f9">4 ROLES, ONE JOURNEY</tspan></text>
+  <text x="60" y="88" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="14" fill="#a1a1aa">Sample IDs, names, and statuses are shared across pages so each step leads to the next.</text>
+
+  <!-- lanes -->
+  <g font-family="Inter, 'Segoe UI', Arial, sans-serif">
+    <rect x="60" y="110" width="1080" height="80" rx="10" fill="#161b22" stroke="#f472b6" stroke-opacity="0.3"/>
+    <rect x="60" y="200" width="1080" height="80" rx="10" fill="#161b22" stroke="#38bdf8" stroke-opacity="0.3"/>
+    <rect x="60" y="290" width="1080" height="80" rx="10" fill="#161b22" stroke="#7ee787" stroke-opacity="0.3"/>
+    <rect x="60" y="380" width="1080" height="80" rx="10" fill="#161b22" stroke="#a78bfa" stroke-opacity="0.3"/>
+    <text x="80" y="155" font-size="15" font-weight="800" fill="#f9a8d4">Patient</text>
+    <text x="80" y="245" font-size="15" font-weight="800" fill="#7dd3fc">Doctor</text>
+    <text x="80" y="335" font-size="15" font-weight="800" fill="#86efac">Lab Tech</text>
+    <text x="80" y="425" font-size="15" font-weight="800" fill="#c4b5fd">Admin</text>
+  </g>
+
+  <!-- connectors -->
+  <use href="#w_path" fill="none" stroke="#3b4252" stroke-width="2" stroke-dasharray="5 5"/>
+
+  <!-- nodes -->
+  <g font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">
+    <rect x="180" y="128" width="120" height="44" rx="10" fill="#2b1224" stroke="#f472b6" stroke-width="1.5"/><text x="240" y="155" fill="#fbcfe8">Register</text>
+    <rect x="320" y="128" width="120" height="44" rx="10" fill="#2b1224" stroke="#f472b6" stroke-width="1.5"/><text x="380" y="155" fill="#fbcfe8">Book slot</text>
+    <rect x="460" y="218" width="120" height="44" rx="10" fill="#0d2436" stroke="#38bdf8" stroke-width="1.5"/><text x="520" y="245" fill="#bae6fd">Consult</text>
+    <rect x="600" y="218" width="120" height="44" rx="10" fill="#0d2436" stroke="#38bdf8" stroke-width="1.5"/><text x="660" y="245" fill="#bae6fd">Rx / Lab order</text>
+    <rect x="740" y="308" width="120" height="44" rx="10" fill="#122316" stroke="#7ee787" stroke-width="1.5"/><text x="800" y="335" fill="#bbf7d0">Lab result</text>
+    <rect x="880" y="128" width="120" height="44" rx="10" fill="#2b1224" stroke="#f472b6" stroke-width="1.5"/><text x="940" y="155" fill="#fbcfe8">Pay invoice</text>
+    <rect x="1020" y="398" width="120" height="44" rx="10" fill="#211a3d" stroke="#a78bfa" stroke-width="1.5"/><text x="1080" y="425" fill="#ddd6fe">Monthly report</text>
+  </g>
+
+  <!-- traveling dot + trail ring -->
+  <circle r="7" fill="url(#w_brand)">
+    <animateMotion dur="9s" repeatCount="indefinite"><mpath href="#w_path"/></animateMotion>
+  </circle>
+  <circle r="7" fill="none" stroke="#fb7185" stroke-width="1.5">
+    <animateMotion dur="9s" repeatCount="indefinite"><mpath href="#w_path"/></animateMotion>
+    <animate attributeName="r" values="7;18;7" dur="1.5s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-opacity" values="0.8;0;0.8" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+</svg>

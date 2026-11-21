@@ -1,4 +1,8 @@
-# HeartCare Clinic Management System
+![HeartCare banner](images/heartcare-banner.svg)
+![Workflow](images/heartcare-workflow.svg)
+![Login flow](images/heartcare-login-flow.svg)
+![Tech stack](images/heartcare-stack.svg)
+![Team](images/heartcare-team.svg)
 
 > A frontend, role-based clinic management prototype built with HTML5, CSS3, and JavaScript for CSC 3215 — Web Technologies.
 
@@ -34,12 +38,12 @@ HeartCare Clinic Management System is a multi-page web application prototype for
 
 The prototype provides four role-specific areas:
 
-| Role | Main responsibility |
-|---|---|
-| Administrator | Clinic setup, staff management, appointments, reports, dashboards, and audit history |
-| Doctor | Schedules, appointments, consultations, prescriptions, laboratory orders, and patient timelines |
-| Patient | Appointment booking, personal health tracking, medical records, prescriptions, invoices, and payment references |
-| Laboratory Technician | Laboratory queue, test results, result management, test catalogue, reports, and technician profile |
+| Role                  | Main responsibility                                                                                             |
+| --------------------- | --------------------------------------------------------------------------------------------------------------- |
+| Administrator         | Clinic setup, staff management, appointments, reports, dashboards, and audit history                            |
+| Doctor                | Schedules, appointments, consultations, prescriptions, laboratory orders, and patient timelines                 |
+| Patient               | Appointment booking, personal health tracking, medical records, prescriptions, invoices, and payment references |
+| Laboratory Technician | Laboratory queue, test results, result management, test catalogue, reports, and technician profile              |
 
 All roles share a consistent visual structure and a linked demonstration workflow. However, this is a frontend prototype. It does not contain a server, database, PHP session system, or real authentication backend.
 
@@ -90,14 +94,14 @@ Administrators need to configure departments and staff, control accounts and tes
 
 ## Technology Stack
 
-| Technology | Purpose |
-|---|---|
-| HTML5 | Page structure, semantic layout, tables, forms, navigation, and dialog elements |
-| CSS3 | Responsive layouts, cards, tables, dashboards, sidebars, status badges, print styles, hover/focus effects, and transitions |
-| JavaScript | Validation, DOM updates, arrays, objects, loops, filtering, sorting, search, CRUD-style operations, dynamic forms, charts, and role redirection |
-| Browser `Date` object | Current-date display and date calculations |
-| Browser `localStorage` | Remembering the login email only |
-| Browser print window | Printing or saving prescriptions, invoices, laboratory reports, timelines, and monthly reports |
+| Technology             | Purpose                                                                                                                                         |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| HTML5                  | Page structure, semantic layout, tables, forms, navigation, and dialog elements                                                                 |
+| CSS3                   | Responsive layouts, cards, tables, dashboards, sidebars, status badges, print styles, hover/focus effects, and transitions                      |
+| JavaScript             | Validation, DOM updates, arrays, objects, loops, filtering, sorting, search, CRUD-style operations, dynamic forms, charts, and role redirection |
+| Browser `Date` object  | Current-date display and date calculations                                                                                                      |
+| Browser `localStorage` | Remembering the login email only                                                                                                                |
+| Browser print window   | Printing or saving prescriptions, invoices, laboratory reports, timelines, and monthly reports                                                  |
 
 No package manager, framework, external chart library, database, or build tool is required.
 
@@ -129,13 +133,13 @@ The login page may also redirect automatically to a role dashboard after a valid
 
 The login system uses sample accounts stored in `js/login-data.js`.
 
-| Role | Email | Password |
-|---|---|---|
-| Administrator | `admin@heartcare.com` | `Admin123!` |
-| Doctor | `doctor@heartcare.com` | `Doctor123!` |
-| Patient | `patient@heartcare.com` | `Patient123!` |
+| Role                  | Email                   | Password      |
+| --------------------- | ----------------------- | ------------- |
+| Administrator         | `admin@heartcare.com`   | `Admin123!`   |
+| Doctor                | `doctor@heartcare.com`  | `Doctor123!`  |
+| Patient               | `patient@heartcare.com` | `Patient123!` |
 | Laboratory Technician | `labtech@heartcare.com` | `Labtech123!` |
-| Inactive Doctor | `islam@heartcare.com` | `Islam123!` |
+| Inactive Doctor       | `islam@heartcare.com`   | `Islam123!`   |
 
 The inactive account demonstrates account-status checking. It cannot sign in.
 
@@ -666,13 +670,13 @@ Laboratory reports include:
 
 ## Feature Matrix
 
-| User | Record Management | Important Unique Features |
-|---|---|---|
-| Administrator | CRUD-style management of departments, doctors, technicians, tests, and appointment updates | Dashboard analytics, bar charts, monthly reports, audit log |
-| Doctor | CRUD-style schedules and records; search on patient, appointments, prescriptions, and tests | Consultation workflow, prescription generation, laboratory orders, patient timeline |
-| Patient | Search and update appointments, create/read/update/delete health entries, view records and invoices | Smart appointment booking, health tracking, simulated billing and payment methods |
-| Laboratory Technician | Create and manage laboratory results and queue records; search/filter reports | Reference-range classification, laboratory queue, printable laboratory reports |
-| Everyone / public | Search and view public clinic information | Public catalogue-style information, login, role redirection |
+| User                  | Record Management                                                                                   | Important Unique Features                                                           |
+| --------------------- | --------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| Administrator         | CRUD-style management of departments, doctors, technicians, tests, and appointment updates          | Dashboard analytics, bar charts, monthly reports, audit log                         |
+| Doctor                | CRUD-style schedules and records; search on patient, appointments, prescriptions, and tests         | Consultation workflow, prescription generation, laboratory orders, patient timeline |
+| Patient               | Search and update appointments, create/read/update/delete health entries, view records and invoices | Smart appointment booking, health tracking, simulated billing and payment methods   |
+| Laboratory Technician | Create and manage laboratory results and queue records; search/filter reports                       | Reference-range classification, laboratory queue, printable laboratory reports      |
+| Everyone / public     | Search and view public clinic information                                                           | Public catalogue-style information, login, role redirection                         |
 
 ---
 
@@ -880,14 +884,14 @@ The project follows HTML, CSS, and JavaScript separation. Page markup is stored 
 
 ## Key HTML, CSS, and JavaScript Files
 
-| Area | Example HTML files | CSS and JavaScript support |
-|---|---|---|
-| Public website | `index.html` | `css/style.css`, `js/script.js` |
-| Authentication | `login.html`, `register.html`, `choose-dash.html` | `css/auth.css`, `js/login-data.js`, `js/login.js`, `js/register.js` |
-| Administrator | `dashboard.html`, `manage-departments.html`, `manage-doctors.html`, `manage-labtechs.html`, `manage-tests.html`, `manage-appointments.html`, `reports.html`, `audit-log.html` | `css/admin-dashboard.css`, `js/admin-*`, `js/departments.js`, `js/common.js` |
-| Doctor | `doctor-dashboard.html`, `myProfile.html`, `my_schedule.html`, `my_appointments.html`, `consultation.html`, `prescription.html`, `order_tests.html`, `patient_timeline.html` | `css/doctor-*.css`, `css/doctorpatient-timeline.css`, `js/doctor-*`, `js/common.js` |
-| Patient | `patient-dashboard.html`, `appointments.html`, `book-appointment.html`, `health-tracker.html`, `medical-records.html`, `prescriptions.html`, `invoices.html`, `payment-methods.html`, `patient-profile.html` | `css/patient-dashboard.css`, `css/health-tracker.css`, `css/my-appointments.css`, `js/patient-*`, `js/payment-methods*` |
-| Laboratory | `lab-dashboard.html`, `lab-queue.html`, `add-labresult.html`, `manage-labresult.html`, `test-catalogue.html`, `lab-reports.html`, `profile.html` | `css/lab-*.css`, `css/manage-labresults.css`, `js/lab-*`, `js/add-labresult*`, `js/manage-labresults*`, `js/common.js` |
+| Area           | Example HTML files                                                                                                                                                                                           | CSS and JavaScript support                                                                                              |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------- |
+| Public website | `index.html`                                                                                                                                                                                                 | `css/style.css`, `js/script.js`                                                                                         |
+| Authentication | `login.html`, `register.html`, `choose-dash.html`                                                                                                                                                            | `css/auth.css`, `js/login-data.js`, `js/login.js`, `js/register.js`                                                     |
+| Administrator  | `dashboard.html`, `manage-departments.html`, `manage-doctors.html`, `manage-labtechs.html`, `manage-tests.html`, `manage-appointments.html`, `reports.html`, `audit-log.html`                                | `css/admin-dashboard.css`, `js/admin-*`, `js/departments.js`, `js/common.js`                                            |
+| Doctor         | `doctor-dashboard.html`, `myProfile.html`, `my_schedule.html`, `my_appointments.html`, `consultation.html`, `prescription.html`, `order_tests.html`, `patient_timeline.html`                                 | `css/doctor-*.css`, `css/doctorpatient-timeline.css`, `js/doctor-*`, `js/common.js`                                     |
+| Patient        | `patient-dashboard.html`, `appointments.html`, `book-appointment.html`, `health-tracker.html`, `medical-records.html`, `prescriptions.html`, `invoices.html`, `payment-methods.html`, `patient-profile.html` | `css/patient-dashboard.css`, `css/health-tracker.css`, `css/my-appointments.css`, `js/patient-*`, `js/payment-methods*` |
+| Laboratory     | `lab-dashboard.html`, `lab-queue.html`, `add-labresult.html`, `manage-labresult.html`, `test-catalogue.html`, `lab-reports.html`, `profile.html`                                                             | `css/lab-*.css`, `css/manage-labresults.css`, `js/lab-*`, `js/add-labresult*`, `js/manage-labresults*`, `js/common.js`  |
 
 The HTML files generally load JavaScript at the end of the `<body>`. Page scripts often need data scripts or shared helpers to load before the page-specific JavaScript.
 
