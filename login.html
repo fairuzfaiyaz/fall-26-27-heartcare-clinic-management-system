@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/auth.css" />
   </head>
+
   <body class="login-page">
     <header class="login-header">
       <a href="index.html" class="login-logo">
@@ -38,13 +39,7 @@
           </p>
         </div>
 
-        <!-- Connect this form to your PHP login handler later -->
-        <form
-          class="login-form"
-          id="loginForm"
-          action="choose-dash.html"
-          method="POST"
-        >
+        <form class="login-form" id="loginForm">
           <div class="form-group">
             <label for="email">Email Address</label>
 
@@ -62,9 +57,7 @@
             <div class="form-label-row">
               <label for="password">Password</label>
 
-              <a href="auth/forgot-password.php" class="forgot-password">
-                Forgot password?
-              </a>
+              <a href="#" class="forgot-password"> Forgot password? </a>
             </div>
 
             <input
@@ -108,6 +101,7 @@
         demonstration.
       </p>
     </main>
+
     <script src="js/login.js"></script>
   </body>
 </html>
