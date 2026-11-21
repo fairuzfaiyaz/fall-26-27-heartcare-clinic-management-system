@@ -12,9 +12,11 @@
   <body>
     <div class="dashboard-layout">
       <!-- SIDEBAR -->
+
       <aside class="dashboard-sidebar">
-        <a class="dashboard-brand" href="doctor/doctor-dashboard.html">
+        <a class="dashboard-brand" href="doctor-dashboard.html">
           <span class="brand-icon">♥</span>
+
           <span>HeartCare</span>
         </a>
 
@@ -22,7 +24,8 @@
           <div class="avatar">BP</div>
 
           <div>
-            <strong>Dr. Badhon Pal </strong>
+            <strong>Dr. Badhon Pal</strong>
+
             <span>Cardiology Department</span>
           </div>
         </div>
@@ -32,41 +35,49 @@
 
           <a class="sidebar-link" href="doctor-dashboard.html">
             <span class="nav-icon">▦</span>
+
             Dashboard
           </a>
 
           <a class="sidebar-link is-active" href="myProfile.html">
             <span class="nav-icon">♙</span>
+
             My Profile
           </a>
 
           <a class="sidebar-link" href="my_schedule.html">
             <span class="nav-icon">▣</span>
+
             My Schedule
           </a>
 
           <a class="sidebar-link" href="my_appointments.html">
             <span class="nav-icon">☷</span>
+
             My Appointments
           </a>
 
           <a class="sidebar-link" href="consultation.html">
             <span class="nav-icon">✚</span>
+
             Consultation
           </a>
 
           <a class="sidebar-link" href="prescription.html">
             <span class="nav-icon">▤</span>
+
             Prescriptions
           </a>
 
           <a class="sidebar-link" href="order_tests.html">
             <span class="nav-icon">⚕</span>
+
             Laboratory Tests
           </a>
 
           <a class="sidebar-link" href="patient_timeline.html">
             <span class="nav-icon">◷</span>
+
             Patient Timeline
           </a>
         </nav>
@@ -77,12 +88,11 @@
       </aside>
 
       <!-- MAIN CONTENT -->
-      <main class="dashboard-main">
-        <!-- TOPBAR -->
 
-        <!-- PROFILE CONTENT -->
+      <main class="dashboard-main">
         <div class="profile-content">
           <!-- PAGE HEADING -->
+
           <section class="page-heading">
             <div>
               <p class="section-eyebrow">ACCOUNT MANAGEMENT</p>
@@ -98,161 +108,278 @@
           </section>
 
           <!-- PROFILE HEADER CARD -->
+
           <section class="profile-header-card">
-            <div class="profile-avatar">AR</div>
+            <div class="profile-avatar" id="profileAvatar">AR</div>
 
             <div class="profile-header-info">
               <span class="verified-badge"> ● Verified Doctor </span>
 
-              <h2>Dr. Ahmed Rahman</h2>
+              <h2 id="profileName">Dr. Ahmed Rahman</h2>
 
-              <p>Cardiologist | HeartCare Clinic</p>
+              <p>
+                <span id="profileSpecialization"> Cardiology </span>
+
+                | HeartCare Clinic
+              </p>
 
               <div class="profile-meta">
-                <span>✉ ahmed.rahman@email.com</span>
-                <span>☎ +880 1712-345678</span>
+                <span>
+                  ✉
+
+                  <span id="profileEmail"> ahmed.rahman@email.com </span>
+                </span>
+
+                <span>
+                  ☎
+
+                  <span id="profilePhone"> +880 1712-345678 </span>
+                </span>
               </div>
             </div>
 
             <a href="#edit-profile" class="edit-button"> ✎ Edit Profile </a>
           </section>
 
-          <!-- PERSONAL INFORMATION -->
-          <section class="profile-card" id="edit-profile">
-            <div class="card-heading">
-              <div>
-                <h2>Personal Information</h2>
-                <p>Your basic personal details</p>
+          <!-- PROFILE FORM -->
+
+          <form id="profileForm" novalidate>
+            <!-- PERSONAL INFORMATION -->
+
+            <section class="profile-card" id="edit-profile">
+              <div class="card-heading">
+                <div>
+                  <h2>Personal Information</h2>
+
+                  <p>Your basic personal details</p>
+                </div>
+
+                <span class="card-icon">♙</span>
               </div>
 
-              <span class="card-icon">♙</span>
+              <div class="profile-form">
+                <div class="form-group">
+                  <label for="fullName">Full Name</label>
+
+                  <input type="text" id="fullName" name="fullName" required />
+
+                  <span id="fullName-error" class="field-error"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="gender">Gender</label>
+
+                  <select id="gender" name="gender" required>
+                    <option value="">Select Gender</option>
+
+                    <option value="Male">Male</option>
+
+                    <option value="Female">Female</option>
+
+                    <option value="Other">Other</option>
+                  </select>
+
+                  <span id="gender-error" class="field-error"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="dateOfBirth">Date of Birth</label>
+
+                  <input
+                    type="date"
+                    id="dateOfBirth"
+                    name="dateOfBirth"
+                    required
+                  />
+
+                  <span id="dateOfBirth-error" class="field-error"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="bloodGroup">Blood Group</label>
+
+                  <select id="bloodGroup" name="bloodGroup" required>
+                    <option value="">Select Blood Group</option>
+
+                    <option value="A+">A+</option>
+
+                    <option value="A-">A-</option>
+
+                    <option value="B+">B+</option>
+
+                    <option value="B-">B-</option>
+
+                    <option value="AB+">AB+</option>
+
+                    <option value="AB-">AB-</option>
+
+                    <option value="O+">O+</option>
+
+                    <option value="O-">O-</option>
+                  </select>
+
+                  <span id="bloodGroup-error" class="field-error"></span>
+                </div>
+              </div>
+            </section>
+
+            <!-- CONTACT INFORMATION -->
+
+            <section class="profile-card">
+              <div class="card-heading">
+                <div>
+                  <h2>Contact Information</h2>
+
+                  <p>Your contact and communication details</p>
+                </div>
+
+                <span class="card-icon">✉</span>
+              </div>
+
+              <div class="profile-form">
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+
+                  <input type="email" id="email" name="email" required />
+
+                  <span id="email-error" class="field-error"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+
+                  <input type="tel" id="phone" name="phone" required />
+
+                  <span id="phone-error" class="field-error"></span>
+                </div>
+
+                <div class="form-group full-width">
+                  <label for="address">Address</label>
+
+                  <textarea
+                    id="address"
+                    name="address"
+                    rows="3"
+                    required
+                  ></textarea>
+
+                  <span id="address-error" class="field-error"></span>
+                </div>
+              </div>
+            </section>
+
+            <!-- PROFESSIONAL INFORMATION -->
+
+            <section class="profile-card">
+              <div class="card-heading">
+                <div>
+                  <h2>Professional Information</h2>
+
+                  <p>Your medical career and qualifications</p>
+                </div>
+
+                <span class="card-icon">✚</span>
+              </div>
+
+              <div class="profile-form">
+                <div class="form-group">
+                  <label for="doctorId">Doctor ID</label>
+
+                  <input type="text" id="doctorId" name="doctorId" readonly />
+                </div>
+
+                <div class="form-group">
+                  <label for="specialization">Specialization</label>
+
+                  <input
+                    type="text"
+                    id="specialization"
+                    name="specialization"
+                    required
+                  />
+
+                  <span id="specialization-error" class="field-error"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="qualification">Qualification</label>
+
+                  <input
+                    type="text"
+                    id="qualification"
+                    name="qualification"
+                    required
+                  />
+
+                  <span id="qualification-error" class="field-error"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="experience">Experience</label>
+
+                  <input
+                    type="text"
+                    id="experience"
+                    name="experience"
+                    required
+                  />
+
+                  <span id="experience-error" class="field-error"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="department">Department</label>
+
+                  <input
+                    type="text"
+                    id="department"
+                    name="department"
+                    required
+                  />
+
+                  <span id="department-error" class="field-error"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="hospital">Hospital</label>
+
+                  <input type="text" id="hospital" name="hospital" required />
+
+                  <span id="hospital-error" class="field-error"></span>
+                </div>
+
+                <div class="form-group full-width">
+                  <label for="biography"> Professional Biography </label>
+
+                  <textarea
+                    id="biography"
+                    name="biography"
+                    rows="4"
+                    required
+                  ></textarea>
+
+                  <span id="biography-error" class="field-error"></span>
+                </div>
+              </div>
+            </section>
+
+            <!-- PROFILE ACTIONS -->
+
+            <div class="profile-actions">
+              <button type="button" class="cancel-button" id="cancelChanges">
+                Cancel
+              </button>
+
+              <button type="submit" class="save-button">✓ Save Changes</button>
             </div>
 
-            <div class="profile-form">
-              <div class="form-group">
-                <label>Full Name</label>
-                <input type="text" value="Dr. Ahmed Rahman" />
-              </div>
+            <!-- SUCCESS OR ERROR MESSAGE -->
 
-              <div class="form-group">
-                <label>Gender</label>
-                <select>
-                  <option selected>Male</option>
-                  <option>Female</option>
-                  <option>Other</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label>Date of Birth</label>
-                <input type="date" value="1985-05-15" />
-              </div>
-
-              <div class="form-group">
-                <label>Blood Group</label>
-                <select>
-                  <option>A+</option>
-                  <option>A-</option>
-                  <option selected>B+</option>
-                  <option>B-</option>
-                  <option>AB+</option>
-                  <option>AB-</option>
-                  <option>O+</option>
-                  <option>O-</option>
-                </select>
-              </div>
-            </div>
-          </section>
-
-          <!-- CONTACT INFORMATION -->
-          <section class="profile-card">
-            <div class="card-heading">
-              <div>
-                <h2>Contact Information</h2>
-                <p>Your contact and communication details</p>
-              </div>
-
-              <span class="card-icon">✉</span>
-            </div>
-
-            <div class="profile-form">
-              <div class="form-group">
-                <label>Email Address</label>
-                <input type="email" value="ahmed.rahman@email.com" />
-              </div>
-
-              <div class="form-group">
-                <label>Phone Number</label>
-                <input type="tel" value="+880 1712-345678" />
-              </div>
-
-              <div class="form-group full-width">
-                <label>Address</label>
-                <textarea rows="3">Dhanmondi, Dhaka, Bangladesh</textarea>
-              </div>
-            </div>
-          </section>
-
-          <!-- PROFESSIONAL INFORMATION -->
-          <section class="profile-card">
-            <div class="card-heading">
-              <div>
-                <h2>Professional Information</h2>
-                <p>Your medical career and qualifications</p>
-              </div>
-
-              <span class="card-icon">✚</span>
-            </div>
-
-            <div class="profile-form">
-              <div class="form-group">
-                <label>Doctor ID</label>
-                <input type="text" value="DOC-00125" readonly />
-              </div>
-
-              <div class="form-group">
-                <label>Specialization</label>
-                <input type="text" value="Cardiology" />
-              </div>
-
-              <div class="form-group">
-                <label>Qualification</label>
-                <input type="text" value="MBBS, MD (Cardiology)" />
-              </div>
-
-              <div class="form-group">
-                <label>Experience</label>
-                <input type="text" value="10 Years" />
-              </div>
-
-              <div class="form-group">
-                <label>Department</label>
-                <input type="text" value="Cardiology Department" />
-              </div>
-
-              <div class="form-group">
-                <label>Hospital</label>
-                <input type="text" value="HeartCare Clinic" />
-              </div>
-
-              <div class="form-group full-width">
-                <label>Professional Biography</label>
-
-                <textarea rows="4">
-Experienced cardiologist specializing in heart health, cardiovascular disease prevention and patient care.</textarea
-                >
-              </div>
-            </div>
-          </section>
-
-          <!-- PROFILE ACTIONS -->
-          <div class="profile-actions">
-            <a href="doctor/doctor-dashboard.html" class="cancel-button"> Cancel </a>
-
-            <button type="button" class="save-button">✓ Save Changes</button>
-          </div>
+            <p id="profileMessage"></p>
+          </form>
 
           <!-- FOOTER -->
+
           <footer class="dashboard-footer">
             <p>© 2026 HeartCare Clinic Management System.</p>
 
@@ -261,5 +388,13 @@ Experienced cardiologist specializing in heart health, cardiovascular disease pr
         </div>
       </main>
     </div>
+
+    <!-- JAVASCRIPT FILES -->
+
+    <script src="js/doctor-profile-data.js"></script>
+
+    <script src="js/common.js"></script>
+
+    <script src="js/doctor-profile.js"></script>
   </body>
 </html>

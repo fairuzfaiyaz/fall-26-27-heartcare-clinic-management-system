@@ -368,6 +368,138 @@
 }
 
 /* =====================================
+   FORM VALIDATION ERRORS
+===================================== */
+
+.field-error {
+  display: block;
+  color: #dc2626;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 5px;
+  line-height: 1.4;
+}
+
+/* =====================================
+   PRESCRIPTION SUCCESS / ERROR MESSAGE
+===================================== */
+
+.prescription-message {
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+/* =====================================
+   SAVED PRESCRIPTIONS SECTION
+===================================== */
+
+.saved-prescriptions {
+  margin-top: 25px;
+  padding: 28px;
+  border-radius: 14px;
+}
+
+.prescription-search {
+  margin-bottom: 20px;
+}
+
+.prescription-search input {
+  width: 100%;
+  max-width: 350px;
+  height: 43px;
+  padding: 10px 14px;
+  box-sizing: border-box;
+  background: #fbfdff;
+  border: 1px solid #dce6ef;
+  border-radius: 8px;
+  outline: none;
+  color: #354761;
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.prescription-search input:focus {
+  border-color: #2193b0;
+  box-shadow: 0 0 0 3px rgba(33, 147, 176, 0.08);
+}
+
+.prescription-search input::placeholder {
+  color: #a4afbd;
+}
+
+/* =====================================
+   SAVED PRESCRIPTION TABLE
+===================================== */
+
+.saved-prescription-table {
+  width: 100%;
+  min-width: 750px;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+.saved-prescription-table thead {
+  background: #edf4f8;
+}
+
+.saved-prescription-table th {
+  padding: 15px;
+  text-align: left;
+  color: #354b63;
+  font-size: 13px;
+  font-weight: 700;
+  border-bottom: 1px solid #e1eaf1;
+}
+
+.saved-prescription-table td {
+  padding: 15px;
+  color: #52647c;
+  font-size: 13px;
+  border-bottom: 1px solid #edf1f5;
+}
+
+.saved-prescription-table tbody tr:hover td {
+  background: #f5faff;
+}
+
+.saved-prescription-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* =====================================
+   EDIT, DELETE AND PRINT BUTTONS
+===================================== */
+
+.saved-prescription-table button {
+  padding: 7px 10px;
+  margin: 3px;
+  border: none;
+  border-radius: 5px;
+  background: #e5f3f8;
+  color: #176b87;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.saved-prescription-table button:hover {
+  background: #176b87;
+  color: #ffffff;
+}
+
+/* =====================================
+   MEDICINE VALIDATION
+===================================== */
+
+.medicine-table td .field-error {
+  min-width: 90px;
+  font-size: 11px;
+}
+
+/* =====================================
    PRINT DESIGN
 ===================================== */
 
@@ -380,7 +512,8 @@
   .welcome-section,
   .prescription-top,
   .dashboard-footer,
-  .prescription-actions {
+  .prescription-actions,
+  .saved-prescriptions {
     display: none !important;
   }
 
@@ -466,5 +599,14 @@
   .prescription-clear,
   .prescription-save {
     width: 100%;
+  }
+
+  .saved-prescriptions {
+    padding: 16px;
+    overflow: hidden;
+  }
+
+  .prescription-search input {
+    max-width: 100%;
   }
 }
