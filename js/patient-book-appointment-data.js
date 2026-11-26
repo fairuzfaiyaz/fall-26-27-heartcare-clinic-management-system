@@ -1,5 +1,5 @@
 // patient-book-appointment-data.js
-// Data for patient-book-appointment.html (arrays of objects).
+// Data for patient-book-appointment.php (arrays of objects).
 // Later: departments and doctors come from MySQL, and "booked" comes from the
 // appointments table (UNIQUE doctor_id + date + start_time).
 

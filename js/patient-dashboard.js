@@ -1,5 +1,5 @@
 // patient-dashboard.js
-// Fills patient-dashboard.html from the arrays (Read only, no forms on this page).
+// Fills patient-dashboard.php from the arrays (Read only, no forms on this page).
 // Needs (loaded before this file):
 //   patient-account-data.js   -> patient
 //   patient-dashboard-data.js -> appointments, healthEntries,
@@ -204,7 +204,7 @@ function renderInvoices() {
       "<td>" + formatDate(inv.date) + "</td>" +
       '<td class="invoice-amount">' + formatMoney(inv.amount) + "</td>" +
       '<td><span class="status-badge ' + badgeClass(inv.status) + '">' + inv.status + "</span></td>" +
-      '<td><a href="invoices.html" class="table-link">' + linkText + "</a></td>" +
+      '<td><a href="invoices.php" class="table-link">' + linkText + "</a></td>" +
       "</tr>";
   }
 

@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Sign in to your HeartCare Clinic account."
+    />
+
+    <title>Login | HeartCare Clinic</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/auth.css" />
+    <link rel="stylesheet" href="css/auth-additions.css" />
+  </head>
+
+  <body class="login-page">
+    <header class="login-header">
+      <a href="index.php" class="login-logo">
+        <span class="login-logo__icon" aria-hidden="true">♥</span>
+        <span>HeartCare</span>
+      </a>
+
+      <a href="index.php" class="login-home-link"> ← Back to Home </a>
+    </header>
+
+    <main class="login-main">
+      <section class="login-card" aria-labelledby="login-title">
+        <div class="login-card__heading">
+          <div class="login-heart-icon" aria-hidden="true">♥</div>
+
+          <p class="login-eyebrow" id="login-eyebrow">WELCOME BACK</p>
+
+          <h1 id="login-title">Sign in to HeartCare</h1>
+
+          <p class="login-subtitle" id="login-subtitle">
+            Access your account and manage your healthcare journey.
+          </p>
+        </div>
+
+        <!-- ========== Sign-in form ==========
+             novalidate: the browser's own pop-ups are off, our JavaScript shows
+             the errors. onsubmit returns false to stop the form.
+             Later: action="auth/login.php" and PHP checks the database. -->
+        <form
+          class="login-form"
+          id="loginForm"
+          method="post"
+          action="#"
+          onsubmit="return validateLogin();"
+          novalidate
+        >
+          <!-- success / error message from validateLogin() -->
+          <div
+            id="login-msg"
+            class="login-msg"
+            role="alert"
+            aria-live="polite"
+            style="display: none"
+          ></div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              maxlength="150"
+            />
+            <span id="email-error"></span>
+          </div>
+
+          <div class="form-group">
+            <div class="form-label-row">
+              <label for="password">Password</label>
+
+              <a
+                href="#"
+                class="forgot-password"
+                onclick="return showForgot();"
+              >
+                Forgot password?
+              </a>
+            </div>
+
+            <!-- the eye button switches the field between password and text -->
+            <div class="password-wrap">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                autocomplete="current-password"
+                onkeyup="checkCapsLock(event)"
+              />
+
+              <button
+                type="button"
+                class="toggle-password"
+                id="toggle-password"
+                onclick="togglePassword()"
+                aria-label="Show password"
+                aria-pressed="false"
+              >
+                <!-- eye (password hidden) -->
+                <svg
+                  id="eye-open"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+                <!-- crossed eye (password visible) -->
+                <svg
+                  id="eye-off"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  style="display: none"
+                >
+                  <path
+                    d="M17.94 17.94A10.94 10.94 0 0 1 12 19c-7 0-11-7-11-7a19.8 19.8 0 0 1 5.06-5.94"
+                  />
+                  <path
+                    d="M9.9 4.24A10.9 10.9 0 0 1 12 5c7 0 11 7 11 7a19.7 19.7 0 0 1-3.17 4.19"
+                  />
+                  <path d="M14.12 14.12A3 3 0 1 1 9.88 9.88" />
+                  <line x1="1" y1="1" x2="23" y2="23" />
+                </svg>
+              </button>
+            </div>
+            <span id="password-error"></span>
+            <small id="caps-warning" class="caps-warning" style="display: none">
+              ⚠ Caps Lock is on
+            </small>
+          </div>
+
+          <div class="login-options">
+            <label class="remember-me">
+              <input
+                type="checkbox"
+                id="remember"
+                name="remember_me"
+                value="1"
+              />
+              <span>Remember me</span>
+            </label>
+          </div>
+
+          <button type="submit" class="login-button" id="login-btn">
+            Sign In <span aria-hidden="true">→</span>
+          </button>
+        </form>
+
+        <!-- ========== Forgot password form (hidden until the link is clicked) ========== -->
+        <form
+          class="login-form"
+          id="forgotForm"
+          method="post"
+          action="#"
+          onsubmit="return sendReset();"
+          style="display: none"
+          novalidate
+        >
+          <div class="form-group">
+            <label for="reset_email">Email Address</label>
+
+            <input
+              type="email"
+              id="reset_email"
+              name="reset_email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              maxlength="150"
+            />
+            <span id="reset_email-error"></span>
+          </div>
+
+          <div
+            id="forgot-msg"
+            class="login-msg"
+            role="alert"
+            aria-live="polite"
+            style="display: none"
+          ></div>
+
+          <button type="submit" class="login-button">
+            Send Reset Link <span aria-hidden="true">→</span>
+          </button>
+
+          <button type="button" class="link-button" onclick="hideForgot()">
+            ← Back to sign in
+          </button>
+        </form>
+
+        <!-- ========== Demo accounts (for testing). Built by renderDemoAccounts() ========== -->
+        <div class="demo-box">
+          <h2>Demo accounts</h2>
+          <p>Click Use to fill the form. These are for testing only.</p>
+          <div id="demo-list"></div>
+        </div>
+
+        <div class="login-divider">
+          <span>SECURE CLINIC ACCESS</span>
+        </div>
+
+        <p class="register-prompt">
+          Don't have a patient account?
+          <a href="register.php">Create an account</a>
+        </p>
+
+        <p class="login-security-note">
+          Your healthcare information should remain private and secure.
+        </p>
+      </section>
+
+      <p class="login-footer">
+        &copy; 2026 HeartCare Clinic Management System. Academic project
+        demonstration.
+      </p>
+    </main>
+
+    <!-- order matters: data first, then this page's code -->
+    <script src="js/login-data.js"></script>
+    <script src="js/login.js"></script>
+  </body>
+</html>

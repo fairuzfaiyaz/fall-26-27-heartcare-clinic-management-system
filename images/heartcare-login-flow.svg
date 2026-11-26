@@ -1,4 +1,4 @@
-<svg viewBox="0 0 1200 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One login page redirects by role: admin to dashboard.html, doctor to doctor-dashboard.html, patient to patient-dashboard.html, labtech to lab-dashboard.html. Five failed attempts lock the form for 30 seconds.">
+<svg viewBox="0 0 1200 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One login page redirects by role: admin to dashboard.php, doctor to doctor-dashboard.php, patient to patient-dashboard.php, labtech to lab-dashboard.php. Five failed attempts lock the form for 30 seconds.">
   <defs>
     <pattern id="l_grid" width="32" height="32" patternUnits="userSpaceOnUse">
       <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/>
@@ -59,25 +59,25 @@
       <animate attributeName="stroke-opacity" values="0.35;0.35;1;0.35;0.35" keyTimes="0;0.22;0.27;0.45;1" dur="8s" repeatCount="indefinite"/>
     </rect>
     <text x="784" y="147" font-size="16" font-weight="800" fill="#e9edf3">Administrator</text>
-    <text x="784" y="167" font-family="Consolas, monospace" font-size="11.5" fill="#c4b5fd">admin &#8594; dashboard.html</text>
+    <text x="784" y="167" font-family="Consolas, monospace" font-size="11.5" fill="#c4b5fd">admin &#8594; dashboard.php</text>
 
     <rect x="760" y="210" width="380" height="64" rx="12" fill="#161b22" stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.35">
       <animate attributeName="stroke-opacity" values="0.35;0.35;1;0.35;0.35" keyTimes="0;0.22;0.27;0.45;1" dur="8s" begin="2s" repeatCount="indefinite"/>
     </rect>
     <text x="784" y="237" font-size="16" font-weight="800" fill="#e9edf3">Doctor</text>
-    <text x="784" y="257" font-family="Consolas, monospace" font-size="11.5" fill="#7dd3fc">doctor &#8594; doctor-dashboard.html</text>
+    <text x="784" y="257" font-family="Consolas, monospace" font-size="11.5" fill="#7dd3fc">doctor &#8594; doctor-dashboard.php</text>
 
     <rect x="760" y="300" width="380" height="64" rx="12" fill="#161b22" stroke="#f472b6" stroke-width="1.5" stroke-opacity="0.35">
       <animate attributeName="stroke-opacity" values="0.35;0.35;1;0.35;0.35" keyTimes="0;0.22;0.27;0.45;1" dur="8s" begin="4s" repeatCount="indefinite"/>
     </rect>
     <text x="784" y="327" font-size="16" font-weight="800" fill="#e9edf3">Patient</text>
-    <text x="784" y="347" font-family="Consolas, monospace" font-size="11.5" fill="#f9a8d4">patient &#8594; patient-dashboard.html</text>
+    <text x="784" y="347" font-family="Consolas, monospace" font-size="11.5" fill="#f9a8d4">patient &#8594; patient-dashboard.php</text>
 
     <rect x="760" y="390" width="380" height="64" rx="12" fill="#161b22" stroke="#7ee787" stroke-width="1.5" stroke-opacity="0.35">
       <animate attributeName="stroke-opacity" values="0.35;0.35;1;0.35;0.35" keyTimes="0;0.22;0.27;0.45;1" dur="8s" begin="6s" repeatCount="indefinite"/>
     </rect>
     <text x="784" y="417" font-size="16" font-weight="800" fill="#e9edf3">Laboratory Technician</text>
-    <text x="784" y="437" font-family="Consolas, monospace" font-size="11.5" fill="#86efac">labtech &#8594; lab-dashboard.html</text>
+    <text x="784" y="437" font-family="Consolas, monospace" font-size="11.5" fill="#86efac">labtech &#8594; lab-dashboard.php</text>
   </g>
 
   <!-- traveling dots, one role at a time -->

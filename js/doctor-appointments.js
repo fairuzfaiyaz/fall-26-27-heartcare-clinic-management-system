@@ -159,7 +159,7 @@ function renderAppointments() {
         "</span>" +
         "</td>" +
         "<td>" +
-        '<a href="consultation.html" class="view-link">' +
+        '<a href="consultation.php" class="view-link">' +
         "View" +
         "</a>" +
         actionButton +

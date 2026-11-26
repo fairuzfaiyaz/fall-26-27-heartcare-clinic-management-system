@@ -1,5 +1,5 @@
 // patient-medical-records-data.js
-// Data for medical-records.html. These records are written by doctors and lab
+// Data for medical-records.php. These records are written by doctors and lab
 // staff, so the patient can only READ them (no add / edit / delete).
 // Later: SELECT ... FROM consultations, prescriptions, lab_results
 //        WHERE patient_id = $_SESSION['user_id']   (a patient only sees HIS OWN records)

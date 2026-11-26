@@ -1,5 +1,5 @@
 // patient-health-tracker-data.js
-// Data for health-tracker.html.
+// Data for health-tracker.php.
 // Later: SELECT ... FROM health_entries WHERE patient_id = $_SESSION['user_id']
 
 // The kinds of measurement (used for the drop-downs)

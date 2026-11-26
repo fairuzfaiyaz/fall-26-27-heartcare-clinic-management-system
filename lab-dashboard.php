@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lab Technician Dashboard | HeartCare</title>
+
+    <link rel="stylesheet" href="css/lab-dashboard.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <span>♥</span> HeartCare
+            </div>
+
+            <div class="profile">
+
+                <div class="avatar">LT</div>
+
+                <div>
+                    <h3>Aurpita Roy</h3>
+                    <p>Laboratory Department</p>
+                </div>
+
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav>
+
+                <p class="menu-title">MAIN MENU</p>
+
+                <a class="sidebar-link is-active" href="lab-dashboard.php">
+
+                    <span class="nav-icon">▦</span>
+                    Dashboard
+
+                </a>
+
+                <a class="sidebar-link" href="lab-queue.php">
+                    ☷ Lab Queue
+                </a>
+
+                <a class="sidebar-link" href="add-labresult.php">
+                    ✚ Add Test Result
+                </a>
+
+                <a class="sidebar-link" href="manage-labresult.php">
+                    ▤ Manage Results
+                </a>
+
+                <a class="sidebar-link" href="test-catalogue.php">
+                    ♧ Test Catalogue
+                </a>
+
+                <a class="sidebar-link" href="lab-reports.php">
+                    ▣ Lab Reports
+                </a>
+
+
+                <p class="menu-title">ACCOUNT</p>
+
+                <a class="sidebar-link" href="profile.php">
+                    ♙ My Profile
+                </a>
+
+                <a class="sidebar-link sidebar-link--logout" href="login.php">
+
+                    Log out
+
+                </a>
+
+            </nav>
+
+
+            <!-- Sidebar Footer -->
+            <div class="sidebar-footer">
+
+                <p>HeartCare Hospital</p>
+
+                <small>Laboratory Management System</small>
+
+            </div>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+
+            <!-- Header -->
+            <header class="topbar">
+
+                <div>
+
+                    <h2>Good Morning</h2>
+
+                    <p>
+                        Welcome back! Here's your laboratory overview.
+                    </p>
+
+                </div>
+
+
+                <div class="header-right">
+
+                    <div class="user-info">
+
+                        <div class="small-avatar">LT</div>
+
+                        <span>Aurpita Roy</span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- Dashboard Content -->
+            <section class="content">
+
+
+                <!-- Page Heading -->
+                <div class="page-heading">
+
+                    <div>
+
+                        <h1>Dashboard Overview</h1>
+
+                        <p>
+                            Monitor laboratory activities and test results.
+                        </p>
+
+                    </div>
+
+                    <div class="date" id="dashboard-date">
+                        Loading date...
+                    </div>
+
+                </div>
+
+
+                <!-- Statistics Cards -->
+                <div class="stats-grid">
+
+
+                    <!-- Total Lab Orders -->
+                    <div class="stat-card blue">
+
+                        <div class="stat-icon">☷</div>
+
+                        <p>Total Lab Orders</p>
+
+                        <h2 id="total-orders">0</h2>
+
+                        <small>All assigned orders</small>
+
+                    </div>
+
+
+                    <!-- Pending Orders -->
+                    <div class="stat-card orange">
+
+                        <div class="stat-icon">◷</div>
+
+                        <p>Pending Orders</p>
+
+                        <h2 id="pending-orders">0</h2>
+
+                        <small>Waiting for collection</small>
+
+                    </div>
+
+
+                    <!-- Processing Orders -->
+                    <div class="stat-card purple">
+
+                        <div class="stat-icon">⚗</div>
+
+                        <p>Processing</p>
+
+                        <h2 id="processing-orders">0</h2>
+
+                        <small>Tests in progress</small>
+
+                    </div>
+
+
+                    <!-- Completed Orders -->
+                    <div class="stat-card green">
+
+                        <div class="stat-icon">✓</div>
+
+                        <p>Completed</p>
+
+                        <h2 id="completed-orders">0</h2>
+
+                        <small>Results completed</small>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- Main Grid -->
+                <div class="main-grid">
+
+
+                    <!-- Recent Lab Orders -->
+                    <div class="panel orders-panel">
+
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <h3>Recent Lab Orders</h3>
+
+                                <p>
+                                    Latest assigned laboratory tests
+                                </p>
+
+                            </div>
+
+                            <a href="lab-queue.php">
+                                View All →
+                            </a>
+
+                        </div>
+
+
+                        <!-- Search and Filter -->
+                        <div class="order-filters">
+
+                            <input type="text" id="order-search" placeholder="Search by order id, patient name ">
+
+
+                            <select id="status-filter">
+
+                                <option value="All">
+                                    All Statuses
+                                </option>
+
+                                <option value="Pending">
+                                    Pending
+                                </option>
+
+                                <option value="Processing">
+                                    Processing
+                                </option>
+
+                                <option value="Completed">
+                                    Completed
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Lab Orders Table -->
+                        <div class="table-responsive">
+
+                            <table>
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>Order ID</th>
+
+                                        <th>Patient Name</th>
+
+                                        <th>Test Name</th>
+
+                                        <th>Doctor</th>
+
+                                        <th>Priority</th>
+
+                                        <th>Status</th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody id="lab-orders-body">
+
+                                    <tr>
+
+                                        <td colspan="6">
+                                            Loading lab orders...
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Quick Actions -->
+                    <div class="panel actions-panel">
+
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <h3>Quick Actions</h3>
+
+                                <p>Frequently used features</p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="action-list">
+
+
+                            <!-- Add Test Result -->
+                            <a href="add-labresult.php" class="action-item">
+
+                                <span class="action-icon blue-bg">
+                                    ＋
+                                </span>
+
+                                <span>
+
+                                    <strong>Add Test Result</strong>
+
+                                    <small>
+                                        Enter patient test results
+                                    </small>
+
+                                </span>
+
+                                <b>→</b>
+
+                            </a>
+
+
+                            <!-- Lab Queue -->
+                            <a href="lab-queue.php" class="action-item">
+
+                                <span class="action-icon orange-bg">
+                                    ☷
+                                </span>
+
+                                <span>
+
+                                    <strong>View Lab Queue</strong>
+
+                                    <small>
+                                        Check pending test orders
+                                    </small>
+
+                                </span>
+
+                                <b>→</b>
+
+                            </a>
+
+
+                            <!-- Manage Results -->
+                            <a href="manage-labresult.php" class="action-item">
+
+                                <span class="action-icon green-bg">
+                                    ▤
+                                </span>
+
+                                <span>
+
+                                    <strong>Manage Results</strong>
+
+                                    <small>
+                                        Review submitted results
+                                    </small>
+
+                                </span>
+
+                                <b>→</b>
+
+                            </a>
+
+
+                            <!-- Generate Reports -->
+                            <a href="lab-reports.php" class="action-item">
+
+                                <span class="action-icon purple-bg">
+                                    ▣
+                                </span>
+
+                                <span>
+
+                                    <strong>Generate Reports</strong>
+
+                                    <small>
+                                        View laboratory reports
+                                    </small>
+
+                                </span>
+
+                                <b>→</b>
+
+                            </a>
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- Bottom Grid -->
+                <div class="bottom-grid">
+
+
+                    <!-- Test Result Overview -->
+                    <div class="panel">
+
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <h3>Test Result Overview</h3>
+
+                                <p>
+                                    Distribution of laboratory orders
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="result-overview">
+
+
+                            <!-- Completed -->
+                            <div class="result-row">
+
+                                <span>Completed</span>
+
+                                <strong id="completed-percent">
+                                    0%
+                                </strong>
+
+                            </div>
+
+                            <div class="progress">
+
+                                <div class="progress-fill completed-fill" id="completed-fill">
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- Processing -->
+                            <div class="result-row">
+
+                                <span>Processing</span>
+
+                                <strong id="processing-percent">
+                                    0%
+                                </strong>
+
+                            </div>
+
+                            <div class="progress">
+
+                                <div class="progress-fill processing-fill" id="processing-fill">
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- Pending -->
+                            <div class="result-row">
+
+                                <span>Pending</span>
+
+                                <strong id="pending-percent">
+                                    0%
+                                </strong>
+
+                            </div>
+
+                            <div class="progress">
+
+                                <div class="progress-fill pending-fill" id="pending-fill">
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- Footer -->
+                <footer>
+
+                    © 2026 HeartCare Hospital. All Rights Reserved.
+
+                </footer>
+
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- JavaScript Files -->
+
+    <!-- 1. Data File -->
+    <script src="js/lab-dashboard-data.js"></script>
+
+    <!-- 2. Shared JavaScript -->
+    <script src="js/common.js"></script>
+
+    <!-- 3. Dashboard Functionalities -->
+    <script src="js/lab-dashboard-func.js"></script>
+
+
+</body>
+
+</html>

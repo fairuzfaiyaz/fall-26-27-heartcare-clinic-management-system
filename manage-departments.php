@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage Departments | HeartCare Admin</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/admin-dashboard.css" />
+  </head>
+  <body class="admin-body">
+    <div class="adm-shell">
+      <aside class="adm-sidebar">
+        <a href="index.php" class="adm-brand">
+          <span class="adm-brand__mark" aria-hidden="true">♥</span>
+          <span class="adm-brand__text">HeartCare</span>
+        </a>
+        <div class="adm-role">
+          <span class="adm-role__badge">Administrator</span>
+          <span class="adm-role__name">Clinic Admin</span>
+        </div>
+        <nav class="adm-nav" aria-label="Administrator navigation">
+          <p class="adm-nav__label">Overview</p>
+          <a href="dashboard.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">▦</span>
+            Dashboard
+          </a>
+          <p class="adm-nav__label">Clinic setup</p>
+          <a
+            href="manage-departments.php"
+            class="adm-nav__link is-active"
+            aria-current="page"
+          >
+            <span class="adm-nav__icon" aria-hidden="true">▤</span>
+            Departments
+          </a>
+          <a href="manage-doctors.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">✚</span>
+            Doctors
+          </a>
+          <a href="manage-labtechs.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">⚗</span>
+            Lab Technicians
+          </a>
+          <a href="manage-tests.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">◉</span>
+            Test Catalogue
+          </a>
+          <p class="adm-nav__label">Operations</p>
+          <a href="manage-appointments.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">▣</span>
+            Appointments
+          </a>
+          <a href="reports.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">▥</span>
+            Monthly Reports
+          </a>
+          <a href="audit-log.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">☰</span>
+            Audit Log
+          </a>
+          <a href="login.php" class="adm-nav__link adm-nav__link--out">
+            <span class="adm-nav__icon" aria-hidden="true">↪</span>
+            Sign Out
+          </a>
+        </nav>
+      </aside>
+
+      <div class="adm-main">
+        <header class="adm-topbar">
+          <div class="adm-crumbs">
+            <span>Admin</span>
+            <span aria-hidden="true">/</span>
+            <strong>Departments</strong>
+          </div>
+          <div class="adm-topbar__right">
+            <span class="adm-date" id="today-date"></span>
+            <span class="adm-avatar" aria-label="Administrator">AD</span>
+          </div>
+        </header>
+
+        <main class="adm-content">
+          <section class="adm-head">
+            <div>
+              <p class="adm-eyebrow">CLINIC SETUP</p>
+              <h1>Manage Departments</h1>
+              <p class="adm-lead">
+                Add, edit and deactivate clinic departments.
+              </p>
+            </div>
+            <div class="adm-head__actions"></div>
+          </section>
+
+          <div class="adm-grid">
+            <!-- ========== List (Read + Search) ========== -->
+            <section class="adm-card adm-span-8">
+              <div class="adm-card__head">
+                <div>
+                  <h2>All Departments</h2>
+                  <p>
+                    Deactivate unused departments instead of deleting them, to
+                    keep history intact.
+                  </p>
+                </div>
+              </div>
+
+              <div class="adm-toolbar">
+                <!-- onkeyup: the table is redrawn on every key typed -->
+                <input
+                  type="search"
+                  id="search-box"
+                  class="adm-input adm-input--search"
+                  placeholder="Search departments…"
+                  aria-label="Search departments"
+                  onkeyup="renderDepartments()"
+                />
+                <select
+                  id="status-filter"
+                  class="adm-input"
+                  aria-label="Filter by status"
+                  onchange="renderDepartments()"
+                >
+                  <option value="All">All statuses</option>
+                  <option value="Active">Active</option>
+                  <option value="Inactive">Inactive</option>
+                </select>
+              </div>
+
+              <div class="adm-table-wrap">
+                <table class="adm-table">
+                  <thead>
+                    <tr>
+                      <th>Department</th>
+                      <th>Description</th>
+                      <th>Doctors</th>
+                      <th>Status</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <!-- rows are built by renderDepartments() -->
+                  <tbody id="department-rows"></tbody>
+                </table>
+              </div>
+
+              <div class="adm-pager"><span id="row-count"></span></div>
+            </section>
+
+            <!-- ========== Form (Create + Update) ========== -->
+            <section class="adm-card adm-span-4">
+              <div class="adm-card__head">
+                <div>
+                  <h2 id="form-title">Add Department</h2>
+                  <p>Create or edit a department.</p>
+                </div>
+              </div>
+
+              <form
+                class="adm-form"
+                method="post"
+                action="#"
+                onsubmit="return saveDepartment();"
+                novalidate
+              >
+                <div class="adm-field">
+                  <label for="dept_name">Department name</label>
+                  <input
+                    class="adm-input"
+                    id="dept_name"
+                    name="dept_name"
+                    type="text"
+                    placeholder="e.g. Cardiology"
+                    maxlength="40"
+                  />
+                  <span id="dept_name-error"></span>
+                </div>
+
+                <div class="adm-field">
+                  <label for="dept_desc">Description</label>
+                  <textarea
+                    class="adm-input"
+                    id="dept_desc"
+                    name="dept_desc"
+                    rows="3"
+                    placeholder="Short description"
+                    maxlength="100"
+                  ></textarea>
+                  <span id="dept_desc-error"></span>
+                </div>
+
+                <div class="adm-field">
+                  <label for="dept_status">Status</label>
+                  <select class="adm-input" id="dept_status" name="dept_status">
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                  </select>
+                  <span id="dept_status-error"></span>
+                </div>
+
+                <div class="adm-form__btns">
+                  <button
+                    type="submit"
+                    id="save-btn"
+                    class="adm-btn adm-btn--solid"
+                  >
+                    Save Department
+                  </button>
+                  <!-- type="button" + clearForm() so editIndex is reset too -->
+                  <button
+                    type="button"
+                    class="adm-btn adm-btn--ghost"
+                    onclick="clearForm()"
+                  >
+                    Clear
+                  </button>
+                </div>
+              </form>
+            </section>
+          </div>
+
+          <footer class="adm-footer">
+            <p>
+              © 2026 HeartCare Clinic Management System. Academic project
+              demonstration.
+            </p>
+          </footer>
+        </main>
+      </div>
+    </div>
+
+    <!-- order matters: data first, then helpers, then this page's code -->
+    <script src="js/admin-manage-dept-data.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/departments.js"></script>
+  </body>
+</html>

@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monthly Reports | HeartCare Admin</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/admin-dashboard.css" />
+  </head>
+  <body class="admin-body">
+    <div class="adm-shell">
+      <aside class="adm-sidebar">
+        <a href="index.php" class="adm-brand">
+          <span class="adm-brand__mark" aria-hidden="true">♥</span>
+          <span class="adm-brand__text">HeartCare</span>
+        </a>
+        <div class="adm-role">
+          <span class="adm-role__badge">Administrator</span>
+          <span class="adm-role__name">Clinic Admin</span>
+        </div>
+        <nav class="adm-nav" aria-label="Administrator navigation">
+          <p class="adm-nav__label">Overview</p>
+          <a href="dashboard.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">▦</span>
+            Dashboard
+          </a>
+          <p class="adm-nav__label">Clinic setup</p>
+          <a href="manage-departments.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">▤</span>
+            Departments
+          </a>
+          <a href="manage-doctors.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">✚</span>
+            Doctors
+          </a>
+          <a href="manage-labtechs.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">⚗</span>
+            Lab Technicians
+          </a>
+          <a href="manage-tests.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">◉</span>
+            Test Catalogue
+          </a>
+          <p class="adm-nav__label">Operations</p>
+          <a href="manage-appointments.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">▣</span>
+            Appointments
+          </a>
+          <a
+            href="reports.php"
+            class="adm-nav__link is-active"
+            aria-current="page"
+          >
+            <span class="adm-nav__icon" aria-hidden="true">▥</span>
+            Monthly Reports
+          </a>
+          <a href="audit-log.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">☰</span>
+            Audit Log
+          </a>
+          <a href="login.php" class="adm-nav__link adm-nav__link--out">
+            <span class="adm-nav__icon" aria-hidden="true">↪</span>
+            Sign Out
+          </a>
+        </nav>
+      </aside>
+
+      <div class="adm-main">
+        <header class="adm-topbar">
+          <div class="adm-crumbs">
+            <span>Admin</span>
+            <span aria-hidden="true">/</span>
+            <strong>Monthly Reports</strong>
+          </div>
+          <div class="adm-topbar__right">
+            <span class="adm-date" id="today-date"></span>
+            <span class="adm-avatar" aria-label="Administrator">AD</span>
+          </div>
+        </header>
+
+        <main class="adm-content">
+          <section class="adm-head">
+            <div>
+              <p class="adm-eyebrow">OPERATIONS</p>
+              <h1>Monthly Reports</h1>
+              <p class="adm-lead">
+                Select a month and year to generate a printable clinic report.
+              </p>
+            </div>
+            <div class="adm-head__actions">
+              <button
+                type="button"
+                class="adm-btn adm-btn--ghost"
+                onclick="window.print()"
+              >
+                Print / Save as PDF
+              </button>
+            </div>
+          </section>
+
+          <!-- ========== Month / year picker ========== -->
+          <section class="adm-card adm-noprint">
+            <form
+              class="adm-toolbar adm-toolbar--form"
+              method="get"
+              action="#"
+              onsubmit="return generateReport();"
+              novalidate
+            >
+              <div class="adm-field">
+                <label for="rep_month">Month</label>
+                <select class="adm-input" id="rep_month" name="month">
+                  <option value="January">January</option>
+                  <option value="February">February</option>
+                  <option value="March">March</option>
+                  <option value="April">April</option>
+                  <option value="May">May</option>
+                  <option value="June">June</option>
+                  <option value="July">July</option>
+                  <option value="August">August</option>
+                  <option value="September">September</option>
+                  <option value="October" selected>October</option>
+                  <option value="November">November</option>
+                  <option value="December">December</option>
+                </select>
+                <span id="rep_month-error"></span>
+              </div>
+              <div class="adm-field">
+                <label for="rep_year">Year</label>
+                <select class="adm-input" id="rep_year" name="year">
+                  <option value="2025">2025</option>
+                  <option value="2026" selected>2026</option>
+                </select>
+              </div>
+              <button type="submit" class="adm-btn adm-btn--solid">
+                Generate Report
+              </button>
+              <button
+                type="button"
+                class="adm-btn adm-btn--ghost"
+                onclick="window.print()"
+              >
+                Print / Save as PDF
+              </button>
+            </form>
+          </section>
+
+          <!-- ========== The report (filled by showReport()) ========== -->
+          <section class="adm-card adm-report" style="margin-top: 1.25rem">
+            <header class="adm-report__head">
+              <div>
+                <p class="adm-eyebrow">HEARTCARE CLINIC</p>
+                <h2 id="report-title"></h2>
+              </div>
+              <p class="adm-report__meta" id="report-generated"></p>
+            </header>
+
+            <!-- shown only when the chosen month has no data -->
+            <p class="adm-note" id="report-empty" style="display: none">
+              No report data is available for this month.
+            </p>
+
+            <div id="report-body">
+              <div class="adm-stats" id="stats-box"></div>
+              <p class="adm-note">
+                Revenue counts payments actually completed during the selected
+                month. New patients are separate from the clinic's historical
+                total.
+              </p>
+
+              <div class="adm-grid adm-report__grid">
+                <div class="adm-span-6">
+                  <h3>Revenue by doctor</h3>
+                  <div class="adm-table-wrap">
+                    <table class="adm-table">
+                      <thead>
+                        <tr>
+                          <th>Doctor</th>
+                          <th>Revenue</th>
+                        </tr>
+                      </thead>
+                      <tbody id="revenue-rows"></tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <div class="adm-span-6">
+                  <h3>Five busiest doctors</h3>
+                  <div class="adm-table-wrap">
+                    <table class="adm-table">
+                      <thead>
+                        <tr>
+                          <th>Doctor</th>
+                          <th>Appointments</th>
+                        </tr>
+                      </thead>
+                      <tbody id="busiest-rows"></tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <div class="adm-span-6">
+                  <h3>Most ordered lab tests</h3>
+                  <div class="adm-table-wrap">
+                    <table class="adm-table">
+                      <thead>
+                        <tr>
+                          <th>Test</th>
+                          <th>Orders</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tests-rows"></tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <div class="adm-span-6">
+                  <h3>Abnormal-result rate</h3>
+                  <div class="adm-table-wrap">
+                    <table class="adm-table">
+                      <thead>
+                        <tr>
+                          <th>Measure</th>
+                          <th>Value</th>
+                        </tr>
+                      </thead>
+                      <tbody id="abnormal-rows"></tbody>
+                    </table>
+                  </div>
+                  <p class="adm-note">
+                    Flags are informational and not a diagnosis.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <footer class="adm-footer">
+            <p>
+              © 2026 HeartCare Clinic Management System. Academic project
+              demonstration.
+            </p>
+          </footer>
+        </main>
+      </div>
+    </div>
+
+    <!-- order matters: data, helpers, then this page's code -->
+    <script src="js/admin-reports-data.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/admin-reports.js"></script>
+  </body>
+</html>

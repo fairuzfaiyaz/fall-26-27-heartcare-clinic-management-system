@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Catalogue | HeartCare Admin</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/admin-dashboard.css" />
+  </head>
+  <body class="admin-body">
+    <div class="adm-shell">
+      <aside class="adm-sidebar">
+        <a href="index.php" class="adm-brand">
+          <span class="adm-brand__mark" aria-hidden="true">♥</span>
+          <span class="adm-brand__text">HeartCare</span>
+        </a>
+        <div class="adm-role">
+          <span class="adm-role__badge">Administrator</span>
+          <span class="adm-role__name">Clinic Admin</span>
+        </div>
+        <nav class="adm-nav" aria-label="Administrator navigation">
+          <p class="adm-nav__label">Overview</p>
+          <a href="dashboard.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">▦</span>
+            Dashboard
+          </a>
+          <p class="adm-nav__label">Clinic setup</p>
+          <a href="manage-departments.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">▤</span>
+            Departments
+          </a>
+          <a href="manage-doctors.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">✚</span>
+            Doctors
+          </a>
+          <a href="manage-labtechs.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">⚗</span>
+            Lab Technicians
+          </a>
+          <a
+            href="manage-tests.php"
+            class="adm-nav__link is-active"
+            aria-current="page"
+          >
+            <span class="adm-nav__icon" aria-hidden="true">◉</span>
+            Test Catalogue
+          </a>
+          <p class="adm-nav__label">Operations</p>
+          <a href="manage-appointments.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">▣</span>
+            Appointments
+          </a>
+          <a href="reports.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">▥</span>
+            Monthly Reports
+          </a>
+          <a href="audit-log.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">☰</span>
+            Audit Log
+          </a>
+          <a href="login.php" class="adm-nav__link adm-nav__link--out">
+            <span class="adm-nav__icon" aria-hidden="true">↪</span>
+            Sign Out
+          </a>
+        </nav>
+      </aside>
+
+      <div class="adm-main">
+        <header class="adm-topbar">
+          <div class="adm-crumbs">
+            <span>Admin</span>
+            <span aria-hidden="true">/</span>
+            <strong>Test Catalogue</strong>
+          </div>
+          <div class="adm-topbar__right">
+            <span class="adm-date" id="today-date"></span>
+            <span class="adm-avatar" aria-label="Administrator">AD</span>
+          </div>
+        </header>
+
+        <main class="adm-content">
+          <section class="adm-head">
+            <div>
+              <p class="adm-eyebrow">CLINIC SETUP</p>
+              <h1>Test Catalogue</h1>
+              <p class="adm-lead">
+                Define lab tests, prices and reference ranges.
+              </p>
+            </div>
+            <div class="adm-head__actions"></div>
+          </section>
+
+          <div class="adm-grid">
+            <!-- ========== List (Read + Search + Filter) ========== -->
+            <section class="adm-card adm-span-8">
+              <div class="adm-card__head">
+                <div>
+                  <h2>Test Catalogue</h2>
+                  <p>The administrator owns prices and reference ranges.</p>
+                </div>
+              </div>
+
+              <div class="adm-toolbar">
+                <input
+                  type="search"
+                  id="search-box"
+                  class="adm-input adm-input--search"
+                  placeholder="Search tests…"
+                  aria-label="Search tests"
+                  onkeyup="renderTests()"
+                />
+                <select
+                  id="status-filter"
+                  class="adm-input"
+                  aria-label="Status"
+                  onchange="renderTests()"
+                >
+                  <option value="All">All statuses</option>
+                  <option value="Active">Active</option>
+                  <option value="Inactive">Inactive</option>
+                </select>
+              </div>
+
+              <div class="adm-table-wrap">
+                <table class="adm-table">
+                  <thead>
+                    <tr>
+                      <th>Test</th>
+                      <th>Unit</th>
+                      <th>Min</th>
+                      <th>Max</th>
+                      <th>Price</th>
+                      <th>Status</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <!-- rows are built by renderTests() -->
+                  <tbody id="test-rows"></tbody>
+                </table>
+              </div>
+
+              <div class="adm-pager"><span id="row-count"></span></div>
+            </section>
+
+            <!-- ========== Form (Create + Update) ========== -->
+            <section class="adm-card adm-span-4">
+              <div class="adm-card__head">
+                <div>
+                  <h2 id="form-title">Add Test</h2>
+                  <p>Define a test and its reference range.</p>
+                </div>
+              </div>
+
+              <form
+                class="adm-form"
+                method="post"
+                action="#"
+                onsubmit="return saveTest();"
+                novalidate
+              >
+                <div class="adm-field">
+                  <label for="test_name">Test name</label>
+                  <input
+                    class="adm-input"
+                    id="test_name"
+                    name="test_name"
+                    type="text"
+                    placeholder="e.g. Hemoglobin"
+                    maxlength="60"
+                  />
+                  <span id="test_name-error"></span>
+                </div>
+
+                <div class="adm-field">
+                  <label for="test_unit">Unit</label>
+                  <input
+                    class="adm-input"
+                    id="test_unit"
+                    name="test_unit"
+                    type="text"
+                    placeholder="e.g. g/dL"
+                    maxlength="15"
+                  />
+                  <span id="test_unit-error"></span>
+                </div>
+
+                <div class="adm-field-row">
+                  <div class="adm-field">
+                    <label for="test_min">Normal min</label>
+                    <input
+                      class="adm-input"
+                      id="test_min"
+                      name="test_min"
+                      type="number"
+                      placeholder="0"
+                      step="any"
+                    />
+                    <span id="test_min-error"></span>
+                  </div>
+                  <div class="adm-field">
+                    <label for="test_max">Normal max</label>
+                    <input
+                      class="adm-input"
+                      id="test_max"
+                      name="test_max"
+                      type="number"
+                      placeholder="0"
+                      step="any"
+                    />
+                    <span id="test_max-error"></span>
+                  </div>
+                </div>
+
+                <div class="adm-field">
+                  <label for="test_price">Price (৳)</label>
+                  <input
+                    class="adm-input"
+                    id="test_price"
+                    name="test_price"
+                    type="number"
+                    placeholder="0"
+                  />
+                  <span id="test_price-error"></span>
+                </div>
+
+                <div class="adm-field">
+                  <label for="test_status">Status</label>
+                  <select class="adm-input" id="test_status" name="test_status">
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                  </select>
+                </div>
+
+                <p class="adm-note">
+                  Reference ranges are informational. Flags are not diagnoses
+                  and ranges depend on method and patient context.
+                </p>
+
+                <div class="adm-form__btns">
+                  <button
+                    type="submit"
+                    id="save-btn"
+                    class="adm-btn adm-btn--solid"
+                  >
+                    Save Test
+                  </button>
+                  <button
+                    type="button"
+                    class="adm-btn adm-btn--ghost"
+                    onclick="clearForm()"
+                  >
+                    Clear
+                  </button>
+                </div>
+              </form>
+            </section>
+          </div>
+
+          <footer class="adm-footer">
+            <p>
+              © 2026 HeartCare Clinic Management System. Academic project
+              demonstration.
+            </p>
+          </footer>
+        </main>
+      </div>
+    </div>
+
+    <!-- order matters: data, helpers, then this page's code -->
+    <script src="js/admin-manage-tests-data.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/admin-manage-tests.js"></script>
+  </body>
+</html>

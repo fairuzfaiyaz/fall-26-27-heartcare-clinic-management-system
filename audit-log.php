@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audit Log | HeartCare Admin</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/admin-dashboard.css" />
+  </head>
+  <body class="admin-body">
+    <div class="adm-shell">
+      <aside class="adm-sidebar">
+        <a href="index.php" class="adm-brand">
+          <span class="adm-brand__mark" aria-hidden="true">♥</span>
+          <span class="adm-brand__text">HeartCare</span>
+        </a>
+        <div class="adm-role">
+          <span class="adm-role__badge">Administrator</span>
+          <span class="adm-role__name">Clinic Admin</span>
+        </div>
+        <nav class="adm-nav" aria-label="Administrator navigation">
+          <p class="adm-nav__label">Overview</p>
+          <a href="dashboard.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">▦</span>
+            Dashboard
+          </a>
+          <p class="adm-nav__label">Clinic setup</p>
+          <a href="manage-departments.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">▤</span>
+            Departments
+          </a>
+          <a href="manage-doctors.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">✚</span>
+            Doctors
+          </a>
+          <a href="manage-labtechs.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">⚗</span>
+            Lab Technicians
+          </a>
+          <a href="manage-tests.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">◉</span>
+            Test Catalogue
+          </a>
+          <p class="adm-nav__label">Operations</p>
+          <a href="manage-appointments.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">▣</span>
+            Appointments
+          </a>
+          <a href="reports.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">▥</span>
+            Monthly Reports
+          </a>
+          <a
+            href="audit-log.php"
+            class="adm-nav__link is-active"
+            aria-current="page"
+          >
+            <span class="adm-nav__icon" aria-hidden="true">☰</span>
+            Audit Log
+          </a>
+          <a href="login.php" class="adm-nav__link adm-nav__link--out">
+            <span class="adm-nav__icon" aria-hidden="true">↪</span>
+            Sign Out
+          </a>
+        </nav>
+      </aside>
+
+      <div class="adm-main">
+        <header class="adm-topbar">
+          <div class="adm-crumbs">
+            <span>Admin</span>
+            <span aria-hidden="true">/</span>
+            <strong>Audit Log</strong>
+          </div>
+          <div class="adm-topbar__right">
+            <span class="adm-date" id="today-date"></span>
+            <span class="adm-avatar" aria-label="Administrator">AD</span>
+          </div>
+        </header>
+
+        <main class="adm-content">
+          <section class="adm-head">
+            <div>
+              <p class="adm-eyebrow">OPERATIONS</p>
+              <h1>Audit Log</h1>
+              <p class="adm-lead">
+                Searchable history of important actions in the system.
+              </p>
+            </div>
+            <div class="adm-head__actions"></div>
+          </section>
+
+          <section class="adm-card">
+            <div class="adm-card__head">
+              <div>
+                <h2>Activity History</h2>
+                <p>
+                  Passwords, full card details and unnecessary medical data are
+                  never logged.
+                </p>
+              </div>
+            </div>
+
+            <!-- onsubmit validates the dates, then redraws the table -->
+            <form
+              class="adm-toolbar adm-toolbar--form"
+              method="get"
+              action="#"
+              onsubmit="return filterLog();"
+              novalidate
+            >
+              <div class="adm-field">
+                <label for="log_user">User</label>
+                <input
+                  class="adm-input"
+                  id="log_user"
+                  name="user"
+                  type="search"
+                  placeholder="Any user"
+                />
+              </div>
+              <div class="adm-field">
+                <label for="log_action">Action</label>
+                <select class="adm-input" id="log_action" name="action">
+                  <option value="All">All actions</option>
+                  <option value="Updated doctor fee">Updated doctor fee</option>
+                  <option value="Added result">Added result</option>
+                  <option value="Completed consultation">
+                    Completed consultation
+                  </option>
+                  <option value="Modified prescription">
+                    Modified prescription
+                  </option>
+                  <option value="Deactivated account">
+                    Deactivated account
+                  </option>
+                  <option value="Successful payment">Successful payment</option>
+                </select>
+              </div>
+              <div class="adm-field">
+                <label for="log_from">From</label>
+                <input
+                  class="adm-input"
+                  id="log_from"
+                  name="from"
+                  type="date"
+                />
+                <span id="log_from-error"></span>
+              </div>
+              <div class="adm-field">
+                <label for="log_to">To</label>
+                <input class="adm-input" id="log_to" name="to" type="date" />
+                <span id="log_to-error"></span>
+              </div>
+              <button type="submit" class="adm-btn adm-btn--solid">
+                Filter
+              </button>
+              <!-- type="button" + resetFilters() so the table is redrawn too -->
+              <button
+                type="button"
+                class="adm-btn adm-btn--ghost"
+                onclick="resetFilters()"
+              >
+                Reset
+              </button>
+            </form>
+
+            <div class="adm-table-wrap">
+              <table class="adm-table">
+                <thead>
+                  <tr>
+                    <th>Time</th>
+                    <th>User</th>
+                    <th>Action</th>
+                    <th>Record</th>
+                  </tr>
+                </thead>
+                <!-- rows are built by renderLog() -->
+                <tbody id="log-rows"></tbody>
+              </table>
+            </div>
+
+            <div class="adm-pager"><span id="row-count"></span></div>
+          </section>
+
+          <footer class="adm-footer">
+            <p>
+              © 2026 HeartCare Clinic Management System. Academic project
+              demonstration.
+            </p>
+          </footer>
+        </main>
+      </div>
+    </div>
+
+    <!-- order matters: data, helpers, then this page's code -->
+    <script src="js/admin-audit-log-data.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/admin-audit-log.js"></script>
+  </body>
+</html>

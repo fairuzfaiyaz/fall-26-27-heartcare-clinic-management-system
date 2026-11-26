@@ -1,7 +1,7 @@
 /* ==========================================================================
    HeartCare Clinic — Authentication Stylesheet
    File: assets/css/auth.css
-   Pages: auth/login.html, auth/register.html
+   Pages: login.php, register.php
    Requires: assets/css/style.css loaded first
    ========================================================================== */
 
@@ -467,7 +467,7 @@
 /* addition for login page also pass hide with eye */
 /* ==========================================================================
    auth-additions.css
-   Extra styles for login.html. Link it AFTER css/auth.css.
+   Extra styles for login.php. Link it AFTER css/auth.css.
    - eye button inside the password field
    - message box (error / ok / warning)
    - Caps Lock warning

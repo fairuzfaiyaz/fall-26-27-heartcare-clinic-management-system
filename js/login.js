@@ -38,15 +38,15 @@ function roleLabel(role) {
 function pageFor(role) {
   switch (role) {
     case "admin":
-      return "dashboard.html";
+      return "dashboard.php";
     case "doctor":
-      return "doctor-dashboard.html";
+      return "doctor-dashboard.php";
     case "patient":
-      return "patient-dashboard.html";
+      return "patient-dashboard.php";
     case "labtech":
-      return "lab-dashboard.html";
+      return "lab-dashboard.php";
     default:
-      return "login.html";
+      return "login.php";
   }
 }
 

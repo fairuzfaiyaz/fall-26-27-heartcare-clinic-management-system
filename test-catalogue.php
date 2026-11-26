@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Catalogue | HeartCare</title>
+
+    <link rel="stylesheet" href="css/lab-test-catalogue.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- LEFT SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <span class="heart-icon">♥</span>
+                Heart<span>Care</span>
+            </div>
+
+            <!-- USER PROFILE -->
+            <div class="profile">
+
+                <div class="avatar">LT</div>
+
+                <div>
+                    <h3>Aurpita Roy</h3>
+                    <p>Laboratory Department</p>
+                </div>
+
+            </div>
+
+            <p class="menu-title">MAIN MENU</p>
+
+            <nav>
+
+                <a class="sidebar-link" href="lab-dashboard.php">
+                    <span class="nav-icon">▦</span>
+                    Dashboard
+                </a>
+
+                <a class="sidebar-link" href="lab-queue.php">
+                    ☷ Lab Queue
+                </a>
+
+                <a class="sidebar-link" href="add-labresult.php">
+                    ✚ Add Test Result
+                </a>
+
+                <a class="sidebar-link" href="manage-labresult.php">
+                    ▤ Manage Results
+                </a>
+
+                <a class="sidebar-link is-active" href="test-catalogue.php">
+                    ♧ Test Catalogue
+                </a>
+
+                <a class="sidebar-link" href="lab-reports.php">
+                    ▣ Lab Reports
+                </a>
+
+                <p class="menu-title">ACCOUNT</p>
+
+                <a class="sidebar-link" href="profile.php">
+                    ♙ My Profile
+                </a>
+
+                <a class="sidebar-link sidebar-link--logout" href="login.php">
+                    Log out
+                </a>
+
+            </nav>
+
+            <!-- SIDEBAR FOOTER -->
+            <div class="sidebar-footer">
+                HeartCare Hospital
+                <small>Laboratory Management System</small>
+            </div>
+
+        </aside>
+
+
+        <!-- RIGHT MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <div>
+                    <h2>Good Morning</h2>
+                    <p>Welcome back, Lab Technician</p>
+                </div>
+
+                <div class="header-right">
+
+
+                    <div class="user-info">
+
+                        <div class="small-avatar">LT</div>
+
+                        <span>Aurpita Roy</span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- PAGE CONTENT -->
+            <section class="content">
+
+                <!-- PAGE HEADING -->
+                <div class="page-heading">
+
+                    <div>
+                        <h1>Test Catelogue</h1>
+
+                        <p>
+                            View test definitions, test costs
+                        </p>
+                    </div>
+
+                    <button class="add-btn" type="button" onclick="showAddTestNotice()">
+
+                        + Add New Test
+
+                    </button>
+
+                </div>
+
+
+                <!-- STATISTICS -->
+                <div class="stats-grid">
+
+                    <!-- TOTAL TESTS -->
+                    <div class="stat-card blue">
+
+                        <div class="stat-icon">🧪</div>
+
+                        <p>Total Tests</p>
+
+                        <h2 id="total-tests">0</h2>
+
+                        <small>Available test definitions</small>
+
+                    </div>
+
+
+                    <!-- ACTIVE TESTS -->
+                    <div class="stat-card green">
+
+                        <div class="stat-icon">✓</div>
+
+                        <p>Active Tests</p>
+
+                        <h2 id="active-tests">0</h2>
+
+                        <small>Currently available</small>
+
+                    </div>
+
+
+                    <!-- TEST CATEGORIES -->
+                    <div class="stat-card orange">
+
+                        <div class="stat-icon">📋</div>
+
+                        <p>Test Categories</p>
+
+                        <h2 id="category-count">0</h2>
+
+                        <small>Different test groups</small>
+
+                    </div>
+
+
+                    <!-- INACTIVE TESTS -->
+                    <div class="stat-card purple">
+
+                        <div class="stat-icon">⏱</div>
+
+                        <p>Inactive Tests</p>
+
+                        <h2 id="inactive-tests">0</h2>
+
+                        <small>Currently unavailable</small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TEST CATALOGUE PANEL -->
+                <div class="panel">
+
+                    <!-- PANEL HEADER -->
+                    <div class="panel-header">
+
+                        <div>
+                            <h3>All Laboratory Tests</h3>
+
+                            <p>
+                                View test information, reference ranges and costs
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- SEARCH AND FILTER SECTION -->
+                    <div class="filter-section">
+
+                        <!-- SEARCH -->
+                        <div class="search-box">
+
+                            <span>🔍</span>
+
+                            <input type="text" id="test-search" placeholder="Search by test name or code..."
+                                onkeyup="applyFilters()">
+
+                        </div>
+
+
+                        <!-- CATEGORY FILTER -->
+                        <select id="category-filter" onchange="applyFilters()">
+
+                            <option value="">All Categories</option>
+
+                            <option value="Blood Test">
+                                Blood Test
+                            </option>
+
+                            <option value="Biochemistry">
+                                Biochemistry
+                            </option>
+
+                            <option value="Hematology">
+                                Hematology
+                            </option>
+
+                            <option value="Urine Test">
+                                Urine Test
+                            </option>
+
+                            <option value="Hormone Test">
+                                Hormone Test
+                            </option>
+
+                            <option value="Immunology">
+                                Immunology
+                            </option>
+
+                        </select>
+
+
+                        <!-- STATUS FILTER -->
+                        <select id="status-filter" onchange="applyFilters()">
+
+                            <option value="">All Status</option>
+
+                            <option value="Active">
+                                Active
+                            </option>
+
+                            <option value="Inactive">
+                                Inactive
+                            </option>
+
+                        </select>
+
+
+                        <!-- RESET BUTTON -->
+                        <button type="button" class="reset-btn" onclick="resetFilters()">
+
+                            Reset
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- TEST TABLE -->
+                    <div class="table-responsive">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>TEST CODE</th>
+
+                                    <th>TEST NAME</th>
+
+                                    <th>CATEGORY</th>
+
+                                    <th>SPECIMEN</th>
+
+                                    <th>REFERENCE RANGE</th>
+
+                                    <th>UNIT</th>
+
+                                    <th>TEST COST</th>
+
+                                    <th>STATUS</th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <!-- DYNAMIC TABLE BODY -->
+                            <tbody id="test-table-body">
+
+                                <!-- JavaScript will display test records here -->
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <!-- PAGINATION -->
+                    <div class="pagination">
+
+                        <p id="pagination-summary">
+                            Showing 0–0 of 0 tests
+                        </p>
+
+                        <div id="pagination-buttons">
+
+                            <!-- Pagination buttons generated by JavaScript -->
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- INFORMATION PANEL -->
+                <div class="info-panel">
+
+                    <div class="info-icon">ℹ</div>
+
+                    <div>
+
+                        <h3>
+                            Reference Range and Cost Information
+                        </h3>
+
+                        <p>
+                            Reference ranges may vary depending on age, sex,
+                            laboratory methods and clinical conditions.
+                            Test costs and reference intervals are controlled
+                            by the Admin. Please contact the Admin if any
+                            information needs to be updated.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+            <footer>
+
+                © 2026 HeartCare Hospital. All rights reserved.
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- JAVASCRIPT FILES -->
+
+    <!-- Test Catalogue Data -->
+    <script src="js/labtest-catalogue-data.js"></script>
+
+    <!-- Common JavaScript -->
+    <script src="js/common.js"></script>
+
+    <!-- Test Catalogue Functionalities -->
+    <script src="js/labtest-catalogue.js"></script>
+
+</body>
+
+</html>

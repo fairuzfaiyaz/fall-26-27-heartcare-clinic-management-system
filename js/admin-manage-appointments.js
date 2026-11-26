@@ -1,5 +1,5 @@
 // admin-manage-appointments.js
-// Read / search / filter / correct (update) / cancel for manage-appointments.html
+// Read / search / filter / correct (update) / cancel for manage-appointments.php
 // Needs (loaded before this file):
 //   admin-manage-appointments-data.js -> appointments, monthNames
 //   common.js                         -> showToday, containsText, showError, clearErrors

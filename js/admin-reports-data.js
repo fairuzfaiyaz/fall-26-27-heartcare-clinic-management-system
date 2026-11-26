@@ -1,5 +1,5 @@
 // admin-reports-data.js
-// Data for reports.html.
+// Data for reports.php.
 // Sample monthly reports for 2026.
 // Later, PHP + MySQL will calculate these values using SELECT queries.
 

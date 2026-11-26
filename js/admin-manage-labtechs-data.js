@@ -1,5 +1,5 @@
 // admin-manage-labtechs-data.js
-// Dummy data for manage-labtechs.html.
+// Dummy data for manage-labtechs.php.
 // Passwords are NOT stored here. Later PHP will hash them in MySQL.
 
 let labTechs = [

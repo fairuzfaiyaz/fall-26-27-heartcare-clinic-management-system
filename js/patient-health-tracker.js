@@ -1,7 +1,7 @@
 /* ==========================================================================
    HeartCare Clinic - Health Tracker page
    File: js/health-tracker.js
-   Page: health-tracker.html  (no libraries, no charts)
+   Page: health-tracker.php  (no libraries, no charts)
 
    Frontend only: measurements live in the array below. Changes work while you
    stay on the page and reset on reload. Later PHP/MySQL replaces the array
@@ -691,5 +691,5 @@ tbody.addEventListener("click", function (e) {
 resetForm();
 renderAll();
 
-// opening health-tracker.html#add goes straight to the form
+// opening health-tracker.php#add goes straight to the form
 if (window.location.hash === "#add") openAddForm();

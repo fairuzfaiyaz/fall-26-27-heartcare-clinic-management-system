@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage Doctors | HeartCare Admin</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/admin-dashboard.css" />
+  </head>
+  <body class="admin-body">
+    <div class="adm-shell">
+      <aside class="adm-sidebar">
+        <a href="index.php" class="adm-brand">
+          <span class="adm-brand__mark" aria-hidden="true">♥</span>
+          <span class="adm-brand__text">HeartCare</span>
+        </a>
+        <div class="adm-role">
+          <span class="adm-role__badge">Administrator</span>
+          <span class="adm-role__name">Clinic Admin</span>
+        </div>
+        <nav class="adm-nav" aria-label="Administrator navigation">
+          <p class="adm-nav__label">Overview</p>
+          <a href="dashboard.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">▦</span>
+            Dashboard
+          </a>
+          <p class="adm-nav__label">Clinic setup</p>
+          <a href="manage-departments.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">▤</span>
+            Departments
+          </a>
+          <a
+            href="manage-doctors.php"
+            class="adm-nav__link is-active"
+            aria-current="page"
+          >
+            <span class="adm-nav__icon" aria-hidden="true">✚</span>
+            Doctors
+          </a>
+          <a href="manage-labtechs.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">⚗</span>
+            Lab Technicians
+          </a>
+          <a href="manage-tests.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">◉</span>
+            Test Catalogue
+          </a>
+          <p class="adm-nav__label">Operations</p>
+          <a href="manage-appointments.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">▣</span>
+            Appointments
+          </a>
+          <a href="reports.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">▥</span>
+            Monthly Reports
+          </a>
+          <a href="audit-log.php" class="adm-nav__link">
+            <span class="adm-nav__icon" aria-hidden="true">☰</span>
+            Audit Log
+          </a>
+          <a href="login.php" class="adm-nav__link adm-nav__link--out">
+            <span class="adm-nav__icon" aria-hidden="true">↪</span>
+            Sign Out
+          </a>
+        </nav>
+      </aside>
+
+      <div class="adm-main">
+        <header class="adm-topbar">
+          <div class="adm-crumbs">
+            <span>Admin</span>
+            <span aria-hidden="true">/</span>
+            <strong>Doctors</strong>
+          </div>
+          <div class="adm-topbar__right">
+            <span class="adm-date" id="today-date"></span>
+            <span class="adm-avatar" aria-label="Administrator">AD</span>
+          </div>
+        </header>
+
+        <main class="adm-content">
+          <section class="adm-head">
+            <div>
+              <p class="adm-eyebrow">CLINIC SETUP</p>
+              <h1>Manage Doctors</h1>
+              <p class="adm-lead">
+                Create doctor accounts, assign departments and set fees.
+              </p>
+            </div>
+            <div class="adm-head__actions">
+              <a href="manage-departments.php" class="adm-btn adm-btn--ghost"
+                >Departments</a
+              >
+            </div>
+          </section>
+
+          <div class="adm-grid">
+            <!-- ========== List (Read + Search + Filters) ========== -->
+            <section class="adm-card adm-span-8">
+              <div class="adm-card__head">
+                <div>
+                  <h2>Doctor Accounts</h2>
+                  <p>
+                    Search and manage doctor profiles, departments and fees.
+                  </p>
+                </div>
+              </div>
+
+              <div class="adm-toolbar">
+                <input
+                  type="search"
+                  id="search-box"
+                  class="adm-input adm-input--search"
+                  placeholder="Search doctors…"
+                  aria-label="Search doctors"
+                  onkeyup="renderDoctors()"
+                />
+                <select
+                  id="dept-filter"
+                  class="adm-input"
+                  aria-label="Department"
+                  onchange="renderDoctors()"
+                >
+                  <option value="All">All departments</option>
+                  <option value="Cardiology">Cardiology</option>
+                  <option value="General Medicine">General Medicine</option>
+                  <option value="Preventive Care">Preventive Care</option>
+                  <option value="Pathology">Pathology</option>
+                  <option value="Pediatrics">Pediatrics</option>
+                  <option value="Radiology">Radiology</option>
+                </select>
+                <select
+                  id="status-filter"
+                  class="adm-input"
+                  aria-label="Status"
+                  onchange="renderDoctors()"
+                >
+                  <option value="All">All statuses</option>
+                  <option value="Active">Active</option>
+                  <option value="Inactive">Inactive</option>
+                </select>
+              </div>
+
+              <div class="adm-table-wrap">
+                <table class="adm-table">
+                  <thead>
+                    <tr>
+                      <th>Doctor</th>
+                      <th>Department</th>
+                      <th>Fee</th>
+                      <th>Status</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <!-- rows are built by renderDoctors() -->
+                  <tbody id="doctor-rows"></tbody>
+                </table>
+              </div>
+
+              <div class="adm-pager"><span id="row-count"></span></div>
+            </section>
+
+            <!-- ========== Form (Create + Update) ========== -->
+            <section class="adm-card adm-span-4">
+              <div class="adm-card__head">
+                <div>
+                  <h2 id="form-title">Add Doctor</h2>
+                  <p>Create a doctor account.</p>
+                </div>
+              </div>
+
+              <form
+                class="adm-form"
+                method="post"
+                action="#"
+                onsubmit="return saveDoctor();"
+                novalidate
+              >
+                <div class="adm-field">
+                  <label for="doc_name">Full name</label>
+                  <input
+                    class="adm-input"
+                    id="doc_name"
+                    name="doc_name"
+                    type="text"
+                    placeholder="Dr. Full Name"
+                    maxlength="60"
+                  />
+                  <span id="doc_name-error"></span>
+                </div>
+
+                <div class="adm-field">
+                  <label for="doc_email">Email</label>
+                  <input
+                    class="adm-input"
+                    id="doc_email"
+                    name="doc_email"
+                    type="email"
+                    placeholder="doctor@heartcare.com"
+                    maxlength="100"
+                  />
+                  <span id="doc_email-error"></span>
+                </div>
+
+                <div class="adm-field">
+                  <label for="doc_phone">Phone</label>
+                  <input
+                    class="adm-input"
+                    id="doc_phone"
+                    name="doc_phone"
+                    type="tel"
+                    placeholder="01XXXXXXXXX"
+                    maxlength="11"
+                  />
+                  <span id="doc_phone-error"></span>
+                </div>
+
+                <div class="adm-field">
+                  <label for="doc_dept">Department</label>
+                  <select class="adm-input" id="doc_dept" name="doc_dept">
+                    <option value="Cardiology">Cardiology</option>
+                    <option value="General Medicine">General Medicine</option>
+                    <option value="Preventive Care">Preventive Care</option>
+                    <option value="Pathology">Pathology</option>
+                    <option value="Pediatrics">Pediatrics</option>
+                    <option value="Radiology">Radiology</option>
+                  </select>
+                </div>
+
+                <div class="adm-field">
+                  <label for="doc_fee">Consultation fee (৳)</label>
+                  <input
+                    class="adm-input"
+                    id="doc_fee"
+                    name="doc_fee"
+                    type="number"
+                    placeholder="1000"
+                  />
+                  <span id="doc_fee-error"></span>
+                </div>
+
+                <div class="adm-field">
+                  <label for="doc_license">License number</label>
+                  <input
+                    class="adm-input"
+                    id="doc_license"
+                    name="doc_license"
+                    type="text"
+                    placeholder="Registration no."
+                    maxlength="30"
+                  />
+                  <span id="doc_license-error"></span>
+                </div>
+
+                <div class="adm-field">
+                  <label for="doc_pass">Temporary password</label>
+                  <input
+                    class="adm-input"
+                    id="doc_pass"
+                    name="doc_pass"
+                    type="password"
+                    placeholder="Min. 8 characters"
+                  />
+                  <span id="doc_pass-error"></span>
+                </div>
+
+                <div class="adm-field">
+                  <label for="doc_status">Status</label>
+                  <select class="adm-input" id="doc_status" name="doc_status">
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                  </select>
+                </div>
+
+                <p class="adm-note">
+                  Passwords are hashed on the server and never displayed.
+                </p>
+
+                <div class="adm-form__btns">
+                  <button
+                    type="submit"
+                    id="save-btn"
+                    class="adm-btn adm-btn--solid"
+                  >
+                    Create Doctor
+                  </button>
+                  <button
+                    type="button"
+                    class="adm-btn adm-btn--ghost"
+                    onclick="clearForm()"
+                  >
+                    Clear
+                  </button>
+                </div>
+              </form>
+            </section>
+          </div>
+
+          <footer class="adm-footer">
+            <p>
+              © 2026 HeartCare Clinic Management System. Academic project
+              demonstration.
+            </p>
+          </footer>
+        </main>
+      </div>
+    </div>
+
+    <!-- order matters: data, helpers, then this page's code -->
+    <script src="js/admin-manage-doctors-data.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/admin-validators.js"></script>
+    <script src="js/admin-manage-doctors.js"></script>
+  </body>
+</html>

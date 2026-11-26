@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manage Lab Results | HeartCare</title>
+
+    <link rel="stylesheet" href="css/lab-dashboard.css">
+    <link rel="stylesheet" href="css/manage-labresults.css">
+</head>
+
+<body class="patient-dashboard">
+
+    <div class="dashboard-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <span>♥</span> HeartCare
+            </div>
+
+            <div class="profile-summary">
+                <div class="profile-avatar">LT</div>
+
+                <div class="profile-info">
+                    <h3>Aurpita Roy</h3>
+                    <p>Laboratory Department</p>
+                </div>
+            </div>
+
+            <nav>
+
+                <p class="nav-heading">MAIN MENU</p>
+
+                <a class="sidebar-link" href="lab-dashboard.php">
+                    <span class="nav-icon">▦</span>
+                    Dashboard
+                </a>
+
+                <a class="sidebar-link" href="lab-queue.php">
+                    ☷ Lab Queue
+                </a>
+
+                <a class="sidebar-link" href="add-labresult.php">
+                    ✚ Add Test Result
+                </a>
+
+                <a class="sidebar-link is-active" href="manage-labresult.php">
+                    ▤ Manage Results
+                </a>
+
+                <a class="sidebar-link" href="test-catalogue.php">
+                    ♧ Test Catalogue
+                </a>
+
+                <a class="sidebar-link" href="lab-reports.php">
+                    ▣ Lab Reports
+                </a>
+
+                <p class="menu-title">ACCOUNT</p>
+
+                <a class="sidebar-link" href="profile.php">
+                    ♙ My Profile
+                </a>
+
+                <a class="sidebar-link sidebar-link--logout" href="login.php">
+                    Log out
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <section class="page-content">
+
+                <!-- PAGE HEADING -->
+                <div class="page-heading">
+
+                    <div>
+                        <h2>Manage Test Results</h2>
+
+                        <p>
+                            Manage previously submitted laboratory test results.
+                        </p>
+                    </div>
+
+                    <a href="add-labresult.php" class="add-result-btn">
+                        + Add New Result
+                    </a>
+
+                </div>
+
+
+                <!-- SUMMARY CARDS -->
+                <div class="summary-grid">
+
+                    <div class="summary-card">
+                        <div class="summary-icon total-icon">▤</div>
+
+                        <div>
+                            <p>Total Results</p>
+                            <h2 id="total-results">0</h2>
+                        </div>
+                    </div>
+
+
+                    <div class="summary-card">
+                        <div class="summary-icon completed-icon">✓</div>
+
+                        <div>
+                            <p>Completed</p>
+                            <h2 id="completed-results">0</h2>
+                        </div>
+                    </div>
+
+
+                    <div class="summary-card">
+                        <div class="summary-icon pending-icon">◷</div>
+
+                        <div>
+                            <p>Pending</p>
+                            <h2 id="pending-results">0</h2>
+                        </div>
+                    </div>
+
+
+                    <div class="summary-card">
+                        <div class="summary-icon reviewed-icon">↻</div>
+
+                        <div>
+                            <p>Under Review</p>
+                            <h2 id="reviewed-results">0</h2>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- SEARCH AND FILTER -->
+                <div class="filter-card">
+
+                    <div class="filter-title">
+
+                        <div>
+                            <h3>Search & Filter Results</h3>
+
+                            <p>
+                                Find test results using patient information and test details.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <form class="filter-form" novalidate onsubmit="return searchLabResults();">
+
+                        <div class="form-group search-group">
+
+                            <label for="search">
+                                Search Patient
+                            </label>
+
+                            <input type="search" id="search" placeholder="Search by Patient ID or Name">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="test-name">
+                                Test Name
+                            </label>
+
+                            <select id="test-name">
+
+                                <option value="">
+                                    All Test Names
+                                </option>
+
+                                <option value="Complete Blood Count">
+                                    Complete Blood Count (CBC)
+                                </option>
+
+                                <option value="Blood Glucose">
+                                    Blood Glucose
+                                </option>
+
+                                <option value="Lipid Profile">
+                                    Lipid Profile
+                                </option>
+
+                                <option value="Urine R/E">
+                                    Urine R/E
+                                </option>
+
+                                <option value="Thyroid Function Test">
+                                    Thyroid Function Test
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="test-date">
+                                Date
+                            </label>
+
+                            <input type="date" id="test-date">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="result-status">
+                                Result Status
+                            </label>
+
+                            <select id="result-status">
+
+                                <option value="">
+                                    All Status
+                                </option>
+
+                                <option value="Completed">
+                                    Completed
+                                </option>
+
+                                <option value="Pending">
+                                    Pending
+                                </option>
+
+                                <option value="Under Review">
+                                    Under Review
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="filter-actions">
+
+                            <button type="submit" class="search-btn">
+                                Search
+                            </button>
+
+                            <button type="button" class="reset-btn" onclick="resetLabSearch();">
+
+                                Reset
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+
+                <!-- RESULTS TABLE -->
+                <div class="results-card">
+
+                    <div class="results-header">
+
+                        <div>
+                            <h3>Submitted Test Results</h3>
+
+                            <p>
+                                All previously submitted laboratory results
+                            </p>
+                        </div>
+
+                        <span class="result-count" id="result-count">
+                            0 Results
+                        </span>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>Result ID</th>
+                                    <th>Patient Information</th>
+                                    <th>Test Name</th>
+                                    <th>Submitted Date</th>
+                                    <th>Result Status</th>
+                                    <th>Actions</th>
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="results-body">
+
+                                <!-- JavaScript displays result records here -->
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <!-- TABLE FOOTER -->
+                    <div class="table-footer">
+
+                        <p id="table-summary">
+                            Showing 0–0 of 0 results
+                        </p>
+
+                        <div class="pagination" id="pagination">
+
+                            <!-- JavaScript creates pagination buttons here -->
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+            <footer class="footer">
+
+                <p>
+                    © 2026 HeartCare Hospital. All rights reserved.
+                </p>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- JAVASCRIPT FILES -->
+
+    <script src="js/manage-labresults-data.js"></script>
+
+    <script src="js/common.js"></script>
+
+    <script src="js/manage-labresults.js"></script>
+
+</body>
+
+</html>

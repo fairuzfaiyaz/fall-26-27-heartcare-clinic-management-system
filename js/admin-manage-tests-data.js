@@ -1,5 +1,5 @@
 // admin-manage-tests-data.js
-// Dummy data for manage-tests.html.
+// Dummy data for manage-tests.php.
 // min / max are sample reference ranges; price is in taka.
 
 let tests = [

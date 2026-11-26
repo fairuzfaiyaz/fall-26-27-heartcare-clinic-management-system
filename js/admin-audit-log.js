@@ -1,5 +1,5 @@
 // admin-audit-log.js
-// Read-only list with filters for audit-log.html
+// Read-only list with filters for audit-log.php
 // (an audit log is never edited or deleted, so there is no Create/Update/Delete)
 // Needs (loaded before this file):
 //   admin-audit-log-data.js -> auditLogs, auditMonthNames

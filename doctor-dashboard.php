@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" content="HeartCare Doctor Dashboard" />
+
+    <title>Doctor Dashboard | HeartCare Clinic</title>
+
+    <link rel="stylesheet" href="css/doctor-dashboard.css" />
+  </head>
+
+  <body class="doctor-dashboard">
+    <div class="dashboard-layout">
+      <!-- SIDEBAR -->
+
+      <aside class="dashboard-sidebar">
+        <a class="dashboard-brand" href="index.php">
+          <span class="dashboard-brand__icon">&hearts;</span>
+
+          <span>HeartCare</span>
+        </a>
+
+        <div class="sidebar-profile">
+          <div class="avatar">BP</div>
+
+          <div>
+            <strong>Dr. Badhon Pal</strong>
+
+            <span>Cardiology Department</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <p class="sidebar-label">WORKSPACE</p>
+
+          <a class="sidebar-link is-active" href="doctor-dashboard.php">
+            <span class="nav-icon">▦</span>
+
+            Dashboard
+          </a>
+
+          <a class="sidebar-link" href="myProfile.php">
+            <span class="nav-icon">👤</span>
+
+            My Profile
+          </a>
+
+          <a class="sidebar-link" href="my_schedule.php">
+            <span class="nav-icon">▣</span>
+
+            My Schedule
+          </a>
+
+          <a class="sidebar-link" href="my_appointments.php">
+            <span class="nav-icon">☷</span>
+
+            My Appointments
+          </a>
+
+          <a class="sidebar-link" href="consultation.php">
+            <span class="nav-icon">✚</span>
+
+            Consultation
+          </a>
+
+          <a class="sidebar-link" href="prescription.php">
+            <span class="nav-icon">▤</span>
+
+            Prescriptions
+          </a>
+
+          <a class="sidebar-link" href="order_tests.php">
+            <span class="nav-icon">⚕</span>
+
+            Laboratory Tests
+          </a>
+
+          <a class="sidebar-link" href="patient_timeline.php">
+            <span class="nav-icon">◷</span>
+
+            Patient Timeline
+          </a>
+        </nav>
+
+        <a class="sidebar-link sidebar-link--logout" href="login.php">
+          Log out
+        </a>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+
+      <main class="dashboard-main">
+        <div class="dashboard-content">
+          <!-- WELCOME SECTION -->
+
+          <section class="welcome-section">
+            <div>
+              <p class="section-eyebrow">DOCTOR OVERVIEW</p>
+
+              <h1>Good morning, Dr. Badhon👋</h1>
+
+              <p class="welcome-description">
+                Here is your clinical overview, today's schedule and patient
+                activity.
+              </p>
+            </div>
+
+            <a class="primary-button" href="consultation.php">
+              + Start Consultation
+            </a>
+          </section>
+
+          <!-- SUMMARY CARDS -->
+
+          <section class="summary-grid">
+            <article class="summary-card">
+              <div class="summary-card__top">
+                <span class="summary-icon summary-icon--blue">▣</span>
+
+                <span class="summary-caption">Today</span>
+              </div>
+
+              <p class="summary-value" id="totalAppointments">08</p>
+
+              <h2>Total Appointments</h2>
+
+              <a href="my_appointments.php"> View appointment queue &rarr; </a>
+            </article>
+
+            <article class="summary-card">
+              <div class="summary-card__top">
+                <span class="summary-icon summary-icon--red">♡</span>
+
+                <span class="summary-caption">Waiting</span>
+              </div>
+
+              <p class="summary-value" id="pendingPatients">03</p>
+
+              <h2>Pending Patients</h2>
+
+              <a href="my_appointments.php"> Check patient queue &rarr; </a>
+            </article>
+
+            <article class="summary-card">
+              <div class="summary-card__top">
+                <span class="summary-icon summary-icon--gold">✚</span>
+
+                <span class="summary-caption">This month</span>
+              </div>
+
+              <p class="summary-value" id="completedConsultations">42</p>
+
+              <h2>Completed Consultations</h2>
+
+              <a href="consultation.php"> View consultations &rarr; </a>
+            </article>
+
+            <article class="summary-card">
+              <div class="summary-card__top">
+                <span class="summary-icon summary-icon--green">▤</span>
+
+                <span class="summary-caption">This month</span>
+              </div>
+
+              <p class="summary-value" id="prescriptionsIssued">36</p>
+
+              <h2>Prescriptions Issued</h2>
+
+              <a href="prescription.php"> Manage prescriptions &rarr; </a>
+            </article>
+          </section>
+
+          <!-- TODAY'S APPOINTMENTS -->
+
+          <div class="dashboard-columns dashboard-columns--single">
+            <section class="panel schedule-panel">
+              <div class="panel-header">
+                <div>
+                  <p class="section-eyebrow">YOUR SCHEDULE</p>
+
+                  <h2>Today's Appointments</h2>
+                </div>
+
+                <a class="text-link" href="my_schedule.php"> View schedule </a>
+              </div>
+
+              <!-- Appointment cards generated by JavaScript -->
+
+              <div id="todayAppointments"></div>
+
+              <a class="secondary-button" href="my_appointments.php">
+                Open Appointment Queue
+              </a>
+            </section>
+          </div>
+
+          <!-- RECENT PATIENT QUEUE -->
+
+          <div class="dashboard-columns dashboard-columns--single">
+            <section class="panel queue-panel">
+              <div class="panel-header">
+                <div>
+                  <p class="section-eyebrow">PATIENT MANAGEMENT</p>
+
+                  <h2>Recent Patient Queue</h2>
+                </div>
+
+                <a class="text-link" href="my_appointments.php"> View all </a>
+              </div>
+
+              <!-- Patient Search -->
+
+              <div class="search-box">
+                <input
+                  type="text"
+                  id="patientSearch"
+                  placeholder="Search patient name or ID..."
+                />
+              </div>
+
+              <!-- Patient Table -->
+
+              <div class="table-wrapper">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Patient</th>
+
+                      <th>Patient ID</th>
+
+                      <th>Appointment</th>
+
+                      <th>Status</th>
+
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+
+                  <tbody id="patientQueue"></tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+
+          <!-- ADVANCED FEATURES -->
+
+          <section class="panel advanced-panel">
+            <div class="panel-header">
+              <div>
+                <p class="section-eyebrow">ADVANCED CLINICAL FEATURES</p>
+
+                <h2>Doctor Tools</h2>
+              </div>
+            </div>
+
+            <div class="feature-grid">
+              <a class="feature-card" href="doctor/heart_rate_calculator.php">
+                <span class="feature-icon feature-icon--red"> &hearts; </span>
+
+                <strong>Heart Rate Calculator</strong>
+
+                <small>
+                  Calculate and save a patient's heart-rate result.
+                </small>
+
+                <span class="feature-link"> Open calculator &rarr; </span>
+              </a>
+
+              <a class="feature-card" href="doctor/print_prescription.php">
+                <span class="feature-icon feature-icon--blue"> ▤ </span>
+
+                <strong>Printable Prescription</strong>
+
+                <small>
+                  Generate a print-ready prescription from saved records.
+                </small>
+
+                <span class="feature-link"> View prescriptions &rarr; </span>
+              </a>
+
+              <a class="feature-card" href="patient_timeline.php">
+                <span class="feature-icon feature-icon--green"> ◷ </span>
+
+                <strong>Medical Timeline</strong>
+
+                <small>
+                  Review consultations, vitals, lab results and history.
+                </small>
+
+                <span class="feature-link"> View patient timeline &rarr; </span>
+              </a>
+            </div>
+          </section>
+
+          <!-- FOOTER -->
+
+          <footer class="dashboard-footer">
+            <p>
+              &copy; 2026 HeartCare Clinic Management System. Academic project
+              demonstration.
+            </p>
+
+            <p>
+              Patient information must only be accessed by authorized clinical
+              staff.
+            </p>
+          </footer>
+        </div>
+      </main>
+    </div>
+
+    <!-- JAVASCRIPT FILES -->
+
+    <script src="js/doctor-dashboard-data.js"></script>
+
+    <script src="js/common.js"></script>
+
+    <script src="js/doctor-dashboard.js"></script>
+  </body>
+</html>

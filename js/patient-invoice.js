@@ -236,7 +236,7 @@ function renderDetail() {
     if (paymentMethods.length === 0) {
       foot =
         '<div class="pp-alert pp-alert--error">You have no saved payment method. ' +
-        '<a class="text-link" href="payment-methods.html">Add one</a> to pay this invoice.</div>';
+        '<a class="text-link" href="payment-methods.php">Add one</a> to pay this invoice.</div>';
     } else {
       let options = "";
       for (let k = 0; k < paymentMethods.length; k++) {
@@ -263,7 +263,7 @@ function renderDetail() {
         '<button type="submit" class="primary-button pp-submit" id="pay-btn">Pay ' +
         money(invoiceTotal(inv)) +
         "</button>" +
-        '<p class="pp-hint">Need another method? <a class="text-link" href="payment-methods.html">Add one</a>. ' +
+        '<p class="pp-hint">Need another method? <a class="text-link" href="payment-methods.php">Add one</a>. ' +
         "Simulated checkout only.</p></form>";
     }
   } else {

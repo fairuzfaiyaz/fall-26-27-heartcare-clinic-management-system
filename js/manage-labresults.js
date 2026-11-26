@@ -219,9 +219,9 @@ function renderResults() {
                 '<td>' +
                     '<div class="action-buttons">' +
 
-                        '<a href="lab/result-details.html" class="action-btn view-btn" title="View Details">◉</a>' +
+                        '<a href="lab/result-details.php" class="action-btn view-btn" title="View Details">◉</a>' +
 
-                        '<a href="lab/edit-lab-result.html" class="action-btn edit-btn" title="Edit Result">✎</a>' +
+                        '<a href="lab/edit-lab-result.php" class="action-btn edit-btn" title="Edit Result">✎</a>' +
 
                         '<button type="button" class="action-btn delete-btn" title="Delete Result" onclick="deleteLabResult(' +
                             originalIndex +

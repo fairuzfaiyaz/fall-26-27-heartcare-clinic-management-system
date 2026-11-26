@@ -106,7 +106,7 @@ function renderAppointments() {
           break;
         case "past":
           buttons =
-            '<a href="medical-records.html" class="pp-act">View record</a>';
+            '<a href="medical-records.php" class="pp-act">View record</a>';
           break;
         default:
           buttons = "";

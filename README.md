@@ -4,7 +4,7 @@
 ![Tech stack](images/heartcare-stack.svg)
 ![Team](images/heartcare-team.svg)
 
-> A frontend, role-based clinic management prototype built with HTML5, CSS3, and JavaScript for CSC 3215 — Web Technologies.
+> A frontend, role-based clinic management prototype built with PHP, CSS3, and JavaScript for CSC 3215 — Web Technologies.
 
 ## Table of Contents
 
@@ -45,7 +45,7 @@ The prototype provides four role-specific areas:
 | Patient               | Appointment booking, personal health tracking, medical records, prescriptions, invoices, and payment references |
 | Laboratory Technician | Laboratory queue, test results, result management, test catalogue, reports, and technician profile              |
 
-All roles share a consistent visual structure and a linked demonstration workflow. However, this is a frontend prototype. It does not contain a server, database, PHP session system, or real authentication backend.
+All roles share a consistent visual structure and a linked demonstration workflow. However, this is still a frontend prototype. PHP files serve the page markup through Apache; the project does not contain a database, PHP session system, or real authentication backend.
 
 The project demonstrates the use of semantic HTML, external CSS, responsive layouts, JavaScript arrays of objects, forms, DOM manipulation, validation, search, filters, dynamic tables, status changes, charts, modal forms, and print layouts.
 
@@ -96,6 +96,7 @@ Administrators need to configure departments and staff, control accounts and tes
 
 | Technology             | Purpose                                                                                                                                         |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| PHP                    | Page delivery through an Apache/PHP server such as XAMPP                                                                                         |
 | HTML5                  | Page structure, semantic layout, tables, forms, navigation, and dialog elements                                                                 |
 | CSS3                   | Responsive layouts, cards, tables, dashboards, sidebars, status badges, print styles, hover/focus effects, and transitions                      |
 | JavaScript             | Validation, DOM updates, arrays, objects, loops, filtering, sorting, search, CRUD-style operations, dynamic forms, charts, and role redirection |
@@ -109,20 +110,20 @@ No package manager, framework, external chart library, database, or build tool i
 
 ## How to Run
 
-1. Download or clone the repository.
-2. Keep the complete project folder together.
-3. Open `index.html` in Google Chrome or Firefox.
+1. Download or clone the repository into your XAMPP `htdocs` directory (for example, `C:\xampp\htdocs\heartcare-clinic-management-system`).
+2. Start **Apache** from the XAMPP Control Panel. No database service is needed for this frontend prototype.
+3. Open `http://localhost/heartcare-clinic-management-system/` in your browser. If you used a different folder name, use it in the URL.
 
-The project can also be opened using the Live Server extension in Visual Studio Code.
+Do not open the `.php` files directly from File Explorer; they must be served by Apache so their routes and PHP pages work.
 
 ```text
-index.html
+index.php
 ```
 
 Sign-in, registration, and dashboard pages can be opened through the public navigation. The direct route to the demonstration dashboard selector is:
 
 ```text
-choose-dash.html
+choose-dash.php
 ```
 
 The login page may also redirect automatically to a role dashboard after a valid demonstration account is selected.
@@ -158,7 +159,7 @@ The login page uses a simple JavaScript `switch` on the account role:
 
 ### Public Website
 
-The public website is implemented in `index.html`.
+The public website is implemented in `index.php`.
 
 It includes:
 
@@ -195,7 +196,7 @@ Passwords are demonstration values embedded in JavaScript data and are not secur
 
 ### Patient Registration
 
-`register.html` contains a patient registration form with:
+`register.php` contains a patient registration form with:
 
 - Full name
 - Email
@@ -842,14 +843,14 @@ The project does not generate PDF files on a server. It uses the browser's **Pri
 
 ```text
 fall-26-27-heartcare-clinic-management-system/
-├── index.html
-├── login.html
-├── register.html
-├── choose-dash.html
-├── dashboard.html
-├── doctor-dashboard.html
-├── patient-dashboard.html
-├── lab-dashboard.html
+├── index.php
+├── login.php
+├── register.php
+├── choose-dash.php
+├── dashboard.php
+├── doctor-dashboard.php
+├── patient-dashboard.php
+├── lab-dashboard.php
 ├── css/
 │   ├── style.css
 │   ├── auth.css
@@ -878,22 +879,22 @@ fall-26-27-heartcare-clinic-management-system/
 └── README.md
 ```
 
-The project follows HTML, CSS, and JavaScript separation. Page markup is stored in HTML files, presentation is stored in CSS files, and behavior and sample data are stored in JavaScript files.
+The project separates PHP page files, CSS presentation, and JavaScript behavior and sample data. The PHP pages currently serve the existing frontend markup; they do not yet implement database-backed features.
 
 ---
 
-## Key HTML, CSS, and JavaScript Files
+## Key PHP, CSS, and JavaScript Files
 
-| Area           | Example HTML files                                                                                                                                                                                           | CSS and JavaScript support                                                                                              |
+| Area           | Example PHP files                                                                                                                                                                                            | CSS and JavaScript support                                                                                              |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------- |
-| Public website | `index.html`                                                                                                                                                                                                 | `css/style.css`, `js/script.js`                                                                                         |
-| Authentication | `login.html`, `register.html`, `choose-dash.html`                                                                                                                                                            | `css/auth.css`, `js/login-data.js`, `js/login.js`, `js/register.js`                                                     |
-| Administrator  | `dashboard.html`, `manage-departments.html`, `manage-doctors.html`, `manage-labtechs.html`, `manage-tests.html`, `manage-appointments.html`, `reports.html`, `audit-log.html`                                | `css/admin-dashboard.css`, `js/admin-*`, `js/departments.js`, `js/common.js`                                            |
-| Doctor         | `doctor-dashboard.html`, `myProfile.html`, `my_schedule.html`, `my_appointments.html`, `consultation.html`, `prescription.html`, `order_tests.html`, `patient_timeline.html`                                 | `css/doctor-*.css`, `css/doctorpatient-timeline.css`, `js/doctor-*`, `js/common.js`                                     |
-| Patient        | `patient-dashboard.html`, `appointments.html`, `book-appointment.html`, `health-tracker.html`, `medical-records.html`, `prescriptions.html`, `invoices.html`, `payment-methods.html`, `patient-profile.html` | `css/patient-dashboard.css`, `css/health-tracker.css`, `css/my-appointments.css`, `js/patient-*`, `js/payment-methods*` |
-| Laboratory     | `lab-dashboard.html`, `lab-queue.html`, `add-labresult.html`, `manage-labresult.html`, `test-catalogue.html`, `lab-reports.html`, `profile.html`                                                             | `css/lab-*.css`, `css/manage-labresults.css`, `js/lab-*`, `js/add-labresult*`, `js/manage-labresults*`, `js/common.js`  |
+| Public website | `index.php`                                                                                                                                                                                                 | `css/style.css`, `js/script.js`                                                                                         |
+| Authentication | `login.php`, `register.php`, `choose-dash.php`                                                                                                                                                            | `css/auth.css`, `js/login-data.js`, `js/login.js`, `js/register.js`                                                     |
+| Administrator  | `dashboard.php`, `manage-departments.php`, `manage-doctors.php`, `manage-labtechs.php`, `manage-tests.php`, `manage-appointments.php`, `reports.php`, `audit-log.php`                                | `css/admin-dashboard.css`, `js/admin-*`, `js/departments.js`, `js/common.js`                                            |
+| Doctor         | `doctor-dashboard.php`, `myProfile.php`, `my_schedule.php`, `my_appointments.php`, `consultation.php`, `prescription.php`, `order_tests.php`, `patient_timeline.php`                                 | `css/doctor-*.css`, `css/doctorpatient-timeline.css`, `js/doctor-*`, `js/common.js`                                     |
+| Patient        | `patient-dashboard.php`, `appointments.php`, `book-appointment.php`, `health-tracker.php`, `medical-records.php`, `prescriptions.php`, `invoices.php`, `payment-methods.php`, `patient-profile.php` | `css/patient-dashboard.css`, `css/health-tracker.css`, `css/my-appointments.css`, `js/patient-*`, `js/payment-methods*` |
+| Laboratory     | `lab-dashboard.php`, `lab-queue.php`, `add-labresult.php`, `manage-labresult.php`, `test-catalogue.php`, `lab-reports.php`, `profile.php`                                                             | `css/lab-*.css`, `css/manage-labresults.css`, `js/lab-*`, `js/add-labresult*`, `js/manage-labresults*`, `js/common.js`  |
 
-The HTML files generally load JavaScript at the end of the `<body>`. Page scripts often need data scripts or shared helpers to load before the page-specific JavaScript.
+The PHP files generally load JavaScript at the end of the `<body>`. Page scripts often need data scripts or shared helpers to load before the page-specific JavaScript.
 
 ---
 
@@ -975,7 +976,7 @@ This project is a frontend academic prototype, not a production clinic system.
 It does not currently provide:
 
 - A real database
-- PHP or server-side processing
+- PHP-based data processing or form handling
 - Secure session management
 - Password hashing
 - Server-side authorization

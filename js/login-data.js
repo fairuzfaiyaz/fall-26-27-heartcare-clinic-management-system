@@ -1,5 +1,5 @@
 // login-data.js
-// Demo accounts for login.html: an array of objects.
+// Demo accounts for login.php: an array of objects.
 // FRONTEND ONLY. In the real system the passwords are never stored like this:
 // PHP stores a hash (password_hash) in MySQL and checks it with
 // password_verify(), then starts a session ($_SESSION['user_id'], ['role']).

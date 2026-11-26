@@ -1,5 +1,5 @@
 // register.js
-// Form validation for register.html (Week 06 style:
+// Form validation for register.php (Week 06 style:
 // onsubmit="return validateForm()" -> return false stops the form).
 
 // ids of every field that can show an error

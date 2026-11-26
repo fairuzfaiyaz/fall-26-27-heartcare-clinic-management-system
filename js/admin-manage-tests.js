@@ -1,5 +1,5 @@
 // admin-manage-tests.js
-// CRUD for manage-tests.html
+// CRUD for manage-tests.php
 // Needs (loaded before this file):
 //   admin-manage-tests-data.js -> tests array
 //   common.js                  -> showToday, containsText, showError, clearErrors

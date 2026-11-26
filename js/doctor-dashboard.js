@@ -176,7 +176,7 @@ function renderPatientQueue() {
         "</span>" +
         "</td>" +
         "<td>" +
-        '<a class="table-link" href="consultation.html">' +
+        '<a class="table-link" href="consultation.php">' +
         "Open" +
         "</a>" +
         "</td>" +

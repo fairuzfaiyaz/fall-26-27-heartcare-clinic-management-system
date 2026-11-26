@@ -1,5 +1,5 @@
 // patient-appointments-data.js
-// Data for appointments.html: an array of objects (this patient's appointments).
+// Data for appointments.php: an array of objects (this patient's appointments).
 // date is "YYYY-MM-DD", start and end are "HH:MM" (24 hour).
 // Later: SELECT ... FROM appointments WHERE patient_id = $_SESSION['user_id']
 

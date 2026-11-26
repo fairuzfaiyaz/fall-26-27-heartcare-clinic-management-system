@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Lab Results | HeartCare</title>
+    <link rel="stylesheet" href="css/add-labresult.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <span>♥</span> HeartCare
+            </div>
+
+            <div class="profile">
+                <div class="avatar">LT</div>
+                <div>
+                    <h3>Aurpita Roy</h3>
+                    <p>Laboratory Department</p>
+                </div>
+            </div>
+
+            <p class="menu-title">MAIN MENU</p>
+
+            <nav>
+                <a class="sidebar-link" href="lab-dashboard.php">▦ Dashboard</a>
+                <a class="sidebar-link" href="lab-queue.php">☷ Lab Queue</a>
+                <a class="sidebar-link is-active" href="add-labresult.php">✚ Add Test Result</a>
+                <a class="sidebar-link" href="manage-labresult.php">▤ Manage Results</a>
+                <a class="sidebar-link" href="test-catalogue.php">♧ Test Catalogue</a>
+                <a class="sidebar-link" href="lab-reports.php">▣ Lab Reports</a>
+
+                <p class="menu-title">ACCOUNT</p>
+
+                <a class="sidebar-link" href="profile.php">♙ My Profile</a>
+                <a class="sidebar-link sidebar-link--logout" href="login.php">Log out</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                HeartCare Hospital
+                <small>Laboratory Management System</small>
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <div>
+                    <h2>Good Morning, Aurpita</h2>
+                    <p>Welcome back, Lab Technician</p>
+                </div>
+
+                <div class="header-right">
+
+
+                    <div class="user-info">
+                        <div class="small-avatar">LT</div>
+                        <span>Aurpita Roy</span>
+                    </div>
+                </div>
+
+            </header>
+
+
+            <!-- CONTENT -->
+            <section class="content">
+
+                <div class="page-heading">
+                    <div>
+                        <h1>Add Test Results</h1>
+                        <p>Create, view and amend eligible result records</p>
+                    </div>
+
+
+                </div>
+
+
+                <div class="main-grid">
+
+                    <!-- LEFT CONTENT -->
+                    <div class="left-content">
+
+                        <form id="add-result-form" novalidate onsubmit="return saveLabResult()">
+
+                            <!-- PATIENT INFORMATION -->
+                            <div class="panel">
+
+                                <div class="panel-header">
+                                    <div>
+                                        <h3>Patient Information</h3>
+                                        <p>Enter or identify the patient details</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-grid">
+
+                                    <div class="form-group">
+                                        <label for="patient-id">Patient ID</label>
+                                        <input type="text" id="patient-id" placeholder="Enter patient ID"
+                                            onblur="findPatient()">
+                                        <span class="error" id="patient-id-error"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="patient-name">Patient Name</label>
+                                        <input type="text" id="patient-name" placeholder="Enter patient name">
+                                        <span class="error" id="patient-name-error"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="patient-age">Age</label>
+                                        <input type="number" id="patient-age" placeholder="Enter age" min="1">
+                                        <span class="error" id="patient-age-error"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="patient-gender">Gender</label>
+                                        <select id="patient-gender">
+                                            <option value="">Select gender</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                        <span class="error" id="patient-gender-error"></span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- LAB ORDER INFORMATION -->
+                            <div class="panel">
+
+                                <div class="panel-header">
+                                    <div>
+                                        <h3>Lab Order Information</h3>
+                                        <p>Provide the associated laboratory order details</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-grid">
+
+                                    <div class="form-group">
+                                        <label for="order-id">Order ID</label>
+                                        <input type="text" id="order-id" placeholder="Enter order ID">
+                                        <span class="error" id="order-id-error"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="doctor-name">Doctor Name</label>
+                                        <input type="text" id="doctor-name" placeholder="Enter doctor name">
+                                        <span class="error" id="doctor-name-error"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="sample-date">Sample Collection Date</label>
+                                        <input type="date" id="sample-date">
+                                        <span class="error" id="sample-date-error"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="sample-type">Sample Type</label>
+                                        <select id="sample-type">
+                                            <option value="">Select sample type</option>
+                                            <option value="Blood">Blood</option>
+                                            <option value="Urine">Urine</option>
+                                            <option value="Serum">Serum</option>
+                                            <option value="Plasma">Plasma</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                        <span class="error" id="sample-type-error"></span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- TEST RESULT DETAILS -->
+                            <div class="panel">
+
+                                <div class="panel-header">
+                                    <div>
+                                        <h3>Test Result Details</h3>
+                                        <p>Enter the laboratory test result and reference information</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-grid">
+
+                                    <div class="form-group">
+                                        <label for="test-name">Test Name</label>
+                                        <select id="test-name" onchange="updateTestDetails()">
+
+                                            <option value="">Select laboratory test</option>
+                                            <option value="TC001">Complete Blood Count</option>
+                                            <option value="TC002">Hemoglobin</option>
+                                            <option value="TC003">Blood Glucose (Fasting)</option>
+                                            <option value="TC004">Serum Creatinine</option>
+                                            <option value="TC005">Lipid Profile</option>
+                                            <option value="TC006">Urine Routine Examination</option>
+                                            <option value="TC007">Thyroid Stimulating Hormone</option>
+
+                                        </select>
+                                        <span class="error" id="test-name-error"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="test-code">Test Code</label>
+                                        <input type="text" id="test-code" placeholder="Auto-filled test code" readonly>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="result-value">Result Value</label>
+                                        <input type="text" id="result-value" placeholder="Enter result value">
+                                        <span class="error" id="result-value-error"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="unit">Unit</label>
+                                        <input type="text" id="unit" placeholder="e.g. mg/dL, g/dL" readonly>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="reference-range">Reference Range</label>
+                                        <input type="text" id="reference-range"
+                                            placeholder="Auto-filled reference range" readonly>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="result-status">Result Status</label>
+                                        <select id="result-status">
+                                            <option value="">Select result status</option>
+                                            <option value="Normal">Normal</option>
+                                            <option value="Abnormal">Abnormal</option>
+                                            <option value="Critical">Critical</option>
+                                            <option value="Pending Verification">Pending Verification</option>
+                                        </select>
+                                        <span class="error" id="result-status-error"></span>
+                                    </div>
+
+                                    <div class="form-group full-width">
+                                        <label for="technician-remarks">Technician Remarks</label>
+                                        <textarea id="technician-remarks" rows="4"
+                                            placeholder="Enter additional notes or observations..."></textarea>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- FORM MESSAGE -->
+                            <p id="form-message"></p>
+
+
+                            <!-- FORM BUTTONS -->
+                            <div class="form-actions">
+
+                                <button type="button" class="clear-btn" onclick="resetResultForm()">
+                                    Clear Form
+                                </button>
+
+                                <button type="submit" class="save-btn">
+                                    Save Lab Result
+                                </button>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+
+                    <!-- RIGHT CONTENT -->
+                    <div class="right-content">
+
+                        <!-- RESULT GUIDELINES -->
+                        <div class="panel">
+
+                            <div class="panel-header">
+                                <div>
+                                    <h3>Result Guidelines</h3>
+                                    <p>Important information</p>
+                                </div>
+                            </div>
+
+                            <div class="guideline-list">
+
+                                <div class="guideline-item">
+                                    <span class="guide-icon blue-bg">
+                                        <svg viewBox="0 0 24 24">
+                                            <path d="M5 12.5L10 17L19 7" />
+                                        </svg>
+                                    </span>
+                                    <div>
+                                        <strong>Verify Patient</strong>
+                                        <p>Confirm patient ID before entering results.</p>
+                                    </div>
+                                </div>
+
+                                <div class="guideline-item">
+                                    <span class="guide-icon green-bg">
+                                        <svg viewBox="0 0 24 24">
+                                            <path d="M9 3H15" />
+                                            <path d="M10 3V9L5 18C4 20 6 21 8 21H16C18 21 20 20 19 18L14 9V3" />
+                                            <path d="M7 16H17" />
+                                        </svg>
+                                    </span>
+                                    <div>
+                                        <strong>Check Test Details</strong>
+                                        <p>Ensure the selected test matches the lab order.</p>
+                                    </div>
+                                </div>
+
+                                <div class="guideline-item">
+                                    <span class="guide-icon orange-bg">
+                                        <svg viewBox="0 0 24 24">
+                                            <path d="M12 8V13" />
+                                            <path d="M12 17H12.01" />
+                                            <path
+                                                d="M10.3 3.8L2.7 17C1.8 18.6 3 20.5 4.8 20.5H19.2C21 20.5 22.2 18.6 21.3 17L13.7 3.8C12.9 2.3 11.1 2.3 10.3 3.8Z" />
+                                        </svg>
+                                    </span>
+                                    <div>
+                                        <strong>Verify Result</strong>
+                                        <p>Check result values and units before saving.</p>
+                                    </div>
+                                </div>
+
+                                <div class="guideline-item">
+                                    <span class="guide-icon purple-bg">
+                                        <svg viewBox="0 0 24 24">
+                                            <path d="M4 12L9 17L20 6" />
+                                            <path d="M20 12V19H4V5H16" />
+                                        </svg>
+                                    </span>
+                                    <div>
+                                        <strong>Review Before Submit</strong>
+                                        <p>Review all information before final submission.</p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- RECENT RESULTS -->
+                        <div class="panel">
+
+                            <div class="panel-header">
+                                <div>
+                                    <h3>Recent Lab Results</h3>
+                                    <p>Recently entered results</p>
+                                </div>
+
+                                <a href="manage-labresult.php">View All</a>
+                            </div>
+
+                            <div class="recent-list" id="recent-results-list">
+                            </div>
+
+                        </div>
+
+
+                        <!-- RESULT OVERVIEW -->
+                        <div class="panel">
+
+                            <div class="panel-header">
+                                <div>
+                                    <h3>Result Overview</h3>
+                                    <p>Today's result summary</p>
+                                </div>
+                            </div>
+
+                            <div class="overview-item">
+                                <span>
+                                    <i class="overview-dot normal-dot"></i>
+                                    Normal Results
+                                </span>
+                                <strong id="normal-count">20</strong>
+                            </div>
+
+                            <div class="overview-item">
+                                <span>
+                                    <i class="overview-dot abnormal-dot"></i>
+                                    Abnormal Results
+                                </span>
+                                <strong id="abnormal-count">08</strong>
+                            </div>
+
+                            <div class="overview-item">
+                                <span>
+                                    <i class="overview-dot pending-dot"></i>
+                                    Pending Verification
+                                </span>
+                                <strong id="pending-count">04</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+            <footer>
+                © 2026 HeartCare Hospital. All rights reserved.
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/add-labresult-data.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/add-labresult.js"></script>
+
+</body>
+
+</html>

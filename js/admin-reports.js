@@ -1,5 +1,5 @@
 // admin-reports.js
-// Builds the monthly report on reports.html
+// Builds the monthly report on reports.php
 // Needs (loaded before this file):
 //   admin-reports-data.js -> reportMonths, monthlyReports
 //   common.js             -> showToday, showError, clearErrors

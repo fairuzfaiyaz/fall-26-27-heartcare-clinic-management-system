@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Book Appointment - HeartCare patient portal."
+    />
+    <title>Book Appointment | HeartCare Clinic</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/patient-dashboard.css" />
+    <link rel="stylesheet" href="assets/css/patient-pages.css" />
+  </head>
+
+  <body class="patient-dashboard">
+    <div class="dashboard-layout">
+      <aside class="dashboard-sidebar">
+        <a href="index.php" class="dashboard-brand">
+          <span class="dashboard-brand__icon" aria-hidden="true">♥</span>
+          <span>HeartCare</span>
+        </a>
+
+        <div class="sidebar-profile">
+          <!-- filled by showPatientHeader() -->
+          <div class="avatar" id="sidebar-initials"></div>
+          <div>
+            <strong id="sidebar-name"></strong>
+            <span>Patient Account</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Patient navigation">
+          <p class="sidebar-label">MENU</p>
+
+          <a href="patient-dashboard.php" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">▦</span>
+            Dashboard
+          </a>
+
+          <a
+            href="appointments.php"
+            class="sidebar-link is-active"
+            aria-current="page"
+          >
+            <span class="nav-icon" aria-hidden="true">▣</span>
+            My Appointments
+          </a>
+
+          <a href="health-tracker.php" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">♡</span>
+            Health Tracker
+          </a>
+
+          <a href="medical-records.php" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">▤</span>
+            Medical Records
+          </a>
+
+          <a href="prescriptions.php" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">✚</span>
+            Prescriptions
+          </a>
+
+          <a href="invoices.php" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">৳</span>
+            Billing &amp; Invoices
+          </a>
+
+          <p class="sidebar-label sidebar-label--spaced">ACCOUNT</p>
+
+          <a href="patient-profile.php" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">♙</span>
+            My Profile
+          </a>
+
+          <a href="payment-methods.php" class="sidebar-link">
+            <span class="nav-icon" aria-hidden="true">▰</span>
+            Payment Methods
+          </a>
+
+          <a href="login.php" class="sidebar-link sidebar-link--logout">
+            <span class="nav-icon" aria-hidden="true">↪</span>
+            Sign Out
+          </a>
+        </nav>
+
+        <div class="sidebar-help">
+          <div class="help-icon" aria-hidden="true">?</div>
+          <strong>Need assistance?</strong>
+          <p>Contact the clinic team for help with your account.</p>
+          <a href="index.php#contact">Contact Clinic →</a>
+        </div>
+      </aside>
+
+      <main class="dashboard-main">
+        <header class="dashboard-topbar">
+          <div class="breadcrumb">
+            <span>Patient Portal</span>
+            <span aria-hidden="true">/</span>
+            <strong>Book Appointment</strong>
+          </div>
+          <div class="topbar-actions">
+            <span class="portal-status"
+              ><span class="status-dot"></span>Patient Portal</span
+            >
+            <a
+              href="patient-profile.php"
+              class="topbar-avatar"
+              id="topbar-initials"
+              aria-label="Open profile"
+            ></a>
+          </div>
+        </header>
+
+        <div class="dashboard-content">
+          <section class="welcome-section">
+            <div>
+              <p class="section-eyebrow">SMART BOOKING</p>
+              <h1>Book Appointment</h1>
+              <p class="welcome-description">
+                Choose a department, doctor, date and available time slot.
+              </p>
+            </div>
+          </section>
+
+          <div class="dashboard-columns">
+            <section class="panel">
+              <div class="panel-header">
+                <div>
+                  <p class="section-eyebrow">SMART BOOKING</p>
+                  <h2>Book an Appointment</h2>
+                </div>
+              </div>
+
+              <!-- onsubmit validates, then books. novalidate: our JS shows the errors. -->
+              <form
+                class="pp-form"
+                id="book-form"
+                method="post"
+                action="#"
+                onsubmit="return confirmBooking();"
+                novalidate
+              >
+                <div class="pp-step">
+                  <span class="pp-step__n">1</span
+                  ><strong>Choose department and doctor</strong>
+                </div>
+                <div class="pp-row2">
+                  <div class="pp-field">
+                    <label for="dept">Department</label>
+                    <!-- options are added by fillDepartments() -->
+                    <select
+                      class="pp-input"
+                      id="dept"
+                      name="dept"
+                      onchange="showDoctors()"
+                    >
+                      <option value="">Select department</option>
+                    </select>
+                    <span id="dept-error"></span>
+                  </div>
+                  <div class="pp-field">
+                    <label for="doctor">Doctor</label>
+                    <select
+                      class="pp-input"
+                      id="doctor"
+                      name="doctor"
+                      onchange="doctorChosen()"
+                      disabled
+                    >
+                      <option value="">Select a department first</option>
+                    </select>
+                    <span id="doctor-error"></span>
+                  </div>
+                </div>
+
+                <div class="pp-step">
+                  <span class="pp-step__n">2</span><strong>Pick a date</strong>
+                </div>
+                <div class="pp-field">
+                  <label for="date">Appointment date</label>
+                  <input
+                    class="pp-input"
+                    type="date"
+                    id="date"
+                    name="date"
+                    onchange="dateChosen()"
+                    disabled
+                  />
+                  <span id="date-error"></span>
+                </div>
+
+                <div class="pp-step">
+                  <span class="pp-step__n">3</span
+                  ><strong>Select an available time slot</strong>
+                </div>
+                <!-- slot buttons are built by drawSlots() -->
+                <div id="slots" class="pp-slots" aria-live="polite">
+                  <p class="pp-hint">
+                    Choose a doctor and date to see available slots.
+                  </p>
+                </div>
+                <span id="slot-error"></span>
+                <input type="hidden" id="slot" name="start_time" />
+
+                <div id="book-msg" class="pp-alert" style="display: none"></div>
+                <button type="submit" class="primary-button pp-submit">
+                  Confirm Booking
+                </button>
+              </form>
+            </section>
+
+            <section class="panel">
+              <div class="panel-header">
+                <div>
+                  <p class="section-eyebrow">SUMMARY</p>
+                  <h2>Booking Summary</h2>
+                </div>
+              </div>
+              <div class="pp-kv">
+                <div><span>Department</span><strong id="s-dept">—</strong></div>
+                <div><span>Doctor</span><strong id="s-doc">—</strong></div>
+                <div><span>Date</span><strong id="s-date">—</strong></div>
+                <div><span>Time</span><strong id="s-time">—</strong></div>
+                <div>
+                  <span>Consultation fee</span><strong id="s-fee">—</strong>
+                </div>
+              </div>
+              <div class="health-notice">
+                <span aria-hidden="true">ⓘ</span>
+                <p>
+                  Availability is checked again when you confirm. If someone
+                  books the slot first, you will be asked to choose another
+                  time.
+                </p>
+              </div>
+            </section>
+          </div>
+
+          <footer class="dashboard-footer">
+            <p>
+              © 2026 HeartCare Clinic Management System. Academic project
+              demonstration.
+            </p>
+            <p>For emergencies, contact local emergency services.</p>
+          </footer>
+        </div>
+      </main>
+    </div>
+
+    <!-- order matters: account data, page data, helpers, then this page's code -->
+    <script src="js/patient-account-data.js"></script>
+    <script src="js/patient-book-appointment-data.js"></script>
+    <script src="js/patient-common.js"></script>
+    <script src="js/patient-book-appointment.js"></script>
+  </body>
+</html>

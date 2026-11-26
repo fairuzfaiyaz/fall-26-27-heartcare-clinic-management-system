@@ -1,5 +1,5 @@
 // departments.js
-// CRUD for manage-departments.html
+// CRUD for manage-departments.php
 // Needs: data.js (departments array) and common.js (helpers)
 
 // -1 means "adding a new department".

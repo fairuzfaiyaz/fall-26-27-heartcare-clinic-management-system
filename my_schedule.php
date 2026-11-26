@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>My Schedule | HeartCare Clinic</title>
+
+    <!-- Main Dashboard CSS -->
+    <link rel="stylesheet" href="css/doctor-dashboard.css" />
+
+    <!-- Schedule Page CSS -->
+    <link rel="stylesheet" href="css/doctormy_schedule.css" />
+  </head>
+
+  <body class="doctor-dashboard">
+    <div class="dashboard-layout">
+      <!-- SIDEBAR -->
+
+      <aside class="dashboard-sidebar">
+        <a class="dashboard-brand" href="index.php">
+          <span class="dashboard-brand__icon">&hearts;</span>
+
+          <span>HeartCare</span>
+        </a>
+
+        <div class="sidebar-profile">
+          <div class="avatar">BP</div>
+
+          <div>
+            <strong>Dr. Badhon Pal</strong>
+
+            <span>Cardiology Department</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <p class="sidebar-label">WORKSPACE</p>
+
+          <a class="sidebar-link" href="doctor-dashboard.php">
+            <span class="nav-icon">▦</span>Dashboard
+          </a>
+
+          <a class="sidebar-link" href="myProfile.php"> My Profile </a>
+
+          <a class="sidebar-link is-active" href="my_schedule.php">
+            My Schedule
+          </a>
+
+          <a class="sidebar-link" href="my_appointments.php">
+            My Appointments
+          </a>
+
+          <a class="sidebar-link" href="consultation.php"> Consultation </a>
+
+          <a class="sidebar-link" href="prescription.php"> Prescriptions </a>
+
+          <a class="sidebar-link" href="order_tests.php"> Laboratory Tests </a>
+
+          <a class="sidebar-link" href="patient_timeline.php">
+            Patient Timeline
+          </a>
+        </nav>
+
+        <a class="sidebar-link sidebar-link--logout" href="login.php">
+          Log out
+        </a>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+
+      <main class="dashboard-main">
+        <div class="dashboard-content">
+          <!-- PAGE HEADER -->
+
+          <section class="welcome-section">
+            <div>
+              <p class="section-eyebrow">DOCTOR WORKSPACE</p>
+
+              <h1>My Schedule</h1>
+
+              <p class="welcome-description">
+                Manage your weekly working hours and appointment availability.
+              </p>
+            </div>
+
+            <a class="primary-button" href="my_appointments.php">
+              View Appointments
+            </a>
+          </section>
+
+          <!-- SUMMARY CARDS -->
+
+          <section class="summary-grid">
+            <article class="summary-card">
+              <div class="summary-card__top">
+                <span class="summary-icon summary-icon--blue">▣</span>
+
+                <span class="summary-caption">Weekly</span>
+              </div>
+
+              <p class="summary-value" id="workingDays">06</p>
+
+              <h2>Working Days</h2>
+            </article>
+
+            <article class="summary-card">
+              <div class="summary-card__top">
+                <span class="summary-icon summary-icon--green">◷</span>
+
+                <span class="summary-caption">Daily</span>
+              </div>
+
+              <p class="summary-value" id="workingHours">06</p>
+
+              <h2>Working Hours</h2>
+            </article>
+
+            <article class="summary-card">
+              <div class="summary-card__top">
+                <span class="summary-icon summary-icon--gold">☷</span>
+
+                <span class="summary-caption">Today</span>
+              </div>
+
+              <p class="summary-value" id="totalAppointments">08</p>
+
+              <h2>Total Appointments</h2>
+            </article>
+
+            <article class="summary-card">
+              <div class="summary-card__top">
+                <span class="summary-icon summary-icon--red">♡</span>
+
+                <span class="summary-caption">Weekly</span>
+              </div>
+
+              <p class="summary-value" id="availableDaysOff">01</p>
+
+              <h2>Available Days Off</h2>
+            </article>
+          </section>
+
+          <!-- WEEKLY SCHEDULE -->
+
+          <section class="panel schedule-management">
+            <div class="panel-header">
+              <div>
+                <p class="section-eyebrow">WEEKLY AVAILABILITY</p>
+
+                <h2>My Weekly Schedule</h2>
+              </div>
+
+              <span class="schedule-label"> Regular Schedule </span>
+            </div>
+
+            <div class="table-wrapper">
+              <table class="data-table schedule-table">
+                <thead>
+                  <tr>
+                    <th>Day</th>
+
+                    <th>Working Hours</th>
+
+                    <th>Break Time</th>
+
+                    <th>Status</th>
+                  </tr>
+                </thead>
+
+                <!-- JavaScript will generate rows here -->
+
+                <tbody id="weeklyScheduleTable"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- TODAY'S SCHEDULE -->
+
+          <section class="panel today-schedule">
+            <div class="panel-header">
+              <div>
+                <p class="section-eyebrow">DAILY OVERVIEW</p>
+
+                <h2>Today's Schedule</h2>
+              </div>
+
+              <span class="schedule-label" id="todayDayLabel"> Saturday </span>
+            </div>
+
+            <!-- JavaScript will generate today's timeline -->
+
+            <div class="timeline" id="todayTimeline"></div>
+          </section>
+
+          <!-- FOOTER -->
+
+          <footer class="dashboard-footer">
+            <p>
+              &copy; 2026 HeartCare Clinic Management System. Academic project
+              demonstration.
+            </p>
+          </footer>
+        </div>
+      </main>
+    </div>
+
+    <!-- JAVASCRIPT FILES -->
+
+    <script src="js/doctor-schedule-data.js"></script>
+
+    <script src="js/common.js"></script>
+
+    <script src="js/doctor-schedule.js"></script>
+  </body>
+</html>

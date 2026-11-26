@@ -1,5 +1,5 @@
 // admin-manage-doctors.js
-// CRUD for manage-doctors.html
+// CRUD for manage-doctors.php
 // Needs (loaded before this file):
 //   admin-manage-doctors-data.js -> doctors array
 //   common.js                    -> showToday, containsText, showError, clearErrors

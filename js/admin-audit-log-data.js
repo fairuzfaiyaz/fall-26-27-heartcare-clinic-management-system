@@ -1,5 +1,5 @@
 // admin-audit-log-data.js
-// Data for audit-log.html: an array of objects, newest first.
+// Data for audit-log.php: an array of objects, newest first.
 // date is "YYYY-MM-DD" and time is "HH:MM".
 // Passwords and card details are never logged.
 

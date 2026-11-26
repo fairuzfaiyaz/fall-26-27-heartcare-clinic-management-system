@@ -1,5 +1,5 @@
 // admin-manage-appointments-data.js
-// Dummy data for manage-appointments.html.
+// Dummy data for manage-appointments.php.
 // date: YYYY-MM-DD | time: HH:MM (24-hour format)
 
 let appointments = [

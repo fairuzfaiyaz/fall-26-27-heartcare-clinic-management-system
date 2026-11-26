@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lab Queue | HeartCare</title>
+
+    <link rel="stylesheet" href="css/lab-queue.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <span>♥</span> HeartCare
+            </div>
+
+            <div class="profile">
+
+                <div class="avatar">LT</div>
+
+                <div>
+                    <h3>Aurpita Roy</h3>
+                    <p>Laboratory Department</p>
+                </div>
+
+            </div>
+
+            <nav>
+
+                <p class="menu-title">MAIN MENU</p>
+
+                <a class="sidebar-link" href="lab-dashboard.php">
+                    <span class="nav-icon">▦</span>
+                    Dashboard
+                </a>
+
+                <a class="sidebar-link is-active" href="lab-queue.php">
+                    ☷ Lab Queue
+                </a>
+
+                <a class="sidebar-link" href="add-labresult.php">
+                    ✚ Add Test Result
+                </a>
+
+                <a class="sidebar-link" href="manage-labresult.php">
+                    ▤ Manage Results
+                </a>
+
+                <a class="sidebar-link" href="test-catalogue.php">
+                    ♧ Test Catalogue
+                </a>
+
+                <a class="sidebar-link" href="lab-reports.php">
+                    ▣ Lab Reports
+                </a>
+
+
+                <p class="menu-title">ACCOUNT</p>
+
+                <a class="sidebar-link" href="profile.php">
+                    ♙ My Profile
+                </a>
+
+                <a class="sidebar-link sidebar-link--logout" href="login.php">
+                    Log out
+                </a>
+
+            </nav>
+
+            <div class="sidebar-footer">
+
+                <p>HeartCare Hospital</p>
+
+                <small>Laboratory Management System</small>
+
+            </div>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+
+            <!-- Header -->
+            <header class="topbar">
+
+                <div>
+
+                    <h2>Good Morning..</h2>
+
+                    <p>
+                        Manage and monitor assigned laboratory orders.
+                    </p>
+
+                </div>
+
+
+                <div class="header-right">
+
+
+
+                    <div class="user-info">
+
+                        <div class="small-avatar">LT</div>
+
+                        <span>Aurpita Roy</span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- Page Content -->
+            <section class="content">
+
+
+                <!-- Page Heading -->
+                <div class="page-heading">
+
+                    <div>
+
+                        <h1>Laboratory Queue</h1>
+
+                        <p>
+                            Track patient test orders and their current status.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Dynamic Current Date -->
+                    <div class="date" id="queue-date">
+                        📅
+                    </div>
+
+                </div>
+
+
+
+                <!-- Statistics Cards -->
+                <div class="stats-grid">
+
+
+                    <!-- Total Orders -->
+                    <div class="stat-card blue">
+
+                        <div class="stat-icon">☷</div>
+
+                        <p>Total Orders</p>
+
+                        <h2 id="total-orders">0</h2>
+
+                        <small>All assigned orders</small>
+
+                    </div>
+
+
+
+                    <!-- Pending Orders -->
+                    <div class="stat-card orange">
+
+                        <div class="stat-icon">◷</div>
+
+                        <p>Pending Orders</p>
+
+                        <h2 id="pending-orders">0</h2>
+
+                        <small>Waiting for processing</small>
+
+                    </div>
+
+
+
+                    <!-- Processing Orders -->
+                    <div class="stat-card purple">
+
+                        <div class="stat-icon">⚗</div>
+
+                        <p>Processing</p>
+
+                        <h2 id="processing-orders">0</h2>
+
+                        <small>Tests in progress</small>
+
+                    </div>
+
+
+
+                    <!-- Completed Orders -->
+                    <div class="stat-card green">
+
+                        <div class="stat-icon">✓</div>
+
+                        <p>Completed</p>
+
+                        <h2 id="completed-orders">0</h2>
+
+                        <small>Results completed</small>
+
+                    </div>
+
+                </div>
+
+
+
+
+                <!-- Queue Table Panel -->
+                <div class="panel queue-panel">
+
+
+                    <!-- Panel Header -->
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h3>Patient Test Orders</h3>
+
+                            <p>
+                                List of assigned laboratory orders
+                            </p>
+
+                        </div>
+
+
+                        <!-- Dynamic Total -->
+                        <span class="total-label">
+
+                            <span id="filtered-total">0</span>
+                            Total Orders
+
+                        </span>
+
+                    </div>
+
+
+
+
+                    <!-- Search and Filter Section -->
+                    <div class="filter-section">
+
+
+                        <!-- Search Box -->
+                        <div class="search-box">
+
+                            <span>⌕</span>
+
+                            <input type="text" id="order-search" placeholder="Search by Order ID or Patient Name...">
+
+                        </div>
+
+
+
+                        <!-- Status Filter -->
+                        <select id="status-filter">
+
+                            <option value="All">
+                                All Status
+                            </option>
+
+                            <option value="Pending">
+                                Pending
+                            </option>
+
+                            <option value="Processing">
+                                Processing
+                            </option>
+
+                            <option value="Completed">
+                                Completed
+                            </option>
+
+                        </select>
+
+
+
+
+                        <!-- Priority Filter -->
+                        <select id="priority-filter">
+
+                            <option value="All">
+                                All Priorities
+                            </option>
+
+                            <option value="High">
+                                High
+                            </option>
+
+                            <option value="Normal">
+                                Normal
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+
+                    <!-- Lab Queue Table -->
+                    <div class="table-responsive">
+
+                        <table>
+
+
+                            <!-- Table Heading -->
+                            <thead>
+
+                                <tr>
+
+                                    <th>ORDER ID</th>
+
+                                    <th>PATIENT NAME</th>
+
+                                    <th>TEST NAME</th>
+
+                                    <th>DOCTOR</th>
+
+                                    <th>ORDER DATE</th>
+
+                                    <th>PRIORITY</th>
+
+                                    <th>STATUS</th>
+
+                                </tr>
+
+                            </thead>
+
+
+
+                            <!-- Dynamic Table Body -->
+                            <tbody id="lab-queue-body">
+
+                                <tr>
+
+                                    <td colspan="7">
+                                        Loading laboratory orders...
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+
+                        </table>
+
+                    </div>
+
+
+
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+
+
+                        <!-- Dynamic Showing Information -->
+                        <p id="pagination-summary">
+                            Showing 0–0 of 0 orders
+                        </p>
+
+
+
+                        <!-- Dynamic Pagination Buttons -->
+                        <div class="page-buttons" id="page-buttons">
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+                <!-- Queue Information -->
+                <div class="info-panel">
+
+                    <div class="info-icon">ⓘ</div>
+
+                    <div>
+
+                        <h3>Laboratory Queue Information</h3>
+
+                        <p>
+
+                            High-priority orders should receive attention first.
+
+                            Pending orders are waiting for processing, while
+                            processing orders are currently under laboratory
+                            examination.
+
+                            Completed orders have finished the testing process.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+
+                <!-- Footer -->
+                <footer>
+
+                    © 2026 HeartCare Hospital.
+                    All Rights Reserved.
+
+                </footer>
+
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+
+    <!-- JavaScript Files -->
+
+    <!-- First: Laboratory Order Data -->
+    <script src="js/lab-queue-data.js"></script>
+
+
+    <!-- Second: Common JavaScript -->
+    <script src="js/common.js"></script>
+
+
+    <!-- Third: Lab Queue Functionalities -->
+    <script src="js/lab-queue-func.js"></script>
+
+
+</body>
+
+</html>

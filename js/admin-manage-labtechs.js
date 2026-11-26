@@ -1,5 +1,5 @@
 // admin-manage-labtechs.js
-// CRUD for manage-labtechs.html
+// CRUD for manage-labtechs.php
 // Needs (loaded before this file):
 //   admin-manage-labtechs-data.js -> labTechs array
 //   common.js                     -> showToday, containsText, showError, clearErrors
